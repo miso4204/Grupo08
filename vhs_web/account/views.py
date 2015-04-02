@@ -36,7 +36,9 @@ def logout(request):
 	return render_to_response('account/logout.html')
 
 def register(request):
+	
 	if request.method == 'POST':
+		
 		form = RegisterForm(request.POST)
 		if form.is_valid():
 
@@ -45,6 +47,11 @@ def register(request):
 			last_name = form.cleaned_data['last_name']
 			email = form.cleaned_data['email']
 			password = form.cleaned_data['password']
+			# Opciones de productos
+			special_offer = form.cleaned_data['special_offer']
+			money_administration = form.cleaned_data['money_administration']
+			report = form.cleaned_data['report']
+			social_network = form.cleaned_data['social_network']
 
 			user = User.objects.create_user(username=username, email=email, password=password)
 			user.first_name = name
@@ -53,6 +60,8 @@ def register(request):
 			user.save()
 
 			return HttpResponseRedirect('/account/login/')
+		else:
+			form.add_error(None, "Register form is invalid.")
 	else:
 		form = RegisterForm()
 	return render(request, 'account/register.html', {'form': form})

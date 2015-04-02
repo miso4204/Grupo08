@@ -1,6 +1,44 @@
+{{ form.non_field_errors }}
 <form action="/account/register/" method="post">
 	{% csrf_token %}
-	{{ form.as_p }}
+	
+	{{ form.username.errors }}
+	<label for="{{ form.username.id_for_label }}">Nombre de usuario:</label>
+	{{ form.username }}</br>
+	
+	{{ form.name.errors }}
+	<label for="{{ form.name.id_for_label }}">Nombres:</label>
+	{{ form.name }}</br>
+
+	{{ form.last_name.errors }}
+	<label for="{{ form.last_name.id_for_label }}">Apellidos:</label>
+	{{ form.last_name }}</br>
+
+	{{ form.email.errors }}
+	<label for="{{ form.email.id_for_label }}">Dirección de email:</label>
+	{{ form.email }}</br>
+
+	{{ form.password.errors }}
+	<label for="{{ form.password.id_for_label }}">Contraseña:</label>
+	{{ form.password }}</br>
+
+	<p>Opciones de producto</p>
+
+	{{ form.special_offer.errors }}
+	<label for="{{ form.special_offer.id_for_label }}">Módulo de ofertas especiales:</label>
+	{{ form.special_offer }}</br>
+
+	{{ form.money_administration.errors }}
+	<label for="{{ form.money_administration.id_for_label }}">Módulo de administración de moneda:</label>
+	{{ form.money_administration }}</br>
+
+	{{ form.report.errors }}
+	<label for="{{ form.report.id_for_label }}">Módulo de Reportes:</label>
+	{{ form.report }}</br>
+
+	{{ form.social_network.errors }}
+	<label for="{{ form.social_network.id_for_label }}">Módulo de redes sociales:</label>
+	{{ form.social_network }}</br>
+
 	<input type="submit" value="Submit" />
 </form>
-
