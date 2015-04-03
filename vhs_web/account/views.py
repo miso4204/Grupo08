@@ -6,7 +6,7 @@ from django.core.context_processors import csrf
 
 #Custom 
 
-from account.forms import RegisterForm
+from account.forms import RegisterForm, LoginForm
 from django.contrib.auth.models import User
 import requests
 from xml.etree import ElementTree
@@ -20,37 +20,39 @@ def auth_view(request):
 	url = 'http://jbossasvhsbackendservices-vhstourism.rhcloud.com/VhsBackEndServices/webresources'
 	method = 'vhsuser'
 
-	username = request.POST.get('username', '') # username = 'andresvargasr@gmail.com'
-	password = request.POST.get('password', '') # password = 'andres'
+	if request.method == 'POST':
+		
+		form = LoginForm(request.POST)
+		if form.is_valid():
 
-	response = requests.get('{0}/{1}/{2}/{3}'.format(url, method, username, password))
+			username = form.cleaned_data['username'] # username = 'andresvargasr@gmail.com'
+			password = form.cleaned_data['password'] # password = 'andres'
 
-	if response.status_code == 200:
-		element =  ElementTree.XML(response.text)	
+			response = requests.get('{0}/{1}/{2}/{3}'.format(url, method, username, password))
 
-		for node in element.iter():
-			print node.tag, node.text
-		return HttpResponseRedirect('/account/loggedin')
+			if response.status_code == 200:
+				element =  ElementTree.XML(response.text)	
+				# Login ok
+				return HttpResponseRedirect('/account/index')
+			else:
+				#Bad login
+				form.add_error(None, "Login error: Please check your username and password")
+
+				return render(request, 'account/login.html', {'form': form})
+		else:
+			form.add_error(None, "Login form is invalid.")
 	else:
-		return HttpResponseRedirect('/account/invalid')
+		form = LoginForm()
+	return render(request, 'account/login.html', {'form': form})
 
-	# user = auth.authenticate(username=username, password=password)
-
-	# if user is not None:
-	# 	auth.login(request, user)
-	# 	return HttpResponseRedirect('/account/loggedin')
-	# else:
-	# 	return HttpResponseRedirect('/account/invalid')
-
-def loggedin(request):
-	return render_to_response('account/loggedin.html', {'full_name': request.user.username})
-
-def invalid_login(request):
-	return render_to_response('account/invalid_login.html')
+def index(request):
+	return render_to_response('account/index.html')
 
 def logout(request):
 	auth.logout(request)
-	return render_to_response('account/logout.html')
+	c = {}
+	c.update(csrf(request))
+	return render_to_response('account/login.html', c)
 
 def register(request):
 	
@@ -70,22 +72,13 @@ def register(request):
 			report = form.cleaned_data['report']
 			social_network = form.cleaned_data['social_network']
 
-			user = User.objects.create_user(username=username, email=email, password=password)
-			user.first_name = name
-			user.last_name = last_name
+			# user = User.objects.create_user(username=username, email=email, password=password)
+			# user.first_name = name
+			# user.last_name = last_name
 			
-			user.save()
+			# user.save()
 
-			return HttpResponseRedirect('/account/login/')
-		else:
-			form.add_error(None, "Register form is invalid.")
+			return HttpResponseRedirect('/account/index/')
 	else:
 		form = RegisterForm()
 	return render(request, 'account/register.html', {'form': form})
-
-def index(request):
-	c = {}
-	c.update(csrf(request))
-	return render_to_response('account/index.html', c)	
-
-

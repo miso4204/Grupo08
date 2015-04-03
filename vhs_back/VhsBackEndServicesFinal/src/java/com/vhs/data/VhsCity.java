@@ -6,12 +6,13 @@
 package com.vhs.data;
 
 import java.io.Serializable;
+<<<<<<< HEAD
 import java.util.Collection;
 import javax.persistence.Basic;
+=======
+>>>>>>> origin/develop
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -19,23 +20,33 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
 /**
+ * Service provider offer associated city entity.
  *
- * @author andresvargas
+ * @author Andres Vargas (ja.vargas147@uniandes.edu.co)
+ * @author Alex Vicente ChacOn JimEnez (av.chacon10@uniandes.edu.co)
  */
 @Entity
 @Table(name = "vhs_city")
 @XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "VhsCity.findAll", query = "SELECT v FROM VhsCity v"),
-    @NamedQuery(name = "VhsCity.findByIdCity", query = "SELECT v FROM VhsCity v WHERE v.idCity = :idCity"),
-    @NamedQuery(name = "VhsCity.findByDescription", query = "SELECT v FROM VhsCity v WHERE v.description = :description")})
-public class VhsCity implements Serializable {
+@NamedQueries
+        (
+            {
+                @NamedQuery(name = "VhsCity.findAll", query = "SELECT v FROM VhsCity v"),
+                @NamedQuery(name = "VhsCity.findByIdCity", query = "SELECT v FROM VhsCity v WHERE v.idCity = :idCity"),
+                @NamedQuery(name = "VhsCity.findByDescription", query = "SELECT v FROM VhsCity v WHERE v.description = :description")
+            }
+        )
+public class VhsCity implements Serializable
+{
+    /**
+     * Default serial version UID
+     */
     private static final long serialVersionUID = 1L;
+<<<<<<< HEAD
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
@@ -43,41 +54,67 @@ public class VhsCity implements Serializable {
     private Integer idCity;
     @Size(max = 2147483647)
     @Column(name = "description", length = 2147483647)
+=======
+    
+    /**
+     * City identifier
+     */
+    @Id
+    @Column(name = "id_city")
+    private String idCity;
+    
+    /**
+     * City name
+     */
+    @Column(name = "description")
+>>>>>>> origin/develop
     private String description;
+    
+    /**
+     * City owner country
+     */
     @JoinColumn(name = "country_city", referencedColumnName = "id_country")
     @ManyToOne
     private VhsCountry countryCity;
     @OneToMany(mappedBy = "offerCity")
     private Collection<VhsSpecialOffer> vhsSpecialOfferCollection;
 
-    public VhsCity() {
+    public VhsCity()
+    {
     }
 
-    public VhsCity(Integer idCity) {
+    public VhsCity(String idCity)
+    {
         this.idCity = idCity;
     }
 
-    public Integer getIdCity() {
+    public String getIdCity()
+    {
         return idCity;
     }
 
-    public void setIdCity(Integer idCity) {
+    public void setIdCity(String idCity)
+    {
         this.idCity = idCity;
     }
 
-    public String getDescription() {
+    public String getDescription()
+    {
         return description;
     }
 
-    public void setDescription(String description) {
+    public void setDescription(String description)
+    {
         this.description = description;
     }
 
-    public VhsCountry getCountryCity() {
+    public VhsCountry getCountryCity()
+    {
         return countryCity;
     }
 
-    public void setCountryCity(VhsCountry countryCity) {
+    public void setCountryCity(VhsCountry countryCity)
+    {
         this.countryCity = countryCity;
     }
 
@@ -91,28 +128,33 @@ public class VhsCity implements Serializable {
     }
 
     @Override
-    public int hashCode() {
+    public int hashCode()
+    {
         int hash = 0;
         hash += (idCity != null ? idCity.hashCode() : 0);
         return hash;
     }
 
     @Override
-    public boolean equals(Object object) {
+    public boolean equals(Object object)
+    {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof VhsCity)) {
+        if (!(object instanceof VhsCity))
+        {
             return false;
         }
         VhsCity other = (VhsCity) object;
-        if ((this.idCity == null && other.idCity != null) || (this.idCity != null && !this.idCity.equals(other.idCity))) {
+        if ((this.idCity == null && other.idCity != null) || (this.idCity != null && !this.idCity.equals(other.idCity)))
+        {
             return false;
         }
         return true;
     }
 
     @Override
-    public String toString() {
+    public String toString()
+    {
         return "com.vhs.data.VhsCity[ idCity=" + idCity + " ]";
     }
-    
+
 }

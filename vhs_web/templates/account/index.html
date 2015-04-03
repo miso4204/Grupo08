@@ -40,8 +40,8 @@
         <a class="navbar-brand" href="#home">VHS</a> </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#login" class="smoothScroll">Login</a></li>
           <li> <a href="#reports" class="smoothScroll"> Reportes</a></li>
+          <li><a href="/account/logout/" class="smoothScroll">Logout</a></li>
         </ul>
       </div>
       <!--/.nav-collapse --> 
@@ -49,48 +49,139 @@
   </div>
 </div>
 
-<!-- ==== LOGIN ==== -->
-
-<div id="contact" name="contact">
+<!-- ==== PORTFOLIO ==== -->
+<div id="portfolio" name="portfolio">
   <div class="container">
     <div class="row">
-      <h2 class="centered">LOGIN</h2>
+      <h2 class="centered">OUR PORTFOLIO</h2>
       <hr>
+      <div class="col-lg-8 col-lg-offset-2 centered">
+        <p class="large">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+      </div>
     </div>
-    {% block content %}
-    <form action='/account/auth/' method='post'>
-    	{% csrf_token %}
-	    <div class="row">
-	      <div class="col-lg-8 col-lg-offset-2 centered">
-	        <p>Digita tus datos para ingresar a la plataforma.</p>
-	        <form id="contact" method="post" class="form" role="form">
-	          <div class="row">
-	            <div class="col-xs-6 col-centered form-group">
-	              <input class="form-control" id="username" name="username" placeholder="Nombre de usuario" type="text" required />
-	            </div>
-	          </div>
-	          <div class="row">
-	            <div class="col-xs-6 col-centered form-group">
-	              <input class="form-control" id="password" name="password" placeholder="Contraseña" type="password" required />
-	            </div>
-	          </div>
-	          <div class="row">
-	            <div class="col-xs-12 col-md-12">
-	              <button class="btn btn btn-lg" type="submit" value="login">Login</button>
-	              <button class="btn btn btn-lg" type="submit">Register</button>
-	            </div>
-	          </div>
-	        </form>
-	        <!-- form --> 
-	      </div>
-	    </div>
-	    <!-- row --> 
-	</form>
-    <!-- form --> 
-    {% endblock %}
+    <!-- /row -->
+    <div class="container">
+      <div class="row"> 
+        
+        <!-- PORTFOLIO IMAGE 1 -->
+        <div class="col-md-4 ">
+          <div class="grid mask">
+            <figure> <img class="img-responsive" src="{% static "assets/img/portfolio/folio01.jpg" %}"   alt="">
+              <figcaption>
+                <h5>UX / UI</h5>
+                <a data-toggle="modal" href="#myModal" class="btn btn-default">More Details</a> </figcaption>
+              <!-- /figcaption --> 
+            </figure>
+            <!-- /figure --> 
+          </div>
+          <!-- /grid-mask --> 
+        </div>
+        
+        <!-- MODAL SHOW THE PORTFOLIO IMAGE. In this demo, all links point to this modal. You should create
+                  a modal for each of your projects. -->
+        
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Project Title</h4>
+              </div>
+              <div class="modal-body">
+                <p><img class="img-responsive" src="{% static "assets/img/portfolio/folio01-preview.jpg" %}" alt=""></p>
+                <p>Lorem ipsum dolor sit amet, quo meis audire placerat eu, te eos porro veniam. An everti maiorum detracto mea. Eu eos dicam voluptaria, erant bonorum albucius et per, ei sapientem accommodare est. Saepe dolorum constituam ei vel</p>
+                <p><b><a href="#">Visit Site</a></b></p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+            <!-- /.modal-content --> 
+          </div>
+          <!-- /.modal-dialog --> 
+        </div>
+        <!-- /.modal --> 
+        
+        <!-- PORTFOLIO IMAGE 2 -->
+        <div class="col-md-4">
+          <div class="grid mask">
+            <figure> <img class="img-responsive" src="{% static "assets/img/portfolio/folio02.jpg" %}" alt="">
+              <figcaption>
+                <h5>CONCEPT</h5>
+                <a data-toggle="modal" href="#myModal" class="btn btn-default">More Details</a> </figcaption>
+              <!-- /figcaption --> 
+            </figure>
+            <!-- /figure --> 
+          </div>
+          <!-- /grid-mask --> 
+        </div>
+        
+        <!-- PORTFOLIO IMAGE 3 -->
+        <div class="col-md-4">
+          <div class="grid mask">
+            <figure> <img class="img-responsive" src="{% static "assets/img/portfolio/folio03.jpg" %}" alt="">
+              <figcaption>
+                <h5>UX / UI</h5>
+                <a data-toggle="modal" href="#myModal" class="btn btn-default">More Details</a> </figcaption>
+              <!-- /figcaption --> 
+            </figure>
+            <!-- /figure --> 
+          </div>
+          <!-- /grid-mask --> 
+        </div>
+      </div>
+      <!-- /row --> 
+      
+      <!-- PORTFOLIO IMAGE 4 -->
+      <div class="row">
+        <div class="col-md-4 ">
+          <div class="grid mask">
+            <figure> <img class="img-responsive" src="{% static "assets/img/portfolio/folio04.jpg" %}" alt="">
+              <figcaption>
+                <h5>CONCEPT</h5>
+                <a data-toggle="modal" href="#myModal" class="btn btn-default">More Details</a> </figcaption>
+              <!-- /figcaption --> 
+            </figure>
+            <!-- /figure --> 
+          </div>
+          <!-- /grid-mask --> 
+        </div>
+        
+        <!-- PORTFOLIO IMAGE 5 -->
+        <div class="col-md-4">
+          <div class="grid mask">
+            <figure> <img class="img-responsive" src="{% static "assets/img/portfolio/folio05.jpg" %}" alt="">
+              <figcaption>
+                <h5>UX / UI</h5>
+                <a data-toggle="modal" href="#myModal" class="btn btn-default">More Details</a> </figcaption>
+              <!-- /figcaption --> 
+            </figure>
+            <!-- /figure --> 
+          </div>
+          <!-- /grid-mask --> 
+        </div>
+        
+        <!-- PORTFOLIO IMAGE 6 -->
+        <div class="col-md-4">
+          <div class="grid mask">
+            <figure> <img class="img-responsive" src="{% static "assets/img/portfolio/folio06.jpg" %}" alt="">
+              <figcaption>
+                <h5>CMS INTEGRATION</h5>
+                <a data-toggle="modal" href="#myModal" class="btn btn-default">More Details</a> </figcaption>
+              <!-- /figcaption --> 
+            </figure>
+            <!-- /figure --> 
+          </div>
+          <!-- /grid-mask --> 
+        </div>
+        <!-- /col --> 
+      </div>
+      <!-- /row --> 
+    </div>
+    <!-- /row --> 
   </div>
 </div>
-<!-- container -->
+<!-- /container --> 
 
 <div id="footerwrap">
   <div class="container">
