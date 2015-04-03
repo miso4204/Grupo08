@@ -141,6 +141,13 @@ public class VhsSpecialOffer implements Serializable
     @OneToMany(mappedBy = "specialOffer")
     private Collection<VhsOfferRating> vhsOfferRating;
     
+    /**
+     * Associated sales
+     */
+    @OneToMany(mappedBy = "specialOffer")
+    private Collection<VhsOfferSale> vhsOfferSale;
+    
+    
     public VhsSpecialOffer()
     {
     }
@@ -288,6 +295,16 @@ public class VhsSpecialOffer implements Serializable
     public void setVhsOfferRating(Collection<VhsOfferRating> vhsOfferRating)
     {
         this.vhsOfferRating = vhsOfferRating;
+    }
+
+    public Collection<VhsOfferSale> getVhsOfferSale()
+    {
+        return vhsOfferSale;
+    }
+
+    public void setVhsOfferSale(Collection<VhsOfferSale> vhsOfferSale)
+    {
+        this.vhsOfferSale = vhsOfferSale;
     }
 
     @Override
