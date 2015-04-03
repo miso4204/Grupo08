@@ -8,8 +8,6 @@ package com.vhs.data;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -46,9 +44,8 @@ public class VhsCity implements Serializable
      * City identifier
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_city")
-    private Integer idCity;
+    private String idCity;
     
     /**
      * City name
@@ -67,17 +64,17 @@ public class VhsCity implements Serializable
     {
     }
 
-    public VhsCity(Integer idCity)
+    public VhsCity(String idCity)
     {
         this.idCity = idCity;
     }
 
-    public Integer getIdCity()
+    public String getIdCity()
     {
         return idCity;
     }
 
-    public void setIdCity(Integer idCity)
+    public void setIdCity(String idCity)
     {
         this.idCity = idCity;
     }
