@@ -33,7 +33,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "VhsCity.findByDescription", query = "SELECT v FROM VhsCity v WHERE v.description = :description")})
 public class VhsCity implements Serializable {
     private static final long serialVersionUID = 1L;
-    @Id
+    @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "id_city", nullable = false)
