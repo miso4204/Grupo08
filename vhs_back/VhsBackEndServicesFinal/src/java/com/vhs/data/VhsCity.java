@@ -6,7 +6,6 @@
 package com.vhs.data;
 
 import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,7 +16,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -49,15 +47,13 @@ public class VhsCity implements Serializable
      */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
-    @Column(name = "id_city", nullable = false)
+    @Column(name = "id_city")
     private Integer idCity;
     
     /**
      * City name
      */
-    @Size(max = 2147483647)
-    @Column(name = "description", length = 2147483647)
+    @Column(name = "description")
     private String description;
     
     /**

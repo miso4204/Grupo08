@@ -2,7 +2,6 @@ package com.vhs.data;
 
 import java.io.Serializable;
 import java.util.Collection;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,7 +11,6 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
  
 /**
@@ -48,29 +46,25 @@ public class VhsUser implements Serializable
      */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = true)
-    @Column(name = "user_id", nullable = true)
+    @Column(name = "user_id")
     private Integer userId;
     
     /**
      * Servide provider mail
      */
-    @Size(max = 2147483647)
-    @Column(name = "mail", length = 2147483647)
+    @Column(name = "mail")
     private String mail;
     
     /**
      * Service provider password
      */
-    @Size(max = 2147483647)
-    @Column(name = "password", length = 2147483647)
+    @Column(name = "password")
     private String password;
     
     /**
      * Servide provider full name
      */
-    @Size(max = 2147483647)
-    @Column(name = "full_name", length = 2147483647)
+    @Column(name = "full_name")
     private String fullName;
     
     /**

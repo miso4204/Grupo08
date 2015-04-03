@@ -7,7 +7,6 @@ package com.vhs.data;
 
 import java.io.Serializable;
 import java.util.Collection;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,7 +16,6 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
@@ -51,15 +49,13 @@ public class VhsCategory implements Serializable
      */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
-    @Column(name = "id_category", nullable = false)
+    @Column(name = "id_category")
     private Integer idCategory;
     
     /**
      * Category name and description
      */
-    @Size(max = 2147483647)
-    @Column(name = "description", length = 2147483647)
+    @Column(name = "description")
     private String description;
     
     /**

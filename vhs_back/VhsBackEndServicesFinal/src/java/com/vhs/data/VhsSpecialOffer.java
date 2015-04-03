@@ -2,7 +2,6 @@ package com.vhs.data;
 
 import java.io.Serializable;
 import java.util.Date;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,7 +14,6 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -55,22 +53,19 @@ public class VhsSpecialOffer implements Serializable
      */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
-    @Column(name = "id_special_offers", nullable = false)
+    @Column(name = "id_special_offers")
     private Integer idSpecialOffers;
 
     /**
      * Offer short name
      */
-    @Size(max = 2147483647)
-    @Column(name = "short_name", length = 2147483647)
+    @Column(name = "short_name")
     private String shortName;
 
     /**
      * Offer long description
      */
-    @Size(max = 2147483647)
-    @Column(name = "description", length = 2147483647)
+    @Column(name = "description")
     private String description;
 
     /**
@@ -82,8 +77,7 @@ public class VhsSpecialOffer implements Serializable
     /**
      * Offer thumbnail image absolute URL
      */
-    @Size(max = 2147483647)
-    @Column(name = "main_image_url", length = 2147483647)
+    @Column(name = "main_image_url")
     private String mainImageUrl;
     
     /**
