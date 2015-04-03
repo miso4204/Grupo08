@@ -21,84 +21,119 @@ import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
+ * Service provider offer associated city entity.
  *
- * @author andresvargas
+ * @author Andres Vargas (ja.vargas147@uniandes.edu.co)
+ * @author Alex Vicente ChacOn JimEnez (av.chacon10@uniandes.edu.co)
  */
 @Entity
 @Table(name = "vhs_city")
 @XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "VhsCity.findAll", query = "SELECT v FROM VhsCity v"),
-    @NamedQuery(name = "VhsCity.findByIdCity", query = "SELECT v FROM VhsCity v WHERE v.idCity = :idCity"),
-    @NamedQuery(name = "VhsCity.findByDescription", query = "SELECT v FROM VhsCity v WHERE v.description = :description")})
-public class VhsCity implements Serializable {
+@NamedQueries
+        (
+            {
+                @NamedQuery(name = "VhsCity.findAll", query = "SELECT v FROM VhsCity v"),
+                @NamedQuery(name = "VhsCity.findByIdCity", query = "SELECT v FROM VhsCity v WHERE v.idCity = :idCity"),
+                @NamedQuery(name = "VhsCity.findByDescription", query = "SELECT v FROM VhsCity v WHERE v.description = :description")
+            }
+        )
+public class VhsCity implements Serializable
+{
+    /**
+     * Default serial version UID
+     */
     private static final long serialVersionUID = 1L;
-    @Id 
+    
+    /**
+     * City identifier
+     */
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "id_city", nullable = false)
     private Integer idCity;
+    
+    /**
+     * City name
+     */
     @Size(max = 2147483647)
     @Column(name = "description", length = 2147483647)
     private String description;
+    
+    /**
+     * City owner country
+     */
     @JoinColumn(name = "country_city", referencedColumnName = "id_country")
     @ManyToOne
     private VhsCountry countryCity;
 
-    public VhsCity() {
+    public VhsCity()
+    {
     }
 
-    public VhsCity(Integer idCity) {
+    public VhsCity(Integer idCity)
+    {
         this.idCity = idCity;
     }
 
-    public Integer getIdCity() {
+    public Integer getIdCity()
+    {
         return idCity;
     }
 
-    public void setIdCity(Integer idCity) {
+    public void setIdCity(Integer idCity)
+    {
         this.idCity = idCity;
     }
 
-    public String getDescription() {
+    public String getDescription()
+    {
         return description;
     }
 
-    public void setDescription(String description) {
+    public void setDescription(String description)
+    {
         this.description = description;
     }
 
-    public VhsCountry getCountryCity() {
+    public VhsCountry getCountryCity()
+    {
         return countryCity;
     }
 
-    public void setCountryCity(VhsCountry countryCity) {
+    public void setCountryCity(VhsCountry countryCity)
+    {
         this.countryCity = countryCity;
     }
 
     @Override
-    public int hashCode() {
+    public int hashCode()
+    {
         int hash = 0;
         hash += (idCity != null ? idCity.hashCode() : 0);
         return hash;
     }
 
     @Override
-    public boolean equals(Object object) {
+    public boolean equals(Object object)
+    {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof VhsCity)) {
+        if (!(object instanceof VhsCity))
+        {
             return false;
         }
         VhsCity other = (VhsCity) object;
-        if ((this.idCity == null && other.idCity != null) || (this.idCity != null && !this.idCity.equals(other.idCity))) {
+        if ((this.idCity == null && other.idCity != null) || (this.idCity != null && !this.idCity.equals(other.idCity)))
+        {
             return false;
         }
         return true;
     }
 
     @Override
-    public String toString() {
+    public String toString()
+    {
         return "com.vhs.data.VhsCity[ idCity=" + idCity + " ]";
     }
-    
+
 }
