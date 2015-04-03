@@ -5,6 +5,9 @@
  */
 package testmyrestfulservices;
 
+import com.vhs.data.VhsUser;
+import com.vhs.services.client.NewJerseyClient;
+
 /**
  *
  * @author andresvargas
@@ -15,7 +18,19 @@ public class TestMyRestFulServices {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+         testCreateUser();
+    }
+    
+    public static void testCreateUser(){
+         NewJerseyClient client = new NewJerseyClient();
+         VhsUser u= new VhsUser();
+         u.setFullName("Prueba Seis");
+         u.setMail("prueba6@gmail.com");
+         u.setPassword("prueba6");
+         u.setUserKind("Provider");
+         client.create_JSON(u);
+         // do whatever with response
+         client.close();
     }
     
 }
