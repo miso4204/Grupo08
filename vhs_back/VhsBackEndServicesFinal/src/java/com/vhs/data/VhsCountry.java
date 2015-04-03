@@ -10,13 +10,12 @@ import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
@@ -35,28 +34,31 @@ import javax.xml.bind.annotation.XmlTransient;
 public class VhsCountry implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "id_country", nullable = false)
-    private Integer idCountry;
+    @NotNull
+    @Size(min = 1, max = 2147483647)
+    @Column(name = "id_country", nullable = false, length = 2147483647)
+    private String idCountry;
     @Size(max = 2147483647)
     @Column(name = "description", length = 2147483647)
     private String description;
     @OneToMany(mappedBy = "countryCity")
     private Collection<VhsCity> vhsCityCollection;
+    @OneToMany(mappedBy = "offerCountry")
+    private Collection<VhsSpecialOffer> vhsSpecialOfferCollection;
 
     public VhsCountry() {
     }
 
-    public VhsCountry(Integer idCountry) {
+    public VhsCountry(String idCountry) {
         this.idCountry = idCountry;
     }
 
-    public Integer getIdCountry() {
+    public String getIdCountry() {
         return idCountry;
     }
 
-    public void setIdCountry(Integer idCountry) {
+    public void setIdCountry(String idCountry) {
         this.idCountry = idCountry;
     }
 
@@ -75,6 +77,15 @@ public class VhsCountry implements Serializable {
 
     public void setVhsCityCollection(Collection<VhsCity> vhsCityCollection) {
         this.vhsCityCollection = vhsCityCollection;
+    }
+
+    @XmlTransient
+    public Collection<VhsSpecialOffer> getVhsSpecialOfferCollection() {
+        return vhsSpecialOfferCollection;
+    }
+
+    public void setVhsSpecialOfferCollection(Collection<VhsSpecialOffer> vhsSpecialOfferCollection) {
+        this.vhsSpecialOfferCollection = vhsSpecialOfferCollection;
     }
 
     @Override

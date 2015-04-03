@@ -37,15 +37,13 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "VhsSpecialOffer.findByDescription", query = "SELECT v FROM VhsSpecialOffer v WHERE v.description = :description"),
     @NamedQuery(name = "VhsSpecialOffer.findByPrice", query = "SELECT v FROM VhsSpecialOffer v WHERE v.price = :price"),
     @NamedQuery(name = "VhsSpecialOffer.findByMainImageUrl", query = "SELECT v FROM VhsSpecialOffer v WHERE v.mainImageUrl = :mainImageUrl"),
-    @NamedQuery(name = "VhsSpecialOffer.findByOfferCountry", query = "SELECT v FROM VhsSpecialOffer v WHERE v.offerCountry = :offerCountry"),
-    @NamedQuery(name = "VhsSpecialOffer.findByOfferCity", query = "SELECT v FROM VhsSpecialOffer v WHERE v.offerCity = :offerCity"),
     @NamedQuery(name = "VhsSpecialOffer.findByLatitude", query = "SELECT v FROM VhsSpecialOffer v WHERE v.latitude = :latitude"),
     @NamedQuery(name = "VhsSpecialOffer.findByLongitude", query = "SELECT v FROM VhsSpecialOffer v WHERE v.longitude = :longitude"),
     @NamedQuery(name = "VhsSpecialOffer.findByPublishDate", query = "SELECT v FROM VhsSpecialOffer v WHERE v.publishDate = :publishDate"),
     @NamedQuery(name = "VhsSpecialOffer.findByEndDate", query = "SELECT v FROM VhsSpecialOffer v WHERE v.endDate = :endDate")})
 public class VhsSpecialOffer implements Serializable {
     private static final long serialVersionUID = 1L;
-    @Id 
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "id_special_offers", nullable = false)
@@ -62,10 +60,6 @@ public class VhsSpecialOffer implements Serializable {
     @Size(max = 2147483647)
     @Column(name = "main_image_url", length = 2147483647)
     private String mainImageUrl;
-    @Column(name = "offer_country")
-    private Integer offerCountry;
-    @Column(name = "offer_city")
-    private Integer offerCity;
     @Column(name = "latitude", precision = 17, scale = 17)
     private Double latitude;
     @Column(name = "longitude", precision = 17, scale = 17)
@@ -76,6 +70,12 @@ public class VhsSpecialOffer implements Serializable {
     @Column(name = "end_date")
     @Temporal(TemporalType.DATE)
     private Date endDate;
+    @JoinColumn(name = "offer_country", referencedColumnName = "id_country")
+    @ManyToOne
+    private VhsCountry offerCountry;
+    @JoinColumn(name = "offer_city", referencedColumnName = "id_city")
+    @ManyToOne
+    private VhsCity offerCity;
     @JoinColumn(name = "offer_category", referencedColumnName = "id_category")
     @ManyToOne
     private VhsCategory offerCategory;
@@ -127,22 +127,6 @@ public class VhsSpecialOffer implements Serializable {
         this.mainImageUrl = mainImageUrl;
     }
 
-    public Integer getOfferCountry() {
-        return offerCountry;
-    }
-
-    public void setOfferCountry(Integer offerCountry) {
-        this.offerCountry = offerCountry;
-    }
-
-    public Integer getOfferCity() {
-        return offerCity;
-    }
-
-    public void setOfferCity(Integer offerCity) {
-        this.offerCity = offerCity;
-    }
-
     public Double getLatitude() {
         return latitude;
     }
@@ -173,6 +157,22 @@ public class VhsSpecialOffer implements Serializable {
 
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
+    }
+
+    public VhsCountry getOfferCountry() {
+        return offerCountry;
+    }
+
+    public void setOfferCountry(VhsCountry offerCountry) {
+        this.offerCountry = offerCountry;
+    }
+
+    public VhsCity getOfferCity() {
+        return offerCity;
+    }
+
+    public void setOfferCity(VhsCity offerCity) {
+        this.offerCity = offerCity;
     }
 
     public VhsCategory getOfferCategory() {

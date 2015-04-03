@@ -85,7 +85,8 @@ public class VhsUserFacadeREST extends AbstractFacade<VhsUser> {
         q.setParameter("password", pass);
         return (VhsUser)q.getSingleResult();
     }
-
+    
+    
     @Override
     protected EntityManager getEntityManager() {
         return em;

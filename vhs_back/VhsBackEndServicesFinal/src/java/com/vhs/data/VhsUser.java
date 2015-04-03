@@ -40,6 +40,9 @@ import javax.xml.bind.annotation.XmlRootElement;
         )
 public class VhsUser implements Serializable 
 {
+    @Size(max = 2147483647)
+    @Column(name = "user_kind", length = 2147483647)
+    private String userKind;
     
     /**
      * Default serial version UID
@@ -297,6 +300,14 @@ public class VhsUser implements Serializable
     public String toString() 
     {
         return "com.vhs.data.VhsUser[ userId=" + userId + " ]";
+    }
+
+    public String getUserKind() {
+        return userKind;
+    }
+
+    public void setUserKind(String userKind) {
+        this.userKind = userKind;
     }
     
 }

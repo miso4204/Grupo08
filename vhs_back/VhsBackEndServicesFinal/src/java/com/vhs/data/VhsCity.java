@@ -6,6 +6,7 @@
 package com.vhs.data;
 
 import java.io.Serializable;
+import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,9 +17,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -33,7 +36,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "VhsCity.findByDescription", query = "SELECT v FROM VhsCity v WHERE v.description = :description")})
 public class VhsCity implements Serializable {
     private static final long serialVersionUID = 1L;
-    @Id 
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "id_city", nullable = false)
@@ -44,6 +47,8 @@ public class VhsCity implements Serializable {
     @JoinColumn(name = "country_city", referencedColumnName = "id_country")
     @ManyToOne
     private VhsCountry countryCity;
+    @OneToMany(mappedBy = "offerCity")
+    private Collection<VhsSpecialOffer> vhsSpecialOfferCollection;
 
     public VhsCity() {
     }
@@ -74,6 +79,15 @@ public class VhsCity implements Serializable {
 
     public void setCountryCity(VhsCountry countryCity) {
         this.countryCity = countryCity;
+    }
+
+    @XmlTransient
+    public Collection<VhsSpecialOffer> getVhsSpecialOfferCollection() {
+        return vhsSpecialOfferCollection;
+    }
+
+    public void setVhsSpecialOfferCollection(Collection<VhsSpecialOffer> vhsSpecialOfferCollection) {
+        this.vhsSpecialOfferCollection = vhsSpecialOfferCollection;
     }
 
     @Override
