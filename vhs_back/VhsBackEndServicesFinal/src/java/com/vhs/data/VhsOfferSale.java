@@ -6,6 +6,7 @@
 package com.vhs.data;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,6 +14,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  * Offer sale entity
@@ -115,6 +118,12 @@ public class VhsOfferSale implements Serializable
     @Column(name = "total_sale")
     private Double totalSale;
     
+    /**
+     * Current date
+     */
+    @Column(name = "sale_date")
+    @Temporal(TemporalType.DATE)
+    private Date saleDate;
     /**
      * Associated payment method
      */
@@ -287,6 +296,16 @@ public class VhsOfferSale implements Serializable
     public void setPaymentMethod(VhsPaymentMethod paymentMethod)
     {
         this.paymentMethod = paymentMethod;
+    }
+
+    public Date getSaleDate()
+    {
+        return saleDate;
+    }
+
+    public void setSaleDate(Date saleDate)
+    {
+        this.saleDate = saleDate;
     }
 
     @Override
