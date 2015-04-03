@@ -17,7 +17,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
-
+ 
 /**
  * Service provider entity. Stores personal information and optional features used in the VHS platform
  * 
