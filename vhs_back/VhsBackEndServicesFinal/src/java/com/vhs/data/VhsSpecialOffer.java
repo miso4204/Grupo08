@@ -45,7 +45,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "VhsSpecialOffer.findByEndDate", query = "SELECT v FROM VhsSpecialOffer v WHERE v.endDate = :endDate")})
 public class VhsSpecialOffer implements Serializable {
     private static final long serialVersionUID = 1L;
-    @Id
+    @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "id_special_offers", nullable = false)
