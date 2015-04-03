@@ -1,11 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.vhs.data;
 
 import java.io.Serializable;
+import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -119,6 +116,30 @@ public class VhsUser implements Serializable
     private Boolean optionalFeatureReportsBySales; 
     
     /**
+     * Optional feature used to determinate if the service provider products could be associated with a video
+     */
+    @Column(name = "optional_feature_multimedia_video")
+    private Boolean optionalFeatureMultimediaVideo; 
+    
+    /**
+     * Optional feature used to determinate if the service provider products could be associated with a set of images
+     */
+    @Column(name = "optional_feature_multimedia_images")
+    private Boolean optionalFeatureMultimediaImages; 
+    
+    /**
+     * Optional feature used to determinate if the service provider products could be displayed in a mobile device
+     */
+    @Column(name = "optional_feature_mobile")
+    private Boolean optionalFeatureMobile; 
+    
+     /**
+     * Optional feature used to determinate if the service provider products could be displayed in a map powered by Google
+     */
+    @Column(name = "optional_feature_google_maps")
+    private Boolean optionalFeatureGoogleMapsEnabled; 
+    
+    /**
      * Optional feature used to determinate if the service provider could use hardware scalability 
      */
     @Column(name = "optional_feature_scalability")
@@ -129,6 +150,12 @@ public class VhsUser implements Serializable
      */
     @Column(name = "optional_feature_performance")
     private Boolean optionalFeaturePerformance;
+    
+    /**
+     * Service provider turistic products
+     */
+    @OneToMany(mappedBy = "serviceProviderUser")
+    private Collection<VhsSpecialOffer> vhsSpecialOfferCollection;
     
     public VhsUser() 
     {
@@ -268,6 +295,56 @@ public class VhsUser implements Serializable
     public void setOptionalFeaturePerformance(Boolean optionalFeaturePerformance) 
     {
         this.optionalFeaturePerformance = optionalFeaturePerformance;
+    }
+
+    public Collection<VhsSpecialOffer> getVhsSpecialOfferCollection() 
+    {
+        return vhsSpecialOfferCollection;
+    }
+
+    public void setVhsSpecialOfferCollection(Collection<VhsSpecialOffer> vhsSpecialOfferCollection) 
+    {
+        this.vhsSpecialOfferCollection = vhsSpecialOfferCollection;
+    }
+
+    public Boolean getOptionalFeatureMultimediaVideo()
+    {
+        return optionalFeatureMultimediaVideo;
+    }
+
+    public void setOptionalFeatureMultimediaVideo(Boolean optionalFeatureMultimediaVideo)
+    {
+        this.optionalFeatureMultimediaVideo = optionalFeatureMultimediaVideo;
+    }
+
+    public Boolean getOptionalFeatureMultimediaImages()
+    {
+        return optionalFeatureMultimediaImages;
+    }
+
+    public void setOptionalFeatureMultimediaImages(Boolean optionalFeatureMultimediaImages)
+    {
+        this.optionalFeatureMultimediaImages = optionalFeatureMultimediaImages;
+    }
+
+    public Boolean getOptionalFeatureMobile()
+    {
+        return optionalFeatureMobile;
+    }
+
+    public void setOptionalFeatureMobile(Boolean optionalFeatureMobile)
+    {
+        this.optionalFeatureMobile = optionalFeatureMobile;
+    }
+
+    public Boolean getOptionalFeatureGoogleMapsEnabled()
+    {
+        return optionalFeatureGoogleMapsEnabled;
+    }
+
+    public void setOptionalFeatureGoogleMapsEnabled(Boolean optionalFeatureGoogleMapsEnabled)
+    {
+        this.optionalFeatureGoogleMapsEnabled = optionalFeatureGoogleMapsEnabled;
     }
 
     @Override
