@@ -1,3 +1,4 @@
 *.pyc
 /vhs_back/VhsBackEndServices/nbproject/private/
 /vhs_back/VhsBackEndServices/dist/
+*.pyc
