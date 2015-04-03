@@ -16,9 +16,9 @@ import javax.persistence.Id;
  * Available currencies entity
  *
  * @author Andres Vargas (ja.vargas147@uniandes.edu.co)
- * @author Alex Vicente ChacOn JimEnez (av.chacon10@uniandes.edu.co)
+ * @author Alex Vicente ChacOn JimEnez (av.chacon10@uniandes.edu.co) 
  */
-@Entity
+@Entity 
 public class VhsSupportedCurrency implements Serializable
 {
     /**
