@@ -175,6 +175,12 @@ public class VhsSpecialOffer implements Serializable
     @OneToMany(mappedBy = "specialOffer")
     private Collection<VhsOfferSale> vhsOfferSale;
     
+    /**
+     * Current offer price currency
+     */
+    @JoinColumn(name = "currency", referencedColumnName = "id")
+    @ManyToOne
+    private VhsSupportedCurrency currency;
     
     public VhsSpecialOffer()
     {
@@ -357,6 +363,16 @@ public class VhsSpecialOffer implements Serializable
     public void setVhsOfferSale(Collection<VhsOfferSale> vhsOfferSale)
     {
         this.vhsOfferSale = vhsOfferSale;
+    }
+
+    public VhsSupportedCurrency getCurrency()
+    {
+        return currency;
+    }
+
+    public void setCurrency(VhsSupportedCurrency currency)
+    {
+        this.currency = currency;
     }
 
     @Override

@@ -13,38 +13,44 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- * Available payment method entity
+ * Available currencies entity
  *
  * @author Andres Vargas (ja.vargas147@uniandes.edu.co)
  * @author Alex Vicente ChacOn JimEnez (av.chacon10@uniandes.edu.co)
  */
 @Entity
-public class VhsPaymentMethod implements Serializable
+public class VhsSupportedCurrency implements Serializable
 {
     /**
      * Default serial version UID
      */
     private static final long serialVersionUID = 1L;
     
-     /**
-     * Payment method identifier
+    /**
+     * Currency identifier
      */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_payment")
+    @Column(name = "id")
     private Long id;
 
     /**
-     * Payment method name
+     * Currency name
      */
     @Column(name = "name")
     private String name;
     
     /**
-     * Optional flag. If true this payment method will not available in some products (i.e. Cash payment method).
+     *  Optional flag. If true this currency will not available in some products (i.e. Euro or Colombian Pesos).
      */
     @Column(name = "optional")
     private Boolean optional;
+    
+    /**
+     * Dollas change rate: 2.850 for colombian Pesos and 0.98 for Euro
+     */
+    @Column(name = "dollar_change_rate")
+    private Double dollarChangeRate;
     
     public Long getId()
     {
@@ -76,6 +82,16 @@ public class VhsPaymentMethod implements Serializable
         this.optional = optional;
     }
 
+    public Double getDollarChangeRate()
+    {
+        return dollarChangeRate;
+    }
+
+    public void setDollarChangeRate(Double dollarChangeRate)
+    {
+        this.dollarChangeRate = dollarChangeRate;
+    }
+
     @Override
     public int hashCode()
     {
@@ -88,11 +104,11 @@ public class VhsPaymentMethod implements Serializable
     public boolean equals(Object object)
     {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof VhsPaymentMethod))
+        if (!(object instanceof VhsSupportedCurrency))
         {
             return false;
         }
-        VhsPaymentMethod other = (VhsPaymentMethod) object;
+        VhsSupportedCurrency other = (VhsSupportedCurrency) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id)))
         {
             return false;
@@ -103,7 +119,7 @@ public class VhsPaymentMethod implements Serializable
     @Override
     public String toString()
     {
-        return "com.vhs.data.VhsPaymentMethod[ id=" + id + " ]";
+        return "com.vhs.data.VhsSupportedCurrency[ id=" + id + " ]";
     }
     
 }
