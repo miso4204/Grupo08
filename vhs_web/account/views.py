@@ -8,6 +8,8 @@ from django.core.context_processors import csrf
 
 from account.forms import RegisterForm
 from django.contrib.auth.models import User
+import requests
+from xml.etree import ElementTree
 
 def login(request):
 	c = {}
@@ -15,15 +17,30 @@ def login(request):
 	return render_to_response('account/login.html', c)
 
 def auth_view(request):
-	username = request.POST.get('username', '')
-	password = request.POST.get('password', '')
-	user = auth.authenticate(username=username, password=password)
+	url = 'http://jbossasvhsbackendservices-vhstourism.rhcloud.com/VhsBackEndServices/webresources'
+	method = 'vhsuser'
 
-	if user is not None:
-		auth.login(request, user)
+	username = request.POST.get('username', '') # username = 'andresvargasr@gmail.com'
+	password = request.POST.get('password', '') # password = 'andres'
+
+	response = requests.get('{0}/{1}/{2}/{3}'.format(url, method, username, password))
+
+	if response.status_code == 200:
+		element =  ElementTree.XML(response.text)	
+
+		for node in element.iter():
+			print node.tag, node.text
 		return HttpResponseRedirect('/account/loggedin')
 	else:
 		return HttpResponseRedirect('/account/invalid')
+
+	# user = auth.authenticate(username=username, password=password)
+
+	# if user is not None:
+	# 	auth.login(request, user)
+	# 	return HttpResponseRedirect('/account/loggedin')
+	# else:
+	# 	return HttpResponseRedirect('/account/invalid')
 
 def loggedin(request):
 	return render_to_response('account/loggedin.html', {'full_name': request.user.username})
@@ -65,4 +82,10 @@ def register(request):
 	else:
 		form = RegisterForm()
 	return render(request, 'account/register.html', {'form': form})
+
+def index(request):
+	c = {}
+	c.update(csrf(request))
+	return render_to_response('account/index.html', c)	
+
 
