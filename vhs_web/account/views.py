@@ -72,15 +72,13 @@ def register(request):
 			report = form.cleaned_data['report']
 			social_network = form.cleaned_data['social_network']
 
-			user = User.objects.create_user(username=username, email=email, password=password)
-			user.first_name = name
-			user.last_name = last_name
+			# user = User.objects.create_user(username=username, email=email, password=password)
+			# user.first_name = name
+			# user.last_name = last_name
 			
-			user.save()
+			# user.save()
 
-			return HttpResponseRedirect('/account/login/')
-		else:
-			form.add_error(None, "Register form is invalid.")
+			return HttpResponseRedirect('/account/index/')
 	else:
 		form = RegisterForm()
 	return render(request, 'account/register.html', {'form': form})
