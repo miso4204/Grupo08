@@ -2,8 +2,6 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from django.conf import settings
 
-# from account.models import account
-
 urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'vhs_web.views.home', name='home'),
@@ -11,6 +9,7 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^account/', include('account.urls')),
+    url(r'^report/', include('report.urls')),
 )
 
 if not settings.DEBUG:
