@@ -67,20 +67,10 @@
 	        <form id="contact" method="post" class="form" role="form">
 	          <div class="row">
 	            <div class="col-xs-10 col-sm-8 col-md-6 col-centered form-group">
-	              <input class="form-control" id="username" name="username" placeholder="Nombre de usuario" type="text" required />
+	              <input class="form-control" id="full_name" name="full_name" placeholder="Nombres y Apellidos" type="text" required />
 	            </div>
 	          </div>
 	          <div class="row">
-	            <div class="col-xs-10 col-sm-8 col-md-6 col-centered form-group">
-	              <input class="form-control" id="name" name="name" placeholder="Nombres" type="text" required />
-	            </div>
-	          </div>
-            <div class="row">
-              <div class="col-xs-10 col-sm-8 col-md-6 col-centered form-group">
-                <input class="form-control" id="last_name" name="last_name" placeholder="Apellidos" type="text" required />
-              </div>
-            </div>
-            <div class="row">
               <div class="col-xs-10 col-sm-8 col-md-6 col-centered form-group">
                 <input class="form-control" id="email" name="email" placeholder="Dirección de email" type="text" required />
               </div>
@@ -119,22 +109,8 @@
           </div>
           <!-- /grid-mask --> 
         </div>
-        
+
         <!-- PORTFOLIO IMAGE 2 -->
-        <div class="col-md-4">
-          <div class="grid mask">
-            <figure> <img class="img-responsive" src="{% static "assets/img/portfolio/folio02.jpg" %}" alt="">
-              <figcaption>
-                <h5>Reportes</h5>
-              <!-- /figcaption --> 
-            </figure>
-            <input type="checkbox" name="report" id="report"> Quiero esta funcionalidad
-            <!-- /figure --> 
-          </div>
-          <!-- /grid-mask --> 
-        </div>
-        
-        <!-- PORTFOLIO IMAGE 3 -->
         <div class="col-md-4">
           <div class="grid mask">
             <figure> <img class="img-responsive" src="{% static "assets/img/portfolio/folio03.jpg" %}" alt="">
@@ -147,13 +123,41 @@
           </div>
           <!-- /grid-mask --> 
         </div>
+        
+        <!-- PORTFOLIO IMAGE 3 -->
+        <div class="col-md-4">
+          <div class="grid mask">
+            <figure> <img class="img-responsive" src="{% static "assets/img/portfolio/folio02.jpg" %}" alt="">
+              <figcaption>
+                <h5>Reporte Rating</h5>
+              <!-- /figcaption --> 
+            </figure>
+            <input type="checkbox" name="rating_report" id="rating_report"> Quiero esta funcionalidad
+            <!-- /figure --> 
+          </div>
+          <!-- /grid-mask --> 
+        </div>
 
         <!-- PORTFOLIO IMAGE 4 -->
         <div class="col-md-4">
           <div class="grid mask">
             <figure> <img class="img-responsive" src="{% static "assets/img/portfolio/folio02.jpg" %}" alt="">
               <figcaption>
-                <h5>Social</h5>
+                <h5>Reporte de Ventas</h5>
+              <!-- /figcaption --> 
+            </figure>
+            <input type="checkbox" name="sale_report" id="sale_report"> Quiero esta funcionalidad
+            <!-- /figure --> 
+          </div>
+          <!-- /grid-mask --> 
+        </div>
+
+        <!-- PORTFOLIO IMAGE 5 -->
+        <div class="col-md-4">
+          <div class="grid mask">
+            <figure> <img class="img-responsive" src="{% static "assets/img/portfolio/folio04.jpg" %}" alt="">
+              <figcaption>
+                <h5>Redes Sociales</h5>
               <!-- /figcaption --> 
             </figure>
             <input type="checkbox" name="social_network" id="social_network"> Quiero esta funcionalidad
@@ -161,6 +165,119 @@
           </div>
           <!-- /grid-mask --> 
         </div>
+
+        <!-- PORTFOLIO IMAGE 6 -->
+        <div class="col-md-4">
+          <div class="grid mask">
+            <figure> <img class="img-responsive" src="{% static "assets/img/portfolio/folio06.jpg" %}" alt="">
+              <figcaption>
+                <h5>Búsqueda por ubicación</h5>
+              <!-- /figcaption --> 
+            </figure>
+            <input type="checkbox" name="location_search" id="location_search"> Quiero esta funcionalidad
+            <!-- /figure --> 
+          </div>
+          <!-- /grid-mask --> 
+        </div>
+
+        <!-- PORTFOLIO IMAGE 7 -->
+        <div class="col-md-4">
+          <div class="grid mask">
+            <figure> <img class="img-responsive" src="{% static "assets/img/portfolio/folio05.jpg" %}" alt="">
+              <figcaption>
+                <h5>Pay on Delivery</h5>
+              <!-- /figcaption --> 
+            </figure>
+            <input type="checkbox" name="pay_on_delivery" id="pay_on_delivery"> Quiero esta funcionalidad
+            <!-- /figure --> 
+          </div>
+          <!-- /grid-mask --> 
+        </div>
+
+        <!-- PORTFOLIO IMAGE 8 -->
+        <div class="col-md-4">
+          <div class="grid mask">
+            <figure> <img class="img-responsive" src="{% static "assets/img/portfolio/folio06.jpg" %}" alt="">
+              <figcaption>
+                <h5>Videos</h5>
+              <!-- /figcaption --> 
+            </figure>
+            <input type="checkbox" name="multimedia_video" id="multimedia_video"> Quiero esta funcionalidad
+            <!-- /figure --> 
+          </div>
+          <!-- /grid-mask --> 
+        </div>
+
+        <!-- PORTFOLIO IMAGE 9 -->
+        <div class="col-md-4">
+          <div class="grid mask">
+            <figure> <img class="img-responsive" src="{% static "assets/img/portfolio/folio04.jpg" %}" alt="">
+              <figcaption>
+                <h5>Imagenes</h5>
+              <!-- /figcaption --> 
+            </figure>
+            <input type="checkbox" name="multimedia_image" id="multimedia_image"> Quiero esta funcionalidad
+            <!-- /figure --> 
+          </div>
+          <!-- /grid-mask --> 
+        </div>
+
+        <!-- PORTFOLIO IMAGE 10 -->
+        <div class="col-md-4">
+          <div class="grid mask">
+            <figure> <img class="img-responsive" src="{% static "assets/img/portfolio/folio04.jpg" %}" alt="">
+              <figcaption>
+                <h5>Móvil</h5>
+              <!-- /figcaption --> 
+            </figure>
+            <input type="checkbox" name="mobile" id="mobile"> Quiero esta funcionalidad
+            <!-- /figure --> 
+          </div>
+          <!-- /grid-mask --> 
+        </div>
+
+        <!-- PORTFOLIO IMAGE 11 -->
+        <div class="col-md-4">
+          <div class="grid mask">
+            <figure> <img class="img-responsive" src="{% static "assets/img/portfolio/folio04.jpg" %}" alt="">
+              <figcaption>
+                <h5>Mapas Interactivos</h5>
+              <!-- /figcaption --> 
+            </figure>
+            <input type="checkbox" name="maps" id="maps"> Quiero esta funcionalidad
+            <!-- /figure --> 
+          </div>
+          <!-- /grid-mask --> 
+        </div>
+
+        <!-- PORTFOLIO IMAGE 12 -->
+        <div class="col-md-4">
+          <div class="grid mask">
+            <figure> <img class="img-responsive" src="{% static "assets/img/portfolio/folio01.jpg" %}" alt="">
+              <figcaption>
+                <h5>Escalable</h5>
+              <!-- /figcaption --> 
+            </figure>
+            <input type="checkbox" name="scalability" id="scalability"> Quiero esta funcionalidad
+            <!-- /figure --> 
+          </div>
+          <!-- /grid-mask --> 
+        </div>
+
+        <!-- PORTFOLIO IMAGE 13 -->
+        <div class="col-md-4">
+          <div class="grid mask">
+            <figure> <img class="img-responsive" src="{% static "assets/img/portfolio/folio02.jpg" %}" alt="">
+              <figcaption>
+                <h5>Alto Rendimiento</h5>
+              <!-- /figcaption --> 
+            </figure>
+            <input type="checkbox" name="performance" id="performance"> Quiero esta funcionalidad
+            <!-- /figure --> 
+          </div>
+          <!-- /grid-mask --> 
+        </div>
+
 
       </div>
       <!-- /row --> 

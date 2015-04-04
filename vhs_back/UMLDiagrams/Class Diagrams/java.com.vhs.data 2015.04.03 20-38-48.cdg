@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="java.com.vhs.data">
+  <ClassDiagramComponents>
+    <Class name="VhsCategory" package="com.vhs.data" visibility="public" xPosition="1845.0" yPosition="1739.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="idCategory" type="Integer" visibility="private"/>
+        <Field name="description" type="String" visibility="private"/>
+        <Field name="vhsSpecialOfferCollection" type="Collection&lt;VhsSpecialOffer&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="idCategory"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getIdCategory" returnType="Integer" visibility="public"/>
+        <Method name="setIdCategory" returnType="void" visibility="public">
+          <Argument type="Integer" name="idCategory"/>
+        </Method>
+        <Method name="getDescription" returnType="String" visibility="public"/>
+        <Method name="setDescription" returnType="void" visibility="public">
+          <Argument type="String" name="description"/>
+        </Method>
+        <Method name="getVhsSpecialOfferCollection" returnType="Collection&lt;VhsSpecialOffer&gt;" visibility="public"/>
+        <Method name="setVhsSpecialOfferCollection" returnType="void" visibility="public">
+          <Argument type="Collection&lt;VhsSpecialOffer&gt;" name="vhsSpecialOfferCollection"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="VhsCity" package="com.vhs.data" visibility="public" xPosition="646.0" yPosition="963.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="idCity" type="String" visibility="private"/>
+        <Field name="description" type="String" visibility="private"/>
+        <Field name="countryCity" type="VhsCountry" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="idCity"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getIdCity" returnType="String" visibility="public"/>
+        <Method name="setIdCity" returnType="void" visibility="public">
+          <Argument type="String" name="idCity"/>
+        </Method>
+        <Method name="getDescription" returnType="String" visibility="public"/>
+        <Method name="setDescription" returnType="void" visibility="public">
+          <Argument type="String" name="description"/>
+        </Method>
+        <Method name="getCountryCity" returnType="VhsCountry" visibility="public"/>
+        <Method name="setCountryCity" returnType="void" visibility="public">
+          <Argument type="VhsCountry" name="countryCity"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="VhsCountry" package="com.vhs.data" visibility="public" xPosition="607.0" yPosition="345.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="idCountry" type="Integer" visibility="private"/>
+        <Field name="description" type="String" visibility="private"/>
+        <Field name="vhsCityCollection" type="Collection&lt;VhsCity&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="idCountry"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getIdCountry" returnType="Integer" visibility="public"/>
+        <Method name="setIdCountry" returnType="void" visibility="public">
+          <Argument type="Integer" name="idCountry"/>
+        </Method>
+        <Method name="getDescription" returnType="String" visibility="public"/>
+        <Method name="setDescription" returnType="void" visibility="public">
+          <Argument type="String" name="description"/>
+        </Method>
+        <Method name="getVhsCityCollection" returnType="Collection&lt;VhsCity&gt;" visibility="public"/>
+        <Method name="setVhsCityCollection" returnType="void" visibility="public">
+          <Argument type="Collection&lt;VhsCity&gt;" name="vhsCityCollection"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="VhsOfferImage" package="com.vhs.data" visibility="public" xPosition="739.0" yPosition="1489.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="id" type="Long" visibility="private"/>
+        <Field name="url" type="String" visibility="private"/>
+        <Field name="footer" type="String" visibility="private"/>
+        <Field name="specialOffer" type="VhsSpecialOffer" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getId" returnType="Long" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="Long" name="id"/>
+        </Method>
+        <Method name="getUrl" returnType="String" visibility="public"/>
+        <Method name="setUrl" returnType="void" visibility="public">
+          <Argument type="String" name="url"/>
+        </Method>
+        <Method name="getFooter" returnType="String" visibility="public"/>
+        <Method name="setFooter" returnType="void" visibility="public">
+          <Argument type="String" name="footer"/>
+        </Method>
+        <Method name="getSpecialOffer" returnType="VhsSpecialOffer" visibility="public"/>
+        <Method name="setSpecialOffer" returnType="void" visibility="public">
+          <Argument type="VhsSpecialOffer" name="specialOffer"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="VhsOfferRating" package="com.vhs.data" visibility="public" xPosition="1278.0" yPosition="437.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="id" type="Long" visibility="private"/>
+        <Field name="ratingEmail" type="String" visibility="private"/>
+        <Field name="ratingName" type="String" visibility="private"/>
+        <Field name="ratingComments" type="String" visibility="private"/>
+        <Field name="score" type="Integer" visibility="private"/>
+        <Field name="specialOffer" type="VhsSpecialOffer" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getId" returnType="Long" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="Long" name="id"/>
+        </Method>
+        <Method name="getRatingEmail" returnType="String" visibility="public"/>
+        <Method name="setRatingEmail" returnType="void" visibility="public">
+          <Argument type="String" name="ratingEmail"/>
+        </Method>
+        <Method name="getRatingName" returnType="String" visibility="public"/>
+        <Method name="setRatingName" returnType="void" visibility="public">
+          <Argument type="String" name="ratingName"/>
+        </Method>
+        <Method name="getRatingComments" returnType="String" visibility="public"/>
+        <Method name="setRatingComments" returnType="void" visibility="public">
+          <Argument type="String" name="ratingComments"/>
+        </Method>
+        <Method name="getScore" returnType="Integer" visibility="public"/>
+        <Method name="setScore" returnType="void" visibility="public">
+          <Argument type="Integer" name="score"/>
+        </Method>
+        <Method name="getSpecialOffer" returnType="VhsSpecialOffer" visibility="public"/>
+        <Method name="setSpecialOffer" returnType="void" visibility="public">
+          <Argument type="VhsSpecialOffer" name="specialOffer"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="VhsOfferSale" package="com.vhs.data" visibility="public" xPosition="22.0" yPosition="1419.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="id" type="Long" visibility="private"/>
+        <Field name="buyerEmail" type="String" visibility="private"/>
+        <Field name="buyerAddress" type="String" visibility="private"/>
+        <Field name="buyerName" type="String" visibility="private"/>
+        <Field name="buyerCity" type="VhsCity" visibility="private"/>
+        <Field name="creditCardNumber" type="String" visibility="private"/>
+        <Field name="creditCardFranchise" type="String" visibility="private"/>
+        <Field name="creditCardVerificationCode" type="String" visibility="private"/>
+        <Field name="creditCardExpirationMonth" type="String" visibility="private"/>
+        <Field name="creditCardExpirationYear" type="String" visibility="private"/>
+        <Field name="pseBankName" type="String" visibility="private"/>
+        <Field name="pseAccountNumber" type="String" visibility="private"/>
+        <Field name="saleQuantity" type="String" visibility="private"/>
+        <Field name="totalSale" type="Double" visibility="private"/>
+        <Field name="saleDate" type="Date" visibility="private"/>
+        <Field name="paymentMethod" type="VhsPaymentMethod" visibility="private"/>
+        <Field name="specialOffer" type="VhsSpecialOffer" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getId" returnType="Long" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="Long" name="id"/>
+        </Method>
+        <Method name="getSpecialOffer" returnType="VhsSpecialOffer" visibility="public"/>
+        <Method name="setSpecialOffer" returnType="void" visibility="public">
+          <Argument type="VhsSpecialOffer" name="specialOffer"/>
+        </Method>
+        <Method name="getBuyerEmail" returnType="String" visibility="public"/>
+        <Method name="setBuyerEmail" returnType="void" visibility="public">
+          <Argument type="String" name="buyerEmail"/>
+        </Method>
+        <Method name="getBuyerAddress" returnType="String" visibility="public"/>
+        <Method name="setBuyerAddress" returnType="void" visibility="public">
+          <Argument type="String" name="buyerAddress"/>
+        </Method>
+        <Method name="getBuyerName" returnType="String" visibility="public"/>
+        <Method name="setBuyerName" returnType="void" visibility="public">
+          <Argument type="String" name="buyerName"/>
+        </Method>
+        <Method name="getBuyerCity" returnType="VhsCity" visibility="public"/>
+        <Method name="setBuyerCity" returnType="void" visibility="public">
+          <Argument type="VhsCity" name="buyerCity"/>
+        </Method>
+        <Method name="getCreditCardNumber" returnType="String" visibility="public"/>
+        <Method name="setCreditCardNumber" returnType="void" visibility="public">
+          <Argument type="String" name="creditCardNumber"/>
+        </Method>
+        <Method name="getCreditCardFranchise" returnType="String" visibility="public"/>
+        <Method name="setCreditCardFranchise" returnType="void" visibility="public">
+          <Argument type="String" name="creditCardFranchise"/>
+        </Method>
+        <Method name="getCreditCardVerificationCode" returnType="String" visibility="public"/>
+        <Method name="setCreditCardVerificationCode" returnType="void" visibility="public">
+          <Argument type="String" name="creditCardVerificationCode"/>
+        </Method>
+        <Method name="getCreditCardExpirationMonth" returnType="String" visibility="public"/>
+        <Method name="setCreditCardExpirationMonth" returnType="void" visibility="public">
+          <Argument type="String" name="creditCardExpirationMonth"/>
+        </Method>
+        <Method name="getCreditCardExpirationYear" returnType="String" visibility="public"/>
+        <Method name="setCreditCardExpirationYear" returnType="void" visibility="public">
+          <Argument type="String" name="creditCardExpirationYear"/>
+        </Method>
+        <Method name="getPseBankName" returnType="String" visibility="public"/>
+        <Method name="setPseBankName" returnType="void" visibility="public">
+          <Argument type="String" name="pseBankName"/>
+        </Method>
+        <Method name="getPseAccountNumber" returnType="String" visibility="public"/>
+        <Method name="setPseAccountNumber" returnType="void" visibility="public">
+          <Argument type="String" name="pseAccountNumber"/>
+        </Method>
+        <Method name="getSaleQuantity" returnType="String" visibility="public"/>
+        <Method name="setSaleQuantity" returnType="void" visibility="public">
+          <Argument type="String" name="saleQuantity"/>
+        </Method>
+        <Method name="getTotalSale" returnType="Double" visibility="public"/>
+        <Method name="setTotalSale" returnType="void" visibility="public">
+          <Argument type="Double" name="totalSale"/>
+        </Method>
+        <Method name="getPaymentMethod" returnType="VhsPaymentMethod" visibility="public"/>
+        <Method name="setPaymentMethod" returnType="void" visibility="public">
+          <Argument type="VhsPaymentMethod" name="paymentMethod"/>
+        </Method>
+        <Method name="getSaleDate" returnType="Date" visibility="public"/>
+        <Method name="setSaleDate" returnType="void" visibility="public">
+          <Argument type="Date" name="saleDate"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="VhsPaymentMethod" package="com.vhs.data" visibility="public" xPosition="135.0" yPosition="963.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="id" type="Long" visibility="private"/>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="optional" type="Boolean" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getId" returnType="Long" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="Long" name="id"/>
+        </Method>
+        <Method name="getName" returnType="String" visibility="public"/>
+        <Method name="setName" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="getOptional" returnType="Boolean" visibility="public"/>
+        <Method name="setOptional" returnType="void" visibility="public">
+          <Argument type="Boolean" name="optional"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="VhsSpecialOffer" package="com.vhs.data" visibility="public" xPosition="1232.0" yPosition="1233.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="idSpecialOffers" type="Integer" visibility="private"/>
+        <Field name="shortName" type="String" visibility="private"/>
+        <Field name="description" type="String" visibility="private"/>
+        <Field name="price" type="Double" visibility="private"/>
+        <Field name="mainImageUrl" type="String" visibility="private"/>
+        <Field name="latitude" type="Double" visibility="private"/>
+        <Field name="longitude" type="Double" visibility="private"/>
+        <Field name="publishDate" type="Date" visibility="private"/>
+        <Field name="endDate" type="Date" visibility="private"/>
+        <Field name="servicePromo" type="Boolean" visibility="private"/>
+        <Field name="offerCategory" type="VhsCategory" visibility="private"/>
+        <Field name="serviceProviderUser" type="VhsUser" visibility="private"/>
+        <Field name="offerCity" type="VhsCity" visibility="private"/>
+        <Field name="vhsOfferRating" type="Collection&lt;VhsOfferRating&gt;" visibility="private"/>
+        <Field name="vhsOfferSale" type="Collection&lt;VhsOfferSale&gt;" visibility="private"/>
+        <Field name="vhsOfferImages" type="Collection&lt;VhsOfferImage&gt;" visibility="private"/>
+        <Field name="currency" type="VhsSupportedCurrency" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="idSpecialOffers"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getIdSpecialOffers" returnType="Integer" visibility="public"/>
+        <Method name="setIdSpecialOffers" returnType="void" visibility="public">
+          <Argument type="Integer" name="idSpecialOffers"/>
+        </Method>
+        <Method name="getShortName" returnType="String" visibility="public"/>
+        <Method name="setShortName" returnType="void" visibility="public">
+          <Argument type="String" name="shortName"/>
+        </Method>
+        <Method name="getDescription" returnType="String" visibility="public"/>
+        <Method name="setDescription" returnType="void" visibility="public">
+          <Argument type="String" name="description"/>
+        </Method>
+        <Method name="getPrice" returnType="Double" visibility="public"/>
+        <Method name="setPrice" returnType="void" visibility="public">
+          <Argument type="Double" name="price"/>
+        </Method>
+        <Method name="getMainImageUrl" returnType="String" visibility="public"/>
+        <Method name="setMainImageUrl" returnType="void" visibility="public">
+          <Argument type="String" name="mainImageUrl"/>
+        </Method>
+        <Method name="getLatitude" returnType="Double" visibility="public"/>
+        <Method name="setLatitude" returnType="void" visibility="public">
+          <Argument type="Double" name="latitude"/>
+        </Method>
+        <Method name="getLongitude" returnType="Double" visibility="public"/>
+        <Method name="setLongitude" returnType="void" visibility="public">
+          <Argument type="Double" name="longitude"/>
+        </Method>
+        <Method name="getPublishDate" returnType="Date" visibility="public"/>
+        <Method name="setPublishDate" returnType="void" visibility="public">
+          <Argument type="Date" name="publishDate"/>
+        </Method>
+        <Method name="getEndDate" returnType="Date" visibility="public"/>
+        <Method name="setEndDate" returnType="void" visibility="public">
+          <Argument type="Date" name="endDate"/>
+        </Method>
+        <Method name="getOfferCategory" returnType="VhsCategory" visibility="public"/>
+        <Method name="setOfferCategory" returnType="void" visibility="public">
+          <Argument type="VhsCategory" name="offerCategory"/>
+        </Method>
+        <Method name="getServicePromo" returnType="Boolean" visibility="public"/>
+        <Method name="setServicePromo" returnType="void" visibility="public">
+          <Argument type="Boolean" name="servicePromo"/>
+        </Method>
+        <Method name="getServiceProviderUser" returnType="VhsUser" visibility="public"/>
+        <Method name="setServiceProviderUser" returnType="void" visibility="public">
+          <Argument type="VhsUser" name="serviceProviderUser"/>
+        </Method>
+        <Method name="getOfferCity" returnType="VhsCity" visibility="public"/>
+        <Method name="setOfferCity" returnType="void" visibility="public">
+          <Argument type="VhsCity" name="offerCity"/>
+        </Method>
+        <Method name="getVhsOfferRating" returnType="Collection&lt;VhsOfferRating&gt;" visibility="public"/>
+        <Method name="setVhsOfferRating" returnType="void" visibility="public">
+          <Argument type="Collection&lt;VhsOfferRating&gt;" name="vhsOfferRating"/>
+        </Method>
+        <Method name="getVhsOfferSale" returnType="Collection&lt;VhsOfferSale&gt;" visibility="public"/>
+        <Method name="setVhsOfferSale" returnType="void" visibility="public">
+          <Argument type="Collection&lt;VhsOfferSale&gt;" name="vhsOfferSale"/>
+        </Method>
+        <Method name="getCurrency" returnType="VhsSupportedCurrency" visibility="public"/>
+        <Method name="setCurrency" returnType="void" visibility="public">
+          <Argument type="VhsSupportedCurrency" name="currency"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="VhsSupportedCurrency" package="com.vhs.data" visibility="public" xPosition="1799.0" yPosition="696.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="id" type="Long" visibility="private"/>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="optional" type="Boolean" visibility="private"/>
+        <Field name="dollarChangeRate" type="Double" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getId" returnType="Long" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="Long" name="id"/>
+        </Method>
+        <Method name="getName" returnType="String" visibility="public"/>
+        <Method name="setName" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="getOptional" returnType="Boolean" visibility="public"/>
+        <Method name="setOptional" returnType="void" visibility="public">
+          <Argument type="Boolean" name="optional"/>
+        </Method>
+        <Method name="getDollarChangeRate" returnType="Double" visibility="public"/>
+        <Method name="setDollarChangeRate" returnType="void" visibility="public">
+          <Argument type="Double" name="dollarChangeRate"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="VhsUser" package="com.vhs.data" visibility="public" xPosition="1179.0" yPosition="2696.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="userId" type="Integer" visibility="private"/>
+        <Field name="mail" type="String" visibility="private"/>
+        <Field name="password" type="String" visibility="private"/>
+        <Field name="fullName" type="String" visibility="private"/>
+        <Field name="optionalFeatureSpecialOffer" type="Boolean" visibility="private"/>
+        <Field name="optionalFeatureCurrencyManagement" type="Boolean" visibility="private"/>
+        <Field name="optionalFeatureSearchByLocation" type="Boolean" visibility="private"/>
+        <Field name="optionalFeatureCashPayOnDelivery" type="Boolean" visibility="private"/>
+        <Field name="optionalFeatureSocialNetworks" type="Boolean" visibility="private"/>
+        <Field name="optionalFeatureReportsByRating" type="Boolean" visibility="private"/>
+        <Field name="optionalFeatureReportsBySales" type="Boolean" visibility="private"/>
+        <Field name="optionalFeatureMultimediaVideo" type="Boolean" visibility="private"/>
+        <Field name="optionalFeatureMultimediaImages" type="Boolean" visibility="private"/>
+        <Field name="optionalFeatureMobile" type="Boolean" visibility="private"/>
+        <Field name="optionalFeatureGoogleMapsEnabled" type="Boolean" visibility="private"/>
+        <Field name="optionalFeatureScalability" type="Boolean" visibility="private"/>
+        <Field name="optionalFeaturePerformance" type="Boolean" visibility="private"/>
+        <Field name="vhsSpecialOfferCollection" type="Collection&lt;VhsSpecialOffer&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="userId"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getUserId" returnType="Integer" visibility="public"/>
+        <Method name="setUserId" returnType="void" visibility="public">
+          <Argument type="Integer" name="userId"/>
+        </Method>
+        <Method name="getMail" returnType="String" visibility="public"/>
+        <Method name="setMail" returnType="void" visibility="public">
+          <Argument type="String" name="mail"/>
+        </Method>
+        <Method name="getPassword" returnType="String" visibility="public"/>
+        <Method name="setPassword" returnType="void" visibility="public">
+          <Argument type="String" name="password"/>
+        </Method>
+        <Method name="getFullName" returnType="String" visibility="public"/>
+        <Method name="setFullName" returnType="void" visibility="public">
+          <Argument type="String" name="fullName"/>
+        </Method>
+        <Method name="getOptionalFeatureSpecialOffer" returnType="Boolean" visibility="public"/>
+        <Method name="setOptionalFeatureSpecialOffer" returnType="void" visibility="public">
+          <Argument type="Boolean" name="optionalFeatureSpecialOffer"/>
+        </Method>
+        <Method name="getOptionalFeatureCurrencyManagement" returnType="Boolean" visibility="public"/>
+        <Method name="setOptionalFeatureCurrencyManagement" returnType="void" visibility="public">
+          <Argument type="Boolean" name="optionalFeatureCurrencyManagement"/>
+        </Method>
+        <Method name="getOptionalFeatureSearchByLocation" returnType="Boolean" visibility="public"/>
+        <Method name="setOptionalFeatureSearchByLocation" returnType="void" visibility="public">
+          <Argument type="Boolean" name="optionalFeatureSearchByLocation"/>
+        </Method>
+        <Method name="getOptionalFeatureCashPayOnDelivery" returnType="Boolean" visibility="public"/>
+        <Method name="setOptionalFeatureCashPayOnDelivery" returnType="void" visibility="public">
+          <Argument type="Boolean" name="optionalFeatureCashPayOnDelivery"/>
+        </Method>
+        <Method name="getOptionalFeatureSocialNetworks" returnType="Boolean" visibility="public"/>
+        <Method name="setOptionalFeatureSocialNetworks" returnType="void" visibility="public">
+          <Argument type="Boolean" name="optionalFeatureSocialNetworks"/>
+        </Method>
+        <Method name="getOptionalFeatureReportsByRating" returnType="Boolean" visibility="public"/>
+        <Method name="setOptionalFeatureReportsByRating" returnType="void" visibility="public">
+          <Argument type="Boolean" name="optionalFeatureReportsByRating"/>
+        </Method>
+        <Method name="getOptionalFeatureReportsBySales" returnType="Boolean" visibility="public"/>
+        <Method name="setOptionalFeatureReportsBySales" returnType="void" visibility="public">
+          <Argument type="Boolean" name="optionalFeatureReportsBySales"/>
+        </Method>
+        <Method name="getOptionalFeatureScalability" returnType="Boolean" visibility="public"/>
+        <Method name="setOptionalFeatureScalability" returnType="void" visibility="public">
+          <Argument type="Boolean" name="optionalFeatureScalability"/>
+        </Method>
+        <Method name="getOptionalFeaturePerformance" returnType="Boolean" visibility="public"/>
+        <Method name="setOptionalFeaturePerformance" returnType="void" visibility="public">
+          <Argument type="Boolean" name="optionalFeaturePerformance"/>
+        </Method>
+        <Method name="getVhsSpecialOfferCollection" returnType="Collection&lt;VhsSpecialOffer&gt;" visibility="public"/>
+        <Method name="setVhsSpecialOfferCollection" returnType="void" visibility="public">
+          <Argument type="Collection&lt;VhsSpecialOffer&gt;" name="vhsSpecialOfferCollection"/>
+        </Method>
+        <Method name="getOptionalFeatureMultimediaVideo" returnType="Boolean" visibility="public"/>
+        <Method name="setOptionalFeatureMultimediaVideo" returnType="void" visibility="public">
+          <Argument type="Boolean" name="optionalFeatureMultimediaVideo"/>
+        </Method>
+        <Method name="getOptionalFeatureMultimediaImages" returnType="Boolean" visibility="public"/>
+        <Method name="setOptionalFeatureMultimediaImages" returnType="void" visibility="public">
+          <Argument type="Boolean" name="optionalFeatureMultimediaImages"/>
+        </Method>
+        <Method name="getOptionalFeatureMobile" returnType="Boolean" visibility="public"/>
+        <Method name="setOptionalFeatureMobile" returnType="void" visibility="public">
+          <Argument type="Boolean" name="optionalFeatureMobile"/>
+        </Method>
+        <Method name="getOptionalFeatureGoogleMapsEnabled" returnType="Boolean" visibility="public"/>
+        <Method name="setOptionalFeatureGoogleMapsEnabled" returnType="void" visibility="public">
+          <Argument type="Boolean" name="optionalFeatureGoogleMapsEnabled"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="offerCategory" source="com.vhs.data.VhsSpecialOffer" target="com.vhs.data.VhsCategory" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="vhsSpecialOfferCollection" source="com.vhs.data.VhsUser" target="com.vhs.data.VhsSpecialOffer" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.vhs.data.VhsOfferSale" target="com.vhs.data.VhsCity" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="vhsSpecialOfferCollection" source="com.vhs.data.VhsCategory" target="com.vhs.data.VhsSpecialOffer" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="specialOffer" source="com.vhs.data.VhsOfferImage" target="com.vhs.data.VhsSpecialOffer" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.vhs.data.VhsOfferRating" target="com.vhs.data.VhsSpecialOffer" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.vhs.data.VhsOfferSale" target="com.vhs.data.VhsSpecialOffer" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.vhs.data.VhsOfferImage" target="com.vhs.data.VhsSpecialOffer" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="serviceProviderUser" source="com.vhs.data.VhsSpecialOffer" target="com.vhs.data.VhsUser" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="specialOffer" source="com.vhs.data.VhsOfferRating" target="com.vhs.data.VhsSpecialOffer" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="paymentMethod" source="com.vhs.data.VhsOfferSale" target="com.vhs.data.VhsPaymentMethod" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="vhsCityCollection" source="com.vhs.data.VhsCountry" target="com.vhs.data.VhsCity" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.vhs.data.VhsSpecialOffer" target="com.vhs.data.VhsCity" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="countryCity" source="com.vhs.data.VhsCity" target="com.vhs.data.VhsCountry" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="specialOffer" source="com.vhs.data.VhsOfferSale" target="com.vhs.data.VhsSpecialOffer" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.vhs.data.VhsUser" target="com.vhs.data.VhsSpecialOffer" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="buyerCity" source="com.vhs.data.VhsOfferSale" target="com.vhs.data.VhsCity" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.vhs.data.VhsSpecialOffer" target="com.vhs.data.VhsOfferRating" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.vhs.data.VhsCity" target="com.vhs.data.VhsCountry" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="vhsOfferSale" source="com.vhs.data.VhsSpecialOffer" target="com.vhs.data.VhsOfferSale" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.vhs.data.VhsCountry" target="com.vhs.data.VhsCity" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.vhs.data.VhsSpecialOffer" target="com.vhs.data.VhsOfferSale" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="currency" source="com.vhs.data.VhsSpecialOffer" target="com.vhs.data.VhsSupportedCurrency" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.vhs.data.VhsOfferSale" target="com.vhs.data.VhsPaymentMethod" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="vhsOfferRating" source="com.vhs.data.VhsSpecialOffer" target="com.vhs.data.VhsOfferRating" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.vhs.data.VhsSpecialOffer" target="com.vhs.data.VhsSupportedCurrency" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="offerCity" source="com.vhs.data.VhsSpecialOffer" target="com.vhs.data.VhsCity" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.vhs.data.VhsCategory" target="com.vhs.data.VhsSpecialOffer" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.vhs.data.VhsSpecialOffer" target="com.vhs.data.VhsUser" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.vhs.data.VhsSpecialOffer" target="com.vhs.data.VhsCategory" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="vhsOfferImages" source="com.vhs.data.VhsSpecialOffer" target="com.vhs.data.VhsOfferImage" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
