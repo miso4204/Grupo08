@@ -148,6 +148,12 @@ public class VhsSpecialOffer implements Serializable
     private Collection<VhsOfferSale> vhsOfferSale;
     
     /**
+     * Associated sales
+     */
+    @OneToMany(mappedBy = "specialOffer")
+    private Collection<VhsOfferImage> vhsOfferImages;
+    
+    /**
      * Current offer price currency
      */
     @JoinColumn(name = "currency", referencedColumnName = "id")
