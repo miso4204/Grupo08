@@ -61,22 +61,24 @@ def register(request):
 		form = RegisterForm(request.POST)
 		if form.is_valid():
 
-			username = form.cleaned_data['username']
-			name = form.cleaned_data['name']
-			last_name = form.cleaned_data['last_name']
 			email = form.cleaned_data['email']
 			password = form.cleaned_data['password']
+			full_namename = form.cleaned_data['name']
+			
 			# Opciones de productos
 			special_offer = form.cleaned_data['special_offer']
-			money_administration = form.cleaned_data['money_administration']
-			report = form.cleaned_data['report']
+			currency_administration = form.cleaned_data['currency_administration']
+			rating_report = form.cleaned_data['rating_report']
+			sale_report = form.cleaned_data['sale_report']
 			social_network = form.cleaned_data['social_network']
-
-			# user = User.objects.create_user(username=username, email=email, password=password)
-			# user.first_name = name
-			# user.last_name = last_name
-			
-			# user.save()
+			location_search = form.cleaned_data['location_search']
+			pay_on_delivery = form.cleaned_data['pay_on_delivery']
+			multimedia_video = form.cleaned_data['multimedia_video']
+			multimedia_image = form.cleaned_data['multimedia_image']
+			mobile = form.cleaned_data['mobile']
+			maps = form.cleaned_data['maps']
+			scalability = form.cleaned_data['scalability']
+			performance = form.cleaned_data['performance']
 
 			return HttpResponseRedirect('/account/index/')
 	else:
