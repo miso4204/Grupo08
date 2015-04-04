@@ -16,6 +16,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Offer sale entity
@@ -24,6 +25,7 @@ import javax.persistence.TemporalType;
  * @author Alex Vicente ChacOn JimEnez (av.chacon10@uniandes.edu.co)
  */
 @Entity
+@XmlRootElement
 public class VhsOfferSale implements Serializable
 {
     /**

@@ -17,6 +17,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  * Service provider offer entity. Stores the turistic product description
@@ -299,6 +300,7 @@ public class VhsSpecialOffer implements Serializable
         this.offerCity = offerCity;
     }
 
+    @XmlTransient
     public Collection<VhsOfferRating> getVhsOfferRating()
     {
         return vhsOfferRating;
@@ -309,6 +311,7 @@ public class VhsSpecialOffer implements Serializable
         this.vhsOfferRating = vhsOfferRating;
     }
 
+    @XmlTransient
     public Collection<VhsOfferSale> getVhsOfferSale()
     {
         return vhsOfferSale;
