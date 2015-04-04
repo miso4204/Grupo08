@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>ALPHA</title>
+<title>VHS</title>
 
 <!-- Bootstrap core CSS -->
 <link href="{% static "assets/css/bootstrap.css" %}" rel="stylesheet">
@@ -41,7 +41,6 @@
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
           <li><a href="/account/login/" class="smoothScroll">Login</a></li>
-          <li> <a href="#reports" class="smoothScroll"> Reportes</a></li>
         </ul>
       </div>
       <!--/.nav-collapse --> 
@@ -63,7 +62,10 @@
       {% if form.errors %}
         <div class="alert alert-danger alert-dismissible" role="alert">
           <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <strong>Login error!</strong> Please check your username and password.
+          <strong>Login error: </strong>
+          {% for error in form.non_field_errors %}
+            {{error}}
+          {% endfor %}
         </div>
       {% endif %}
 	    <div class="row">
