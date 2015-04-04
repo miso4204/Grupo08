@@ -45,7 +45,7 @@ public class VhsCity implements Serializable
      */
     @Id
     @Column(name = "id_city")
-    private String idCity;
+    private Long idCity;
     
     /**
      * City name
@@ -64,17 +64,17 @@ public class VhsCity implements Serializable
     {
     }
 
-    public VhsCity(String idCity)
+    public VhsCity(Long idCity)
     {
         this.idCity = idCity;
     }
 
-    public String getIdCity()
+    public long getIdCity()
     {
         return idCity;
     }
 
-    public void setIdCity(String idCity)
+    public void setIdCity(Long idCity)
     {
         this.idCity = idCity;
     }

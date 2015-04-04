@@ -9,8 +9,6 @@ import java.io.Serializable;
 import java.util.Collection;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -47,9 +45,8 @@ public class VhsCountry implements Serializable
      * Country identifier
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_country")
-    private Integer idCountry;
+    private String idCountry;
     
     /**
      * Country name
@@ -67,17 +64,17 @@ public class VhsCountry implements Serializable
     {
     }
 
-    public VhsCountry(Integer idCountry)
+    public VhsCountry(String idCountry)
     {
         this.idCountry = idCountry;
     }
 
-    public Integer getIdCountry()
+    public String getIdCountry()
     {
         return idCountry;
     }
 
-    public void setIdCountry(Integer idCountry)
+    public void setIdCountry(String idCountry)
     {
         this.idCountry = idCountry;
     }
