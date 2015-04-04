@@ -13,6 +13,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Available service image
@@ -21,6 +22,7 @@ import javax.persistence.ManyToOne;
  * @author Alex Vicente ChacOn JimEnez (av.chacon10@uniandes.edu.co) 
  */
 @Entity
+@XmlRootElement
 public class VhsOfferImage implements Serializable
 {
     /**

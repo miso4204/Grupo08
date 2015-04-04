@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Available payment method entity
@@ -19,6 +20,7 @@ import javax.persistence.Id;
  * @author Alex Vicente ChacOn JimEnez (av.chacon10@uniandes.edu.co)
  */
 @Entity
+@XmlRootElement
 public class VhsPaymentMethod implements Serializable
 {
     /**

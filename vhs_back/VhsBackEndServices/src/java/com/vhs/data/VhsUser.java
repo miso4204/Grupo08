@@ -12,6 +12,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
  
 /**
  * Service provider entity. Stores personal information and optional features used in the VHS platform
@@ -291,6 +292,7 @@ public class VhsUser implements Serializable
         this.optionalFeaturePerformance = optionalFeaturePerformance;
     }
 
+    @XmlTransient
     public Collection<VhsSpecialOffer> getVhsSpecialOfferCollection() 
     {
         return vhsSpecialOfferCollection;
