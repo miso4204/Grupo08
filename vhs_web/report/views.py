@@ -31,3 +31,22 @@ def rating_report(request):
 	data = json.dumps(listado_productos)
 
 	return render(request, 'report/rating_report.html', {'data': data, 'fecha': date })
+
+def sale_report(request):
+
+	date = {'date': '03/04/2015 11:58:00 PM'}
+
+	ventas_mes = [{
+			'name': '# de ventas',
+			'data': [138, 232, 625, 357,65,90,41,987,984,729,847,859]
+		}
+	]
+
+	ventas_semana = [{
+			'name': '# de ventas',
+			'data': [2,8,4,3,4,8,7]
+		}
+	]
+	
+	return render(request, 'report/sale_report.html', 
+		{'data_mes': json.dumps(ventas_mes), 'data_semana': json.dumps(ventas_semana), 'fecha': date })

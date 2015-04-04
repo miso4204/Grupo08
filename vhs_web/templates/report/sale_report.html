@@ -31,13 +31,14 @@
 
 <script type="text/javascript">
 
-data = {{ data|safe }};
+data_mes = {{ data_mes|safe }};
+data_semana = {{ data_semana|safe }};
 fechaGeneracion = {{ fecha|safe }};
 
 $(function () {
-    $('#container').highcharts({
+    $('#container_month').highcharts({
         title: {
-            text: 'Reporte de Rating',
+            text: 'Reporte de ventas anual',
             x: -20 //center
         },
         subtitle: {
@@ -45,10 +46,10 @@ $(function () {
             x: -20
         },
         xAxis: {
-            categories: ['1 Estrella', '2 Estrellas', '3 Estrellas', '4 Estrellas', '5 Estrellas', '6 Estrellas', '7 Estrellas', '8 Estrellas', '9 Estrellas', '10 Estrellas']},
+            categories: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']},
         yAxis: {
             title: {
-                text: 'Suma de rating'
+                text: 'Número de ventas'
             },
             plotLines: [{
                 value: 0,
@@ -62,9 +63,41 @@ $(function () {
             verticalAlign: 'middle',
             borderWidth: 0
         },
-        series: data
+        series: data_mes
+    });
+
+    $('#container_week').highcharts({
+        title: {
+            text: 'Reporte de ventas semanal',
+            x: -20 //center
+        },
+        subtitle: {
+            text: 'Fecha de generación: ' + fechaGeneracion.date,
+            x: -20
+        },
+        xAxis: {
+            categories: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo']},
+        yAxis: {
+            title: {
+                text: 'Número de ventas'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: data_semana
     });
 });
+
+
 </script>
 
 </head>
@@ -92,12 +125,13 @@ $(function () {
 <div id="services" name="services">
   <div class="container">
     <div class="row">
-      <h2 class="centered">Reporte de Rating</h2>
+      <h2 class="centered">Reporte de Ventas</h2>
       <hr>
       <div class="col-lg-8 col-lg-offset-2">
-        <p class="large">En este reporte muestra cuales fueron los 5 paquetes que mejor calificación tuvieron.</p>
+        <p class="large">A continuación se presenta el reporte de ventas</p>
       </div>
-      <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+      <div id="container_month" style="min-width: 310px; height: 400px; margin: 0 auto"></div></br>
+      <div id="container_week" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
     </div>
     <!-- row --> 
   </div>
