@@ -34,7 +34,8 @@ public class VhsOfferImage implements Serializable
      * Image identifier
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
     /**
