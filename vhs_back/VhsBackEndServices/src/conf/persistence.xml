@@ -6,6 +6,7 @@
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="hibernate.hbm2ddl.auto" value="update"/>
+      <property name="javax.persistence.sql-load-script-source" value="WEB-INF/sql/import.sql"/>
     </properties>
   </persistence-unit>
 </persistence>
