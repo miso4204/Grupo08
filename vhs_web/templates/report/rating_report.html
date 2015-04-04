@@ -19,6 +19,7 @@
 <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
 <script src="{% static "assets/js/jquery.min.js" %}"></script>
+<script src="{% static "assets/highcharts/highcharts.js" %}"></script>
 <script type="text/javascript" src="{% static "assets/js/modernizr.custom.js" %}"></script>
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -27,6 +28,44 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+<script type="text/javascript">
+
+data = {{ data|safe }};
+fechaGeneracion = {{ fecha|safe }};
+
+$(function () {
+    $('#container').highcharts({
+        title: {
+            text: 'Reporte de Rating',
+            x: -20 //center
+        },
+        subtitle: {
+            text: 'Fecha de generación: ' + fechaGeneracion.date,
+            x: -20
+        },
+        xAxis: {
+            categories: ['1 Estrella', '2 Estrellas', '3 Estrellas', '4 Estrellas', '5 Estrellas', '6 Estrellas', '7 Estrellas', '8 Estrellas', '9 Estrellas', '10 Estrellas']},
+        yAxis: {
+            title: {
+                text: 'Suma de rating'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: data
+    });
+});
+</script>
 
 </head>
 
@@ -56,13 +95,16 @@
       <h2 class="centered">Reporte de Rating</h2>
       <hr>
       <div class="col-lg-8 col-lg-offset-2">
-        <p class="large">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+        <p class="large">A continuación reorete en el que se puede ver cuales fueron los 5 paquetes que mejor calificación tuvieron.</p>
       </div>
+      <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
     </div>
     <!-- row --> 
   </div>
 </div>
 <!-- container --> 
+
+
 
 <div id="footerwrap">
   <div class="container">
