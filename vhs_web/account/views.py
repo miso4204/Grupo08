@@ -25,18 +25,21 @@ def auth_view(request):
 		form = LoginForm(request.POST)
 		if form.is_valid():
 
-			username = form.cleaned_data['username'] # username = 'andresvargasr@gmail.com'
-			password = form.cleaned_data['password'] # password = 'andres'
+			username = form.cleaned_data['username']
+			password = form.cleaned_data['password']
 
 			response = requests.get('{0}/{1}/{2}/{3}'.format(url, method, username, password))
 
 			if response.status_code == 200:
 				element =  ElementTree.XML(response.text)	
+
+				request.session['id_usuario'] = 4
+				
 				# Login ok
 				return HttpResponseRedirect('/account/index')
 			else:
 				#Bad login
-				form.add_error(None, "Login error: Please check your username and password")
+				form.add_error(None, "Please check your username and password")
 
 				return render(request, 'account/login.html', {'form': form})
 		else:
@@ -46,12 +49,21 @@ def auth_view(request):
 	return render(request, 'account/login.html', {'form': form})
 
 def index(request):
-	return render_to_response('account/index.html')
+	print 'entre a index'
+	if esta_autenticado(request):
+		print 'estoy autenticado'
+		return render_to_response('account/index.html')
+	else:
+		print 'no estoy autenticado'
+		form = LoginForm(request.POST)
+		form.add_error(None, "Please enter your username and password")
+		return render(request, 'account/login.html', {'form': form})
 
 def logout(request):
 	auth.logout(request)
 	c = {}
 	c.update(csrf(request))
+	request.session['id_usuario'] = None
 	return render_to_response('account/login.html', c)
 
 def register(request):
@@ -84,3 +96,11 @@ def register(request):
 	else:
 		form = RegisterForm()
 	return render(request, 'account/register.html', {'form': form})
+
+def esta_autenticado(request):
+	if request.session.get('id_usuario'):
+		id_usuario = request.session['id_usuario']
+		return True
+	return False
+		
+	
