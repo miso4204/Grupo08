@@ -17,8 +17,6 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
-
 /**
  * Service provider offer associated category entity.
  *
@@ -92,8 +90,7 @@ public class VhsCategory implements Serializable
     {
         this.description = description;
     }
-
-    @XmlTransient
+    
     public Collection<VhsSpecialOffer> getVhsSpecialOfferCollection()
     {
         return vhsSpecialOfferCollection;

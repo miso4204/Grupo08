@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -119,46 +120,46 @@ public class VhsSpecialOffer implements Serializable
      * Product category
      */
     @JoinColumn(name = "offer_category", referencedColumnName = "id_category")
-    @ManyToOne
+    @ManyToOne (fetch = FetchType.EAGER)
     private VhsCategory offerCategory;
     
     /**
      * Product owner
      */
     @JoinColumn(name = "service_provider", referencedColumnName = "user_id")
-    @ManyToOne
+    @ManyToOne (fetch = FetchType.EAGER)
     private VhsUser serviceProviderUser;
 
     /**
      * Product city
      */
     @JoinColumn(name = "city", referencedColumnName = "id_city")
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     private VhsCity offerCity;
     
     /**
      * Associated offers
      */
-    @OneToMany(mappedBy = "specialOffer")
+    @OneToMany(mappedBy = "specialOffer" )
     private Collection<VhsOfferRating> vhsOfferRating;
     
     /**
      * Associated sales
      */
-    @OneToMany(mappedBy = "specialOffer")
+    @OneToMany(mappedBy = "specialOffer" )
     private Collection<VhsOfferSale> vhsOfferSale;
     
     /**
      * Associated sales
      */
-    @OneToMany(mappedBy = "specialOffer")
+    @OneToMany(mappedBy = "specialOffer" )
     private Collection<VhsOfferImage> vhsOfferImages;
     
     /**
      * Current offer price currency
      */
     @JoinColumn(name = "currency", referencedColumnName = "id")
-    @ManyToOne
+    @ManyToOne (fetch = FetchType.EAGER)
     private VhsSupportedCurrency currency;
     
     public VhsSpecialOffer()
@@ -300,7 +301,7 @@ public class VhsSpecialOffer implements Serializable
         this.offerCity = offerCity;
     }
 
-    @XmlTransient
+    
     public Collection<VhsOfferRating> getVhsOfferRating()
     {
         return vhsOfferRating;
@@ -310,8 +311,7 @@ public class VhsSpecialOffer implements Serializable
     {
         this.vhsOfferRating = vhsOfferRating;
     }
-
-    @XmlTransient
+    
     public Collection<VhsOfferSale> getVhsOfferSale()
     {
         return vhsOfferSale;
@@ -330,6 +330,16 @@ public class VhsSpecialOffer implements Serializable
     public void setCurrency(VhsSupportedCurrency currency)
     {
         this.currency = currency;
+    }
+
+    public Collection<VhsOfferImage> getVhsOfferImages()
+    {
+        return vhsOfferImages;
+    }
+
+    public void setVhsOfferImages(Collection<VhsOfferImage> vhsOfferImages)
+    {
+        this.vhsOfferImages = vhsOfferImages;
     }
 
     @Override

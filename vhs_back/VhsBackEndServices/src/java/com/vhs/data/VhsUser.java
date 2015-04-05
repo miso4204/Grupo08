@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Collection;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -149,7 +150,7 @@ public class VhsUser implements Serializable
     /**
      * Service provider turistic products
      */
-    @OneToMany(mappedBy = "serviceProviderUser")
+    @OneToMany(mappedBy = "serviceProviderUser", fetch = FetchType.EAGER )
     private Collection<VhsSpecialOffer> vhsSpecialOfferCollection;
     
     public VhsUser() 

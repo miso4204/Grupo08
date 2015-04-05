@@ -9,11 +9,13 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -26,6 +28,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @Entity
 @XmlRootElement
+@Table(name = "vhsoffersale")
 public class VhsOfferSale implements Serializable
 {
     /**
@@ -63,7 +66,7 @@ public class VhsOfferSale implements Serializable
      * Buyer city
      */
     @JoinColumn(name = "city", referencedColumnName = "id_city")
-    @ManyToOne
+    @ManyToOne ( fetch = FetchType.EAGER)
     private VhsCity buyerCity;
     
     /**
@@ -130,14 +133,14 @@ public class VhsOfferSale implements Serializable
      * Associated payment method
      */
     @JoinColumn(name = "payment_method", referencedColumnName = "id_payment")
-    @ManyToOne
+    @ManyToOne (fetch = FetchType.EAGER)
     private VhsPaymentMethod paymentMethod;
     
     /**
      * Associated special offer
      */
     @JoinColumn(name = "special_offer", referencedColumnName = "id_special_offers")
-    @ManyToOne
+    @ManyToOne (fetch = FetchType.EAGER)
     private VhsSpecialOffer specialOffer;
     
     public Long getId()

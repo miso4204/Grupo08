@@ -8,11 +8,13 @@ package com.vhs.data;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -23,6 +25,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @Entity
 @XmlRootElement
+@Table(name = "vhsofferimage")
 public class VhsOfferImage implements Serializable
 {
     /**
@@ -54,7 +57,7 @@ public class VhsOfferImage implements Serializable
      * Associated special offer
      */
     @JoinColumn(name = "special_offer", referencedColumnName = "id_special_offers")
-    @ManyToOne
+    @ManyToOne (fetch = FetchType.EAGER)
     private VhsSpecialOffer specialOffer;
     
     public Long getId()

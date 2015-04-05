@@ -8,6 +8,7 @@ package com.vhs.data;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -66,7 +67,7 @@ public class VhsOfferRating implements Serializable
      * Associated special offer
      */
     @JoinColumn(name = "special_offer", referencedColumnName = "id_special_offers")
-    @ManyToOne
+    @ManyToOne (fetch = FetchType.EAGER)
     private VhsSpecialOffer specialOffer;
     
     public Long getId()

@@ -28,13 +28,25 @@ var app = {
     
 // Model for VhsUser entity
     models.VhsUser = Backbone.Model.extend({
-        urlRoot: "http://localhost:8087/VhsBackEndServices/webresources/vhsuser/",
+        urlRoot: "http://localhost:8080/VhsBackEndServices/webresources/vhsuser/",
         idAttribute: 'userId',
         defaults: {
+            optionalFeatureSearchByLocation: "",
             mail: "",
-            userKind: "",
+            optionalFeatureMobile: "",
+            optionalFeatureCashPayOnDelivery: "",
+            optionalFeatureMultimediaImages: "",
             fullName: "",
-            password: ""
+            optionalFeatureReportsByRating: "",
+            password: "",
+            optionalFeatureGoogleMapsEnabled: "",
+            optionalFeatureSpecialOffer: "",
+            optionalFeatureMultimediaVideo: "",
+            optionalFeatureCurrencyManagement: "",
+            optionalFeatureScalability: "",
+            optionalFeatureReportsBySales: "",
+            optionalFeatureSocialNetworks: "",
+            optionalFeaturePerformance: ""
         },
         toViewJson: function () {
             var result = this.toJSON(); // displayName property is used to render item in the list
@@ -62,7 +74,7 @@ var app = {
                 }}
             
             if (method == 'create') {
-                options.url = 'http://localhost:8087/VhsBackEndServices/webresources/vhsuser/';
+                options.url = 'http://localhost:8080/VhsBackEndServices/webresources/vhsuser/';
             }
             var result = Backbone.sync(method, model, _.extend(options, errorHandler));
             return result;
@@ -75,7 +87,7 @@ var app = {
     // Collection class for VhsUser entities
     models.VhsUserCollection = Backbone.Collection.extend({
         model: models.VhsUser,
-        url: "http://localhost:8087/VhsBackEndServices/webresources/vhsuser/",
+        url: "http://localhost:8080/VhsBackEndServices/webresources/vhsuser/",
         sync: function (method, model, options) {
             options || (options = {});
             var errorHandler = {
@@ -353,10 +365,22 @@ $(function () {
         getData: function () {
             return {
                 userId: $('#userId').val(),
+                optionalFeatureSearchByLocation: $('#optionalFeatureSearchByLocation').val(),
                 mail: $('#mail').val(),
-                userKind: $('#userKind').val(),
+                optionalFeatureMobile: $('#optionalFeatureMobile').val(),
+                optionalFeatureCashPayOnDelivery: $('#optionalFeatureCashPayOnDelivery').val(),
+                optionalFeatureMultimediaImages: $('#optionalFeatureMultimediaImages').val(),
                 fullName: $('#fullName').val(),
-                password: $('#password').val()
+                optionalFeatureReportsByRating: $('#optionalFeatureReportsByRating').val(),
+                password: $('#password').val(),
+                optionalFeatureGoogleMapsEnabled: $('#optionalFeatureGoogleMapsEnabled').val(),
+                optionalFeatureSpecialOffer: $('#optionalFeatureSpecialOffer').val(),
+                optionalFeatureMultimediaVideo: $('#optionalFeatureMultimediaVideo').val(),
+                optionalFeatureCurrencyManagement: $('#optionalFeatureCurrencyManagement').val(),
+                optionalFeatureScalability: $('#optionalFeatureScalability').val(),
+                optionalFeatureReportsBySales: $('#optionalFeatureReportsBySales').val(),
+                optionalFeatureSocialNetworks: $('#optionalFeatureSocialNetworks').val(),
+                optionalFeaturePerformance: $('#optionalFeaturePerformance').val()
             };
         }
     });

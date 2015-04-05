@@ -8,6 +8,7 @@ package com.vhs.data;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -57,7 +58,7 @@ public class VhsCity implements Serializable
      * City owner country
      */
     @JoinColumn(name = "country_city", referencedColumnName = "id_country")
-    @ManyToOne
+    @ManyToOne (fetch = FetchType.EAGER)
     private VhsCountry countryCity;
 
     public VhsCity()
