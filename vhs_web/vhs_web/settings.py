@@ -10,8 +10,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
@@ -36,6 +35,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'account',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -68,6 +68,8 @@ DATABASES = {
 
 LANGUAGE_CODE = 'en-us'
 
+TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
+
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
@@ -81,3 +83,20 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# <--   configuracion Heroku
+
+# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# Allow all host headers
+ALLOWED_HOSTS = ['*']
+
+STATIC_ROOT = 'staticfiles'
+
+STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
+# -->   Termina configuracion Heroku
