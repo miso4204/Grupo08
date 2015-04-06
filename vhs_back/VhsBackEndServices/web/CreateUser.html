@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<!--
+Registration form demo. Implemented to the project VHS- Software Factories :: Uniandes
+Alex Vicente Chacon (alex.chacon@gmail.com) 
+-->
+<html>
+
+	<head>
+		<title>Register user demo :: VHS - Final:: </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script>
+			var rootURL = "http://localhost:8080/VhsBackEndServices/webresources/vhsuser";
+			
+			function addServiceProvider() 
+			{
+				$.ajax
+				(
+					{
+						type: 'POST',
+						contentType: 'application/json',
+						url: rootURL,
+						dataType: "json",
+						data: formToJSON(),
+						success: function(data, textStatus, jqXHR)
+						{
+							alert('Proveedor de servicio creado satisfacoriamente');
+						},
+						error: function(jqXHR, textStatus, errorThrown)
+						{
+							alert('Falla al momento de crear el proveedor de servicio: ' + textStatus);
+						}
+					}
+				);
+				
+				return false;
+			}
+			
+			//
+			// Helper function to serialize all the form fields into a JSON string
+			// http://coenraets.org/blog/2011/12/restful-services-with-jquery-and-java-using-jax-rs-and-jersey/
+			function formToJSON() 
+			{
+				return JSON.stringify
+				(
+					{
+						"mail": $('#mail').val(),
+						"password": $('#password').val(),
+						"fullName": $('#fullName').val(),
+						"optionalFeatureSpecialOffer": $('#optionalFeatureSpecialOffer').prop('checked'),
+						"optionalFeatureCurrencyManagement": $('#optionalFeatureCurrencyManagement').prop('checked'),
+						"optionalFeatureSearchByLocation": $('#optionalFeatureSearchByLocation').prop('checked'),
+						"optionalFeatureCashPayOnDelivery": $('#optionalFeatureCashPayOnDelivery').prop('checked'),
+						"optionalFeatureSocialNetworks": $('#optionalFeatureSocialNetworks').prop('checked'),
+						"optionalFeatureReportsByRating": $('#optionalFeatureReportsByRating').prop('checked'),
+						"optionalFeatureReportsBySales": $('#optionalFeatureReportsBySales').prop('checked'),
+						"optionalFeatureMultimediaVideo": $('#optionalFeatureMultimediaVideo').prop('checked'),
+						"optionalFeatureMultimediaImages": $('#optionalFeatureMultimediaImages').prop('checked'),
+						"optionalFeatureMobile": $('#optionalFeatureMobile').prop('checked'),
+						"optionalFeatureGoogleMapsEnabled": $('#optionalFeatureGoogleMapsEnabled').prop('checked'),
+						"optionalFeatureScalability": $('#optionalFeatureScalability').prop('checked'),
+						"optionalFeaturePerformance": $('#optionalFeaturePerformance').prop('checked')
+					}
+				);
+			}
+		</script>
+     </head>
+	<body>
+		<form name="frmRegUser" id="frmRegUser" onsubmit="return addServiceProvider();">
+			<div>
+				<label>Mail:</label>
+				<input type="text" id="mail" name="mail" />
+			</div>
+			<hr/>
+			<div>
+				<label>Password:</label>
+				<input type="text" id="password" name="password" />
+			</div>
+			<hr/>
+			<div>
+				<label>Name:</label>
+				<input type="text" id="fullName" name="fullName" />
+			</div>
+			<hr/>
+			<div>
+				<label>optionalFeatureSpecialOffer:</label>
+				<input type="checkbox" name="optionalFeatureSpecialOffer" id="optionalFeatureSpecialOffer" value="optionalFeatureSpecialOffer"/> 
+			</div>
+			<hr/>
+			<div>
+				<label>optionalFeatureCurrencyManagement:</label>
+				<input type="checkbox" name="optionalFeatureCurrencyManagement" id="optionalFeatureCurrencyManagement" value="optionalFeatureCurrencyManagement"/> 
+			</div>
+			<hr/>
+			<div>
+				<label>optionalFeatureSearchByLocation:</label>
+				<input type="checkbox" name="optionalFeatureSearchByLocation" id="optionalFeatureSearchByLocation" value="optionalFeatureSearchByLocation"/> 
+			</div>
+			<hr/>
+			<div>
+				<label>optionalFeatureCashPayOnDelivery:</label>
+				<input type="checkbox" name="optionalFeatureCashPayOnDelivery" id="optionalFeatureCashPayOnDelivery" value="optionalFeatureCashPayOnDelivery"/> 
+			</div>
+			<hr/>
+			<div>
+				<label>optionalFeatureSocialNetworks:</label>
+				<input type="checkbox" name="optionalFeatureSocialNetworks" id="optionalFeatureSocialNetworks" value="optionalFeatureSocialNetworks"/> 
+			</div>
+			<hr/>
+			<div>
+				<label>optionalFeatureReportsByRating:</label>
+				<input type="checkbox" name="optionalFeatureReportsByRating" id="optionalFeatureReportsByRating" value="optionalFeatureReportsByRating"/> 
+			</div>
+			<hr/>
+			<div>
+				<label>optionalFeatureReportsBySales:</label>
+				<input type="checkbox" name="optionalFeatureReportsBySales" id="optionalFeatureReportsBySales" value="optionalFeatureReportsBySales"/> 
+			</div>
+			<hr/>
+			<div>
+				<label>optionalFeatureMultimediaVideo:</label>
+				<input type="checkbox" name="optionalFeatureMultimediaVideo" id="optionalFeatureMultimediaVideo" value="optionalFeatureMultimediaVideo"/> 
+			</div>
+			<hr/>
+			<div>
+				<label>optionalFeatureMultimediaImages:</label>
+				<input type="checkbox" name="optionalFeatureMultimediaImages" id="optionalFeatureMultimediaImages" value="optionalFeatureMultimediaImages"/> 
+			</div>
+			<hr/>
+			<div>
+				<label>optionalFeatureMobile:</label>
+				<input type="checkbox" name="optionalFeatureMobile" id="optionalFeatureMobile" value="optionalFeatureMobile"/> 
+			</div>
+			<hr/>
+			<div>
+				<label>optionalFeatureGoogleMapsEnabled:</label>
+				<input type="checkbox" name="optionalFeatureGoogleMapsEnabled" id="optionalFeatureGoogleMapsEnabled" value="optionalFeatureGoogleMapsEnabled"/> 
+			</div>
+			<hr/>
+			<div>
+				<label>optionalFeatureScalability:</label>
+				<input type="checkbox" name="optionalFeatureScalability" id="optionalFeatureScalability" value="optionalFeatureScalability"/> 
+			</div>
+			<hr/>
+			<div>
+				<label>optionalFeaturePerformance:</label>
+				<input type="checkbox" name="optionalFeaturePerformance" id="optionalFeaturePerformance" value="optionalFeaturePerformance"/> 
+			</div>
+			<hr/>
+			<input type="submit" value="Registrar proveedor de servicio"/>
+		</form>
+	</body>
+
+</html>
