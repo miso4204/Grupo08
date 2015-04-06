@@ -28,7 +28,8 @@ public class ApplicationConfig extends Application {
      * all resources defined in the project.
      * If required, comment out calling this method in getClasses().
      */
-    private void addRestResourceClasses(Set<Class<?>> resources) {
+    private void addRestResourceClasses(Set<Class<?>> resources) 
+    {    
         resources.add(com.vhs.service.VhsCategoryFacadeREST.class);
         resources.add(com.vhs.service.VhsCityFacadeREST.class);
         resources.add(com.vhs.service.VhsCountryFacadeREST.class);
