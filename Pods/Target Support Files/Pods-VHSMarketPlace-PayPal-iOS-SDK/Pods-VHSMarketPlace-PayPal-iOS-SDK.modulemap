@@ -1,6 +1,0 @@
-framework module PayPal_iOS_SDK {
-  umbrella header "Pods-VHSMarketPlace-PayPal-iOS-SDK-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -1,6 +1,0 @@
-framework module Pods_VHSMarketPlace {
-  umbrella header "Pods-VHSMarketPlace-umbrella.h"
-
-  export *
-  module * { export * }
-}
