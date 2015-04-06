@@ -1,0 +1,46 @@
+PODS:
+  - AFNetworking (2.5.2):
+    - AFNetworking/NSURLConnection (= 2.5.2)
+    - AFNetworking/NSURLSession (= 2.5.2)
+    - AFNetworking/Reachability (= 2.5.2)
+    - AFNetworking/Security (= 2.5.2)
+    - AFNetworking/Serialization (= 2.5.2)
+    - AFNetworking/UIKit (= 2.5.2)
+  - AFNetworking/NSURLConnection (2.5.2):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.5.2):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.5.2)
+  - AFNetworking/Security (2.5.2)
+  - AFNetworking/Serialization (2.5.2)
+  - AFNetworking/UIKit (2.5.2):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - BButton (4.0.2)
+  - FMDB (2.5):
+    - FMDB/standard (= 2.5)
+  - FMDB/common (2.5)
+  - FMDB/standard (2.5):
+    - FMDB/common
+  - Google-Maps-iOS-SDK (1.9.2)
+  - PayPal-iOS-SDK (2.9.0)
+
+DEPENDENCIES:
+  - AFNetworking
+  - BButton
+  - FMDB
+  - Google-Maps-iOS-SDK
+  - PayPal-iOS-SDK
+
+SPEC CHECKSUMS:
+  AFNetworking: fefbce9660acb17f48ae0011292d4da0f457bf36
+  BButton: ab0f2ed3b998ae73c5188b57d270d81e4a1eeb27
+  FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
+  Google-Maps-iOS-SDK: 4c008abdb68e03ae125c7f674be841d369e2b3de
+  PayPal-iOS-SDK: 11e0adaee51c9edef35d6864ecfa927a8cf673cd
+
+COCOAPODS: 0.36.1
