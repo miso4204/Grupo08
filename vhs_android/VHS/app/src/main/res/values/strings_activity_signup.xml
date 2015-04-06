@@ -1,0 +1,4 @@
+<resources>
+    <string name="title_activity_signup">Create Account</string>
+    <string name="action_continue">continue</string>
+</resources>
