@@ -1,0 +1,6 @@
+framework module BButton {
+  umbrella header "Pods-VHSMarketPlace-BButton-umbrella.h"
+
+  export *
+  module * { export * }
+}
