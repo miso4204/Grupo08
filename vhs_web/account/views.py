@@ -9,6 +9,7 @@ from django.core.context_processors import csrf
 from account.forms import RegisterForm, LoginForm
 from django.contrib.auth.models import User
 import requests
+import json
 from xml.etree import ElementTree
 
 def login(request):
@@ -49,12 +50,9 @@ def auth_view(request):
 	return render(request, 'account/login.html', {'form': form})
 
 def index(request):
-	print 'entre a index'
 	if esta_autenticado(request):
-		print 'estoy autenticado'
 		return render_to_response('account/index.html')
 	else:
-		print 'no estoy autenticado'
 		form = LoginForm(request.POST)
 		form.add_error(None, "Please enter your username and password")
 		return render(request, 'account/login.html', {'form': form})
@@ -71,13 +69,15 @@ def register(request):
 	if request.method == 'POST':
 		
 		form = RegisterForm(request.POST)
+
 		if form.is_valid():
 
 			email = form.cleaned_data['email']
 			password = form.cleaned_data['password']
-			full_namename = form.cleaned_data['name']
+			full_name = form.cleaned_data['name']
 			
 			# Opciones de productos
+
 			special_offer = form.cleaned_data['special_offer']
 			currency_administration = form.cleaned_data['currency_administration']
 			rating_report = form.cleaned_data['rating_report']
@@ -92,7 +92,32 @@ def register(request):
 			scalability = form.cleaned_data['scalability']
 			performance = form.cleaned_data['performance']
 
-			return HttpResponseRedirect('/account/index/')
+			url = 'http://jbossasvhsbackendservices-vhstourism.rhcloud.com/VhsBackEndServices/webresources/vhsuser/'
+			
+			data = { 
+				'mail': email,
+				'password': password,
+				'fullName': full_name,
+				'optionalFeatureSpecialOffer': special_offer,
+				'optionalFeatureCurrencyManagement': currency_administration,
+				'optionalFeatureSearchByLocation': location_search,
+				'optionalFeatureCashPayOnDelivery': pay_on_delivery,
+				'optionalFeatureSocialNetworks': social_network,
+				'optionalFeatureReportsByRating': rating_report,
+				'optionalFeatureReportsBySales': sale_report,
+				'optionalFeatureMultimediaVideo': multimedia_video,
+				'optionalFeatureMultimediaImages': multimedia_image,
+				'optionalFeatureMobile': mobile,
+				'optionalFeatureGoogleMapsEnabled': maps,
+				'optionalFeatureScalability': scalability,
+				'optionalFeaturePerformance': performance 
+			}
+			
+			headers = {'Content-Type': 'application/json'}
+			
+			response = requests.post(url, data=json.dumps(data), headers=headers)
+
+			return HttpResponseRedirect('/account/login/')
 	else:
 		form = RegisterForm()
 	return render(request, 'account/register.html', {'form': form})
