@@ -18,7 +18,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 /**
  * Service provider offer entity. Stores the turistic product description
@@ -141,18 +142,21 @@ public class VhsSpecialOffer implements Serializable
      * Associated offers
      */
     @OneToMany(mappedBy = "specialOffer" )
+    @LazyCollection(LazyCollectionOption.FALSE)
     private Collection<VhsOfferRating> vhsOfferRating;
     
     /**
      * Associated sales
      */
     @OneToMany(mappedBy = "specialOffer" )
+    @LazyCollection(LazyCollectionOption.FALSE)
     private Collection<VhsOfferSale> vhsOfferSale;
     
     /**
      * Associated sales
      */
     @OneToMany(mappedBy = "specialOffer" )
+    @LazyCollection(LazyCollectionOption.FALSE)
     private Collection<VhsOfferImage> vhsOfferImages;
     
     /**
