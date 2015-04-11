@@ -1,1 +1,1 @@
-../../../Google-Maps-iOS-SDK/GoogleMaps.framework/Versions/A/Headers/GMSUISettings.h
+../../../Google-Maps-iOS-SDK/googlemaps.framework/versions/current/Headers/GMSUISettings.h

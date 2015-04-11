@@ -13,8 +13,9 @@
 @property (assign, nonatomic) double price;
 @property (assign, nonatomic) float latitude;
 @property (assign, nonatomic) float longitude;
+@property (strong, nonatomic) NSString *descriptions;
+@property (strong, nonatomic) NSMutableArray * images;
 
-
-- (id)initWithId:(int)productid name:(NSString *)name image:(NSString *)image andPrice:(double) price andLatitude:(float)latitude andLongitude:(float)longitude;
+- (id)initWithId:(int)productid name:(NSString *)name image:(NSString *)image andPrice:(double) price andLatitude:(float)latitude andLongitude:(float)longitude andDescrioption:(NSString *)descriptions andimages:(NSMutableArray *)images;
 + (NSMutableArray *)listProducts;
 @end

@@ -1,1 +1,1 @@
-../../../Google-Maps-iOS-SDK/GoogleMaps.framework/Versions/A/Headers/GMSURLTileLayer.h
+../../../Google-Maps-iOS-SDK/googlemaps.framework/versions/current/Headers/GMSURLTileLayer.h

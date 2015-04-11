@@ -50,7 +50,6 @@
 {
       self.products = [Product listProducts];
     
-     NSLog(@"Products %@",self.products);
      [self.tableviewProducts reloadData];
 }
 - (void)didReceiveMemoryWarning {
@@ -85,7 +84,24 @@
     // Configure the cell...
     
 
-    cell.productImage.image = [self getImageFromURL:product.image];
+   // cell.productImage.image = [self getImageFromURL:product.image];
+    NSURL* url = [NSURL URLWithString:product.image];
+    NSURLRequest* request = [NSURLRequest requestWithURL:url];
+    
+    
+    [NSURLConnection sendAsynchronousRequest:request
+                                       queue:[NSOperationQueue mainQueue]
+                           completionHandler:^(NSURLResponse * response,
+                                               NSData * data,
+                                               NSError * error) {
+                               if (!error){
+                                   
+                                   UIImage * image = [UIImage imageWithData:data];
+                                   cell.productImage.image  = image;
+                               }
+                               
+                           }];
+
     cell.productImage.contentMode = UIViewContentModeScaleAspectFit;
     cell.productTitle.text = product.name;
     
@@ -139,7 +155,7 @@
 
     self.myProduct = product;
     
-    [self performSegueWithIdentifier:@"description" sender:product];
+    [self performSegueWithIdentifier:@"description" sender:self.myProduct];
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     NSLog(@"sender for book info %@",sender);

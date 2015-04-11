@@ -7,7 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+//FlatUI
+#import "UIFont+FlatUI.h"
+#import "UIColor+FlatUI.h"
+#import "UINavigationBar+FlatUI.h"
+#import "UIColor+FlatUI.h"
+#import "FUIButton.h"
+#import "BButton.h"
 
 @interface SearchViewController : UIViewController
+- (IBAction)getLocation:(id)sender;
+- (IBAction)setBeginDate:(id)sender;
+- (IBAction)setEndDate:(id)sender;
+@property (strong, nonatomic) IBOutlet BButton *btnBeginDate;
+@property (strong, nonatomic) IBOutlet BButton *btnEndDate;
 
 @end

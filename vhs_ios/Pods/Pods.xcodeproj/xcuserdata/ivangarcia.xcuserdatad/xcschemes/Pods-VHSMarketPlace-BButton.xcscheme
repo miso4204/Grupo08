@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EC93A974B77D6A8FA34A3D66"
+               BlueprintIdentifier = "1F1F474BFEE5EB5625736BE9"
                BuildableName = "BButton.framework"
                BlueprintName = "Pods-VHSMarketPlace-BButton"
                ReferencedContainer = "container:Pods.xcodeproj">

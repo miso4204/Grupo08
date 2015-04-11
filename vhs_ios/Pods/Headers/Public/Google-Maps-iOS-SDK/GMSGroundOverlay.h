@@ -1,1 +1,1 @@
-../../../Google-Maps-iOS-SDK/GoogleMaps.framework/Versions/A/Headers/GMSGroundOverlay.h
+../../../Google-Maps-iOS-SDK/googlemaps.framework/versions/current/Headers/GMSGroundOverlay.h

@@ -96,7 +96,24 @@
     Product *item = [appDelegate.shoppingCart objectAtIndex:[indexPath row]];
     
     // Configure the cell...
-    cell.productImage.image = [self getImageFromURL:item.image];
+   // cell.productImage.image = [self getImageFromURL:item.image];
+    NSURL* url = [NSURL URLWithString:item.image];
+    NSURLRequest* request = [NSURLRequest requestWithURL:url];
+    
+    
+    [NSURLConnection sendAsynchronousRequest:request
+                                       queue:[NSOperationQueue mainQueue]
+                           completionHandler:^(NSURLResponse * response,
+                                               NSData * data,
+                                               NSError * error) {
+                               if (!error){
+                                   
+                                   UIImage * image = [UIImage imageWithData:data];
+                                   cell.productImage.image  = image;
+                               }
+                               
+                           }];
+
     cell.productImage.contentMode = UIViewContentModeScaleAspectFit;
     cell.productTitle.text =item.name;
     

@@ -30,6 +30,13 @@
     
     [self.navigationController.navigationBar configureFlatNavigationBarWithColor:[UIColor colorFromHexCode:@"#e75659"]];
     
+    
+    [self.btnBeginDate setStyle:BButtonStyleBootstrapV3];
+    [self.btnBeginDate setType:BButtonTypeFacebook];
+    
+    [self.btnEndDate setStyle:BButtonStyleBootstrapV3];
+    [self.btnEndDate setType:BButtonTypeFacebook];
+    
 
 }
 
@@ -48,4 +55,12 @@
 }
 */
 
+- (IBAction)getLocation:(id)sender {
+}
+
+- (IBAction)setBeginDate:(id)sender {
+}
+
+- (IBAction)setEndDate:(id)sender {
+}
 @end

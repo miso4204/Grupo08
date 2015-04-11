@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0AA84DCEE9037DF1A6E5D57F"
+               BlueprintIdentifier = "7137E7E89EFFC08822634EBD"
                BuildableName = "FMDB.framework"
                BlueprintName = "Pods-VHSMarketPlace-FMDB"
                ReferencedContainer = "container:Pods.xcodeproj">

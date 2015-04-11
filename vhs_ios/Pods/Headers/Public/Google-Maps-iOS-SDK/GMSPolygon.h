@@ -1,1 +1,1 @@
-../../../Google-Maps-iOS-SDK/GoogleMaps.framework/Versions/A/Headers/GMSPolygon.h
+../../../Google-Maps-iOS-SDK/googlemaps.framework/versions/current/Headers/GMSPolygon.h

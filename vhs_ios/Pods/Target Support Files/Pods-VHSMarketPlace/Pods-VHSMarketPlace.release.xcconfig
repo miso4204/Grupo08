@@ -2,7 +2,7 @@ FRAMEWORK_SEARCH_PATHS = "$PODS_FRAMEWORK_BUILD_PATH" "$(PODS_ROOT)/Google-Maps-
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
 OTHER_CFLAGS = $(inherited) -iquote "$PODS_FRAMEWORK_BUILD_PATH/AFNetworking.framework/Headers" -iquote "$PODS_FRAMEWORK_BUILD_PATH/BButton.framework/Headers" -iquote "$PODS_FRAMEWORK_BUILD_PATH/FMDB.framework/Headers" -iquote "$PODS_FRAMEWORK_BUILD_PATH/Google_Maps_iOS_SDK.framework/Headers" -iquote "$PODS_FRAMEWORK_BUILD_PATH/PayPal_iOS_SDK.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"c++" -l"icucore" -l"z" -framework "AFNetworking" -framework "AVFoundation" -framework "BButton" -framework "CoreData" -framework "CoreGraphics" -framework "CoreLocation" -framework "CoreText" -framework "FMDB" -framework "GLKit" -framework "GoogleMaps" -framework "ImageIO" -framework "OpenGLES" -framework "PayPal_iOS_SDK" -framework "QuartzCore" -framework "SystemConfiguration"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"c++" -l"icucore" -l"z" -framework "AFNetworking" -framework "AVFoundation" -framework "BButton" -framework "CoreData" -framework "CoreGraphics" -framework "CoreLocation" -framework "CoreText" -framework "FMDB" -framework "GLKit" -framework "ImageIO" -framework "OpenGLES" -framework "PayPal_iOS_SDK" -framework "QuartzCore" -framework "SystemConfiguration" -framework "googlemaps"
 OTHER_LIBTOOLFLAGS = $(OTHER_LDFLAGS)
 PODS_FRAMEWORK_BUILD_PATH = $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods-VHSMarketPlace
 PODS_ROOT = ${SRCROOT}/Pods

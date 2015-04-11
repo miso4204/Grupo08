@@ -1,1 +1,1 @@
-../../../Google-Maps-iOS-SDK/GoogleMaps.framework/Versions/A/Headers/GMSCameraPosition.h
+../../../Google-Maps-iOS-SDK/googlemaps.framework/versions/current/Headers/GMSCameraPosition.h

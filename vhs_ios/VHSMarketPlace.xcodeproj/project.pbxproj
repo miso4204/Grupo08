@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		10032DC41ACCB7D9004B94E0 /* search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10032DC31ACCB7D9004B94E0 /* search@2x.png */; };
+		103D4BEB1AD39A38004F65E9 /* tsFactory@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 103D4BEA1AD39A38004F65E9 /* tsFactory@2x.png */; };
+		1055DEB01AD39D9600B23D3E /* KASlideShow.m in Sources */ = {isa = PBXBuildFile; fileRef = 1055DEAF1AD39D9600B23D3E /* KASlideShow.m */; };
+		1055DEB51AD3A01A00B23D3E /* hote4@2x.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1055DEB11AD3A01A00B23D3E /* hote4@2x.jpeg */; };
+		1055DEB61AD3A01A00B23D3E /* hote3@2x.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1055DEB21AD3A01A00B23D3E /* hote3@2x.jpeg */; };
+		1055DEB71AD3A01A00B23D3E /* hote2@2x.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1055DEB31AD3A01A00B23D3E /* hote2@2x.jpeg */; };
+		1055DEB81AD3A01A00B23D3E /* hote1@2x.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1055DEB41AD3A01A00B23D3E /* hote1@2x.jpeg */; };
+		107E922E1AD38FC400328F6C /* location@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 107E922D1AD38FC400328F6C /* location@2x.png */; };
 		10A148CD1AC8D8E20038DEF8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A148CC1AC8D8E20038DEF8 /* main.m */; };
 		10A148D01AC8D8E20038DEF8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A148CF1AC8D8E20038DEF8 /* AppDelegate.m */; };
 		10A148D31AC8D8E20038DEF8 /* VHSMarketPlace.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10A148D11AC8D8E20038DEF8 /* VHSMarketPlace.xcdatamodeld */; };
@@ -26,6 +33,11 @@
 		10A1491E1AC8F0E00038DEF8 /* cart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A1491C1AC8F0E00038DEF8 /* cart@2x.png */; };
 		10A1491F1AC8F0E00038DEF8 /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A1491D1AC8F0E00038DEF8 /* home@2x.png */; };
 		10A149221AC8F7220038DEF8 /* CartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A149211AC8F7220038DEF8 /* CartViewController.m */; };
+		10B52F381AD7878200D241E7 /* Client.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B52F351AD7878200D241E7 /* Client.m */; };
+		10B52F391AD7878200D241E7 /* Connections.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B52F371AD7878200D241E7 /* Connections.m */; };
+		10B52F3E1AD7887C00D241E7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B52F3B1AD7887C00D241E7 /* LoginViewController.m */; };
+		10B52F3F1AD7887C00D241E7 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B52F3D1AD7887C00D241E7 /* RegisterViewController.m */; };
+		10B52F421AD788B700D241E7 /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B52F411AD788B700D241E7 /* InitialViewController.m */; };
 		10BBADDD1AD063A400E8297D /* catalog@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10BBADDC1AD063A400E8297D /* catalog@2x.png */; };
 		10BBADE01AD0672B00E8297D /* CatalogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BBADDF1AD0672B00E8297D /* CatalogViewController.m */; };
 		10DAF6FF1ACDAE66000CC7B8 /* FUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DAF6EF1ACDAE66000CC7B8 /* FUIButton.m */; };
@@ -62,6 +74,14 @@
 
 /* Begin PBXFileReference section */
 		10032DC31ACCB7D9004B94E0 /* search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "search@2x.png"; path = "Resources/search@2x.png"; sourceTree = "<group>"; };
+		103D4BEA1AD39A38004F65E9 /* tsFactory@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tsFactory@2x.png"; path = "Resources/tsFactory@2x.png"; sourceTree = "<group>"; };
+		1055DEAE1AD39D9600B23D3E /* KASlideShow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KASlideShow.h; path = SlideTutorial/KASlideShow.h; sourceTree = SOURCE_ROOT; };
+		1055DEAF1AD39D9600B23D3E /* KASlideShow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KASlideShow.m; path = SlideTutorial/KASlideShow.m; sourceTree = SOURCE_ROOT; };
+		1055DEB11AD3A01A00B23D3E /* hote4@2x.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "hote4@2x.jpeg"; path = "Resources/hote4@2x.jpeg"; sourceTree = "<group>"; };
+		1055DEB21AD3A01A00B23D3E /* hote3@2x.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "hote3@2x.jpeg"; path = "Resources/hote3@2x.jpeg"; sourceTree = "<group>"; };
+		1055DEB31AD3A01A00B23D3E /* hote2@2x.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "hote2@2x.jpeg"; path = "Resources/hote2@2x.jpeg"; sourceTree = "<group>"; };
+		1055DEB41AD3A01A00B23D3E /* hote1@2x.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "hote1@2x.jpeg"; path = "Resources/hote1@2x.jpeg"; sourceTree = "<group>"; };
+		107E922D1AD38FC400328F6C /* location@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "location@2x.png"; path = "Resources/location@2x.png"; sourceTree = "<group>"; };
 		10A148C71AC8D8E20038DEF8 /* VHSMarketPlace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VHSMarketPlace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10A148CB1AC8D8E20038DEF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10A148CC1AC8D8E20038DEF8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -91,6 +111,16 @@
 		10A1491D1AC8F0E00038DEF8 /* home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "home@2x.png"; path = "Resources/home@2x.png"; sourceTree = "<group>"; };
 		10A149201AC8F7220038DEF8 /* CartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartViewController.h; sourceTree = "<group>"; };
 		10A149211AC8F7220038DEF8 /* CartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartViewController.m; sourceTree = "<group>"; };
+		10B52F341AD7878200D241E7 /* Client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Client.h; path = Connections/Client.h; sourceTree = SOURCE_ROOT; };
+		10B52F351AD7878200D241E7 /* Client.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Client.m; path = Connections/Client.m; sourceTree = SOURCE_ROOT; };
+		10B52F361AD7878200D241E7 /* Connections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Connections.h; path = Connections/Connections.h; sourceTree = SOURCE_ROOT; };
+		10B52F371AD7878200D241E7 /* Connections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Connections.m; path = Connections/Connections.m; sourceTree = SOURCE_ROOT; };
+		10B52F3A1AD7887C00D241E7 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		10B52F3B1AD7887C00D241E7 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		10B52F3C1AD7887C00D241E7 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		10B52F3D1AD7887C00D241E7 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		10B52F401AD788B700D241E7 /* InitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialViewController.h; sourceTree = "<group>"; };
+		10B52F411AD788B700D241E7 /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialViewController.m; sourceTree = "<group>"; };
 		10BBADDC1AD063A400E8297D /* catalog@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "catalog@2x.png"; path = "Resources/catalog@2x.png"; sourceTree = "<group>"; };
 		10BBADDE1AD0672B00E8297D /* CatalogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatalogViewController.h; sourceTree = "<group>"; };
 		10BBADDF1AD0672B00E8297D /* CatalogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatalogViewController.m; sourceTree = "<group>"; };
@@ -150,6 +180,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1055DEAD1AD39D8F00B23D3E /* tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				1055DEAE1AD39D9600B23D3E /* KASlideShow.h */,
+				1055DEAF1AD39D9600B23D3E /* KASlideShow.m */,
+			);
+			name = tutorial;
+			sourceTree = "<group>";
+		};
 		10A148BE1AC8D8E20038DEF8 = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +212,7 @@
 		10A148C91AC8D8E20038DEF8 /* VHSMarketPlace */ = {
 			isa = PBXGroup;
 			children = (
+				1055DEAD1AD39D8F00B23D3E /* tutorial */,
 				10DAF6D11ACDAD28000CC7B8 /* Design */,
 				10A149191AC8DC360038DEF8 /* Product.h */,
 				10A1491A1AC8DC360038DEF8 /* Product.m */,
@@ -184,9 +224,22 @@
 				10032DC31ACCB7D9004B94E0 /* search@2x.png */,
 				10DAF71B1ACDD9AF000CC7B8 /* flechablanca@2x.png */,
 				10EBE1B21AD217BF00CC496D /* photo-frame.png */,
+				107E922D1AD38FC400328F6C /* location@2x.png */,
+				103D4BEA1AD39A38004F65E9 /* tsFactory@2x.png */,
+				1055DEB11AD3A01A00B23D3E /* hote4@2x.jpeg */,
+				1055DEB21AD3A01A00B23D3E /* hote3@2x.jpeg */,
+				1055DEB31AD3A01A00B23D3E /* hote2@2x.jpeg */,
+				1055DEB41AD3A01A00B23D3E /* hote1@2x.jpeg */,
 				10A149031AC8DA510038DEF8 /* Cells */,
+				10B52F331AD7877500D241E7 /* ApiConnection */,
 				10A148CE1AC8D8E20038DEF8 /* AppDelegate.h */,
 				10A148CF1AC8D8E20038DEF8 /* AppDelegate.m */,
+				10B52F401AD788B700D241E7 /* InitialViewController.h */,
+				10B52F411AD788B700D241E7 /* InitialViewController.m */,
+				10B52F3A1AD7887C00D241E7 /* LoginViewController.h */,
+				10B52F3B1AD7887C00D241E7 /* LoginViewController.m */,
+				10B52F3C1AD7887C00D241E7 /* RegisterViewController.h */,
+				10B52F3D1AD7887C00D241E7 /* RegisterViewController.m */,
 				10A148D41AC8D8E20038DEF8 /* ViewController.h */,
 				10A148D51AC8D8E20038DEF8 /* ViewController.m */,
 				10A149201AC8F7220038DEF8 /* CartViewController.h */,
@@ -246,6 +299,17 @@
 				10A1490C1AC8DA570038DEF8 /* ProductCell.xib */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		10B52F331AD7877500D241E7 /* ApiConnection */ = {
+			isa = PBXGroup;
+			children = (
+				10B52F341AD7878200D241E7 /* Client.h */,
+				10B52F351AD7878200D241E7 /* Client.m */,
+				10B52F361AD7878200D241E7 /* Connections.h */,
+				10B52F371AD7878200D241E7 /* Connections.m */,
+			);
+			name = ApiConnection;
 			sourceTree = "<group>";
 		};
 		10DAF6D11ACDAD28000CC7B8 /* Design */ = {
@@ -376,17 +440,23 @@
 			files = (
 				10DAF7011ACDAE66000CC7B8 /* Lato-Bold.ttf in Resources */,
 				10BBADDD1AD063A400E8297D /* catalog@2x.png in Resources */,
+				1055DEB81AD3A01A00B23D3E /* hote1@2x.jpeg in Resources */,
 				10A1491E1AC8F0E00038DEF8 /* cart@2x.png in Resources */,
 				10DAF71C1ACDD9AF000CC7B8 /* flechablanca@2x.png in Resources */,
 				10EBE1B31AD217BF00CC496D /* photo-frame.png in Resources */,
 				10032DC41ACCB7D9004B94E0 /* search@2x.png in Resources */,
+				1055DEB61AD3A01A00B23D3E /* hote3@2x.jpeg in Resources */,
 				10A148D91AC8D8E20038DEF8 /* Main.storyboard in Resources */,
 				10A1490E1AC8DA570038DEF8 /* CheckoutHeaderView.xib in Resources */,
 				10A149101AC8DA570038DEF8 /* ProductCartCell.xib in Resources */,
 				10A1491F1AC8F0E00038DEF8 /* home@2x.png in Resources */,
+				107E922E1AD38FC400328F6C /* location@2x.png in Resources */,
+				103D4BEB1AD39A38004F65E9 /* tsFactory@2x.png in Resources */,
+				1055DEB51AD3A01A00B23D3E /* hote4@2x.jpeg in Resources */,
 				10A149121AC8DA570038DEF8 /* ProductCell.xib in Resources */,
 				10A148DE1AC8D8E20038DEF8 /* LaunchScreen.xib in Resources */,
 				10DAF7001ACDAE66000CC7B8 /* Lato-Black.ttf in Resources */,
+				1055DEB71AD3A01A00B23D3E /* hote2@2x.jpeg in Resources */,
 				10DAF7031ACDAE66000CC7B8 /* Lato-Regular.ttf in Resources */,
 				10DAF7021ACDAE66000CC7B8 /* Lato-Italic.ttf in Resources */,
 				10A148DB1AC8D8E20038DEF8 /* Images.xcassets in Resources */,
@@ -457,6 +527,8 @@
 			files = (
 				10A1490D1AC8DA570038DEF8 /* CheckoutHeaderview.m in Sources */,
 				10A148D01AC8D8E20038DEF8 /* AppDelegate.m in Sources */,
+				10B52F391AD7878200D241E7 /* Connections.m in Sources */,
+				10B52F421AD788B700D241E7 /* InitialViewController.m in Sources */,
 				10A148CD1AC8D8E20038DEF8 /* main.m in Sources */,
 				10A148D61AC8D8E20038DEF8 /* ViewController.m in Sources */,
 				10EBE1B61AD228DE00CC496D /* SearchViewController.m in Sources */,
@@ -465,13 +537,17 @@
 				10A148D31AC8D8E20038DEF8 /* VHSMarketPlace.xcdatamodeld in Sources */,
 				10A1491B1AC8DC360038DEF8 /* Product.m in Sources */,
 				10A149111AC8DA570038DEF8 /* ProductCell.m in Sources */,
+				10B52F3F1AD7887C00D241E7 /* RegisterViewController.m in Sources */,
 				10DAF7141ACDCA83000CC7B8 /* detailViewController.m in Sources */,
 				10DAF7091ACDAE66000CC7B8 /* UINavigationBar+FlatUI.m in Sources */,
 				10DAF7081ACDAE66000CC7B8 /* UIImage+FlatUI.m in Sources */,
 				10DAF7071ACDAE66000CC7B8 /* UIFont+FlatUI.m in Sources */,
+				10B52F381AD7878200D241E7 /* Client.m in Sources */,
 				10BBADE01AD0672B00E8297D /* CatalogViewController.m in Sources */,
 				10DAF7061ACDAE66000CC7B8 /* UIColor+FlatUI.m in Sources */,
+				1055DEB01AD39D9600B23D3E /* KASlideShow.m in Sources */,
 				10A149221AC8F7220038DEF8 /* CartViewController.m in Sources */,
+				10B52F3E1AD7887C00D241E7 /* LoginViewController.m in Sources */,
 				10A1490F1AC8DA570038DEF8 /* ProductCartCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

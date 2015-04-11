@@ -41,17 +41,27 @@
        // self.txtcode.text=self.booking.code;
         //self.txtplace.text=self.booking.name;
         //self.txtprice.text = self.booking.price;
-        NSLog(@"product %@",self.myProduct.name);
-        
-        self.imgProduct.image= [self getImageFromURL:self.myProduct.image ];
-        
-
+ 
         
     }
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    _slideshow.delegate = self;
+    [_slideshow setDelay:1]; // Delay between transitions
+    [_slideshow setTransitionDuration:.5]; // Transition duration
+    [_slideshow setTransitionType:KASlideShowTransitionFade]; // Choose a transition type (fade or slide)
+    [_slideshow setImagesContentMode:UIViewContentModeScaleAspectFill]; // Choose a content mode for images to display
+    [_slideshow addImagesFromResources:@[@"hote1@2x.jpeg",@"hote2@2x.jpeg",@"hote3@2x.jpeg",@"hote4@2x.jpeg"]]; // Add images from resources
+    
+    [_slideshow addGesture:KASlideShowGestureTap]; // Gesture to go previous/next directly on the image
+    
+    _slideshow.gestureRecognizers = nil;
+    [_slideshow addGesture:KASlideShowGestureSwipe];
+
     self.lblName.text = self.myProduct.name;
     CLLocationCoordinate2D position = CLLocationCoordinate2DMake(self.myProduct.latitude,	self.myProduct.longitude);
     GMSMarker *markerCC;
@@ -69,6 +79,7 @@
     
     [self.navigationController.navigationBar configureFlatNavigationBarWithColor:[UIColor colorFromHexCode:@"#e75659"]];
     
+    self.lblDescription.text = self.myProduct.descriptions;
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(0, 0, 32, 32);
     [button setImage:[UIImage imageNamed:@"flechablanca@2x.png"] forState:UIControlStateNormal];
@@ -305,4 +316,33 @@
     
     return result;
 }
+
+#pragma mark - KASlideShow delegate
+
+- (void)kaSlideShowWillShowNext:(KASlideShow *)slideShow
+{
+    NSLog(@"kaSlideShowWillShowNext, index : %@",@(slideShow.currentIndex));
+    
+    
+    
+}
+
+- (void)kaSlideShowWillShowPrevious:(KASlideShow *)slideShow
+{
+    NSLog(@"kaSlideShowWillShowPrevious, index : %@",@(slideShow.currentIndex));
+    
+    
+}
+
+- (void) kaSlideShowDidShowNext:(KASlideShow *)slideShow
+{
+    NSLog(@"kaSlideShowDidNext, index : %@",@(slideShow.currentIndex));
+}
+
+-(void)kaSlideShowDidShowPrevious:(KASlideShow *)slideShow
+{
+    NSLog(@"kaSlideShowDidPrevious, index : %@",@(slideShow.currentIndex));
+}
+
+
 @end

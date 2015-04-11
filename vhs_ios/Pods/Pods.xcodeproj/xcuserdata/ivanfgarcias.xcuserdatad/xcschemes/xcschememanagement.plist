@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Pods-VHSMarketPlace-AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-VHSMarketPlace-BButton.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-VHSMarketPlace-FMDB.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-VHSMarketPlace-PayPal-iOS-SDK.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-VHSMarketPlace.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>0DEC44196F66C63804C533FC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0E5692472A27BF437785B33A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>95B08CAA6C9FD9F17559E238</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BEEEEAFC136571AEE16731CF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BF1D929D81FF16310D5E46B1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

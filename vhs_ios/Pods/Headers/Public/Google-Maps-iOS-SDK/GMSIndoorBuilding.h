@@ -1,1 +1,1 @@
-../../../Google-Maps-iOS-SDK/GoogleMaps.framework/Versions/A/Headers/GMSIndoorBuilding.h
+../../../Google-Maps-iOS-SDK/googlemaps.framework/versions/current/Headers/GMSIndoorBuilding.h
