@@ -3,9 +3,7 @@ package com.tsfactory.user.android.vhs;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
-import android.app.Activity;
 import android.app.LoaderManager.LoaderCallbacks;
-import android.content.ContentResolver;
 import android.content.Context;
 import android.content.CursorLoader;
 import android.content.Intent;
@@ -29,24 +27,17 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.Switch;
 import android.widget.TextView;
 
 import com.tsfactory.user.android.vhs.util.Constants;
 
-import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
-import org.apache.http.util.EntityUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -62,13 +53,6 @@ import java.util.List;
 public class SignupActivity extends ActionBarActivity implements LoaderCallbacks<Cursor> {
 
     /**
-     * A dummy authentication store containing known user names and passwords.
-     * TODO: remove after connecting to a real authentication system.
-     */
-    private static final String[] DUMMY_CREDENTIALS = new String[]{
-            "foo@example.com:hello", "bar@example.com:world"
-    };
-    /**
      * Keep track of the login task to ensure we can cancel it if requested.
      */
     private UserSignupTask mAuthTask = null;
@@ -77,7 +61,6 @@ public class SignupActivity extends ActionBarActivity implements LoaderCallbacks
     private AutoCompleteTextView mEmailView;
     private EditText mPasswordView;
     private EditText mFullNameView;
-    private Switch mUserKindView;
     private View mProgressView;
     private View mSignupFormView;
 
@@ -103,9 +86,6 @@ public class SignupActivity extends ActionBarActivity implements LoaderCallbacks
         });
 
         mFullNameView = (EditText) findViewById(R.id.full_name);
-
-        mUserKindView = (Switch) findViewById(R.id.switch_kind);
-        mUserKindView.setChecked(true);
 
         Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
@@ -171,7 +151,6 @@ public class SignupActivity extends ActionBarActivity implements LoaderCallbacks
         String email = mEmailView.getText().toString();
         String password = mPasswordView.getText().toString();
         String fullName = mFullNameView.getText().toString();
-        String userKind;
 
         boolean cancel = false;
         View focusView = null;
@@ -209,13 +188,6 @@ public class SignupActivity extends ActionBarActivity implements LoaderCallbacks
             cancel = true;
         }
 
-        //Check user's kind
-        if(mUserKindView.isChecked()) {
-            userKind = "Provider";
-        } else {
-            userKind = "Customer";
-        }
-
         if (cancel) {
             // There was an error; don't attempt sign up and focus the first
             // form field with an error.
@@ -224,7 +196,7 @@ public class SignupActivity extends ActionBarActivity implements LoaderCallbacks
             // Show a progress spinner, and kick off a background task to
             // perform the user sign up attempt.
             showProgress(true);
-            mAuthTask = new UserSignupTask(this, email, password, fullName, userKind);
+            mAuthTask = new UserSignupTask(this, email, password, fullName);
             mAuthTask.execute((Void) null);
         }
     }
@@ -344,14 +316,12 @@ public class SignupActivity extends ActionBarActivity implements LoaderCallbacks
         private final String mEmail;
         private final String mPassword;
         private final String mFullName;
-        private final String mUserKind;
 
-        UserSignupTask(Context context, String email, String password, String fullName, String userKind) {
+        UserSignupTask(Context context, String email, String password, String fullName) {
             mContext = context;
             mEmail = email;
             mPassword = password;
             mFullName = fullName;
-            mUserKind = userKind;
         }
 
         @Override
@@ -370,7 +340,6 @@ public class SignupActivity extends ActionBarActivity implements LoaderCallbacks
                 jsonObject.accumulate("mail", mEmail);
                 jsonObject.accumulate("password", mPassword);
                 jsonObject.accumulate("fullName", mFullName);
-                //jsonObject.accumulate("userKind", mUserKind);
 
                 // Convert JSONObject to JSON to String
                 json = jsonObject.toString();
@@ -433,6 +402,3 @@ public class SignupActivity extends ActionBarActivity implements LoaderCallbacks
         }
     }
 }
-
-
-
