@@ -1,4 +1,10 @@
 <resources>
     <string name="title_activity_signup">Create Account</string>
     <string name="action_continue">continue</string>
+    <string name="action_register">Register</string>
+
+    <string name="prompt_full_name">Full name</string>
+    <string name="switch_service_provider">Service provider</string>
+    <string name="error_sign_up">There was an error creating the user</string>
+    <string name="error_invalid_fullname">Please use your full name</string>
 </resources>

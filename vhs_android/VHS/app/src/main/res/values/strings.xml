@@ -8,18 +8,35 @@
     <string name="tsfactory">Ts Factory</string>
     <string name="vhs">Virtual Hub Services</string>
     <string name="slogan">Ecological Tourism Marketplace</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_main">MainActivitySs</string>
 
     <string name="hello_world">Hello world!</string>
 
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
+    <string name="title_section1">My Properties</string>
+    <string name="title_section2">Add Property</string>
+    <string name="title_section3">My Profile</string>
+    <string name="title_section4">Log Out</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_example">Example action</string>
-    <string name="title_activity_basura">basura</string>
+
+    <!-- ADD PROPERTY -->
+    <string name="property_title">Property title</string>
+    <string name="main_description">Main description</string>
+    <string name="property_location">Town, city or village</string>
+    <string name="property_price">Default nightly price</string>
+    <string name="property_photo_message">Upload a photo to really sell your property to potential guests. Click <b>Add photo</b> and choose a picture to <b>upload</b></string>
+    <string name="property_add_photo">Add photo</string>
+
+    <string-array name="currency_array">
+        <item>US Dollar</item>
+        <item>Colombian Peso</item>
+        <item>Euro</item>
+    </string-array>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

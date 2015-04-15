@@ -12,7 +12,7 @@
         android:layout_width="wrap_content" android:layout_height="wrap_content"
         android:layout_marginBottom="8dp" android:visibility="gone" />
 
-    <ScrollView android:id="@+id/login_form" android:layout_width="match_parent"
+    <ScrollView android:id="@+id/signup_form" android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <LinearLayout android:id="@+id/email_login_form" android:layout_width="match_parent"
@@ -23,16 +23,27 @@
                 android:inputType="textEmailAddress" android:maxLines="1"
                 android:singleLine="true" />
 
+            <EditText android:id="@+id/full_name" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:hint="@string/prompt_full_name"
+                android:inputType="textPersonName"
+                android:maxLines="1" android:singleLine="true" />
+
             <EditText android:id="@+id/password" android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:hint="@string/prompt_password"
-                android:imeActionId="@+id/login"
-                android:imeActionLabel="@string/action_sign_in_short"
-                android:imeOptions="actionUnspecified" android:inputType="textPassword"
+                android:inputType="textPassword"
                 android:maxLines="1" android:singleLine="true" />
+
+            <Switch
+                android:layout_marginTop="16dp"
+                android:layout_gravity="right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/switch_service_provider"
+                android:id="@+id/switch_kind" />
 
             <Button android:id="@+id/email_sign_in_button" style="?android:textAppearanceSmall"
                 android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:layout_marginTop="16dp" android:text="@string/action_sign_in"
+                android:layout_marginTop="16dp" android:text="@string/action_register"
                 android:textStyle="bold" />
 
         </LinearLayout>

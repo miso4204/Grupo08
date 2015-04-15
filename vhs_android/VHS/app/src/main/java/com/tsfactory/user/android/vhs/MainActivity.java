@@ -1,26 +1,30 @@
 package com.tsfactory.user.android.vhs;
 
 import android.app.Activity;
+import android.net.Uri;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.content.Context;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.Gravity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
-import android.widget.ArrayAdapter;
-import android.widget.TextView;
+
+import com.tsfactory.user.android.vhs.fragments.AddPropertyFragment;
+import com.tsfactory.user.android.vhs.fragments.CameraFragment;
+import com.tsfactory.user.android.vhs.fragments.ItemFragment;
 
 
 public class MainActivity extends ActionBarActivity
-        implements NavigationDrawerFragment.NavigationDrawerCallbacks {
+        implements NavigationDrawerFragment.NavigationDrawerCallbacks,
+                   ItemFragment.OnItemFragmentInteractionListener,
+                   AddPropertyFragment.OnAddPropertyFragmentInteractionListener,
+                   CameraFragment.OnCameraFragmentInteractionListener{
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -31,6 +35,16 @@ public class MainActivity extends ActionBarActivity
      * Used to store the last screen title. For use in {@link #restoreActionBar()}.
      */
     private CharSequence mTitle;
+
+    /**
+     * Class to manage the items on the Navigation Drawer.
+     */
+    public class MenuItems {
+        public final static int MY_PROPERTIES = 0;
+        public final static int ADD_PROPERTY  = 1;
+        public final static int MY_PROFILE    = 2;
+        public final static int LOG_OUT       = 3;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,10 +64,33 @@ public class MainActivity extends ActionBarActivity
     @Override
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
+        /*
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
-                .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
-                .commit();
+        .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+        .commit();
+        */
+
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        switch (position) {
+            case MenuItems.MY_PROPERTIES:
+                //fragmentTransaction.replace(R.id.container, PlaceholderFragment.newInstance(position + 1));
+                fragmentTransaction.replace(R.id.container, ItemFragment.newInstance(position + 1));
+                break;
+
+            case MenuItems.ADD_PROPERTY:
+                fragmentTransaction.replace(R.id.container, AddPropertyFragment.newInstance(position + 1));
+                break;
+
+            case MenuItems.MY_PROFILE:
+                fragmentTransaction.replace(R.id.container, PlaceholderFragment.newInstance(position + 1));
+                break;
+
+            case MenuItems.LOG_OUT:
+                fragmentTransaction.replace(R.id.container, PlaceholderFragment.newInstance(position + 1));
+                break;
+        }
+        fragmentTransaction.commit();
     }
 
     public void onSectionAttached(int number) {
@@ -66,6 +103,9 @@ public class MainActivity extends ActionBarActivity
                 break;
             case 3:
                 mTitle = getString(R.string.title_section3);
+                break;
+            case 4:
+                mTitle = getString(R.string.title_section4);
                 break;
         }
     }
@@ -144,6 +184,21 @@ public class MainActivity extends ActionBarActivity
             ((MainActivity) activity).onSectionAttached(
                     getArguments().getInt(ARG_SECTION_NUMBER));
         }
+    }
+
+    @Override
+    public void onItemSelected(String id) {
+        Log.e("Main" , "ID: " + id);
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+        Log.e("Main" , "Uri: " + uri);
+    }
+
+    @Override
+    public void onCameraFragmentInteraction(Uri uri) {
+        Log.e("Main" , "Uri: " + uri);
     }
 
 }
