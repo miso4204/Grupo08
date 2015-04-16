@@ -31,40 +31,68 @@
 
 <script type="text/javascript">
 
-data = {{ data|safe }};
+ciudades = {{ ciudades|safe }};
+calificaciones = {{ calificaciones|safe }};
 fechaGeneracion = {{ fecha|safe }};
 
 $(function () {
     $('#container').highcharts({
+        chart: {
+            type: 'bar'
+        },
         title: {
-            text: 'Reporte de Rating',
-            x: -20 //center
+            text: 'Reporte de Rating'
         },
         subtitle: {
-            text: 'Fecha de generación: ' + fechaGeneracion.date,
-            x: -20
+            text: 'Fecha de generación: ' + fechaGeneracion.date
         },
         xAxis: {
-            categories: ['1 Estrella', '2 Estrellas', '3 Estrellas', '4 Estrellas', '5 Estrellas', '6 Estrellas', '7 Estrellas', '8 Estrellas', '9 Estrellas', '10 Estrellas']},
-        yAxis: {
+            categories: ciudades,
             title: {
-                text: 'Suma de rating'
+                text: 'Paquetes'
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Calificación por estrellas',
+                align: 'high'
             },
-            plotLines: [{
-                value: 0,
-                width: 1,
-                color: '#808080'
-            }]
+            labels: {
+                overflow: 'justify'
+            }
+        },
+        tooltip: {
+            valueSuffix: ' Estrellas'
+        },
+        plotOptions: {
+            bar: {
+                dataLabels: {
+                    enabled: true
+                }
+            }
         },
         legend: {
             layout: 'vertical',
             align: 'right',
-            verticalAlign: 'middle',
-            borderWidth: 0
+            verticalAlign: 'top',
+            x: -40,
+            y: 100,
+            floating: true,
+            borderWidth: 1,
+            backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+            shadow: true
         },
-        series: data
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'Estrellas',
+            data: calificaciones
+        }]
     });
 });
+
 </script>
 
 </head>

@@ -20,21 +20,33 @@ def rating_report(request):
 		date = {'date': '03/04/2015 11:58:00 PM'}
 
 		listado_productos = [{
-				'name': 'Bogota',
-				'data': [0,1,0,0,4,0,6,7,8,9]
+				'name': 'Paquete Bogota',
+				'data': 3.3
 			}, {
-				'name': 'Barranquilla',
-				'data': [0,1,0,0,0,5,6,7,16,9]
+				'name': 'Paquete Barranquilla',
+				'data': 4.3
 			}, {
-				'name': 'Cartagena',
-				'data': [0,2,2,0,0,10,6,0,0,0]
+				'name': 'Paquete Cartagena',
+				'data': 3.8
 			}, {
-				'name': 'Santa Marta',
-				'data': [0,0,0,6,4,0,6,0,8,18]
+				'name': 'Paquete Santa Marta',
+				'data': 3
+			}, {
+				'name': 'Paquete Amazonas',
+				'data': 4.9
 		}]
-		data = json.dumps(listado_productos)
+		
+		ciudades = []
+		calificaciones = []
+		for producto in listado_productos:
+			ciudades.append(producto['name'])
+			calificaciones.append(producto['data'])
 
-		return render(request, 'report/rating_report.html', {'data': data, 'fecha': date })
+		# Tambien se debe recibir el parametro de fecha
+		
+		return render(request, 'report/rating_report.html', {'ciudades': json.dumps(ciudades), 
+			'calificaciones': json.dumps(calificaciones), 
+			'fecha': date })
 	else:
 		form = LoginForm(request.POST)
 		form.add_error(None, "Please enter your username and password")
