@@ -8,6 +8,7 @@
 
 #import "Connections.h"
 #import "Client.h"
+#import "XMLReader.h"
 @implementation Connections
 
 
@@ -65,9 +66,33 @@
 
 }
 
--(void)getProducts:(NSDictionary *)params{
+-(void)getProducts{
+    
+
+    
+    [[Client sharedInstance] GET:@"vhscategory" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        // Parse the XML into a dictionary
+        NSError *parseError = nil;
+        NSDictionary *xmlDictionary = [XMLReader dictionaryForXMLString:string error:&parseError];
+        // Print the dictionary
+        NSLog(@"The response to the VHS Special offer request is:  %@", xmlDictionary);
+        [self.delegate GetProductsDidFinishSuccessfully:xmlDictionary];
+        
+    }
+                          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                              NSLog(@"error report %@",error);
+                          
+                              
+                              
+                              
+                          }];
+    
 
 
+
+}
+-(void)payProducts:(NSDictionary *)params{
 
 
 }

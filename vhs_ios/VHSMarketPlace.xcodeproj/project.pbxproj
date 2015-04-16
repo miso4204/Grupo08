@@ -60,6 +60,7 @@
 		10EBE1B31AD217BF00CC496D /* photo-frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 10EBE1B21AD217BF00CC496D /* photo-frame.png */; };
 		10EBE1B61AD228DE00CC496D /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10EBE1B51AD228DE00CC496D /* SearchViewController.m */; };
 		542B5F0B19F5C9B78F477854 /* Pods_VHSMarketPlace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F87363710C9210C32DE1462F /* Pods_VHSMarketPlace.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		F27F38881ADF61EB0060DFC1 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = F27F38871ADF61EB0060DFC1 /* XMLReader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +154,8 @@
 		10EBE1B51AD228DE00CC496D /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		640271BA198B2935FBC51021 /* Pods-VHSMarketPlace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VHSMarketPlace.release.xcconfig"; path = "Pods/Target Support Files/Pods-VHSMarketPlace/Pods-VHSMarketPlace.release.xcconfig"; sourceTree = "<group>"; };
 		9195B48D2D97B7F1339C7902 /* Pods-VHSMarketPlace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VHSMarketPlace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VHSMarketPlace/Pods-VHSMarketPlace.debug.xcconfig"; sourceTree = "<group>"; };
+		F27F38861ADF61EB0060DFC1 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMLReader.h; path = "../../../../../Downloads/XMLReader-master/XMLReader.h"; sourceTree = "<group>"; };
+		F27F38871ADF61EB0060DFC1 /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XMLReader.m; path = "../../../../../Downloads/XMLReader-master/XMLReader.m"; sourceTree = "<group>"; };
 		F87363710C9210C32DE1462F /* Pods_VHSMarketPlace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VHSMarketPlace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -315,6 +318,8 @@
 		10DAF6D11ACDAD28000CC7B8 /* Design */ = {
 			isa = PBXGroup;
 			children = (
+				F27F38861ADF61EB0060DFC1 /* XMLReader.h */,
+				F27F38871ADF61EB0060DFC1 /* XMLReader.m */,
 				10DAF6EE1ACDAE66000CC7B8 /* FUIButton.h */,
 				10DAF6EF1ACDAE66000CC7B8 /* FUIButton.m */,
 				10DAF6F01ACDAE66000CC7B8 /* Lato-Black.ttf */,
@@ -532,6 +537,7 @@
 				10A148CD1AC8D8E20038DEF8 /* main.m in Sources */,
 				10A148D61AC8D8E20038DEF8 /* ViewController.m in Sources */,
 				10EBE1B61AD228DE00CC496D /* SearchViewController.m in Sources */,
+				F27F38881ADF61EB0060DFC1 /* XMLReader.m in Sources */,
 				10DAF6FF1ACDAE66000CC7B8 /* FUIButton.m in Sources */,
 				10EBE1B11AD2070E00CC496D /* Category.m in Sources */,
 				10A148D31AC8D8E20038DEF8 /* VHSMarketPlace.xcdatamodeld in Sources */,

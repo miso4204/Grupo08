@@ -38,6 +38,7 @@
 {
     NSMutableArray *products = [[NSMutableArray alloc] init];
     
+
     Product *product = [[Product alloc] init];
     product.id=1;
     product.name=@"Hotel Lujoso";

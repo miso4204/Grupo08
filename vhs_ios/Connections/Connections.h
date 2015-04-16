@@ -24,6 +24,11 @@
 -(void)RegisterDidFinishWithFailure:(NSDictionary*)responseObject; //  LoginViewController
 
 
+-(void)GetProductsDidFinishSuccessfully:(NSDictionary*)responseObject; //  ViewController
+-(void)GetProductsDidFinishWithFailure:(NSDictionary*)responseObject; //  ViewController
+
+
+
 @end
 
 
@@ -43,6 +48,9 @@
 
 -(void)subCategories:(NSDictionary *)params;
 
--(void)getProducts:(NSDictionary *)params;
+-(void)getProducts;
+
+-(void)payProducts:(NSDictionary *)params;
+
 
 @end

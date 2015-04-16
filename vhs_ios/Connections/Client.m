@@ -16,8 +16,13 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         
-        _sharedInstance = [[Client alloc] initWithBaseURL:[NSURL URLWithString:@"http://45.55.169.95:3000/"]];
+        _sharedInstance = [[Client alloc] initWithBaseURL:[NSURL URLWithString:@"http://jbossasvhsbackendservices-vhstourism.rhcloud.com/VhsBackEndServices/webresources/"]];
         
+        _sharedInstance.responseSerializer = [AFHTTPResponseSerializer serializer];
+
+        
+    
+
     });
     
     return _sharedInstance;
@@ -26,28 +31,16 @@
 
 - (id)initWithBaseURL:(NSURL *)url{
     self = [super initWithBaseURL:url];
-    NSLog(@"NEW aaaaa URL %@",url);
     
     
     if (self) {
-        
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-        manager.responseSerializer = [AFJSONResponseSerializer serializer];
-        /*
-        [self setReachabilityManager:^(AFNetworkReachabilityStatus status) {
-            if (status == AFNetworkReachabilityStatusNotReachable) {
-                NSLog(@"API is NOT Reachable");
-                [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"isApiReachable"];
-                [[NSUserDefaults standardUserDefaults] synchronize];
-            }else{
-                NSLog(@"API is Reachable");
-                [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isApiReachable"];
-                [[NSUserDefaults standardUserDefaults] synchronize];
-            }
-        }];
-        */
-        
-        
+
+        [manager.requestSerializer setValue:@"application/json"
+                                 forHTTPHeaderField:@"Accept"];
+        [manager.requestSerializer setValue:@"application/json"
+                                 forHTTPHeaderField:@"Content-Type"];
+         
         
     }
     

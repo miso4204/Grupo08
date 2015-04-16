@@ -20,6 +20,8 @@
 @interface ViewController ()
 @property (strong, nonatomic) NSMutableArray *products;
 
+@property (strong, nonatomic)   Connections *ConnectionDelegate;
+
 @end
 
 @implementation ViewController
@@ -27,6 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.ConnectionDelegate = [[Connections alloc]init];
     
     self.title = @"Home";
     self.navigationController.navigationBar.titleTextAttributes = @{UITextAttributeFont: [UIFont boldFlatFontOfSize:18],
@@ -48,9 +51,14 @@
 }
 - (void)loadProducts
 {
-      self.products = [Product listProducts];
+    self.ConnectionDelegate.delegate = self;
     
-     [self.tableviewProducts reloadData];
+    [self.ConnectionDelegate getProducts];
+    
+    
+    //  self.products = [Product listProducts];
+    
+   //  [self.tableviewProducts reloadData];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -174,5 +182,27 @@
     }
     
 }
+-(void)GetProductsDidFinishSuccessfully:(NSDictionary*)responseObject{
+   
+    NSArray *items = [responseObject valueForKeyPath:@"collection.vhsCategory"];
+    NSLog(@"arraty %@",items);
+    
+    NSEnumerator *enumerator = [items objectEnumerator];
+    NSDictionary* item;
+    while (item = (NSDictionary*)[enumerator nextObject]) {
+        NSLog(@"clientId = %@",  [item objectForKey:@"text"]);
+
+    }
+
+}
+
+-(void)GetProductsDidFinishWithFailure:(NSDictionary*)responseObject{
+
+
+
+
+}
+
+
 
 @end

@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "Product.h"
+#import "Connections.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<ConnectionsDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableviewProducts;
 
