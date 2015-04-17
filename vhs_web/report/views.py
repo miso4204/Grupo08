@@ -7,6 +7,7 @@ from xml.etree import ElementTree
 from django.http import HttpResponse
 import requests
 import json
+import operator
 
 #Custom 
 
@@ -19,33 +20,31 @@ def rating_report(request):
 
 		date = {'date': '03/04/2015 11:58:00 PM'}
 
-		listado_productos = [{
-				'name': 'Paquete Bogota',
-				'data': 3.3
-			}, {
-				'name': 'Paquete Barranquilla',
-				'data': 4.3
-			}, {
-				'name': 'Paquete Cartagena',
-				'data': 3.8
-			}, {
-				'name': 'Paquete Santa Marta',
-				'data': 3
-			}, {
-				'name': 'Paquete Amazonas',
-				'data': 4.9
-		}]
+		listado_productos = {
+			"Paquete San Andres": 3.3,
+			"Paquete Barranquilla": 4.3,
+			"Paquete Cartagena": 3.8,
+			"Paquete Santa Marta": 3,
+			"Paquete Amazonas": 4.9
+		}
+
+		mejores_10 = sorted(listado_productos.iteritems(), key=lambda (k, v): (-v, k))[:10]
+		peores_10 = sorted(listado_productos.iteritems(), key=lambda (k, v): (v, k))[:10]
 		
-		ciudades = []
-		calificaciones = []
-		for producto in listado_productos:
-			ciudades.append(producto['name'])
-			calificaciones.append(producto['data'])
+		mejores_10 = dict(mejores_10)
+		mejores_ciudades = mejores_10.keys()
+		mejores_calificaciones = mejores_10.values()
+
+		peores_10 = dict(peores_10)
+		peores_ciudades = peores_10.keys()
+		peores_calificaciones = peores_10.values()
 
 		# Tambien se debe recibir el parametro de fecha
 		
-		return render(request, 'report/rating_report.html', {'ciudades': json.dumps(ciudades), 
-			'calificaciones': json.dumps(calificaciones), 
+		return render(request, 'report/rating_report.html', {'mejores_ciudades': mejores_ciudades, 
+			'mejores_calificaciones': mejores_calificaciones, 
+			'peores_ciudades': peores_ciudades,
+			'peores_calificaciones': peores_calificaciones,
 			'fecha': date })
 	else:
 		form = LoginForm(request.POST)

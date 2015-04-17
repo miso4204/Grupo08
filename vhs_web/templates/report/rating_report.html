@@ -31,12 +31,14 @@
 
 <script type="text/javascript">
 
-ciudades = {{ ciudades|safe }};
-calificaciones = {{ calificaciones|safe }};
+mejores_ciudades = {{ mejores_ciudades|safe }};
+mejores_calificaciones = {{ mejores_calificaciones|safe }};
+peores_ciudades = {{ peores_ciudades|safe }};
+peores_calificaciones = {{ peores_calificaciones|safe }};
 fechaGeneracion = {{ fecha|safe }};
 
 $(function () {
-    $('#container').highcharts({
+    $('#container_best').highcharts({
         chart: {
             type: 'bar'
         },
@@ -47,7 +49,7 @@ $(function () {
             text: 'Fecha de generación: ' + fechaGeneracion.date
         },
         xAxis: {
-            categories: ciudades,
+            categories: mejores_ciudades,
             title: {
                 text: 'Paquetes'
             }
@@ -88,9 +90,67 @@ $(function () {
         },
         series: [{
             name: 'Estrellas',
-            data: calificaciones
+            data: mejores_calificaciones
         }]
     });
+
+    $('#container_worst').highcharts({
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Reporte de Rating'
+        },
+        subtitle: {
+            text: 'Fecha de generación: ' + fechaGeneracion.date
+        },
+        xAxis: {
+            categories: peores_ciudades,
+            title: {
+                text: 'Paquetes'
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Calificación por estrellas',
+                align: 'high'
+            },
+            labels: {
+                overflow: 'justify'
+            }
+        },
+        tooltip: {
+            valueSuffix: ' Estrellas'
+        },
+        plotOptions: {
+            bar: {
+                dataLabels: {
+                    enabled: true
+                }
+            }
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            x: -40,
+            y: 100,
+            floating: true,
+            borderWidth: 1,
+            backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+            shadow: true
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'Estrellas',
+            data: peores_calificaciones
+        }]
+    });
+
+
 });
 
 </script>
@@ -122,18 +182,25 @@ $(function () {
 <div id="services" name="services">
   <div class="container">
     <div class="row">
-      <h2 class="centered">Reporte de Rating</h2>
+      <h2 class="centered">Reporte de Rating - Mejores 10</h2>
       <hr>
       <div class="col-lg-8 col-lg-offset-2">
-        <p class="large">En este reporte muestra cuales fueron los 5 paquetes que mejor calificación tuvieron.</p>
+        <p class="large">Este reporte muestra los 10 mejores paquetes.</p>
       </div>
-      <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+      <div id="container_best" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+    </div>
+    <div class="row">
+      <h2 class="centered">Reporte de Rating - Mejores 10</h2>
+      <hr>
+      <div class="col-lg-8 col-lg-offset-2">
+        <p class="large">Este reporte muestra los 10 peores paquetes.</p>
+      </div>
+      <div id="container_worst" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
     </div>
     <!-- row --> 
   </div>
 </div>
 <!-- container --> 
-
 
 
 <div id="footerwrap">
