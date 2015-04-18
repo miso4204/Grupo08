@@ -10,6 +10,7 @@
 
 <!-- Bootstrap core CSS -->
 <link href="{% static "assets/css/bootstrap.css" %}" rel="stylesheet">
+<link href="{% static "assets/css/bootstrap-datepicker.css" %}" rel="stylesheet">
 
 
 <!-- Custom CSS -->
@@ -150,8 +151,20 @@ $(function () {
         }]
     });
 
+    $('.datepicker_start').datepicker({
+      format: 'dd/mm/yyyy',
+      autoclose: true,
+      clearBtn: true
+    });
 
+    $('.datepicker_end').datepicker({
+      format: 'dd/mm/yyyy',
+      autoclose: true,
+      clearBtn: true
+    });
 });
+
+
 
 </script>
 
@@ -175,6 +188,40 @@ $(function () {
       </div>
       <!--/.nav-collapse --> 
     </div>
+  </div>
+</div>
+
+<!-- ==== CONTACT ==== -->
+<div id="contact" name="contact">
+  <div class="container">
+    <div class="row">
+      <h2 class="centered">REPORTE DE RATING</h2>
+      <hr>
+    </div>
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 centered">
+        <p>Por favor escoge las fechas para la generación de tu reporte.</p>
+        {% block content %}
+        <form action='/report/rating/' id="dates" method="post" class="form" role="form">
+          {% csrf_token %}
+          <div class="row form-group">
+            <input id="start_date" name="start_date" placeholder="Fecha Inicial" class="datepicker_start" type="text" >
+          </div>
+          <div class="row form-group">
+            <input id="end_date" name="end_date" placeholder="Fecha Final" class="datepicker_end" type="text" >  
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-md-12">
+              <button class="btn btn btn-lg" type="submit">Graficar</button>
+            </div>
+          </div>
+        </form>
+        {% endblock %}
+        <!-- form --> 
+      </div>
+    </div>
+    <!-- row --> 
+    
   </div>
 </div>
 
@@ -224,6 +271,7 @@ $(function () {
 <!-- Placed at the end of the document so the pages load faster --> 
 
 <script type="text/javascript" src="{% static "assets/js/bootstrap.min.js" %}" ></script> 
+<script type="text/javascript" src="{% static "assets/js/bootstrap-datepicker.js" %}" ></script> 
 <script type="text/javascript" src="{% static "assets/js/retina.js" %}" ></script> 
 <script type="text/javascript" src="{% static "assets/js/jquery.easing.1.3.js" %}" ></script> 
 <script type="text/javascript" src="{% static "assets/js/smoothscroll.js" %}" ></script> 

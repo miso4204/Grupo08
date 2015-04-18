@@ -12,12 +12,21 @@ import operator
 #Custom 
 
 from account.views import *
+from report.forms import RatingForm
 
 
 def rating_report(request):
 
 	if esta_autenticado(request):
 
+		if request.method == 'POST':
+
+			form = RatingForm(request.POST)
+
+			if form.is_valid():
+				start_date = form.cleaned_data['start_date']
+				end_date = form.cleaned_data['end_date']
+				
 		date = {'date': '03/04/2015 11:58:00 PM'}
 
 		listado_productos = {
@@ -39,13 +48,12 @@ def rating_report(request):
 		peores_ciudades = peores_10.keys()
 		peores_calificaciones = peores_10.values()
 
-		# Tambien se debe recibir el parametro de fecha
-		
 		return render(request, 'report/rating_report.html', {'mejores_ciudades': mejores_ciudades, 
 			'mejores_calificaciones': mejores_calificaciones, 
 			'peores_ciudades': peores_ciudades,
 			'peores_calificaciones': peores_calificaciones,
 			'fecha': date })
+		
 	else:
 		form = LoginForm(request.POST)
 		form.add_error(None, "Please enter your username and password")
