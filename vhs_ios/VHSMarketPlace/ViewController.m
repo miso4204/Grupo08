@@ -17,7 +17,11 @@
 #import "UIColor+FlatUI.h"
 #import "FUIButton.h"
 #import "detailViewController.h"
-@interface ViewController ()
+@interface ViewController (){
+    Product * prod;
+
+
+}
 @property (strong, nonatomic) NSMutableArray *products;
 
 @property (strong, nonatomic)   Connections *ConnectionDelegate;
@@ -56,6 +60,7 @@
     [self.ConnectionDelegate getProducts];
     
     
+    
     //  self.products = [Product listProducts];
     
    //  [self.tableviewProducts reloadData];
@@ -78,7 +83,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.products count];
+    return [self.returnP count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -87,7 +92,7 @@
     
     ProductCell *cell = (ProductCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    Product *product = [self.products objectAtIndex:[indexPath row]];
+    Product *product = [self.returnP objectAtIndex:[indexPath row]];
     
     // Configure the cell...
     
@@ -130,7 +135,7 @@
 
 - (void)addToCart:(UIButton *)button
 {
-    Product *product = [self.products objectAtIndex:button.tag];
+    Product *product = [self.returnP objectAtIndex:button.tag];
     
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 
@@ -159,7 +164,7 @@
 }
 - (void)viewDetail:(UIButton *)button
 {
-    Product *product = [self.products objectAtIndex:button.tag];
+    Product *product = [self.returnP objectAtIndex:button.tag];
 
     self.myProduct = product;
     
@@ -183,17 +188,85 @@
     
 }
 -(void)GetProductsDidFinishSuccessfully:(NSDictionary*)responseObject{
-   
-    NSArray *items = [responseObject valueForKeyPath:@"collection.vhsCategory"];
-    NSLog(@"arraty %@",items);
     
+    NSArray *items = [responseObject valueForKeyPath:@"collection.vhsSpecialOffer"];
+    NSLog(@"arraty %@",items);
+    self.returnP = [[NSMutableArray alloc]init];
     NSEnumerator *enumerator = [items objectEnumerator];
     NSDictionary* item;
+    int count = 0;
     while (item = (NSDictionary*)[enumerator nextObject]) {
-        NSLog(@"clientId = %@",  [item objectForKey:@"text"]);
+        if (count ==0) {
+            prod = [[Product alloc]init];
+            prod.longitude = [[item objectForKey:@"text"] floatValue];
+            count ++;
+            NSLog(@"proeucts0 = %@",  [item objectForKey:@"text"]);
+            
 
+        }
+        
+        if (count ==1) {
+            prod.longitude = [[item objectForKey:@"text"] floatValue];
+            count ++;
+            NSLog(@"proeucts1 = %@",  [item objectForKey:@"text"]);
+
+            
+        }else if (count ==2){
+            prod.longitude =[[item objectForKey:@"text"] floatValue];
+            count ++;
+            NSLog(@"proeucts2 = %@",  [item objectForKey:@"text"]);
+
+            
+        }else if (count ==3){
+            prod.startDate =[item objectForKey:@"text"];
+            count ++;
+            NSLog(@"proeucts3 = %@",  [item objectForKey:@"text"]);
+
+            
+        }else if (count == 4) {
+            prod.image = [item objectForKey:@"text"];
+            count ++;
+            NSLog(@"proeucts4 = %@",  [item objectForKey:@"text"]);
+
+            
+        }else if (count ==5){
+            prod.price = [[item objectForKey:@"text"] intValue];
+            count ++;
+            NSLog(@"proeucts5 = %@",  [item objectForKey:@"text"]);
+
+        }else if (count ==6){
+            prod.name = [item objectForKey:@"text"];
+            count ++;
+            NSLog(@"proeucts6 = %@",  [item objectForKey:@"text"]);
+
+        }else if (count ==7){
+            prod.latitude =[[item objectForKey:@"text"] floatValue];
+            count ++;
+            NSLog(@"proeucts7 = %@",  [item objectForKey:@"text"]);
+
+        }else if (count ==8){
+            prod.descriptions =[item objectForKey:@"text"];
+            count ++;
+            NSLog(@"proeucts8 = %@",  [item objectForKey:@"text"]);
+
+        }else if (count ==9){
+            NSLog(@"proeucts9 = %@",  [item objectForKey:@"text"]);
+            prod.startDate = [item objectForKey:@"text"];
+            count ++;
+        }else if (count ==10){
+            prod.id =[[item objectForKey:@"text"] intValue];
+            count =0;
+            [self.returnP addObject:prod];
+
+            NSLog(@"proeucts10 = %@",  [item objectForKey:@"text"]);
+
+        }
+        
+        
     }
-
+    [self.tableviewProducts reloadData];
+    
+    
 }
 
 -(void)GetProductsDidFinishWithFailure:(NSDictionary*)responseObject{

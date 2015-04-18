@@ -28,6 +28,9 @@
 -(void)GetProductsDidFinishWithFailure:(NSDictionary*)responseObject; //  ViewController
 
 
+-(void)GetCategoriesDidFinishSuccessfully:(NSDictionary*)responseObject; //  CatalogViewController
+-(void)GetCategoriesDidFinishWithFailure:(NSDictionary*)responseObject; //  CatalogViewController
+
 
 @end
 
@@ -44,7 +47,7 @@
 
 -(void)Register:(NSDictionary *)params;
 
--(void)getCategories:(NSDictionary *)params;
+-(void)getCategories;
 
 -(void)subCategories:(NSDictionary *)params;
 

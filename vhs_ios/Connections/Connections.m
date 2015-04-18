@@ -54,9 +54,27 @@
 
 
 
--(void)getCategories:(NSDictionary *)params{
+-(void)getCategories{
 
-
+    
+    
+    [[Client sharedInstance] GET:@"vhscategory" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        // Parse the XML into a dictionary
+        NSError *parseError = nil;
+        NSDictionary *xmlDictionary = [XMLReader dictionaryForXMLString:string error:&parseError];
+        // Print the dictionary
+        NSLog(@"The response to the VHS categories  request is:  %@", xmlDictionary);
+        [self.delegate GetCategoriesDidFinishSuccessfully:xmlDictionary];
+        
+    }
+                         failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                             NSLog(@"error report %@",error);
+                             
+                             
+                             
+                             
+                         }];
 
 }
 
@@ -68,25 +86,33 @@
 
 -(void)getProducts{
     
-
-    
-    [[Client sharedInstance] GET:@"vhscategory" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [[Client sharedInstance] GET:@"vhsspecialoffer" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         // Parse the XML into a dictionary
         NSError *parseError = nil;
         NSDictionary *xmlDictionary = [XMLReader dictionaryForXMLString:string error:&parseError];
         // Print the dictionary
+        
         NSLog(@"The response to the VHS Special offer request is:  %@", xmlDictionary);
-        [self.delegate GetProductsDidFinishSuccessfully:xmlDictionary];
+        @try {
+            [self.delegate GetProductsDidFinishSuccessfully:xmlDictionary];
+        }
+        @catch (NSException *exception) {
+        }
+        @finally {
+        }
         
     }
-                          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                              NSLog(@"error report %@",error);
-                          
-                              
-                              
-                              
-                          }];
+                         failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                             NSLog(@"error report %@",error);
+                             
+                             
+                             
+                             
+                         }];
+    
+
+
     
 
 

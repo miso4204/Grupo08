@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Connections.h"
 
-@interface CatalogViewController : UIViewController
+@interface CatalogViewController : UIViewController<ConnectionsDelegate>
 
 @property (nonatomic, retain) NSMutableArray *returnP;
 @property (strong, nonatomic) IBOutlet UICollectionView *collections;

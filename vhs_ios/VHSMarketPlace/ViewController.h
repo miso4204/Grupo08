@@ -13,6 +13,7 @@
 @interface ViewController : UIViewController<ConnectionsDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableviewProducts;
+@property (nonatomic, retain) NSMutableArray *returnP;
 
 
 @property (strong, nonatomic)   Product *myProduct;

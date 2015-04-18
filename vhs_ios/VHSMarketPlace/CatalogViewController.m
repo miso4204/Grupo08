@@ -15,7 +15,10 @@
 #import "FUIButton.h"
 #import "Product.h"
 #import "Category.h"
-@interface CatalogViewController ()
+@interface CatalogViewController (){
+Categoryc * cat;
+}
+@property (strong, nonatomic)   Connections *ConnectionDelegate;
 
 @end
 
@@ -24,7 +27,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    self.ConnectionDelegate = [[Connections alloc]init];
+
     self.title = @"Categories";
     self.navigationController.navigationBar.titleTextAttributes = @{UITextAttributeFont: [UIFont boldFlatFontOfSize:18],
                                                                     UITextAttributeTextColor: [UIColor whiteColor]};
@@ -56,13 +60,18 @@
     [self loadCatalog];
     
     
+    
 }
 
 -(void)loadCatalog{
 
-self.returnP =  [Categoryc listcategories];
+    //self.returnP =  [Categoryc listcategories];
     
-    [self.collections reloadData];
+   // [self.collections reloadData];
+    
+    self.ConnectionDelegate.delegate = self;
+    
+    [self.ConnectionDelegate getCategories];
     
 }
 
@@ -116,6 +125,41 @@ self.returnP =  [Categoryc listcategories];
     return cell;
 }
 
+
+-(void)GetCategoriesDidFinishSuccessfully:(NSDictionary*)responseObject{
+
+    NSArray *items = [responseObject valueForKeyPath:@"collection.vhsCategory"];
+    NSLog(@"arraty %@",items);
+    
+    NSEnumerator *enumerator = [items objectEnumerator];
+    NSDictionary* item;
+    int count = 0;
+    while (item = (NSDictionary*)[enumerator nextObject]) {
+        NSLog(@"clientId = %@",  [item objectForKey:@"text"]);
+        
+        if (count ==0) {
+            cat = [[Categoryc alloc]init];
+            cat.id = [[item objectForKey:@"text"] intValue];
+            count ++;
+
+            
+        }else if (count ==1){
+            cat.name =[item objectForKey:@"text"];
+            count=0;
+            
+           [self.returnP addObject:cat];
+        }
+        
+    
+    }
+    [self.collections reloadData];
+
+}
+-(void)GetCategoriesDidFinishWithFailure:(NSDictionary*)responseObject{
+
+
+
+}
 
 
 @end

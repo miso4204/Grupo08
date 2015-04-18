@@ -13,7 +13,7 @@
 
 @implementation Product
 
-- (id)initWithId:(int)productid name:(NSString *)name image:(NSString *)image andPrice:(double)price andLatitude:(float)latitude andLongitude:(float)longitude andDescrioption:(NSString *)descriptions andimages:(NSMutableArray *)images
+- (id)initWithId:(int)productid name:(NSString *)name image:(NSString *)image andPrice:(double)price andLatitude:(float)latitude andLongitude:(float)longitude andDescrioption:(NSString *)descriptions andimages:(NSMutableArray *)images andEndDate:(NSString *)endDate andStartDate:(NSString *)startDate
 {
     self = [super init];
 
@@ -27,6 +27,8 @@
         self.longitude = longitude;
         self.descriptions = descriptions;
         self.images =images;
+        self.endDate = endDate;
+        self.startDate = startDate;
         
         
     }
