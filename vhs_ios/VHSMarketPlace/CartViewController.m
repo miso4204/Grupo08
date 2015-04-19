@@ -22,8 +22,8 @@
 @property (strong, nonatomic, readwrite) PayPalConfiguration *payPalConfiguration;
 
 @end
-
 @implementation CartViewController
+@synthesize alert=_alert;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -162,42 +162,17 @@
 }
 - (void)checkout:(UIButton *)button
 {
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [self showAlertPayment];
+}
+-(void)showAlertPayment{
 
-    // Create a PayPalPayment
-    PayPalPayment *payment = [[PayPalPayment alloc] init];
+    self.alert  = [[UIAlertView alloc]initWithTitle:@"Métodos de pago" message:@"Porfavor selecciona tu método de pago" delegate:nil cancelButtonTitle:@"Cancelar" otherButtonTitles:@"PayPal",@"Tarjeta de crédito",@"efectivo", nil];
     
-    // Amount, currency, and description
-    payment.amount = [NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithDouble:[appDelegate totalAmount]] decimalValue]];
-    payment.currencyCode = @"USD";
-    payment.shortDescription = @"VHS MarketPlace";
+    self.alert .tag = kAlertCheckOut;
     
-    // Use the intent property to indicate that this is a "sale" payment,
-    // meaning combined Authorization + Capture. To perform Authorization only,
-    // and defer Capture to your server, use PayPalPaymentIntentAuthorize.
-    payment.intent = PayPalPaymentIntentSale;
-    
-    // Check whether payment is processable.
-    if (!payment.processable) {
-        // If, for example, the amount was negative or the shortDescription was empty, then
-        // this payment would not be processable. You would want to handle that here.
-        
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Payment not processable"
-                                                            message:@"The payment is not processable"
-                                                           delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alertView show];
-        
-        return;
-    }
-    
-    // Create a PayPalPaymentViewController.
-    PayPalPaymentViewController *paymentViewController;
-    paymentViewController = [[PayPalPaymentViewController alloc] initWithPayment:payment
-                                                                   configuration:self.payPalConfiguration
-                                                                        delegate:self];
-    
-    // Present the PayPalPaymentViewController.
-    [self.navigationController presentViewController:paymentViewController animated:YES completion:nil];
+    [self.alert  show];
+
+
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
@@ -225,7 +200,7 @@
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
     
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Payment cancelled" message:@"The payment was cancelled"
-                                                       delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                                                       delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alertView show];
 }
 
@@ -264,10 +239,78 @@
 
 }
 -(void)viewDidAppear:(BOOL)animated{
-    
+    [CardIOUtilities preload];
+
     [[[[[self tabBarController] tabBar] items]
       objectAtIndex:1] setBadgeValue:nil];
 }
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (alertView.tag == kAlertCheckOut) {
+        
+        if (buttonIndex == 0) {
+            
+            AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+            
+            // Create a PayPalPayment
+            PayPalPayment *payment = [[PayPalPayment alloc] init];
+            
+            // Amount, currency, and description
+            payment.amount = [NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithDouble:[appDelegate totalAmount]] decimalValue]];
+            payment.currencyCode = @"USD";
+            payment.shortDescription = @"VHS MarketPlace";
+            
+            // Use the intent property to indicate that this is a "sale" payment,
+            // meaning combined Authorization + Capture. To perform Authorization only,
+            // and defer Capture to your server, use PayPalPaymentIntentAuthorize.
+            payment.intent = PayPalPaymentIntentSale;
+            
+            // Check whether payment is processable.
+            if (!payment.processable) {
+                // If, for example, the amount was negative or the shortDescription was empty, then
+                // this payment would not be processable. You would want to handle that here.
+                
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Payment not processable"
+                                                                    message:@"The payment is not processable"
+                                                                   delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                [alertView show];
+                
+                return;
+            }
+            
+            // Create a PayPalPaymentViewController.
+            PayPalPaymentViewController *paymentViewController;
+            paymentViewController = [[PayPalPaymentViewController alloc] initWithPayment:payment
+                                                                           configuration:self.payPalConfiguration
+                                                                                delegate:self];
+            
+            // Present the PayPalPaymentViewController.
+            [self.navigationController presentViewController:paymentViewController animated:YES completion:nil];
+            
+            
+        }else if (buttonIndex ==1) {
+            CardIOPaymentViewController *scanViewController = [[CardIOPaymentViewController alloc] initWithPaymentDelegate:self];
+            [self presentViewController:scanViewController animated:YES completion:nil];
+        
+        }else if (buttonIndex == 2){
+            
+            // call the api with the payment and the products
+        
+        
+        }
+    }
 
-
+}
+- (void)cardIOView:(CardIOView *)cardIOView didScanCard:(CardIOCreditCardInfo *)info {
+    if (info) {
+        // The full card number is available as info.cardNumber, but don't log that!
+        NSLog(@"Received card info. Number: %@, expiry: %02i/%i, cvv: %@.", info.redactedCardNumber, info.expiryMonth, info.expiryYear, info.cvv);
+        // Use the card info...
+    }
+    else {
+        NSLog(@"User cancelled payment info");
+        // Handle user cancellation here...
+    }
+    
+    [cardIOView removeFromSuperview];
+}
 @end

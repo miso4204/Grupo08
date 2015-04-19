@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BEEEEAFC136571AEE16731CF"
+               BlueprintIdentifier = "1185B171098F58F38D499DCF"
                BuildableName = "PayPal_iOS_SDK.framework"
                BlueprintName = "Pods-VHSMarketPlace-PayPal-iOS-SDK"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -11,6 +11,7 @@ pod 'FMDB'
 pod 'BButton'
 pod 'PayPal-iOS-SDK'
 pod 'Google-Maps-iOS-SDK'
+pod 'CardIO'
 end
 
 target 'VHSMarketPlaceTests' do

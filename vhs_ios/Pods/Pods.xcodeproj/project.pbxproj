@@ -7,809 +7,870 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0338D6EEF81A8392818B6CB1 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6B1A192D9205CF106C0FF1 /* AFHTTPSessionManager.m */; };
-		06304EF2C74789CC72D0D67B /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F63FDC966CB3DDEA00E0101 /* AFURLConnectionOperation.m */; };
-		0745A8B5D0C26E1F080933D6 /* PayPalPayment.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C97B8C0DA9530D2C1851788 /* PayPalPayment.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0FA680AFAB028CA7B8FBA5E0 /* UIAlertView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = FBEC225321A7DEECEEB88D66 /* UIAlertView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		188C07B16BDA2D9A59BF2D25 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4089FA21EB7C6F9664E21DDE /* FontAwesome.ttf */; };
-		18F5DFF88DFD14E764EC4BA5 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4B74A7FD5F9E0D5E3C1EC2 /* FMDatabaseAdditions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		1B005DCAA66F22D27397A55C /* UIKit+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 0682565ABAFB25FBC9C69F27 /* UIKit+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1D65EEE3AB45CC82F7034F4E /* UIColor+BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 570470B641BA03F863E83E87 /* UIColor+BButton.m */; };
-		2017073D6358EE646BAB6EB6 /* PayPalFuturePaymentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 09B51100F9129A0B3BCC9721 /* PayPalFuturePaymentViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		21A27B30273CA56C22348561 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F4C86C9FA6975325F120AEF /* MessageUI.framework */; };
-		2629FEB1A89E57A612821C43 /* Pods-VHSMarketPlace-AFNetworking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAAC4BB7511D5040E39A064 /* Pods-VHSMarketPlace-AFNetworking-dummy.m */; };
-		26F3BB25AC14279211156C69 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0AF4DDC6233E69F89284DCB /* Foundation.framework */; };
-		27495BC82D60E9748126E9BC /* AFHTTPRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = A9F09FDE33E09E7BBBE068D0 /* AFHTTPRequestOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2A0D30DC0720737756454456 /* BButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 000C3678E198199CFD43635D /* BButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2BD7B16E64956756B12A0429 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC3AEEF50D34886EB0F1DE7 /* UIWebView+AFNetworking.m */; };
-		2F188212191EE604CEAE4951 /* Pods-VHSMarketPlace-FMDB-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3260F499774CCB69C8A959C5 /* Pods-VHSMarketPlace-FMDB-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3468948C5FB31F91652E7A0E /* AFNetworkActivityIndicatorManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C01155F5030E1FFC92F5AF03 /* AFNetworkActivityIndicatorManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		362A776A33C2F4F9FB326299 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF804FE245AF06180D47E059 /* AudioToolbox.framework */; };
-		3770AC1EC8D1448989DC9319 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C530EBDFA33BC693824006 /* AFNetworkReachabilityManager.m */; };
-		38D0DB0CCFF88870899210F6 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9826DAFBF8D968BF90D0C5AE /* CoreMedia.framework */; };
-		448F3674EA7A742820D0B45A /* CardIODetectionMode.h in Headers */ = {isa = PBXBuildFile; fileRef = CFF34AAE9C982EE7F8891A61 /* CardIODetectionMode.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		47C6D988F5E3BD7F934D989A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0AF4DDC6233E69F89284DCB /* Foundation.framework */; };
-		4F0E1878ECC8675746E0A919 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359C456599234F9DE1294177 /* MobileCoreServices.framework */; };
-		54D9EA9ABF7FA224BE19710B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4423A5FB27CE62FBCD4F4F0 /* AVFoundation.framework */; };
-		56CE9B9541E2BCFE6F019904 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = E5295301093C002E5EF95496 /* AFURLResponseSerialization.m */; };
-		570E0C884661471893CE6F73 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 39642162CFF06168E6057792 /* UIProgressView+AFNetworking.m */; };
-		584AE03D08AF7FEDD07BD598 /* FMResultSet.h in Headers */ = {isa = PBXBuildFile; fileRef = BBA0C3B8C587347880240B20 /* FMResultSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5DAB62C214328C4173526605 /* FMDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = 075D9B93D6CD78921F82F5B5 /* FMDatabase.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5F7D79FAF4466080180E469B /* AFNetworkReachabilityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 710B69B149A2BE743B8C24AA /* AFNetworkReachabilityManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		61B67A8E75B180DBC45BE6DA /* UIActivityIndicatorView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 3661BF904EC0FC6CF9EB63AB /* UIActivityIndicatorView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		61CE313201A6F79ACA6B6620 /* Pods-VHSMarketPlace-BButton-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B4FAF814DFE57CA00F9A64A0 /* Pods-VHSMarketPlace-BButton-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		63DE17DB91CD16B882CF4E9C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0AF4DDC6233E69F89284DCB /* Foundation.framework */; };
-		659B5737A1F2CF51AFCD1848 /* AFURLResponseSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = C84F552832DDCE26439E5935 /* AFURLResponseSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		68E29EA7C9FB02A3AB11ED76 /* PayPalPaymentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 05627EB953A81B59384C672E /* PayPalPaymentViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		69C26DF5C2F38EE58D3C39B6 /* AFURLRequestSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = DC92248FE415B4915CE06AEB /* AFURLRequestSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6C9764F89ED012C049471431 /* Pods-VHSMarketPlace-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 949D678EB1CFB77A638CDF1B /* Pods-VHSMarketPlace-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		71C6327C84367B6E0377AB21 /* Pods-VHSMarketPlace-PayPal-iOS-SDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B91BFBC9286162E2A05EDFE /* Pods-VHSMarketPlace-PayPal-iOS-SDK-dummy.m */; };
-		736DD40815D8EED4B57FC78A /* PayPalProfileSharingViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B979CA823BCA454C4EE6D20 /* PayPalProfileSharingViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		74E82D734A03791DE787FF23 /* Pods-VHSMarketPlace-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FB00603272991A97963B67 /* Pods-VHSMarketPlace-dummy.m */; };
-		76C0BBB05B77956CC2913A74 /* UIRefreshControl+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EC337929148282726B37F60 /* UIRefreshControl+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		76C53F08ED162F8755AED08F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0207D1BC091641E9E01A4CD7 /* SystemConfiguration.framework */; };
-		79095585FE1ACE78BEAFC64E /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FC1F0DE4EC1047BE5B79FD /* UIImageView+AFNetworking.m */; };
-		7B240D88FD9D3EF9967DB568 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35F25AE25EF831BBE08BEA91 /* CoreGraphics.framework */; };
-		7C4D135FC4E8E9CE0887C7F6 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D699E730DD8B303C87264D /* AFURLSessionManager.m */; };
-		7D1FFCFCD18BBCCEAEE6DAAA /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 764392D13EF44F8003583C9A /* AFNetworkActivityIndicatorManager.m */; };
-		831183FC4F7920BD89E51B01 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359C456599234F9DE1294177 /* MobileCoreServices.framework */; };
-		85A8FD1FFE50DDA578A57C33 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A60D3C09BB31EE2342D204F4 /* Security.framework */; };
-		86664A36B479EA51521C2DF0 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = E793747095C108FA1A8894C7 /* FMResultSet.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		86C92B6D65F658D702A82221 /* Pods-VHSMarketPlace-PayPal-iOS-SDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 067CDB224D46EBBE163129B5 /* Pods-VHSMarketPlace-PayPal-iOS-SDK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		899940AE4EE05708DFC8819A /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB2D8C171FAAC00FCC648DF /* UIRefreshControl+AFNetworking.m */; };
-		8A1593DE65AF58914030769A /* CardIOView.h in Headers */ = {isa = PBXBuildFile; fileRef = 907E900BB76BD0BACDC32680 /* CardIOView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8F095C432E16724A9F2A5CC7 /* AFHTTPRequestOperationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9127CD9C1B0C7DC37261D12E /* AFHTTPRequestOperationManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		90A2923376B61DFE5CB734E0 /* CardIOCreditCardInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D99F9375FD9C5F20F5DF30 /* CardIOCreditCardInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		916D0B034B77F2294BDC9FB2 /* PayPalOAuthScopes.h in Headers */ = {isa = PBXBuildFile; fileRef = E5A3C6F82E0DE6D92F1983E2 /* PayPalOAuthScopes.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		92EFFAE084B287A052BD394A /* FMDB.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F1AA881DCD51DA0E491211E /* FMDB.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		98535AF503AD65B7719C4A5A /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F9A3AC35E8C7C754B5A9F4 /* NSString+FontAwesome.m */; };
-		98E478814080798C47812EF5 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8953A1E91451E17B667194 /* AFURLRequestSerialization.m */; };
-		993D40BBAC5F8D690D463114 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = C19AE92CEBD7E22CB742BCED /* AFSecurityPolicy.m */; };
-		9B8CF7AAE418D4DC0ED68E54 /* FMDatabaseQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B1E633457655A037B0BA022 /* FMDatabaseQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9BCBAF51D2893A6E3F546DDD /* UIButton+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 9446F7BA63A622928066B47B /* UIButton+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9BE7535303CEA8B7D5D23DAB /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = FBB1D918DF7DE1F8304E998B /* UIButton+AFNetworking.m */; };
-		9D09C47CBF9BEF792DB15EF8 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E1628092E78EF7EA656294 /* FMDatabaseQueue.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		A05114265CDCB167683304C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0AF4DDC6233E69F89284DCB /* Foundation.framework */; };
-		A06A48C431040FFAF7A88589 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = B38493622CC85F72BB47F953 /* FMDatabasePool.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		A32DB9500E2AB70E2944E884 /* Pods-VHSMarketPlace-AFNetworking-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 726D5FABE4A79A353A5FD62C /* Pods-VHSMarketPlace-AFNetworking-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A4E3A9B5CFD05F5426F14E7A /* CardIOPaymentViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B31F55B75D4F7F6491FC226 /* CardIOPaymentViewControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A7A592B23B102498AD2EB51D /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = E3424C09F9CB4A65BCC5AF3F /* AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AC489BFBC6A829F541F1D1A4 /* PayPalMobile.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F3C851BA92502FAE0A115D8 /* PayPalMobile.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AC4A92544CE7D831895E5DBF /* FMDatabasePool.h in Headers */ = {isa = PBXBuildFile; fileRef = 00894A50CF4DED83446A912B /* FMDatabasePool.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AD3A3A23A20E54EFB56ED8C6 /* AFURLSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = D5499634E85F6E94A1E7DF35 /* AFURLSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B3C2B7811AEA35000740691B /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 335BFCFAC5FE4EB82B711B9F /* AFHTTPRequestOperation.m */; };
-		B3C727355D9ECA25089D3B60 /* BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0A3F0AE4D5B848552CA0E2 /* BButton.m */; };
-		B5BB95126FA44460A01F50B5 /* UIImageView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = C7480768B9ED3920035740F0 /* UIImageView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B94CD4DD714FADE8D72D4E75 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8AF4C202401828951B3080 /* AFHTTPRequestOperationManager.m */; };
-		B9529ADD91548D3BC22DB4ED /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D7312296ECAC5DEC7347B4B /* CoreLocation.framework */; };
-		BB6CC1E3D3179EE69EE1CAD4 /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BC70469268F902F5F069BDD7 /* UIActivityIndicatorView+AFNetworking.m */; };
-		BCC32005AB9FF47AC5F05B70 /* FMDatabaseAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = C3795E734255FE5058518C65 /* FMDatabaseAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BE9D87413624C91612F2D918 /* NSString+FontAwesome.h in Headers */ = {isa = PBXBuildFile; fileRef = BE45A7832AC01A69A8641183 /* NSString+FontAwesome.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C7E9176B2B076F35F7BA6F6F /* UIProgressView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 34FDADA0EE06BD5D1EEFFFC7 /* UIProgressView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C9370F630A852D9A0AC87908 /* CardIO.h in Headers */ = {isa = PBXBuildFile; fileRef = DA7F78F640E617EE6521795D /* CardIO.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CA43BD2584304D881A21F693 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35F25AE25EF831BBE08BEA91 /* CoreGraphics.framework */; };
-		CE9C780B8B1382A1D038E5DC /* UIAlertView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = CB05A566505779B82DE42CEF /* UIAlertView+AFNetworking.m */; };
-		D0CAF46B7C2E1DECC3E52A63 /* Pods-VHSMarketPlace-BButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9133F98C6336E470319C5865 /* Pods-VHSMarketPlace-BButton-dummy.m */; };
-		D1EC83507ED66771ED9F20B1 /* UIColor+BButton.h in Headers */ = {isa = PBXBuildFile; fileRef = A082C3A04C80761916A81287 /* UIColor+BButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D7E71F25FC5C53652889557C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0207D1BC091641E9E01A4CD7 /* SystemConfiguration.framework */; };
-		E4736B40CD42380CD63A9F0F /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BEA46FD44E865FAFAB559 /* FMDatabase.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		E886E003D298893E84B10BEF /* UIWebView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = E9E559B74339E4CD377285F0 /* UIWebView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EB648ADBCFC50ACC6E631C03 /* PayPalConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = B6CE4DC349546D787CB3D96A /* PayPalConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F583FC3F99D164EFCEA9A275 /* AFSecurityPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = CA55D33452F43484DCC7EFB0 /* AFSecurityPolicy.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F64F9747D50DCEB23CEC5264 /* Pods-VHSMarketPlace-FMDB-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 39B34BD023C9F0A22535526C /* Pods-VHSMarketPlace-FMDB-dummy.m */; };
-		F8A91BE603B982ED659EE91B /* AFURLConnectionOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 390A618136A20314FB531F2F /* AFURLConnectionOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FA4359ABC756335E12742DD5 /* CardIOViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B8B813513AC02A4805C1B2 /* CardIOViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FAA63B73416EDC91D3F6E7A8 /* CardIOUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = B47CFB9842C6E577D7C89D8B /* CardIOUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FD1C8739603EBF2775A962CC /* CardIOPaymentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = FABA44F0630598DDA54BDE19 /* CardIOPaymentViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FDA4B5861D5EB5236E24172C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0AF4DDC6233E69F89284DCB /* Foundation.framework */; };
-		FE4D33A2E5BD355BB4C1A563 /* AFHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 018B0998330297FC4BEE8BD7 /* AFHTTPSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		062A32B9BFDB633EBEF675E3 /* UIImageView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = ABF611D3EDE84A3E2592899A /* UIImageView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0713963B590ADD79AB6BC229 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 039A2F108E93C3216387DF45 /* UIRefreshControl+AFNetworking.m */; };
+		071B71DF9708258E61FFB138 /* UIColor+BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB62940D173C5625E1B9C5 /* UIColor+BButton.m */; };
+		0860ADAB674A4957DEDB6B23 /* PayPalConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 806F2D2B1C8F6A4A5314B64E /* PayPalConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0D4907734CBA7672262CAF06 /* CardIO.h in Headers */ = {isa = PBXBuildFile; fileRef = 750566010E89B0122E5DD90D /* CardIO.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		11A1356F4CA2C33E4A65796A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 904B59A6F2DB33835A12F8E3 /* Foundation.framework */; };
+		127D5366E0BEA0EA4F619012 /* AFHTTPRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = C512AF5CA1895DC2EAA5098D /* AFHTTPRequestOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1483F2EF69FBBBEDFD5B90F1 /* UIColor+BButton.h in Headers */ = {isa = PBXBuildFile; fileRef = F41507688875B85696FCE7A7 /* UIColor+BButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		15FFDD576C8A14A1AE40F9FB /* Pods-VHSMarketPlace-CardIO-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1691192CDFACA99F1ABDBB79 /* Pods-VHSMarketPlace-CardIO-dummy.m */; };
+		171E7BFCC1ED3CB89C522974 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BBDF501C272410FA4780E3D /* CoreLocation.framework */; };
+		1882BCC999403FFA91A63513 /* Pods-VHSMarketPlace-CardIO-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D921E2A099368B5A919CEA1C /* Pods-VHSMarketPlace-CardIO-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		19310C2BDFB6DDDCF22A5308 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF447C127FBB4D12548FBCED /* CoreVideo.framework */; };
+		1D8004270B70487B9929D73F /* PayPalMobile.h in Headers */ = {isa = PBXBuildFile; fileRef = 8893706574EACE93E1933C74 /* PayPalMobile.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2107E60659976136C86F8767 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = F57DC00BF7F5CAECBEFE8AE3 /* FMDatabasePool.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		249BFA30113B64862CF9252F /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE64BCAF14298BEFC81B9A7 /* UIActivityIndicatorView+AFNetworking.m */; };
+		2558321EDFB191BF2CFE7790 /* AFNetworkActivityIndicatorManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 625DB697A0DD3F642A277897 /* AFNetworkActivityIndicatorManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		255AACE0D1726E57A38367F5 /* FMResultSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FCC286EE20278C745B24CA1 /* FMResultSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2B0D101870CB0CC14225F659 /* PayPalProfileSharingViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 59E6E29764577986936D65E8 /* PayPalProfileSharingViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2BFCA9B92805F204F8E96CA9 /* UIAlertView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = E87FCAA0390297BFB85AF04A /* UIAlertView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2DF1D576F53D0856119DC945 /* UIKit+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E0F949CAC801AB500B0E4E7 /* UIKit+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F4928455BA514A29E9AE4B9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 904B59A6F2DB33835A12F8E3 /* Foundation.framework */; };
+		3357C840B2B0EA48C0F3F40E /* Pods-VHSMarketPlace-AFNetworking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 080AC43EBF36FA38F33C2419 /* Pods-VHSMarketPlace-AFNetworking-dummy.m */; };
+		381C2B98E7CF6FA22AB3C54A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A92799E9B8FAFF9DEEC064D /* Security.framework */; };
+		3875420AC5E82B224B4492A3 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5CABD62DEFC4A854A3B737 /* AFURLRequestSerialization.m */; };
+		3C1DBD59B9D41570634DB1B4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 669085D9A6C01C4F88C5DF2F /* SystemConfiguration.framework */; };
+		3C2548851101A45D36EC58A8 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B62862E25A30DA061373000 /* CoreMedia.framework */; };
+		3E868AAE0DCD009CB9762222 /* UIButton+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = F1D96EEDDDF0002B57A09DFB /* UIButton+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3ECB9A7A89A9EA4A38153F18 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C67710F766095E1FAFF2034C /* AFHTTPRequestOperation.m */; };
+		40C5F43B8EBE120D823C8CF0 /* AFURLResponseSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = D92B33D8D552D5CDD22CC138 /* AFURLResponseSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		413F11363D47EDD9DAD46D6C /* CardIODetectionMode.h in Headers */ = {isa = PBXBuildFile; fileRef = 13CE5653B9FE7E6EAA85F107 /* CardIODetectionMode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45776E60A319804E6A9B844A /* UIRefreshControl+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = A545E06E25CBB8BF88475F5E /* UIRefreshControl+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4818128BB898006BA93C51BA /* BButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 97ACBEA6191926EA055BAC49 /* BButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		49AE1CE5F8EDA194034B5E04 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 9863BC81F337DF3F8270B3F6 /* FMResultSet.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		4AA88D744366FEE0C8C88A0C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68DCA91884C18B94FCFDE2CF /* AudioToolbox.framework */; };
+		4B0CD7BE118F557F92A0D6C6 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B10C8FA108776DF6F40E3B5 /* FMDatabase.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		4B1D55B68EBA9870A853CAFD /* CardIOView.h in Headers */ = {isa = PBXBuildFile; fileRef = F62305A53FAF67269431291E /* CardIOView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4B1DDF4AD59FEB2502216572 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8C9AAEE5958E581E78CA63 /* AFNetworkReachabilityManager.m */; };
+		4D0DF2B0F803C65EAF4DAA7D /* CardIOViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = DC8895AAB22F155A51B4CEDF /* CardIOViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4F11E39CAB13C5BA9C5D0CB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 904B59A6F2DB33835A12F8E3 /* Foundation.framework */; };
+		4FC9CDDBEAE1D22A5491CD0F /* Pods-VHSMarketPlace-PayPal-iOS-SDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DC7D7F6EF9873A4DFF268E0A /* Pods-VHSMarketPlace-PayPal-iOS-SDK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5089963275E759AE95EE305B /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF701DC54767F0B165D3D031 /* AFURLConnectionOperation.m */; };
+		511E0B16C4869C0BEC0D6001 /* UIProgressView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = B85456C2AD8FECA7F3049F93 /* UIProgressView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		52DC1FEE5B34F503E2906E02 /* Pods-VHSMarketPlace-AFNetworking-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D7E7ECE9BD8F428385D3D5D /* Pods-VHSMarketPlace-AFNetworking-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		57C78545C0E1546BAA358ED5 /* CardIOPaymentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A5FFF09FCC0845DCB6104AD1 /* CardIOPaymentViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5B0E463A5AE7824303EFBEF5 /* AFHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = AFC825FA95B4685A6B3BDE56 /* AFHTTPSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5C84B34B0480732B61302303 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E0B7D2C34E5BF574EE306F2 /* UIImageView+AFNetworking.m */; };
+		5DA6DCFD8EC1CE754B51DF06 /* CardIOUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = C5720B33D1F38B220E612B8B /* CardIOUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5DE221B5DB3A5A50AB24BB0C /* CardIOPaymentViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 48464187F8E2731E3164078F /* CardIOPaymentViewControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5DE6BE364542B9E8C52129CA /* PayPalFuturePaymentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 594349635292E091FA295CE2 /* PayPalFuturePaymentViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		623DCB8F93BFFA4BECF048BD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 669085D9A6C01C4F88C5DF2F /* SystemConfiguration.framework */; };
+		65C13E24DC187297BCB32C57 /* AFURLSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = ED6E09CAA6A1ED0FE5D94743 /* AFURLSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6A475A18FBB68B063DFBCF08 /* FMDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = 0CDC8214559025F2984F2E04 /* FMDatabase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6CDA7343BDD091871C876FF4 /* Pods-VHSMarketPlace-BButton-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E84C154B0E85207949A2850 /* Pods-VHSMarketPlace-BButton-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6D1844630B7A07AD4F6F7C9D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80ECAD45D461F833D8D36F3F /* MessageUI.framework */; };
+		6D6E47A2C44BC61C1C3406BA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3752AE20AFC32EB88D4FD9CB /* UIKit.framework */; };
+		6D718E8AD90671CF730D5EBF /* BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CB5DD5D529D5B697C7CAF7 /* BButton.m */; };
+		6E9AA91617E021CD0270CEB7 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E1251E3ED3DA2B14D4398A /* UIWebView+AFNetworking.m */; };
+		6EA3DDEF46D8CC8C955F2C20 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 937D80AACF3C129B523E6046 /* FMDatabaseQueue.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		6FF4FC1C16C5047B6BFD5264 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD582BFBF197C72BAF330FE /* AVFoundation.framework */; };
+		7786A47033E335E2EF3EF92F /* PayPalPaymentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B2EBCE79E9FCA805210079C5 /* PayPalPaymentViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		797306B2FC7B633920D85982 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 904B59A6F2DB33835A12F8E3 /* Foundation.framework */; };
+		7D8BD2F36D56B1AD41631726 /* CardIOUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = A19C1AA1F8ABA3308AFF277D /* CardIOUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7DAB8AB8A97C9A38B7319FA3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 904B59A6F2DB33835A12F8E3 /* Foundation.framework */; };
+		7E197EB5B4B45B962A545676 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5417F55EC5C1B6586C051B62 /* MobileCoreServices.framework */; };
+		7E7E52AE00351A98C3724AAD /* CardIOPaymentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = DF276D4FA6CA4A4E82D54BF3 /* CardIOPaymentViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		82A3B8029F6AE18C7922DC76 /* Pods-VHSMarketPlace-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F7F0BFDAB7518C4986EB592C /* Pods-VHSMarketPlace-dummy.m */; };
+		8790C57DECB67C70D8994065 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2500187333348399AAE0604 /* CoreGraphics.framework */; };
+		898903822FBD4E4BABBB1C99 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2500187333348399AAE0604 /* CoreGraphics.framework */; };
+		8B849DE47341CB34E3090C74 /* NSString+FontAwesome.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BDFB754CA83B92D39E9D00C /* NSString+FontAwesome.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8B9E79C3AC4B8D95C2312638 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0AB31563AAD1506213C3388 /* QuartzCore.framework */; };
+		8C780DFCB332CBA851DD04AC /* Pods-VHSMarketPlace-FMDB-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F4C4CAFD75C937F49E5CA0 /* Pods-VHSMarketPlace-FMDB-dummy.m */; };
+		8ED5779912A75AA3447F9C24 /* AFSecurityPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = 36B8C407AFC32BD4A282507E /* AFSecurityPolicy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F7B3218209939CAB1E5F90F /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9654C600417D923924CEC6DA /* AFSecurityPolicy.m */; };
+		928ADDC9D4B41CD5B474E6FA /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = F01AA8136BC99A05DF204D04 /* AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		94CF29AC62427757F7EB81FF /* AFHTTPRequestOperationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B4DC2B546564E24D0759153 /* AFHTTPRequestOperationManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9ACAEDF92C2399A06E1CF3FB /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = B9BB2A7DE321A26C2DF4340E /* NSString+FontAwesome.m */; };
+		9BD016FF4ACE1E370CE47237 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5417F55EC5C1B6586C051B62 /* MobileCoreServices.framework */; };
+		9C17413C9CD8AD4441D35FBE /* UIActivityIndicatorView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = D2AC996F85DC9C7641FC29D3 /* UIActivityIndicatorView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9F19A444B9E9872546B953E6 /* CardIODetectionMode.h in Headers */ = {isa = PBXBuildFile; fileRef = 96E7CDF2061A5150F58FA2EA /* CardIODetectionMode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A18AD704BA1488D22635E7C2 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A164994C8BA9560A4D2764 /* AFHTTPSessionManager.m */; };
+		A23D8CE5B73BCDB81DDFC9C0 /* FMDatabaseAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = FABB69B69E29A1F19268AB07 /* FMDatabaseAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A5306F86CC241263FF24DE58 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B62862E25A30DA061373000 /* CoreMedia.framework */; };
+		A6095E63ABBC9EBB7B23C256 /* UIWebView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 35779A4C7F8A491589CF02F2 /* UIWebView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AA4396709F5D09F58173146A /* AFURLConnectionOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FE6E8C4C3A5604553CE3470 /* AFURLConnectionOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AC4B76359CF14252A2153388 /* FMDatabasePool.h in Headers */ = {isa = PBXBuildFile; fileRef = EC0D2DBC83FE32DEAD38925E /* FMDatabasePool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B143C450DE97C4EF5D8E4C94 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 06DFD39D40DC6A3A35CB6832 /* AFHTTPRequestOperationManager.m */; };
+		B1FE59E12CADD1B9B6D3EE57 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 82D646AB5282E542CDD84E03 /* AFURLResponseSerialization.m */; };
+		B82E41E6F86D87943437A8A5 /* CardIOView.h in Headers */ = {isa = PBXBuildFile; fileRef = C8555AC6FD8CD23A7326AA1E /* CardIOView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BCCACFD1E8DB9E64F9BFB61C /* CardIOCreditCardInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = D704D687A055CCD16465F70F /* CardIOCreditCardInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BE3F8BE47A88EFB02C04E8DA /* AFURLRequestSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 489B3417B93721A999938F5A /* AFURLRequestSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C1B4643EF6AB7D02892B1DC7 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 20276A87D163387E2500C060 /* AFNetworkActivityIndicatorManager.m */; };
+		C45BAC85702D373EA3508EDC /* FMDatabaseQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 352FDE6028B5CB0CAFEBFBBB /* FMDatabaseQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C5D2B85602F90EE8DB3A8056 /* CardIOPaymentViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 18CE27B3BBB9400A0764D7C9 /* CardIOPaymentViewControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C61E8CBDFF7EB609E126ED4C /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 84820C472567F0A46EF89934 /* UIButton+AFNetworking.m */; };
+		D07DC0D89A9C4B0963CDF712 /* Pods-VHSMarketPlace-FMDB-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B13199A527A2BB964370C253 /* Pods-VHSMarketPlace-FMDB-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D15AF7230DC5EC9A607C2E1F /* FMDB.h in Headers */ = {isa = PBXBuildFile; fileRef = 04DD27EE9813A1D56A74BE15 /* FMDB.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D377AD77E41C1F6D442541C2 /* CardIO.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B02382E64AD2F37D7282418 /* CardIO.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D560B2139A6CC7E922BC9DBD /* PayPalPayment.h in Headers */ = {isa = PBXBuildFile; fileRef = A7F503E6C67FD6D529D553A5 /* PayPalPayment.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5711F28491FF7A1B160B229 /* Pods-VHSMarketPlace-PayPal-iOS-SDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1D76B78991904426F1A5EA /* Pods-VHSMarketPlace-PayPal-iOS-SDK-dummy.m */; };
+		D822C7DB58BE2F1D3215CC9F /* Pods-VHSMarketPlace-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F201F3B7FFD53126DC13DDFC /* Pods-VHSMarketPlace-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D92EB20E801754BCB39E6340 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9436AF29DEBF68070EEA33BB /* AFURLSessionManager.m */; };
+		DF61DE7566043FE9BB2B321E /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5C63DDEC37AF4A63CA6B31CB /* FontAwesome.ttf */; };
+		E28796F5A5B9F5C6B57D01F8 /* AFNetworkReachabilityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 51486D3E05A72B2615D98F28 /* AFNetworkReachabilityManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E538D18A3264073EAF64F940 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 093117593A56FB6A636E457D /* OpenGLES.framework */; };
+		E53E2B8A3DA8407ED5A67BC7 /* PayPalOAuthScopes.h in Headers */ = {isa = PBXBuildFile; fileRef = F73D2C7F74407A07F3C13079 /* PayPalOAuthScopes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E8B9CB939E4F29B7D9313BCF /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5417F55EC5C1B6586C051B62 /* MobileCoreServices.framework */; };
+		EAFC45D0A1482CA03AFFA1FC /* Pods-VHSMarketPlace-BButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C6ED3A8E656E5C9CC8F517EF /* Pods-VHSMarketPlace-BButton-dummy.m */; };
+		EF2789DB0226340A93CAB2BA /* UIAlertView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = F08736E3DFAAF91C0CDE748D /* UIAlertView+AFNetworking.m */; };
+		EF717D24BCC5A3F4118B4B42 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68DCA91884C18B94FCFDE2CF /* AudioToolbox.framework */; };
+		EF9C0A44960CE6EBFB1DF632 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A92799E9B8FAFF9DEEC064D /* Security.framework */; };
+		F30561A5B4EA81050777AF02 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD582BFBF197C72BAF330FE /* AVFoundation.framework */; };
+		F4E204116417BCF65FFEF357 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 904B59A6F2DB33835A12F8E3 /* Foundation.framework */; };
+		F534216338F731979A1DA465 /* CardIOCreditCardInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = ABE254C377C4BB6853518DB0 /* CardIOCreditCardInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FA181A7D8B0DE3469A414389 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = F8DEBCD715FA0A2C3366086C /* UIProgressView+AFNetworking.m */; };
+		FDFF13C57ADB277C5C2EA3ED /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B067414A79BC5E73B61140 /* FMDatabaseAdditions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		FE03672CD96744EE0CCAD052 /* CardIOViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 20F37FF1D8D1692BB2F88B6F /* CardIOViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		02993D58A029BFB1B582B0B8 /* PBXContainerItemProxy */ = {
+		13FE7F97B7D4C7BB61EB7516 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 71E176BE959E666CD90B470B /* Project object */;
+			containerPortal = 2C8D598B39E909668142AA13 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = BF1D929D81FF16310D5E46B1;
-			remoteInfo = "Pods-VHSMarketPlace-AFNetworking";
+			remoteGlobalIDString = 49FCD25C3790B0A78EB29940;
+			remoteInfo = "Pods-VHSMarketPlace-FMDB";
 		};
-		172E03E9678A88E53798676F /* PBXContainerItemProxy */ = {
+		1AA4AC16C552146F9FE09FD8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 71E176BE959E666CD90B470B /* Project object */;
+			containerPortal = 2C8D598B39E909668142AA13 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = BEEEEAFC136571AEE16731CF;
+			remoteGlobalIDString = 1185B171098F58F38D499DCF;
 			remoteInfo = "Pods-VHSMarketPlace-PayPal-iOS-SDK";
 		};
-		BE46DA2E857616FDC7105A05 /* PBXContainerItemProxy */ = {
+		40F6FFE4FDFA6A742FA9D4E1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 71E176BE959E666CD90B470B /* Project object */;
+			containerPortal = 2C8D598B39E909668142AA13 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0E5692472A27BF437785B33A;
+			remoteGlobalIDString = F701668EBC742A563DF21353;
 			remoteInfo = "Pods-VHSMarketPlace-BButton";
 		};
-		DF2FD00E4EFD9DE2204BF24E /* PBXContainerItemProxy */ = {
+		4232A838BB11D571EC5FF9AF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 71E176BE959E666CD90B470B /* Project object */;
+			containerPortal = 2C8D598B39E909668142AA13 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0DEC44196F66C63804C533FC;
-			remoteInfo = "Pods-VHSMarketPlace-FMDB";
+			remoteGlobalIDString = 65A62ED5BCA037E9A9EE65A1;
+			remoteInfo = "Pods-VHSMarketPlace-CardIO";
+		};
+		9A4A5F4F7CC2E80482243F63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C8D598B39E909668142AA13 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF2065FE776F1688B403F7E0;
+			remoteInfo = "Pods-VHSMarketPlace-AFNetworking";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		000C3678E198199CFD43635D /* BButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BButton.h; path = bbutton/Classes/BButton.h; sourceTree = "<group>"; };
-		00894A50CF4DED83446A912B /* FMDatabasePool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabasePool.h; path = src/fmdb/FMDatabasePool.h; sourceTree = "<group>"; };
-		018B0998330297FC4BEE8BD7 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPSessionManager.h; path = AFNetworking/AFHTTPSessionManager.h; sourceTree = "<group>"; };
-		01D699E730DD8B303C87264D /* AFURLSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLSessionManager.m; path = AFNetworking/AFURLSessionManager.m; sourceTree = "<group>"; };
-		0207D1BC091641E9E01A4CD7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
-		03E1628092E78EF7EA656294 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseQueue.m; path = src/fmdb/FMDatabaseQueue.m; sourceTree = "<group>"; };
-		05627EB953A81B59384C672E /* PayPalPaymentViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PayPalPaymentViewController.h; path = PayPalMobile/PayPalPaymentViewController.h; sourceTree = "<group>"; };
-		05D99F9375FD9C5F20F5DF30 /* CardIOCreditCardInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOCreditCardInfo.h; path = PayPalMobile/CardIOCreditCardInfo.h; sourceTree = "<group>"; };
-		067CDB224D46EBBE163129B5 /* Pods-VHSMarketPlace-PayPal-iOS-SDK-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VHSMarketPlace-PayPal-iOS-SDK-umbrella.h"; sourceTree = "<group>"; };
-		0682565ABAFB25FBC9C69F27 /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIKit+AFNetworking.h"; path = "UIKit+AFNetworking/UIKit+AFNetworking.h"; sourceTree = "<group>"; };
-		06B8B813513AC02A4805C1B2 /* CardIOViewDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOViewDelegate.h; path = PayPalMobile/CardIOViewDelegate.h; sourceTree = "<group>"; };
-		075D9B93D6CD78921F82F5B5 /* FMDatabase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabase.h; path = src/fmdb/FMDatabase.h; sourceTree = "<group>"; };
-		09B51100F9129A0B3BCC9721 /* PayPalFuturePaymentViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PayPalFuturePaymentViewController.h; path = PayPalMobile/PayPalFuturePaymentViewController.h; sourceTree = "<group>"; };
-		0D7C34AC23338B4F94B2987F /* Pods-VHSMarketPlace-AFNetworking.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-VHSMarketPlace-AFNetworking.modulemap"; sourceTree = "<group>"; };
-		0F1AA881DCD51DA0E491211E /* FMDB.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDB.h; path = src/fmdb/FMDB.h; sourceTree = "<group>"; };
-		156D485632F5E588AA766EFE /* Pods-VHSMarketPlace-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VHSMarketPlace-environment.h"; sourceTree = "<group>"; };
-		1B1E633457655A037B0BA022 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabaseQueue.h; path = src/fmdb/FMDatabaseQueue.h; sourceTree = "<group>"; };
-		1DA8EA5B66A52B7698D601F0 /* Pods-VHSMarketPlace-AFNetworking.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VHSMarketPlace-AFNetworking.xcconfig"; sourceTree = "<group>"; };
-		21224F0C72DE26A371D183B0 /* BButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		295F45945F6A72267D273C12 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2A11F2774D125BF99A6AC979 /* Pods-VHSMarketPlace-PayPal-iOS-SDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VHSMarketPlace-PayPal-iOS-SDK.xcconfig"; sourceTree = "<group>"; };
-		2A6B1A192D9205CF106C0FF1 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPSessionManager.m; path = AFNetworking/AFHTTPSessionManager.m; sourceTree = "<group>"; };
-		2B979CA823BCA454C4EE6D20 /* PayPalProfileSharingViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PayPalProfileSharingViewController.h; path = PayPalMobile/PayPalProfileSharingViewController.h; sourceTree = "<group>"; };
-		3260F499774CCB69C8A959C5 /* Pods-VHSMarketPlace-FMDB-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VHSMarketPlace-FMDB-umbrella.h"; sourceTree = "<group>"; };
-		335BFCFAC5FE4EB82B711B9F /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperation.m; path = AFNetworking/AFHTTPRequestOperation.m; sourceTree = "<group>"; };
-		343109CC9FA7B05687AE1DC3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		343BEA46FD44E865FAFAB559 /* FMDatabase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabase.m; path = src/fmdb/FMDatabase.m; sourceTree = "<group>"; };
-		34FDADA0EE06BD5D1EEFFFC7 /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIProgressView+AFNetworking.h"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
-		350DFFD0D7CAAAE7E2B85B09 /* Pods-VHSMarketPlace-BButton-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VHSMarketPlace-BButton-Private.xcconfig"; sourceTree = "<group>"; };
-		359C456599234F9DE1294177 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
-		35F25AE25EF831BBE08BEA91 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		3661BF904EC0FC6CF9EB63AB /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIActivityIndicatorView+AFNetworking.h"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
-		390A618136A20314FB531F2F /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLConnectionOperation.h; path = AFNetworking/AFURLConnectionOperation.h; sourceTree = "<group>"; };
-		39642162CFF06168E6057792 /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIProgressView+AFNetworking.m"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
-		39B34BD023C9F0A22535526C /* Pods-VHSMarketPlace-FMDB-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VHSMarketPlace-FMDB-dummy.m"; sourceTree = "<group>"; };
-		3B31F55B75D4F7F6491FC226 /* CardIOPaymentViewControllerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOPaymentViewControllerDelegate.h; path = PayPalMobile/CardIOPaymentViewControllerDelegate.h; sourceTree = "<group>"; };
-		3D8953A1E91451E17B667194 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLRequestSerialization.m; path = AFNetworking/AFURLRequestSerialization.m; sourceTree = "<group>"; };
-		3F63FDC966CB3DDEA00E0101 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLConnectionOperation.m; path = AFNetworking/AFURLConnectionOperation.m; sourceTree = "<group>"; };
-		3FB2D8C171FAAC00FCC648DF /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIRefreshControl+AFNetworking.m"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
-		4089FA21EB7C6F9664E21DDE /* FontAwesome.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = FontAwesome.ttf; path = bbutton/resources/FontAwesome.ttf; sourceTree = "<group>"; };
-		40FC1F0DE4EC1047BE5B79FD /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
-		4BA043590984E01CAEFB6416 /* Pods-VHSMarketPlace-PayPal-iOS-SDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-VHSMarketPlace-PayPal-iOS-SDK.modulemap"; sourceTree = "<group>"; };
-		4C97B8C0DA9530D2C1851788 /* PayPalPayment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PayPalPayment.h; path = PayPalMobile/PayPalPayment.h; sourceTree = "<group>"; };
-		4CF9ACAEA8BFD47FE32581FD /* Pods-VHSMarketPlace-FMDB-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VHSMarketPlace-FMDB-Private.xcconfig"; sourceTree = "<group>"; };
-		4EC337929148282726B37F60 /* UIRefreshControl+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIRefreshControl+AFNetworking.h"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.h"; sourceTree = "<group>"; };
-		53E192A7312036ACBD1CDB5F /* Pods-VHSMarketPlace-BButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VHSMarketPlace-BButton-prefix.pch"; sourceTree = "<group>"; };
-		5686CBC66FB612366C6274C4 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		570470B641BA03F863E83E87 /* UIColor+BButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+BButton.m"; path = "bbutton/Classes/UIColor+BButton.m"; sourceTree = "<group>"; };
-		5D272851FF2FF5ECC704C396 /* Pods-VHSMarketPlace-FMDB.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-VHSMarketPlace-FMDB.modulemap"; sourceTree = "<group>"; };
-		5F4C86C9FA6975325F120AEF /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/MessageUI.framework; sourceTree = DEVELOPER_DIR; };
-		5F87A9BB3570A30BC8347495 /* Pods-VHSMarketPlace-BButton.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VHSMarketPlace-BButton.xcconfig"; sourceTree = "<group>"; };
-		61E57D415D2D0FCE2753F6F0 /* Pods-VHSMarketPlace-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VHSMarketPlace-acknowledgements.plist"; sourceTree = "<group>"; };
-		65B7E74F995F4DFD79AF8773 /* googlemaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = googlemaps.framework; sourceTree = "<group>"; };
-		710B69B149A2BE743B8C24AA /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkReachabilityManager.h; path = AFNetworking/AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
-		726D5FABE4A79A353A5FD62C /* Pods-VHSMarketPlace-AFNetworking-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VHSMarketPlace-AFNetworking-umbrella.h"; sourceTree = "<group>"; };
-		764392D13EF44F8003583C9A /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkActivityIndicatorManager.m; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m"; sourceTree = "<group>"; };
-		77A2EABD098758FB48707310 /* PayPal_iOS_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PayPal_iOS_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		79C530EBDFA33BC693824006 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkReachabilityManager.m; path = AFNetworking/AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
-		7B91BFBC9286162E2A05EDFE /* Pods-VHSMarketPlace-PayPal-iOS-SDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VHSMarketPlace-PayPal-iOS-SDK-dummy.m"; sourceTree = "<group>"; };
-		7D7312296ECAC5DEC7347B4B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
-		7DAAC4BB7511D5040E39A064 /* Pods-VHSMarketPlace-AFNetworking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VHSMarketPlace-AFNetworking-dummy.m"; sourceTree = "<group>"; };
-		896DFCDA654367BDAE470323 /* Pods-VHSMarketPlace-FMDB.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VHSMarketPlace-FMDB.xcconfig"; sourceTree = "<group>"; };
-		8BA7993368D3F824975886EA /* Pods_VHSMarketPlace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VHSMarketPlace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8F3C851BA92502FAE0A115D8 /* PayPalMobile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PayPalMobile.h; path = PayPalMobile/PayPalMobile.h; sourceTree = "<group>"; };
-		907E900BB76BD0BACDC32680 /* CardIOView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOView.h; path = PayPalMobile/CardIOView.h; sourceTree = "<group>"; };
-		9127CD9C1B0C7DC37261D12E /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperationManager.h; path = AFNetworking/AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
-		9133F98C6336E470319C5865 /* Pods-VHSMarketPlace-BButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VHSMarketPlace-BButton-dummy.m"; sourceTree = "<group>"; };
-		93DB5E4D70CB30A265417437 /* Pods-VHSMarketPlace-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VHSMarketPlace-frameworks.sh"; sourceTree = "<group>"; };
-		9446F7BA63A622928066B47B /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+AFNetworking.h"; path = "UIKit+AFNetworking/UIButton+AFNetworking.h"; sourceTree = "<group>"; };
-		949D678EB1CFB77A638CDF1B /* Pods-VHSMarketPlace-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VHSMarketPlace-umbrella.h"; sourceTree = "<group>"; };
-		959C5A8A4C738AFC9606F309 /* Pods-VHSMarketPlace.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-VHSMarketPlace.modulemap"; sourceTree = "<group>"; };
-		9826DAFBF8D968BF90D0C5AE /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreMedia.framework; sourceTree = DEVELOPER_DIR; };
-		9DF4D0E7B0C300DEFD0F0D62 /* googlemaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = googlemaps.bundle; path = googlemaps.framework/versions/a/resources/googlemaps.bundle; sourceTree = "<group>"; };
-		A082C3A04C80761916A81287 /* UIColor+BButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+BButton.h"; path = "bbutton/Classes/UIColor+BButton.h"; sourceTree = "<group>"; };
-		A60D3C09BB31EE2342D204F4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
-		A64EF6E2B258A3C122383323 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A9F09FDE33E09E7BBBE068D0 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperation.h; path = AFNetworking/AFHTTPRequestOperation.h; sourceTree = "<group>"; };
-		AA4B74A7FD5F9E0D5E3C1EC2 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseAdditions.m; path = src/fmdb/FMDatabaseAdditions.m; sourceTree = "<group>"; };
-		AADA2218AF8A88E7CAE78214 /* Pods-VHSMarketPlace-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VHSMarketPlace-resources.sh"; sourceTree = "<group>"; };
-		AD0A3F0AE4D5B848552CA0E2 /* BButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BButton.m; path = bbutton/Classes/BButton.m; sourceTree = "<group>"; };
-		B0AF4DDC6233E69F89284DCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		B1C4F9E471ED4BE8965C3580 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B31421E2B83BB819950F3F39 /* Pods-VHSMarketPlace-PayPal-iOS-SDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VHSMarketPlace-PayPal-iOS-SDK-prefix.pch"; sourceTree = "<group>"; };
-		B38493622CC85F72BB47F953 /* FMDatabasePool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabasePool.m; path = src/fmdb/FMDatabasePool.m; sourceTree = "<group>"; };
-		B47CFB9842C6E577D7C89D8B /* CardIOUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOUtilities.h; path = PayPalMobile/CardIOUtilities.h; sourceTree = "<group>"; };
-		B4FAF814DFE57CA00F9A64A0 /* Pods-VHSMarketPlace-BButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VHSMarketPlace-BButton-umbrella.h"; sourceTree = "<group>"; };
-		B6CE4DC349546D787CB3D96A /* PayPalConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PayPalConfiguration.h; path = PayPalMobile/PayPalConfiguration.h; sourceTree = "<group>"; };
-		B710318B5AE3B8E0358145C1 /* Pods-VHSMarketPlace-PayPal-iOS-SDK-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VHSMarketPlace-PayPal-iOS-SDK-Private.xcconfig"; sourceTree = "<group>"; };
-		B9D309AFFB07AECB9E4666AE /* Pods-VHSMarketPlace-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-VHSMarketPlace-acknowledgements.markdown"; sourceTree = "<group>"; };
-		B9F9A3AC35E8C7C754B5A9F4 /* NSString+FontAwesome.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+FontAwesome.m"; path = "bbutton/Classes/NSString+FontAwesome.m"; sourceTree = "<group>"; };
-		BBA0C3B8C587347880240B20 /* FMResultSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMResultSet.h; path = src/fmdb/FMResultSet.h; sourceTree = "<group>"; };
-		BC70469268F902F5F069BDD7 /* UIActivityIndicatorView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIActivityIndicatorView+AFNetworking.m"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.m"; sourceTree = "<group>"; };
-		BE45A7832AC01A69A8641183 /* NSString+FontAwesome.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+FontAwesome.h"; path = "bbutton/Classes/NSString+FontAwesome.h"; sourceTree = "<group>"; };
-		BFC3AEEF50D34886EB0F1DE7 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+AFNetworking.m"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
-		C01155F5030E1FFC92F5AF03 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkActivityIndicatorManager.h; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.h"; sourceTree = "<group>"; };
-		C19AE92CEBD7E22CB742BCED /* AFSecurityPolicy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFSecurityPolicy.m; path = AFNetworking/AFSecurityPolicy.m; sourceTree = "<group>"; };
-		C3795E734255FE5058518C65 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabaseAdditions.h; path = src/fmdb/FMDatabaseAdditions.h; sourceTree = "<group>"; };
-		C4423A5FB27CE62FBCD4F4F0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
-		C5FB00603272991A97963B67 /* Pods-VHSMarketPlace-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VHSMarketPlace-dummy.m"; sourceTree = "<group>"; };
-		C7480768B9ED3920035740F0 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
-		C7C6CE2AF4EEC4139B9BEC47 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C84F552832DDCE26439E5935 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLResponseSerialization.h; path = AFNetworking/AFURLResponseSerialization.h; sourceTree = "<group>"; };
-		CA55D33452F43484DCC7EFB0 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFSecurityPolicy.h; path = AFNetworking/AFSecurityPolicy.h; sourceTree = "<group>"; };
-		CB05A566505779B82DE42CEF /* UIAlertView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+AFNetworking.m"; path = "UIKit+AFNetworking/UIAlertView+AFNetworking.m"; sourceTree = "<group>"; };
-		CCD997BBC09457AE77DEA039 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CFF34AAE9C982EE7F8891A61 /* CardIODetectionMode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIODetectionMode.h; path = PayPalMobile/CardIODetectionMode.h; sourceTree = "<group>"; };
-		D5499634E85F6E94A1E7DF35 /* AFURLSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLSessionManager.h; path = AFNetworking/AFURLSessionManager.h; sourceTree = "<group>"; };
-		D94BA9322F68CBA99EE93B6A /* Pods-VHSMarketPlace-FMDB-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VHSMarketPlace-FMDB-prefix.pch"; sourceTree = "<group>"; };
-		DA7F78F640E617EE6521795D /* CardIO.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIO.h; path = PayPalMobile/CardIO.h; sourceTree = "<group>"; };
-		DC8AF4C202401828951B3080 /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperationManager.m; path = AFNetworking/AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
-		DC92248FE415B4915CE06AEB /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLRequestSerialization.h; path = AFNetworking/AFURLRequestSerialization.h; sourceTree = "<group>"; };
-		E3424C09F9CB4A65BCC5AF3F /* AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
-		E386FA2C90E66EB4013F0450 /* Pods-VHSMarketPlace-AFNetworking-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VHSMarketPlace-AFNetworking-prefix.pch"; sourceTree = "<group>"; };
-		E5295301093C002E5EF95496 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLResponseSerialization.m; path = AFNetworking/AFURLResponseSerialization.m; sourceTree = "<group>"; };
-		E5575A2E451B730DD04F5B75 /* Pods-VHSMarketPlace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VHSMarketPlace.debug.xcconfig"; sourceTree = "<group>"; };
-		E5A3C6F82E0DE6D92F1983E2 /* PayPalOAuthScopes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PayPalOAuthScopes.h; path = PayPalMobile/PayPalOAuthScopes.h; sourceTree = "<group>"; };
-		E793747095C108FA1A8894C7 /* FMResultSet.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = src/fmdb/FMResultSet.m; sourceTree = "<group>"; };
-		E7F6357C509479AE0CB5BC91 /* FMDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FMDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E9E559B74339E4CD377285F0 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIWebView+AFNetworking.h"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
-		F10172AC05949A8FEA6FB2F0 /* Pods-VHSMarketPlace-BButton.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-VHSMarketPlace-BButton.modulemap"; sourceTree = "<group>"; };
-		F8952597C06512F12A2E61DF /* Pods-VHSMarketPlace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VHSMarketPlace.release.xcconfig"; sourceTree = "<group>"; };
-		FABA44F0630598DDA54BDE19 /* CardIOPaymentViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOPaymentViewController.h; path = PayPalMobile/CardIOPaymentViewController.h; sourceTree = "<group>"; };
-		FBB1D918DF7DE1F8304E998B /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+AFNetworking.m"; path = "UIKit+AFNetworking/UIButton+AFNetworking.m"; sourceTree = "<group>"; };
-		FBEC225321A7DEECEEB88D66 /* UIAlertView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+AFNetworking.h"; path = "UIKit+AFNetworking/UIAlertView+AFNetworking.h"; sourceTree = "<group>"; };
-		FE5E8501A5F4BE3C445C36E9 /* Pods-VHSMarketPlace-AFNetworking-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VHSMarketPlace-AFNetworking-Private.xcconfig"; sourceTree = "<group>"; };
-		FF804FE245AF06180D47E059 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		039A2F108E93C3216387DF45 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIRefreshControl+AFNetworking.m"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
+		04DD27EE9813A1D56A74BE15 /* FMDB.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDB.h; path = src/fmdb/FMDB.h; sourceTree = "<group>"; };
+		06DFD39D40DC6A3A35CB6832 /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperationManager.m; path = AFNetworking/AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
+		073DBCAAC99A57C131E330AF /* Pods-VHSMarketPlace-AFNetworking-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VHSMarketPlace-AFNetworking-prefix.pch"; sourceTree = "<group>"; };
+		080AC43EBF36FA38F33C2419 /* Pods-VHSMarketPlace-AFNetworking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VHSMarketPlace-AFNetworking-dummy.m"; sourceTree = "<group>"; };
+		093117593A56FB6A636E457D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
+		0B02382E64AD2F37D7282418 /* CardIO.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIO.h; path = PayPalMobile/CardIO.h; sourceTree = "<group>"; };
+		0B62862E25A30DA061373000 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreMedia.framework; sourceTree = DEVELOPER_DIR; };
+		0BBDF501C272410FA4780E3D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
+		0C16DB7B337E938242308586 /* Pods-VHSMarketPlace-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VHSMarketPlace-resources.sh"; sourceTree = "<group>"; };
+		0CDC8214559025F2984F2E04 /* FMDatabase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabase.h; path = src/fmdb/FMDatabase.h; sourceTree = "<group>"; };
+		0D7E7ECE9BD8F428385D3D5D /* Pods-VHSMarketPlace-AFNetworking-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VHSMarketPlace-AFNetworking-umbrella.h"; sourceTree = "<group>"; };
+		0E0B7D2C34E5BF574EE306F2 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		0E84C154B0E85207949A2850 /* Pods-VHSMarketPlace-BButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VHSMarketPlace-BButton-umbrella.h"; sourceTree = "<group>"; };
+		13CE5653B9FE7E6EAA85F107 /* CardIODetectionMode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIODetectionMode.h; path = CardIO/CardIODetectionMode.h; sourceTree = "<group>"; };
+		1691192CDFACA99F1ABDBB79 /* Pods-VHSMarketPlace-CardIO-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VHSMarketPlace-CardIO-dummy.m"; sourceTree = "<group>"; };
+		18CE27B3BBB9400A0764D7C9 /* CardIOPaymentViewControllerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOPaymentViewControllerDelegate.h; path = PayPalMobile/CardIOPaymentViewControllerDelegate.h; sourceTree = "<group>"; };
+		1B10C8FA108776DF6F40E3B5 /* FMDatabase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabase.m; path = src/fmdb/FMDatabase.m; sourceTree = "<group>"; };
+		1F1D76B78991904426F1A5EA /* Pods-VHSMarketPlace-PayPal-iOS-SDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VHSMarketPlace-PayPal-iOS-SDK-dummy.m"; sourceTree = "<group>"; };
+		20276A87D163387E2500C060 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkActivityIndicatorManager.m; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m"; sourceTree = "<group>"; };
+		20F37FF1D8D1692BB2F88B6F /* CardIOViewDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOViewDelegate.h; path = PayPalMobile/CardIOViewDelegate.h; sourceTree = "<group>"; };
+		21B067414A79BC5E73B61140 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseAdditions.m; path = src/fmdb/FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		25D6D0FF3515F2BCA76FC590 /* Pods-VHSMarketPlace-PayPal-iOS-SDK-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VHSMarketPlace-PayPal-iOS-SDK-Private.xcconfig"; sourceTree = "<group>"; };
+		2A92799E9B8FAFF9DEEC064D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		2BC21F8EAC2F953BDACB45E5 /* Pods-VHSMarketPlace-BButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VHSMarketPlace-BButton-prefix.pch"; sourceTree = "<group>"; };
+		34D3CC92FAC1883400B7F5B4 /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		352FDE6028B5CB0CAFEBFBBB /* FMDatabaseQueue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabaseQueue.h; path = src/fmdb/FMDatabaseQueue.h; sourceTree = "<group>"; };
+		35779A4C7F8A491589CF02F2 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIWebView+AFNetworking.h"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
+		36B8C407AFC32BD4A282507E /* AFSecurityPolicy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFSecurityPolicy.h; path = AFNetworking/AFSecurityPolicy.h; sourceTree = "<group>"; };
+		3752AE20AFC32EB88D4FD9CB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		380A6F7A8E5F54E9F7588B1B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		380B2ED90FAA8165D8A1B988 /* Pods-VHSMarketPlace-CardIO.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-VHSMarketPlace-CardIO.modulemap"; sourceTree = "<group>"; };
+		3FE6E8C4C3A5604553CE3470 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLConnectionOperation.h; path = AFNetworking/AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		4573C3849B65AD14E7476811 /* Pods-VHSMarketPlace-PayPal-iOS-SDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-VHSMarketPlace-PayPal-iOS-SDK.modulemap"; sourceTree = "<group>"; };
+		46F4AC4710C96FA4C74ADDF7 /* Pods-VHSMarketPlace-BButton.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-VHSMarketPlace-BButton.modulemap"; sourceTree = "<group>"; };
+		48464187F8E2731E3164078F /* CardIOPaymentViewControllerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOPaymentViewControllerDelegate.h; path = CardIO/CardIOPaymentViewControllerDelegate.h; sourceTree = "<group>"; };
+		489B3417B93721A999938F5A /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLRequestSerialization.h; path = AFNetworking/AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		4963066AFE46E0E1A93B017A /* Pods-VHSMarketPlace-AFNetworking.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-VHSMarketPlace-AFNetworking.modulemap"; sourceTree = "<group>"; };
+		496B9752C1CF0D05EADC8865 /* PayPal_iOS_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PayPal_iOS_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B067A4FAAC6D639ECF36786 /* CardIO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CardIO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BDFB754CA83B92D39E9D00C /* NSString+FontAwesome.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+FontAwesome.h"; path = "BButton/Classes/NSString+FontAwesome.h"; sourceTree = "<group>"; };
+		4E0F949CAC801AB500B0E4E7 /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIKit+AFNetworking.h"; path = "UIKit+AFNetworking/UIKit+AFNetworking.h"; sourceTree = "<group>"; };
+		4FA20188440FEB26C3E25A74 /* Pods_VHSMarketPlace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VHSMarketPlace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		51486D3E05A72B2615D98F28 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkReachabilityManager.h; path = AFNetworking/AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		516FDDF2F92617C5B2B3978E /* Pods-VHSMarketPlace-BButton-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VHSMarketPlace-BButton-Private.xcconfig"; sourceTree = "<group>"; };
+		5380E450CE73EE8765ED98B9 /* BButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5417F55EC5C1B6586C051B62 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
+		541B5A4F68B3E6ADD49F6476 /* Pods-VHSMarketPlace-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-VHSMarketPlace-acknowledgements.markdown"; sourceTree = "<group>"; };
+		560020269F325EF6E022BD23 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5873532A4F0735BBBB7DF23E /* Pods-VHSMarketPlace-FMDB.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-VHSMarketPlace-FMDB.modulemap"; sourceTree = "<group>"; };
+		594349635292E091FA295CE2 /* PayPalFuturePaymentViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PayPalFuturePaymentViewController.h; path = PayPalMobile/PayPalFuturePaymentViewController.h; sourceTree = "<group>"; };
+		59E6E29764577986936D65E8 /* PayPalProfileSharingViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PayPalProfileSharingViewController.h; path = PayPalMobile/PayPalProfileSharingViewController.h; sourceTree = "<group>"; };
+		59F4C4CAFD75C937F49E5CA0 /* Pods-VHSMarketPlace-FMDB-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VHSMarketPlace-FMDB-dummy.m"; sourceTree = "<group>"; };
+		5C63DDEC37AF4A63CA6B31CB /* FontAwesome.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = FontAwesome.ttf; path = BButton/resources/FontAwesome.ttf; sourceTree = "<group>"; };
+		60DE715E4CE979F6B0878576 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		625DB697A0DD3F642A277897 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkActivityIndicatorManager.h; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.h"; sourceTree = "<group>"; };
+		669085D9A6C01C4F88C5DF2F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		6815115D7AB2AA8C6184EABA /* Pods-VHSMarketPlace-BButton.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VHSMarketPlace-BButton.xcconfig"; sourceTree = "<group>"; };
+		685630F22A92BF0800790952 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68DCA91884C18B94FCFDE2CF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		6D9F18EAB98BA7E3A457B353 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6F9077DC7411BA3CA095E1EA /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		71DB95F9455CC11C58C811DC /* Pods-VHSMarketPlace-AFNetworking.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VHSMarketPlace-AFNetworking.xcconfig"; sourceTree = "<group>"; };
+		750566010E89B0122E5DD90D /* CardIO.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIO.h; path = CardIO/CardIO.h; sourceTree = "<group>"; };
+		806F2D2B1C8F6A4A5314B64E /* PayPalConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PayPalConfiguration.h; path = PayPalMobile/PayPalConfiguration.h; sourceTree = "<group>"; };
+		80ECAD45D461F833D8D36F3F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/MessageUI.framework; sourceTree = DEVELOPER_DIR; };
+		82D646AB5282E542CDD84E03 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLResponseSerialization.m; path = AFNetworking/AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		84820C472567F0A46EF89934 /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+AFNetworking.m"; path = "UIKit+AFNetworking/UIButton+AFNetworking.m"; sourceTree = "<group>"; };
+		88214D1408B7486C2FA8B08B /* Pods-VHSMarketPlace-FMDB.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VHSMarketPlace-FMDB.xcconfig"; sourceTree = "<group>"; };
+		8893706574EACE93E1933C74 /* PayPalMobile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PayPalMobile.h; path = PayPalMobile/PayPalMobile.h; sourceTree = "<group>"; };
+		88A164994C8BA9560A4D2764 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPSessionManager.m; path = AFNetworking/AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		8D8B97C8AD5313E5988B87C1 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
+		8DEB62940D173C5625E1B9C5 /* UIColor+BButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+BButton.m"; path = "BButton/Classes/UIColor+BButton.m"; sourceTree = "<group>"; };
+		904B59A6F2DB33835A12F8E3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		937D80AACF3C129B523E6046 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseQueue.m; path = src/fmdb/FMDatabaseQueue.m; sourceTree = "<group>"; };
+		9436AF29DEBF68070EEA33BB /* AFURLSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLSessionManager.m; path = AFNetworking/AFURLSessionManager.m; sourceTree = "<group>"; };
+		9654C600417D923924CEC6DA /* AFSecurityPolicy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFSecurityPolicy.m; path = AFNetworking/AFSecurityPolicy.m; sourceTree = "<group>"; };
+		96E7CDF2061A5150F58FA2EA /* CardIODetectionMode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIODetectionMode.h; path = PayPalMobile/CardIODetectionMode.h; sourceTree = "<group>"; };
+		97ACBEA6191926EA055BAC49 /* BButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BButton.h; path = BButton/Classes/BButton.h; sourceTree = "<group>"; };
+		9863BC81F337DF3F8270B3F6 /* FMResultSet.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = src/fmdb/FMResultSet.m; sourceTree = "<group>"; };
+		98697BF459AB07E01220C617 /* Pods-VHSMarketPlace-FMDB-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VHSMarketPlace-FMDB-Private.xcconfig"; sourceTree = "<group>"; };
+		9AD582BFBF197C72BAF330FE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		9B4DC2B546564E24D0759153 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperationManager.h; path = AFNetworking/AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		9C5CABD62DEFC4A854A3B737 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLRequestSerialization.m; path = AFNetworking/AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		9D45002D7E13434FBB58CABA /* Pods-VHSMarketPlace-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VHSMarketPlace-acknowledgements.plist"; sourceTree = "<group>"; };
+		9FCC286EE20278C745B24CA1 /* FMResultSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMResultSet.h; path = src/fmdb/FMResultSet.h; sourceTree = "<group>"; };
+		A19C1AA1F8ABA3308AFF277D /* CardIOUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOUtilities.h; path = PayPalMobile/CardIOUtilities.h; sourceTree = "<group>"; };
+		A37713DB63983C3B900B4F47 /* Pods-VHSMarketPlace-PayPal-iOS-SDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VHSMarketPlace-PayPal-iOS-SDK-prefix.pch"; sourceTree = "<group>"; };
+		A450980AB297F401529DD098 /* Pods-VHSMarketPlace-PayPal-iOS-SDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VHSMarketPlace-PayPal-iOS-SDK.xcconfig"; sourceTree = "<group>"; };
+		A545E06E25CBB8BF88475F5E /* UIRefreshControl+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIRefreshControl+AFNetworking.h"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.h"; sourceTree = "<group>"; };
+		A5FFF09FCC0845DCB6104AD1 /* CardIOPaymentViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOPaymentViewController.h; path = PayPalMobile/CardIOPaymentViewController.h; sourceTree = "<group>"; };
+		A7F503E6C67FD6D529D553A5 /* PayPalPayment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PayPalPayment.h; path = PayPalMobile/PayPalPayment.h; sourceTree = "<group>"; };
+		ABE254C377C4BB6853518DB0 /* CardIOCreditCardInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOCreditCardInfo.h; path = CardIO/CardIOCreditCardInfo.h; sourceTree = "<group>"; };
+		ABF611D3EDE84A3E2592899A /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		AEF214831BB034C1C466FE86 /* Pods-VHSMarketPlace.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-VHSMarketPlace.modulemap"; sourceTree = "<group>"; };
+		AF447C127FBB4D12548FBCED /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreVideo.framework; sourceTree = DEVELOPER_DIR; };
+		AFC825FA95B4685A6B3BDE56 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPSessionManager.h; path = AFNetworking/AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		B13199A527A2BB964370C253 /* Pods-VHSMarketPlace-FMDB-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VHSMarketPlace-FMDB-umbrella.h"; sourceTree = "<group>"; };
+		B2EBCE79E9FCA805210079C5 /* PayPalPaymentViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PayPalPaymentViewController.h; path = PayPalMobile/PayPalPaymentViewController.h; sourceTree = "<group>"; };
+		B85456C2AD8FECA7F3049F93 /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIProgressView+AFNetworking.h"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
+		B8A3C04BF3323C1C9B09881D /* FMDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FMDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8C5AE9122FD0C01AFF81949 /* Pods-VHSMarketPlace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VHSMarketPlace.debug.xcconfig"; sourceTree = "<group>"; };
+		B9BB2A7DE321A26C2DF4340E /* NSString+FontAwesome.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+FontAwesome.m"; path = "BButton/Classes/NSString+FontAwesome.m"; sourceTree = "<group>"; };
+		BBE64BCAF14298BEFC81B9A7 /* UIActivityIndicatorView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIActivityIndicatorView+AFNetworking.m"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.m"; sourceTree = "<group>"; };
+		C42CC35C152F0787585B3021 /* Pods-VHSMarketPlace-CardIO-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VHSMarketPlace-CardIO-Private.xcconfig"; sourceTree = "<group>"; };
+		C512AF5CA1895DC2EAA5098D /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperation.h; path = AFNetworking/AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		C5720B33D1F38B220E612B8B /* CardIOUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOUtilities.h; path = CardIO/CardIOUtilities.h; sourceTree = "<group>"; };
+		C67710F766095E1FAFF2034C /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperation.m; path = AFNetworking/AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		C6ED3A8E656E5C9CC8F517EF /* Pods-VHSMarketPlace-BButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VHSMarketPlace-BButton-dummy.m"; sourceTree = "<group>"; };
+		C7CB5DD5D529D5B697C7CAF7 /* BButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BButton.m; path = BButton/Classes/BButton.m; sourceTree = "<group>"; };
+		C8555AC6FD8CD23A7326AA1E /* CardIOView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOView.h; path = PayPalMobile/CardIOView.h; sourceTree = "<group>"; };
+		D0AB31563AAD1506213C3388 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		D12715643219DF425CFF586E /* Pods-VHSMarketPlace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VHSMarketPlace.release.xcconfig"; sourceTree = "<group>"; };
+		D2500187333348399AAE0604 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		D2AC996F85DC9C7641FC29D3 /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIActivityIndicatorView+AFNetworking.h"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
+		D704D687A055CCD16465F70F /* CardIOCreditCardInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOCreditCardInfo.h; path = PayPalMobile/CardIOCreditCardInfo.h; sourceTree = "<group>"; };
+		D86A5828110AF427D433684D /* Pods-VHSMarketPlace-CardIO-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VHSMarketPlace-CardIO-prefix.pch"; sourceTree = "<group>"; };
+		D921E2A099368B5A919CEA1C /* Pods-VHSMarketPlace-CardIO-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VHSMarketPlace-CardIO-umbrella.h"; sourceTree = "<group>"; };
+		D92B33D8D552D5CDD22CC138 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLResponseSerialization.h; path = AFNetworking/AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		D99A6FD8D06B7F2A1E513034 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC7D7F6EF9873A4DFF268E0A /* Pods-VHSMarketPlace-PayPal-iOS-SDK-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VHSMarketPlace-PayPal-iOS-SDK-umbrella.h"; sourceTree = "<group>"; };
+		DC8895AAB22F155A51B4CEDF /* CardIOViewDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOViewDelegate.h; path = CardIO/CardIOViewDelegate.h; sourceTree = "<group>"; };
+		DD8C9AAEE5958E581E78CA63 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkReachabilityManager.m; path = AFNetworking/AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		DF276D4FA6CA4A4E82D54BF3 /* CardIOPaymentViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOPaymentViewController.h; path = CardIO/CardIOPaymentViewController.h; sourceTree = "<group>"; };
+		E028AF7C968B77502A54509C /* Pods-VHSMarketPlace-AFNetworking-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VHSMarketPlace-AFNetworking-Private.xcconfig"; sourceTree = "<group>"; };
+		E1825E89D9CBA5165084EF82 /* Pods-VHSMarketPlace-CardIO.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VHSMarketPlace-CardIO.xcconfig"; sourceTree = "<group>"; };
+		E18E012C7E19F82ADAA6162C /* Pods-VHSMarketPlace-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VHSMarketPlace-frameworks.sh"; sourceTree = "<group>"; };
+		E6AD3D1D2293284B7E6130A3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E87FCAA0390297BFB85AF04A /* UIAlertView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+AFNetworking.h"; path = "UIKit+AFNetworking/UIAlertView+AFNetworking.h"; sourceTree = "<group>"; };
+		EB78755EF05E3462EC196737 /* Pods-VHSMarketPlace-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VHSMarketPlace-environment.h"; sourceTree = "<group>"; };
+		EC0D2DBC83FE32DEAD38925E /* FMDatabasePool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabasePool.h; path = src/fmdb/FMDatabasePool.h; sourceTree = "<group>"; };
+		ED6E09CAA6A1ED0FE5D94743 /* AFURLSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLSessionManager.h; path = AFNetworking/AFURLSessionManager.h; sourceTree = "<group>"; };
+		EF701DC54767F0B165D3D031 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLConnectionOperation.m; path = AFNetworking/AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		F01AA8136BC99A05DF204D04 /* AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
+		F08736E3DFAAF91C0CDE748D /* UIAlertView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+AFNetworking.m"; path = "UIKit+AFNetworking/UIAlertView+AFNetworking.m"; sourceTree = "<group>"; };
+		F1D96EEDDDF0002B57A09DFB /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+AFNetworking.h"; path = "UIKit+AFNetworking/UIButton+AFNetworking.h"; sourceTree = "<group>"; };
+		F201F3B7FFD53126DC13DDFC /* Pods-VHSMarketPlace-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VHSMarketPlace-umbrella.h"; sourceTree = "<group>"; };
+		F41507688875B85696FCE7A7 /* UIColor+BButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+BButton.h"; path = "BButton/Classes/UIColor+BButton.h"; sourceTree = "<group>"; };
+		F57DC00BF7F5CAECBEFE8AE3 /* FMDatabasePool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabasePool.m; path = src/fmdb/FMDatabasePool.m; sourceTree = "<group>"; };
+		F62305A53FAF67269431291E /* CardIOView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOView.h; path = CardIO/CardIOView.h; sourceTree = "<group>"; };
+		F73D2C7F74407A07F3C13079 /* PayPalOAuthScopes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PayPalOAuthScopes.h; path = PayPalMobile/PayPalOAuthScopes.h; sourceTree = "<group>"; };
+		F749E14955C6781FA1F44A92 /* Pods-VHSMarketPlace-FMDB-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VHSMarketPlace-FMDB-prefix.pch"; sourceTree = "<group>"; };
+		F7E1251E3ED3DA2B14D4398A /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+AFNetworking.m"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		F7F0BFDAB7518C4986EB592C /* Pods-VHSMarketPlace-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VHSMarketPlace-dummy.m"; sourceTree = "<group>"; };
+		F8DEBCD715FA0A2C3366086C /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIProgressView+AFNetworking.m"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
+		FABB69B69E29A1F19268AB07 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabaseAdditions.h; path = src/fmdb/FMDatabaseAdditions.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0CFF948047C51DAE511C3F95 /* Frameworks */ = {
+		2499E1C7345BF5BF26DED540 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA43BD2584304D881A21F693 /* CoreGraphics.framework in Frameworks */,
-				63DE17DB91CD16B882CF4E9C /* Foundation.framework in Frameworks */,
+				898903822FBD4E4BABBB1C99 /* CoreGraphics.framework in Frameworks */,
+				4F11E39CAB13C5BA9C5D0CB0 /* Foundation.framework in Frameworks */,
+				E8B9CB939E4F29B7D9313BCF /* MobileCoreServices.framework in Frameworks */,
+				EF9C0A44960CE6EBFB1DF632 /* Security.framework in Frameworks */,
+				623DCB8F93BFFA4BECF048BD /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2FFF441CFF0FEFDD4AB84BF7 /* Frameworks */ = {
+		36B9318B4F18E2CD7AA43CC3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FDA4B5861D5EB5236E24172C /* Foundation.framework in Frameworks */,
+				F30561A5B4EA81050777AF02 /* AVFoundation.framework in Frameworks */,
+				EF717D24BCC5A3F4118B4B42 /* AudioToolbox.framework in Frameworks */,
+				3C2548851101A45D36EC58A8 /* CoreMedia.framework in Frameworks */,
+				19310C2BDFB6DDDCF22A5308 /* CoreVideo.framework in Frameworks */,
+				11A1356F4CA2C33E4A65796A /* Foundation.framework in Frameworks */,
+				7E197EB5B4B45B962A545676 /* MobileCoreServices.framework in Frameworks */,
+				E538D18A3264073EAF64F940 /* OpenGLES.framework in Frameworks */,
+				8B9E79C3AC4B8D95C2312638 /* QuartzCore.framework in Frameworks */,
+				381C2B98E7CF6FA22AB3C54A /* Security.framework in Frameworks */,
+				6D6E47A2C44BC61C1C3406BA /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B68CA3E7265B93ECFA33ADB3 /* Frameworks */ = {
+		8AF307135BF2501B77401D8A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47C6D988F5E3BD7F934D989A /* Foundation.framework in Frameworks */,
+				F4E204116417BCF65FFEF357 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C127FAFEBB97BABADFA12DA9 /* Frameworks */ = {
+		95E1E192BCE24AC61507DC79 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54D9EA9ABF7FA224BE19710B /* AVFoundation.framework in Frameworks */,
-				362A776A33C2F4F9FB326299 /* AudioToolbox.framework in Frameworks */,
-				B9529ADD91548D3BC22DB4ED /* CoreLocation.framework in Frameworks */,
-				38D0DB0CCFF88870899210F6 /* CoreMedia.framework in Frameworks */,
-				26F3BB25AC14279211156C69 /* Foundation.framework in Frameworks */,
-				21A27B30273CA56C22348561 /* MessageUI.framework in Frameworks */,
-				831183FC4F7920BD89E51B01 /* MobileCoreServices.framework in Frameworks */,
-				76C53F08ED162F8755AED08F /* SystemConfiguration.framework in Frameworks */,
+				2F4928455BA514A29E9AE4B9 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DE507B348D9AAB2A847E1377 /* Frameworks */ = {
+		AD71951B9AD63EF59CD8A062 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B240D88FD9D3EF9967DB568 /* CoreGraphics.framework in Frameworks */,
-				A05114265CDCB167683304C6 /* Foundation.framework in Frameworks */,
-				4F0E1878ECC8675746E0A919 /* MobileCoreServices.framework in Frameworks */,
-				85A8FD1FFE50DDA578A57C33 /* Security.framework in Frameworks */,
-				D7E71F25FC5C53652889557C /* SystemConfiguration.framework in Frameworks */,
+				6FF4FC1C16C5047B6BFD5264 /* AVFoundation.framework in Frameworks */,
+				4AA88D744366FEE0C8C88A0C /* AudioToolbox.framework in Frameworks */,
+				171E7BFCC1ED3CB89C522974 /* CoreLocation.framework in Frameworks */,
+				A5306F86CC241263FF24DE58 /* CoreMedia.framework in Frameworks */,
+				7DAB8AB8A97C9A38B7319FA3 /* Foundation.framework in Frameworks */,
+				6D1844630B7A07AD4F6F7C9D /* MessageUI.framework in Frameworks */,
+				9BD016FF4ACE1E370CE47237 /* MobileCoreServices.framework in Frameworks */,
+				3C1DBD59B9D41570634DB1B4 /* SystemConfiguration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FACFB147514EAE5892C76F5A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8790C57DECB67C70D8994065 /* CoreGraphics.framework in Frameworks */,
+				797306B2FC7B633920D85982 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0D59A5FC730DB0DF4303F624 /* Resources */ = {
+		0B7A5F9944D2F38E3F3C6360 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4089FA21EB7C6F9664E21DDE /* FontAwesome.ttf */,
+				B5DDE2EE40400D84541704F6 /* iOS */,
 			);
-			name = Resources;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		1B17C95746CC2A0145FC0281 /* Resources */ = {
+		0DE6D512031C177451F93073 /* CardIO */ = {
 			isa = PBXGroup;
 			children = (
-				9DF4D0E7B0C300DEFD0F0D62 /* googlemaps.bundle */,
+				750566010E89B0122E5DD90D /* CardIO.h */,
+				ABE254C377C4BB6853518DB0 /* CardIOCreditCardInfo.h */,
+				13CE5653B9FE7E6EAA85F107 /* CardIODetectionMode.h */,
+				DF276D4FA6CA4A4E82D54BF3 /* CardIOPaymentViewController.h */,
+				48464187F8E2731E3164078F /* CardIOPaymentViewControllerDelegate.h */,
+				C5720B33D1F38B220E612B8B /* CardIOUtilities.h */,
+				F62305A53FAF67269431291E /* CardIOView.h */,
+				DC8895AAB22F155A51B4CEDF /* CardIOViewDelegate.h */,
+				F8C2A78C981426E823697839 /* Support Files */,
 			);
-			name = Resources;
+			path = CardIO;
 			sourceTree = "<group>";
 		};
-		1C734BC2EA9A56910E49C127 /* Targets Support Files */ = {
+		13398F369B692EC830C83FB9 /* Reachability */ = {
 			isa = PBXGroup;
 			children = (
-				AA0BC72FCF2B5912E08E6C8A /* Pods-VHSMarketPlace */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		1DD78ED1C2A68DF28616F878 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				CCD997BBC09457AE77DEA039 /* Info.plist */,
-				5D272851FF2FF5ECC704C396 /* Pods-VHSMarketPlace-FMDB.modulemap */,
-				896DFCDA654367BDAE470323 /* Pods-VHSMarketPlace-FMDB.xcconfig */,
-				4CF9ACAEA8BFD47FE32581FD /* Pods-VHSMarketPlace-FMDB-Private.xcconfig */,
-				39B34BD023C9F0A22535526C /* Pods-VHSMarketPlace-FMDB-dummy.m */,
-				D94BA9322F68CBA99EE93B6A /* Pods-VHSMarketPlace-FMDB-prefix.pch */,
-				3260F499774CCB69C8A959C5 /* Pods-VHSMarketPlace-FMDB-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Pods-VHSMarketPlace-FMDB";
-			sourceTree = "<group>";
-		};
-		33D5B869D7CC663A17044194 /* NSURLSession */ = {
-			isa = PBXGroup;
-			children = (
-				018B0998330297FC4BEE8BD7 /* AFHTTPSessionManager.h */,
-				2A6B1A192D9205CF106C0FF1 /* AFHTTPSessionManager.m */,
-				D5499634E85F6E94A1E7DF35 /* AFURLSessionManager.h */,
-				01D699E730DD8B303C87264D /* AFURLSessionManager.m */,
-			);
-			name = NSURLSession;
-			sourceTree = "<group>";
-		};
-		38890304019D677461F0A931 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				C4423A5FB27CE62FBCD4F4F0 /* AVFoundation.framework */,
-				FF804FE245AF06180D47E059 /* AudioToolbox.framework */,
-				35F25AE25EF831BBE08BEA91 /* CoreGraphics.framework */,
-				7D7312296ECAC5DEC7347B4B /* CoreLocation.framework */,
-				9826DAFBF8D968BF90D0C5AE /* CoreMedia.framework */,
-				B0AF4DDC6233E69F89284DCB /* Foundation.framework */,
-				5F4C86C9FA6975325F120AEF /* MessageUI.framework */,
-				359C456599234F9DE1294177 /* MobileCoreServices.framework */,
-				A60D3C09BB31EE2342D204F4 /* Security.framework */,
-				0207D1BC091641E9E01A4CD7 /* SystemConfiguration.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		3991C515408E6623FB214F31 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5686CBC66FB612366C6274C4 /* AFNetworking.framework */,
-				21224F0C72DE26A371D183B0 /* BButton.framework */,
-				E7F6357C509479AE0CB5BC91 /* FMDB.framework */,
-				77A2EABD098758FB48707310 /* PayPal_iOS_SDK.framework */,
-				8BA7993368D3F824975886EA /* Pods_VHSMarketPlace.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		3F4B8E1E330A507FA7108A4D /* NSURLConnection */ = {
-			isa = PBXGroup;
-			children = (
-				A9F09FDE33E09E7BBBE068D0 /* AFHTTPRequestOperation.h */,
-				335BFCFAC5FE4EB82B711B9F /* AFHTTPRequestOperation.m */,
-				9127CD9C1B0C7DC37261D12E /* AFHTTPRequestOperationManager.h */,
-				DC8AF4C202401828951B3080 /* AFHTTPRequestOperationManager.m */,
-				390A618136A20314FB531F2F /* AFURLConnectionOperation.h */,
-				3F63FDC966CB3DDEA00E0101 /* AFURLConnectionOperation.m */,
-			);
-			name = NSURLConnection;
-			sourceTree = "<group>";
-		};
-		47A25580BF4756D99A89B5F8 /* common */ = {
-			isa = PBXGroup;
-			children = (
-				0F1AA881DCD51DA0E491211E /* FMDB.h */,
-				075D9B93D6CD78921F82F5B5 /* FMDatabase.h */,
-				343BEA46FD44E865FAFAB559 /* FMDatabase.m */,
-				C3795E734255FE5058518C65 /* FMDatabaseAdditions.h */,
-				AA4B74A7FD5F9E0D5E3C1EC2 /* FMDatabaseAdditions.m */,
-				00894A50CF4DED83446A912B /* FMDatabasePool.h */,
-				B38493622CC85F72BB47F953 /* FMDatabasePool.m */,
-				1B1E633457655A037B0BA022 /* FMDatabaseQueue.h */,
-				03E1628092E78EF7EA656294 /* FMDatabaseQueue.m */,
-				BBA0C3B8C587347880240B20 /* FMResultSet.h */,
-				E793747095C108FA1A8894C7 /* FMResultSet.m */,
-			);
-			name = common;
-			sourceTree = "<group>";
-		};
-		5D5C00C07CA69DC3B0F01149 /* Google-Maps-iOS-SDK */ = {
-			isa = PBXGroup;
-			children = (
-				9A3C60827F8CC36DA0D58B8A /* Frameworks */,
-				1B17C95746CC2A0145FC0281 /* Resources */,
-			);
-			path = "Google-Maps-iOS-SDK";
-			sourceTree = "<group>";
-		};
-		6656A4B13EC21D9BB6B21E44 /* Reachability */ = {
-			isa = PBXGroup;
-			children = (
-				710B69B149A2BE743B8C24AA /* AFNetworkReachabilityManager.h */,
-				79C530EBDFA33BC693824006 /* AFNetworkReachabilityManager.m */,
+				51486D3E05A72B2615D98F28 /* AFNetworkReachabilityManager.h */,
+				DD8C9AAEE5958E581E78CA63 /* AFNetworkReachabilityManager.m */,
 			);
 			name = Reachability;
 			sourceTree = "<group>";
 		};
-		694ADB796C7200CCDFF878EF /* BButton */ = {
+		1F9265D8D1FF3952694656F7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				000C3678E198199CFD43635D /* BButton.h */,
-				AD0A3F0AE4D5B848552CA0E2 /* BButton.m */,
-				BE45A7832AC01A69A8641183 /* NSString+FontAwesome.h */,
-				B9F9A3AC35E8C7C754B5A9F4 /* NSString+FontAwesome.m */,
-				A082C3A04C80761916A81287 /* UIColor+BButton.h */,
-				570470B641BA03F863E83E87 /* UIColor+BButton.m */,
-				0D59A5FC730DB0DF4303F624 /* Resources */,
-				DCA4A84DF6827804DF9AB7BA /* Support Files */,
+				34D3CC92FAC1883400B7F5B4 /* GoogleMaps.bundle */,
 			);
-			path = BButton;
+			name = Resources;
 			sourceTree = "<group>";
 		};
-		721E2B2E5992096FF453BCA4 = {
+		3436E21BF6009300E8B027F8 /* PayPal-iOS-SDK */ = {
 			isa = PBXGroup;
 			children = (
-				A64EF6E2B258A3C122383323 /* Podfile */,
-				768422769140D78787F0EA7F /* Frameworks */,
-				80D035B489CCA188B0A0F106 /* Pods */,
-				3991C515408E6623FB214F31 /* Products */,
-				1C734BC2EA9A56910E49C127 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		76389EA132E91881292E75ED /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				295F45945F6A72267D273C12 /* Info.plist */,
-				4BA043590984E01CAEFB6416 /* Pods-VHSMarketPlace-PayPal-iOS-SDK.modulemap */,
-				2A11F2774D125BF99A6AC979 /* Pods-VHSMarketPlace-PayPal-iOS-SDK.xcconfig */,
-				B710318B5AE3B8E0358145C1 /* Pods-VHSMarketPlace-PayPal-iOS-SDK-Private.xcconfig */,
-				7B91BFBC9286162E2A05EDFE /* Pods-VHSMarketPlace-PayPal-iOS-SDK-dummy.m */,
-				B31421E2B83BB819950F3F39 /* Pods-VHSMarketPlace-PayPal-iOS-SDK-prefix.pch */,
-				067CDB224D46EBBE163129B5 /* Pods-VHSMarketPlace-PayPal-iOS-SDK-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Pods-VHSMarketPlace-PayPal-iOS-SDK";
-			sourceTree = "<group>";
-		};
-		768422769140D78787F0EA7F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				38890304019D677461F0A931 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		772CCB93441DA2A69D1C6238 /* Security */ = {
-			isa = PBXGroup;
-			children = (
-				CA55D33452F43484DCC7EFB0 /* AFSecurityPolicy.h */,
-				C19AE92CEBD7E22CB742BCED /* AFSecurityPolicy.m */,
-			);
-			name = Security;
-			sourceTree = "<group>";
-		};
-		80D035B489CCA188B0A0F106 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				F24DE3284EC0880231FA3CF4 /* AFNetworking */,
-				694ADB796C7200CCDFF878EF /* BButton */,
-				A7A38E5154ED898851CCBCAB /* FMDB */,
-				5D5C00C07CA69DC3B0F01149 /* Google-Maps-iOS-SDK */,
-				9EE98702CECA50707B064C41 /* PayPal-iOS-SDK */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		93BE8D7979A3999A86784361 /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-				C01155F5030E1FFC92F5AF03 /* AFNetworkActivityIndicatorManager.h */,
-				764392D13EF44F8003583C9A /* AFNetworkActivityIndicatorManager.m */,
-				3661BF904EC0FC6CF9EB63AB /* UIActivityIndicatorView+AFNetworking.h */,
-				BC70469268F902F5F069BDD7 /* UIActivityIndicatorView+AFNetworking.m */,
-				FBEC225321A7DEECEEB88D66 /* UIAlertView+AFNetworking.h */,
-				CB05A566505779B82DE42CEF /* UIAlertView+AFNetworking.m */,
-				9446F7BA63A622928066B47B /* UIButton+AFNetworking.h */,
-				FBB1D918DF7DE1F8304E998B /* UIButton+AFNetworking.m */,
-				C7480768B9ED3920035740F0 /* UIImageView+AFNetworking.h */,
-				40FC1F0DE4EC1047BE5B79FD /* UIImageView+AFNetworking.m */,
-				0682565ABAFB25FBC9C69F27 /* UIKit+AFNetworking.h */,
-				34FDADA0EE06BD5D1EEFFFC7 /* UIProgressView+AFNetworking.h */,
-				39642162CFF06168E6057792 /* UIProgressView+AFNetworking.m */,
-				4EC337929148282726B37F60 /* UIRefreshControl+AFNetworking.h */,
-				3FB2D8C171FAAC00FCC648DF /* UIRefreshControl+AFNetworking.m */,
-				E9E559B74339E4CD377285F0 /* UIWebView+AFNetworking.h */,
-				BFC3AEEF50D34886EB0F1DE7 /* UIWebView+AFNetworking.m */,
-			);
-			name = UIKit;
-			sourceTree = "<group>";
-		};
-		9A3C60827F8CC36DA0D58B8A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				65B7E74F995F4DFD79AF8773 /* googlemaps.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		9EE98702CECA50707B064C41 /* PayPal-iOS-SDK */ = {
-			isa = PBXGroup;
-			children = (
-				DA7F78F640E617EE6521795D /* CardIO.h */,
-				05D99F9375FD9C5F20F5DF30 /* CardIOCreditCardInfo.h */,
-				CFF34AAE9C982EE7F8891A61 /* CardIODetectionMode.h */,
-				FABA44F0630598DDA54BDE19 /* CardIOPaymentViewController.h */,
-				3B31F55B75D4F7F6491FC226 /* CardIOPaymentViewControllerDelegate.h */,
-				B47CFB9842C6E577D7C89D8B /* CardIOUtilities.h */,
-				907E900BB76BD0BACDC32680 /* CardIOView.h */,
-				06B8B813513AC02A4805C1B2 /* CardIOViewDelegate.h */,
-				B6CE4DC349546D787CB3D96A /* PayPalConfiguration.h */,
-				09B51100F9129A0B3BCC9721 /* PayPalFuturePaymentViewController.h */,
-				8F3C851BA92502FAE0A115D8 /* PayPalMobile.h */,
-				E5A3C6F82E0DE6D92F1983E2 /* PayPalOAuthScopes.h */,
-				4C97B8C0DA9530D2C1851788 /* PayPalPayment.h */,
-				05627EB953A81B59384C672E /* PayPalPaymentViewController.h */,
-				2B979CA823BCA454C4EE6D20 /* PayPalProfileSharingViewController.h */,
-				76389EA132E91881292E75ED /* Support Files */,
+				0B02382E64AD2F37D7282418 /* CardIO.h */,
+				D704D687A055CCD16465F70F /* CardIOCreditCardInfo.h */,
+				96E7CDF2061A5150F58FA2EA /* CardIODetectionMode.h */,
+				A5FFF09FCC0845DCB6104AD1 /* CardIOPaymentViewController.h */,
+				18CE27B3BBB9400A0764D7C9 /* CardIOPaymentViewControllerDelegate.h */,
+				A19C1AA1F8ABA3308AFF277D /* CardIOUtilities.h */,
+				C8555AC6FD8CD23A7326AA1E /* CardIOView.h */,
+				20F37FF1D8D1692BB2F88B6F /* CardIOViewDelegate.h */,
+				806F2D2B1C8F6A4A5314B64E /* PayPalConfiguration.h */,
+				594349635292E091FA295CE2 /* PayPalFuturePaymentViewController.h */,
+				8893706574EACE93E1933C74 /* PayPalMobile.h */,
+				F73D2C7F74407A07F3C13079 /* PayPalOAuthScopes.h */,
+				A7F503E6C67FD6D529D553A5 /* PayPalPayment.h */,
+				B2EBCE79E9FCA805210079C5 /* PayPalPaymentViewController.h */,
+				59E6E29764577986936D65E8 /* PayPalProfileSharingViewController.h */,
+				99E4E51AA9CABBA248EC7F3E /* Support Files */,
 			);
 			path = "PayPal-iOS-SDK";
 			sourceTree = "<group>";
 		};
-		A093CC7854E9C350D1F444D8 /* Support Files */ = {
+		36A56395F1EEFD95BA835664 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C7C6CE2AF4EEC4139B9BEC47 /* Info.plist */,
-				0D7C34AC23338B4F94B2987F /* Pods-VHSMarketPlace-AFNetworking.modulemap */,
-				1DA8EA5B66A52B7698D601F0 /* Pods-VHSMarketPlace-AFNetworking.xcconfig */,
-				FE5E8501A5F4BE3C445C36E9 /* Pods-VHSMarketPlace-AFNetworking-Private.xcconfig */,
-				7DAAC4BB7511D5040E39A064 /* Pods-VHSMarketPlace-AFNetworking-dummy.m */,
-				E386FA2C90E66EB4013F0450 /* Pods-VHSMarketPlace-AFNetworking-prefix.pch */,
-				726D5FABE4A79A353A5FD62C /* Pods-VHSMarketPlace-AFNetworking-umbrella.h */,
+				560020269F325EF6E022BD23 /* AFNetworking.framework */,
+				5380E450CE73EE8765ED98B9 /* BButton.framework */,
+				4B067A4FAAC6D639ECF36786 /* CardIO.framework */,
+				B8A3C04BF3323C1C9B09881D /* FMDB.framework */,
+				496B9752C1CF0D05EADC8865 /* PayPal_iOS_SDK.framework */,
+				4FA20188440FEB26C3E25A74 /* Pods_VHSMarketPlace.framework */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/Pods-VHSMarketPlace-AFNetworking";
+			name = Products;
 			sourceTree = "<group>";
 		};
-		A7A38E5154ED898851CCBCAB /* FMDB */ = {
+		3E9672AC3DDCE1D90F97EDB4 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				1DD78ED1C2A68DF28616F878 /* Support Files */,
-				47A25580BF4756D99A89B5F8 /* common */,
+				4D34A7A5F43C0AD6E65620A7 /* Pods-VHSMarketPlace */,
 			);
-			path = FMDB;
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		AA0BC72FCF2B5912E08E6C8A /* Pods-VHSMarketPlace */ = {
+		425A7DC2FC46B1996D3A2889 = {
 			isa = PBXGroup;
 			children = (
-				343109CC9FA7B05687AE1DC3 /* Info.plist */,
-				959C5A8A4C738AFC9606F309 /* Pods-VHSMarketPlace.modulemap */,
-				B9D309AFFB07AECB9E4666AE /* Pods-VHSMarketPlace-acknowledgements.markdown */,
-				61E57D415D2D0FCE2753F6F0 /* Pods-VHSMarketPlace-acknowledgements.plist */,
-				C5FB00603272991A97963B67 /* Pods-VHSMarketPlace-dummy.m */,
-				156D485632F5E588AA766EFE /* Pods-VHSMarketPlace-environment.h */,
-				93DB5E4D70CB30A265417437 /* Pods-VHSMarketPlace-frameworks.sh */,
-				AADA2218AF8A88E7CAE78214 /* Pods-VHSMarketPlace-resources.sh */,
-				949D678EB1CFB77A638CDF1B /* Pods-VHSMarketPlace-umbrella.h */,
-				E5575A2E451B730DD04F5B75 /* Pods-VHSMarketPlace.debug.xcconfig */,
-				F8952597C06512F12A2E61DF /* Pods-VHSMarketPlace.release.xcconfig */,
+				6F9077DC7411BA3CA095E1EA /* Podfile */,
+				0B7A5F9944D2F38E3F3C6360 /* Frameworks */,
+				D01C3206198F454974A5E55B /* Pods */,
+				36A56395F1EEFD95BA835664 /* Products */,
+				3E9672AC3DDCE1D90F97EDB4 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		49864909F2AA66DE138ED2C2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8D8B97C8AD5313E5988B87C1 /* GoogleMaps.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4D34A7A5F43C0AD6E65620A7 /* Pods-VHSMarketPlace */ = {
+			isa = PBXGroup;
+			children = (
+				D99A6FD8D06B7F2A1E513034 /* Info.plist */,
+				AEF214831BB034C1C466FE86 /* Pods-VHSMarketPlace.modulemap */,
+				541B5A4F68B3E6ADD49F6476 /* Pods-VHSMarketPlace-acknowledgements.markdown */,
+				9D45002D7E13434FBB58CABA /* Pods-VHSMarketPlace-acknowledgements.plist */,
+				F7F0BFDAB7518C4986EB592C /* Pods-VHSMarketPlace-dummy.m */,
+				EB78755EF05E3462EC196737 /* Pods-VHSMarketPlace-environment.h */,
+				E18E012C7E19F82ADAA6162C /* Pods-VHSMarketPlace-frameworks.sh */,
+				0C16DB7B337E938242308586 /* Pods-VHSMarketPlace-resources.sh */,
+				F201F3B7FFD53126DC13DDFC /* Pods-VHSMarketPlace-umbrella.h */,
+				B8C5AE9122FD0C01AFF81949 /* Pods-VHSMarketPlace.debug.xcconfig */,
+				D12715643219DF425CFF586E /* Pods-VHSMarketPlace.release.xcconfig */,
 			);
 			name = "Pods-VHSMarketPlace";
 			path = "Target Support Files/Pods-VHSMarketPlace";
 			sourceTree = "<group>";
 		};
-		BE03F2DFA30C4CCC695ABC43 /* Serialization */ = {
+		5D1F9D9626A1606617C5AA18 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				DC92248FE415B4915CE06AEB /* AFURLRequestSerialization.h */,
-				3D8953A1E91451E17B667194 /* AFURLRequestSerialization.m */,
-				C84F552832DDCE26439E5935 /* AFURLResponseSerialization.h */,
-				E5295301093C002E5EF95496 /* AFURLResponseSerialization.m */,
-			);
-			name = Serialization;
-			sourceTree = "<group>";
-		};
-		DCA4A84DF6827804DF9AB7BA /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				B1C4F9E471ED4BE8965C3580 /* Info.plist */,
-				F10172AC05949A8FEA6FB2F0 /* Pods-VHSMarketPlace-BButton.modulemap */,
-				5F87A9BB3570A30BC8347495 /* Pods-VHSMarketPlace-BButton.xcconfig */,
-				350DFFD0D7CAAAE7E2B85B09 /* Pods-VHSMarketPlace-BButton-Private.xcconfig */,
-				9133F98C6336E470319C5865 /* Pods-VHSMarketPlace-BButton-dummy.m */,
-				53E192A7312036ACBD1CDB5F /* Pods-VHSMarketPlace-BButton-prefix.pch */,
-				B4FAF814DFE57CA00F9A64A0 /* Pods-VHSMarketPlace-BButton-umbrella.h */,
+				6D9F18EAB98BA7E3A457B353 /* Info.plist */,
+				46F4AC4710C96FA4C74ADDF7 /* Pods-VHSMarketPlace-BButton.modulemap */,
+				6815115D7AB2AA8C6184EABA /* Pods-VHSMarketPlace-BButton.xcconfig */,
+				516FDDF2F92617C5B2B3978E /* Pods-VHSMarketPlace-BButton-Private.xcconfig */,
+				C6ED3A8E656E5C9CC8F517EF /* Pods-VHSMarketPlace-BButton-dummy.m */,
+				2BC21F8EAC2F953BDACB45E5 /* Pods-VHSMarketPlace-BButton-prefix.pch */,
+				0E84C154B0E85207949A2850 /* Pods-VHSMarketPlace-BButton-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Pods-VHSMarketPlace-BButton";
 			sourceTree = "<group>";
 		};
-		F24DE3284EC0880231FA3CF4 /* AFNetworking */ = {
+		783581B65716645D2C127779 /* Security */ = {
 			isa = PBXGroup;
 			children = (
-				E3424C09F9CB4A65BCC5AF3F /* AFNetworking.h */,
-				3F4B8E1E330A507FA7108A4D /* NSURLConnection */,
-				33D5B869D7CC663A17044194 /* NSURLSession */,
-				6656A4B13EC21D9BB6B21E44 /* Reachability */,
-				772CCB93441DA2A69D1C6238 /* Security */,
-				BE03F2DFA30C4CCC695ABC43 /* Serialization */,
-				A093CC7854E9C350D1F444D8 /* Support Files */,
-				93BE8D7979A3999A86784361 /* UIKit */,
+				36B8C407AFC32BD4A282507E /* AFSecurityPolicy.h */,
+				9654C600417D923924CEC6DA /* AFSecurityPolicy.m */,
+			);
+			name = Security;
+			sourceTree = "<group>";
+		};
+		7CCDA2DF61074A1EE2EA45D8 /* NSURLSession */ = {
+			isa = PBXGroup;
+			children = (
+				AFC825FA95B4685A6B3BDE56 /* AFHTTPSessionManager.h */,
+				88A164994C8BA9560A4D2764 /* AFHTTPSessionManager.m */,
+				ED6E09CAA6A1ED0FE5D94743 /* AFURLSessionManager.h */,
+				9436AF29DEBF68070EEA33BB /* AFURLSessionManager.m */,
+			);
+			name = NSURLSession;
+			sourceTree = "<group>";
+		};
+		836E55B47140F380F90D43FD /* common */ = {
+			isa = PBXGroup;
+			children = (
+				04DD27EE9813A1D56A74BE15 /* FMDB.h */,
+				0CDC8214559025F2984F2E04 /* FMDatabase.h */,
+				1B10C8FA108776DF6F40E3B5 /* FMDatabase.m */,
+				FABB69B69E29A1F19268AB07 /* FMDatabaseAdditions.h */,
+				21B067414A79BC5E73B61140 /* FMDatabaseAdditions.m */,
+				EC0D2DBC83FE32DEAD38925E /* FMDatabasePool.h */,
+				F57DC00BF7F5CAECBEFE8AE3 /* FMDatabasePool.m */,
+				352FDE6028B5CB0CAFEBFBBB /* FMDatabaseQueue.h */,
+				937D80AACF3C129B523E6046 /* FMDatabaseQueue.m */,
+				9FCC286EE20278C745B24CA1 /* FMResultSet.h */,
+				9863BC81F337DF3F8270B3F6 /* FMResultSet.m */,
+			);
+			name = common;
+			sourceTree = "<group>";
+		};
+		99E4E51AA9CABBA248EC7F3E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				685630F22A92BF0800790952 /* Info.plist */,
+				4573C3849B65AD14E7476811 /* Pods-VHSMarketPlace-PayPal-iOS-SDK.modulemap */,
+				A450980AB297F401529DD098 /* Pods-VHSMarketPlace-PayPal-iOS-SDK.xcconfig */,
+				25D6D0FF3515F2BCA76FC590 /* Pods-VHSMarketPlace-PayPal-iOS-SDK-Private.xcconfig */,
+				1F1D76B78991904426F1A5EA /* Pods-VHSMarketPlace-PayPal-iOS-SDK-dummy.m */,
+				A37713DB63983C3B900B4F47 /* Pods-VHSMarketPlace-PayPal-iOS-SDK-prefix.pch */,
+				DC7D7F6EF9873A4DFF268E0A /* Pods-VHSMarketPlace-PayPal-iOS-SDK-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-VHSMarketPlace-PayPal-iOS-SDK";
+			sourceTree = "<group>";
+		};
+		A97AF7C8E2767C69FD8A1411 /* NSURLConnection */ = {
+			isa = PBXGroup;
+			children = (
+				C512AF5CA1895DC2EAA5098D /* AFHTTPRequestOperation.h */,
+				C67710F766095E1FAFF2034C /* AFHTTPRequestOperation.m */,
+				9B4DC2B546564E24D0759153 /* AFHTTPRequestOperationManager.h */,
+				06DFD39D40DC6A3A35CB6832 /* AFHTTPRequestOperationManager.m */,
+				3FE6E8C4C3A5604553CE3470 /* AFURLConnectionOperation.h */,
+				EF701DC54767F0B165D3D031 /* AFURLConnectionOperation.m */,
+			);
+			name = NSURLConnection;
+			sourceTree = "<group>";
+		};
+		AEE1F7DCFF392E5D4C6E3943 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				F01AA8136BC99A05DF204D04 /* AFNetworking.h */,
+				A97AF7C8E2767C69FD8A1411 /* NSURLConnection */,
+				7CCDA2DF61074A1EE2EA45D8 /* NSURLSession */,
+				13398F369B692EC830C83FB9 /* Reachability */,
+				783581B65716645D2C127779 /* Security */,
+				F2726A6160B4540CAF215BC8 /* Serialization */,
+				CB1294194C106AF43860F388 /* Support Files */,
+				CE2F2F0DF14AD4E53E99AD4F /* UIKit */,
 			);
 			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		AFC9463A4BD9EABAC0A22AFA /* BButton */ = {
+			isa = PBXGroup;
+			children = (
+				97ACBEA6191926EA055BAC49 /* BButton.h */,
+				C7CB5DD5D529D5B697C7CAF7 /* BButton.m */,
+				4BDFB754CA83B92D39E9D00C /* NSString+FontAwesome.h */,
+				B9BB2A7DE321A26C2DF4340E /* NSString+FontAwesome.m */,
+				F41507688875B85696FCE7A7 /* UIColor+BButton.h */,
+				8DEB62940D173C5625E1B9C5 /* UIColor+BButton.m */,
+				C0E9234083ACE9E8E21E7E54 /* Resources */,
+				5D1F9D9626A1606617C5AA18 /* Support Files */,
+			);
+			path = BButton;
+			sourceTree = "<group>";
+		};
+		B5DDE2EE40400D84541704F6 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				9AD582BFBF197C72BAF330FE /* AVFoundation.framework */,
+				68DCA91884C18B94FCFDE2CF /* AudioToolbox.framework */,
+				D2500187333348399AAE0604 /* CoreGraphics.framework */,
+				0BBDF501C272410FA4780E3D /* CoreLocation.framework */,
+				0B62862E25A30DA061373000 /* CoreMedia.framework */,
+				AF447C127FBB4D12548FBCED /* CoreVideo.framework */,
+				904B59A6F2DB33835A12F8E3 /* Foundation.framework */,
+				80ECAD45D461F833D8D36F3F /* MessageUI.framework */,
+				5417F55EC5C1B6586C051B62 /* MobileCoreServices.framework */,
+				093117593A56FB6A636E457D /* OpenGLES.framework */,
+				D0AB31563AAD1506213C3388 /* QuartzCore.framework */,
+				2A92799E9B8FAFF9DEEC064D /* Security.framework */,
+				669085D9A6C01C4F88C5DF2F /* SystemConfiguration.framework */,
+				3752AE20AFC32EB88D4FD9CB /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		C0E9234083ACE9E8E21E7E54 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5C63DDEC37AF4A63CA6B31CB /* FontAwesome.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		C7F96B510E3FC590749FD71F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				380A6F7A8E5F54E9F7588B1B /* Info.plist */,
+				5873532A4F0735BBBB7DF23E /* Pods-VHSMarketPlace-FMDB.modulemap */,
+				88214D1408B7486C2FA8B08B /* Pods-VHSMarketPlace-FMDB.xcconfig */,
+				98697BF459AB07E01220C617 /* Pods-VHSMarketPlace-FMDB-Private.xcconfig */,
+				59F4C4CAFD75C937F49E5CA0 /* Pods-VHSMarketPlace-FMDB-dummy.m */,
+				F749E14955C6781FA1F44A92 /* Pods-VHSMarketPlace-FMDB-prefix.pch */,
+				B13199A527A2BB964370C253 /* Pods-VHSMarketPlace-FMDB-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-VHSMarketPlace-FMDB";
+			sourceTree = "<group>";
+		};
+		CB1294194C106AF43860F388 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E6AD3D1D2293284B7E6130A3 /* Info.plist */,
+				4963066AFE46E0E1A93B017A /* Pods-VHSMarketPlace-AFNetworking.modulemap */,
+				71DB95F9455CC11C58C811DC /* Pods-VHSMarketPlace-AFNetworking.xcconfig */,
+				E028AF7C968B77502A54509C /* Pods-VHSMarketPlace-AFNetworking-Private.xcconfig */,
+				080AC43EBF36FA38F33C2419 /* Pods-VHSMarketPlace-AFNetworking-dummy.m */,
+				073DBCAAC99A57C131E330AF /* Pods-VHSMarketPlace-AFNetworking-prefix.pch */,
+				0D7E7ECE9BD8F428385D3D5D /* Pods-VHSMarketPlace-AFNetworking-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-VHSMarketPlace-AFNetworking";
+			sourceTree = "<group>";
+		};
+		CE2F2F0DF14AD4E53E99AD4F /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				625DB697A0DD3F642A277897 /* AFNetworkActivityIndicatorManager.h */,
+				20276A87D163387E2500C060 /* AFNetworkActivityIndicatorManager.m */,
+				D2AC996F85DC9C7641FC29D3 /* UIActivityIndicatorView+AFNetworking.h */,
+				BBE64BCAF14298BEFC81B9A7 /* UIActivityIndicatorView+AFNetworking.m */,
+				E87FCAA0390297BFB85AF04A /* UIAlertView+AFNetworking.h */,
+				F08736E3DFAAF91C0CDE748D /* UIAlertView+AFNetworking.m */,
+				F1D96EEDDDF0002B57A09DFB /* UIButton+AFNetworking.h */,
+				84820C472567F0A46EF89934 /* UIButton+AFNetworking.m */,
+				ABF611D3EDE84A3E2592899A /* UIImageView+AFNetworking.h */,
+				0E0B7D2C34E5BF574EE306F2 /* UIImageView+AFNetworking.m */,
+				4E0F949CAC801AB500B0E4E7 /* UIKit+AFNetworking.h */,
+				B85456C2AD8FECA7F3049F93 /* UIProgressView+AFNetworking.h */,
+				F8DEBCD715FA0A2C3366086C /* UIProgressView+AFNetworking.m */,
+				A545E06E25CBB8BF88475F5E /* UIRefreshControl+AFNetworking.h */,
+				039A2F108E93C3216387DF45 /* UIRefreshControl+AFNetworking.m */,
+				35779A4C7F8A491589CF02F2 /* UIWebView+AFNetworking.h */,
+				F7E1251E3ED3DA2B14D4398A /* UIWebView+AFNetworking.m */,
+			);
+			name = UIKit;
+			sourceTree = "<group>";
+		};
+		D01C3206198F454974A5E55B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AEE1F7DCFF392E5D4C6E3943 /* AFNetworking */,
+				AFC9463A4BD9EABAC0A22AFA /* BButton */,
+				0DE6D512031C177451F93073 /* CardIO */,
+				E0B3BCF4C3395A9B1744009E /* FMDB */,
+				F6C7B85E34879E700269D2AE /* Google-Maps-iOS-SDK */,
+				3436E21BF6009300E8B027F8 /* PayPal-iOS-SDK */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E0B3BCF4C3395A9B1744009E /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				C7F96B510E3FC590749FD71F /* Support Files */,
+				836E55B47140F380F90D43FD /* common */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
+		F2726A6160B4540CAF215BC8 /* Serialization */ = {
+			isa = PBXGroup;
+			children = (
+				489B3417B93721A999938F5A /* AFURLRequestSerialization.h */,
+				9C5CABD62DEFC4A854A3B737 /* AFURLRequestSerialization.m */,
+				D92B33D8D552D5CDD22CC138 /* AFURLResponseSerialization.h */,
+				82D646AB5282E542CDD84E03 /* AFURLResponseSerialization.m */,
+			);
+			name = Serialization;
+			sourceTree = "<group>";
+		};
+		F6C7B85E34879E700269D2AE /* Google-Maps-iOS-SDK */ = {
+			isa = PBXGroup;
+			children = (
+				49864909F2AA66DE138ED2C2 /* Frameworks */,
+				1F9265D8D1FF3952694656F7 /* Resources */,
+			);
+			path = "Google-Maps-iOS-SDK";
+			sourceTree = "<group>";
+		};
+		F8C2A78C981426E823697839 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				60DE715E4CE979F6B0878576 /* Info.plist */,
+				380B2ED90FAA8165D8A1B988 /* Pods-VHSMarketPlace-CardIO.modulemap */,
+				E1825E89D9CBA5165084EF82 /* Pods-VHSMarketPlace-CardIO.xcconfig */,
+				C42CC35C152F0787585B3021 /* Pods-VHSMarketPlace-CardIO-Private.xcconfig */,
+				1691192CDFACA99F1ABDBB79 /* Pods-VHSMarketPlace-CardIO-dummy.m */,
+				D86A5828110AF427D433684D /* Pods-VHSMarketPlace-CardIO-prefix.pch */,
+				D921E2A099368B5A919CEA1C /* Pods-VHSMarketPlace-CardIO-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-VHSMarketPlace-CardIO";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		4298D4E092C2092E28219D03 /* Headers */ = {
+		59A0CDC6F7A9C819CF5B4030 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92EFFAE084B287A052BD394A /* FMDB.h in Headers */,
-				5DAB62C214328C4173526605 /* FMDatabase.h in Headers */,
-				BCC32005AB9FF47AC5F05B70 /* FMDatabaseAdditions.h in Headers */,
-				AC4A92544CE7D831895E5DBF /* FMDatabasePool.h in Headers */,
-				9B8CF7AAE418D4DC0ED68E54 /* FMDatabaseQueue.h in Headers */,
-				584AE03D08AF7FEDD07BD598 /* FMResultSet.h in Headers */,
-				2F188212191EE604CEAE4951 /* Pods-VHSMarketPlace-FMDB-umbrella.h in Headers */,
+				D822C7DB58BE2F1D3215CC9F /* Pods-VHSMarketPlace-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		42A2F44447A7637721F548DB /* Headers */ = {
+		5D9ED69C32AB98B0C2C6C952 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27495BC82D60E9748126E9BC /* AFHTTPRequestOperation.h in Headers */,
-				8F095C432E16724A9F2A5CC7 /* AFHTTPRequestOperationManager.h in Headers */,
-				FE4D33A2E5BD355BB4C1A563 /* AFHTTPSessionManager.h in Headers */,
-				3468948C5FB31F91652E7A0E /* AFNetworkActivityIndicatorManager.h in Headers */,
-				5F7D79FAF4466080180E469B /* AFNetworkReachabilityManager.h in Headers */,
-				A7A592B23B102498AD2EB51D /* AFNetworking.h in Headers */,
-				F583FC3F99D164EFCEA9A275 /* AFSecurityPolicy.h in Headers */,
-				F8A91BE603B982ED659EE91B /* AFURLConnectionOperation.h in Headers */,
-				69C26DF5C2F38EE58D3C39B6 /* AFURLRequestSerialization.h in Headers */,
-				659B5737A1F2CF51AFCD1848 /* AFURLResponseSerialization.h in Headers */,
-				AD3A3A23A20E54EFB56ED8C6 /* AFURLSessionManager.h in Headers */,
-				A32DB9500E2AB70E2944E884 /* Pods-VHSMarketPlace-AFNetworking-umbrella.h in Headers */,
-				61B67A8E75B180DBC45BE6DA /* UIActivityIndicatorView+AFNetworking.h in Headers */,
-				0FA680AFAB028CA7B8FBA5E0 /* UIAlertView+AFNetworking.h in Headers */,
-				9BCBAF51D2893A6E3F546DDD /* UIButton+AFNetworking.h in Headers */,
-				B5BB95126FA44460A01F50B5 /* UIImageView+AFNetworking.h in Headers */,
-				1B005DCAA66F22D27397A55C /* UIKit+AFNetworking.h in Headers */,
-				C7E9176B2B076F35F7BA6F6F /* UIProgressView+AFNetworking.h in Headers */,
-				76C0BBB05B77956CC2913A74 /* UIRefreshControl+AFNetworking.h in Headers */,
-				E886E003D298893E84B10BEF /* UIWebView+AFNetworking.h in Headers */,
+				D15AF7230DC5EC9A607C2E1F /* FMDB.h in Headers */,
+				6A475A18FBB68B063DFBCF08 /* FMDatabase.h in Headers */,
+				A23D8CE5B73BCDB81DDFC9C0 /* FMDatabaseAdditions.h in Headers */,
+				AC4B76359CF14252A2153388 /* FMDatabasePool.h in Headers */,
+				C45BAC85702D373EA3508EDC /* FMDatabaseQueue.h in Headers */,
+				255AACE0D1726E57A38367F5 /* FMResultSet.h in Headers */,
+				D07DC0D89A9C4B0963CDF712 /* Pods-VHSMarketPlace-FMDB-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		601C7CADC92A99D4D051667A /* Headers */ = {
+		8E409C10ADA0161A0D7CA03A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A0D30DC0720737756454456 /* BButton.h in Headers */,
-				BE9D87413624C91612F2D918 /* NSString+FontAwesome.h in Headers */,
-				61CE313201A6F79ACA6B6620 /* Pods-VHSMarketPlace-BButton-umbrella.h in Headers */,
-				D1EC83507ED66771ED9F20B1 /* UIColor+BButton.h in Headers */,
+				D377AD77E41C1F6D442541C2 /* CardIO.h in Headers */,
+				BCCACFD1E8DB9E64F9BFB61C /* CardIOCreditCardInfo.h in Headers */,
+				9F19A444B9E9872546B953E6 /* CardIODetectionMode.h in Headers */,
+				57C78545C0E1546BAA358ED5 /* CardIOPaymentViewController.h in Headers */,
+				C5D2B85602F90EE8DB3A8056 /* CardIOPaymentViewControllerDelegate.h in Headers */,
+				7D8BD2F36D56B1AD41631726 /* CardIOUtilities.h in Headers */,
+				B82E41E6F86D87943437A8A5 /* CardIOView.h in Headers */,
+				FE03672CD96744EE0CCAD052 /* CardIOViewDelegate.h in Headers */,
+				0860ADAB674A4957DEDB6B23 /* PayPalConfiguration.h in Headers */,
+				5DE6BE364542B9E8C52129CA /* PayPalFuturePaymentViewController.h in Headers */,
+				1D8004270B70487B9929D73F /* PayPalMobile.h in Headers */,
+				E53E2B8A3DA8407ED5A67BC7 /* PayPalOAuthScopes.h in Headers */,
+				D560B2139A6CC7E922BC9DBD /* PayPalPayment.h in Headers */,
+				7786A47033E335E2EF3EF92F /* PayPalPaymentViewController.h in Headers */,
+				2B0D101870CB0CC14225F659 /* PayPalProfileSharingViewController.h in Headers */,
+				4FC9CDDBEAE1D22A5491CD0F /* Pods-VHSMarketPlace-PayPal-iOS-SDK-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8403017D8ED60ECD86C4E5DA /* Headers */ = {
+		A49751325E420C558E82A86A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9370F630A852D9A0AC87908 /* CardIO.h in Headers */,
-				90A2923376B61DFE5CB734E0 /* CardIOCreditCardInfo.h in Headers */,
-				448F3674EA7A742820D0B45A /* CardIODetectionMode.h in Headers */,
-				FD1C8739603EBF2775A962CC /* CardIOPaymentViewController.h in Headers */,
-				A4E3A9B5CFD05F5426F14E7A /* CardIOPaymentViewControllerDelegate.h in Headers */,
-				FAA63B73416EDC91D3F6E7A8 /* CardIOUtilities.h in Headers */,
-				8A1593DE65AF58914030769A /* CardIOView.h in Headers */,
-				FA4359ABC756335E12742DD5 /* CardIOViewDelegate.h in Headers */,
-				EB648ADBCFC50ACC6E631C03 /* PayPalConfiguration.h in Headers */,
-				2017073D6358EE646BAB6EB6 /* PayPalFuturePaymentViewController.h in Headers */,
-				AC489BFBC6A829F541F1D1A4 /* PayPalMobile.h in Headers */,
-				916D0B034B77F2294BDC9FB2 /* PayPalOAuthScopes.h in Headers */,
-				0745A8B5D0C26E1F080933D6 /* PayPalPayment.h in Headers */,
-				68E29EA7C9FB02A3AB11ED76 /* PayPalPaymentViewController.h in Headers */,
-				736DD40815D8EED4B57FC78A /* PayPalProfileSharingViewController.h in Headers */,
-				86C92B6D65F658D702A82221 /* Pods-VHSMarketPlace-PayPal-iOS-SDK-umbrella.h in Headers */,
+				127D5366E0BEA0EA4F619012 /* AFHTTPRequestOperation.h in Headers */,
+				94CF29AC62427757F7EB81FF /* AFHTTPRequestOperationManager.h in Headers */,
+				5B0E463A5AE7824303EFBEF5 /* AFHTTPSessionManager.h in Headers */,
+				2558321EDFB191BF2CFE7790 /* AFNetworkActivityIndicatorManager.h in Headers */,
+				E28796F5A5B9F5C6B57D01F8 /* AFNetworkReachabilityManager.h in Headers */,
+				928ADDC9D4B41CD5B474E6FA /* AFNetworking.h in Headers */,
+				8ED5779912A75AA3447F9C24 /* AFSecurityPolicy.h in Headers */,
+				AA4396709F5D09F58173146A /* AFURLConnectionOperation.h in Headers */,
+				BE3F8BE47A88EFB02C04E8DA /* AFURLRequestSerialization.h in Headers */,
+				40C5F43B8EBE120D823C8CF0 /* AFURLResponseSerialization.h in Headers */,
+				65C13E24DC187297BCB32C57 /* AFURLSessionManager.h in Headers */,
+				52DC1FEE5B34F503E2906E02 /* Pods-VHSMarketPlace-AFNetworking-umbrella.h in Headers */,
+				9C17413C9CD8AD4441D35FBE /* UIActivityIndicatorView+AFNetworking.h in Headers */,
+				2BFCA9B92805F204F8E96CA9 /* UIAlertView+AFNetworking.h in Headers */,
+				3E868AAE0DCD009CB9762222 /* UIButton+AFNetworking.h in Headers */,
+				062A32B9BFDB633EBEF675E3 /* UIImageView+AFNetworking.h in Headers */,
+				2DF1D576F53D0856119DC945 /* UIKit+AFNetworking.h in Headers */,
+				511E0B16C4869C0BEC0D6001 /* UIProgressView+AFNetworking.h in Headers */,
+				45776E60A319804E6A9B844A /* UIRefreshControl+AFNetworking.h in Headers */,
+				A6095E63ABBC9EBB7B23C256 /* UIWebView+AFNetworking.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BBD49D9F890AAC279E20551D /* Headers */ = {
+		A6E79440EBE372FEBAD6F458 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C9764F89ED012C049471431 /* Pods-VHSMarketPlace-umbrella.h in Headers */,
+				0D4907734CBA7672262CAF06 /* CardIO.h in Headers */,
+				F534216338F731979A1DA465 /* CardIOCreditCardInfo.h in Headers */,
+				413F11363D47EDD9DAD46D6C /* CardIODetectionMode.h in Headers */,
+				7E7E52AE00351A98C3724AAD /* CardIOPaymentViewController.h in Headers */,
+				5DE221B5DB3A5A50AB24BB0C /* CardIOPaymentViewControllerDelegate.h in Headers */,
+				5DA6DCFD8EC1CE754B51DF06 /* CardIOUtilities.h in Headers */,
+				4B1D55B68EBA9870A853CAFD /* CardIOView.h in Headers */,
+				4D0DF2B0F803C65EAF4DAA7D /* CardIOViewDelegate.h in Headers */,
+				1882BCC999403FFA91A63513 /* Pods-VHSMarketPlace-CardIO-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA95769F7A30BF482C581A17 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4818128BB898006BA93C51BA /* BButton.h in Headers */,
+				8B849DE47341CB34E3090C74 /* NSString+FontAwesome.h in Headers */,
+				6CDA7343BDD091871C876FF4 /* Pods-VHSMarketPlace-BButton-umbrella.h in Headers */,
+				1483F2EF69FBBBEDFD5B90F1 /* UIColor+BButton.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		0DEC44196F66C63804C533FC /* Pods-VHSMarketPlace-FMDB */ = {
+		1185B171098F58F38D499DCF /* Pods-VHSMarketPlace-PayPal-iOS-SDK */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 87D2CFE833C28144753D4896 /* Build configuration list for PBXNativeTarget "Pods-VHSMarketPlace-FMDB" */;
+			buildConfigurationList = A0E021D25F98AADCDB8522DE /* Build configuration list for PBXNativeTarget "Pods-VHSMarketPlace-PayPal-iOS-SDK" */;
 			buildPhases = (
-				DCDADDCABBC42519B4304A32 /* Sources */,
-				B68CA3E7265B93ECFA33ADB3 /* Frameworks */,
-				4298D4E092C2092E28219D03 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-VHSMarketPlace-FMDB";
-			productName = "Pods-VHSMarketPlace-FMDB";
-			productReference = E7F6357C509479AE0CB5BC91 /* FMDB.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		0E5692472A27BF437785B33A /* Pods-VHSMarketPlace-BButton */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 73EFE3FE1EFC53DDB298618C /* Build configuration list for PBXNativeTarget "Pods-VHSMarketPlace-BButton" */;
-			buildPhases = (
-				3B6AEC7CE6AFE2BBF8A7D80B /* Sources */,
-				0CFF948047C51DAE511C3F95 /* Frameworks */,
-				601C7CADC92A99D4D051667A /* Headers */,
-				3B6A066037B4B23D060AAA67 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-VHSMarketPlace-BButton";
-			productName = "Pods-VHSMarketPlace-BButton";
-			productReference = 21224F0C72DE26A371D183B0 /* BButton.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		95B08CAA6C9FD9F17559E238 /* Pods-VHSMarketPlace */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 16F03C381C89A5AA21DD26EB /* Build configuration list for PBXNativeTarget "Pods-VHSMarketPlace" */;
-			buildPhases = (
-				126B5C63E42F2658BE22DDC0 /* Sources */,
-				2FFF441CFF0FEFDD4AB84BF7 /* Frameworks */,
-				BBD49D9F890AAC279E20551D /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				98575F25F92023F3B405262E /* PBXTargetDependency */,
-				316CB8B5837B546E485887BE /* PBXTargetDependency */,
-				5F58F3AF0B9285A0C3E93F75 /* PBXTargetDependency */,
-				E877CB48209478998DF043D2 /* PBXTargetDependency */,
-			);
-			name = "Pods-VHSMarketPlace";
-			productName = "Pods-VHSMarketPlace";
-			productReference = 8BA7993368D3F824975886EA /* Pods_VHSMarketPlace.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		BEEEEAFC136571AEE16731CF /* Pods-VHSMarketPlace-PayPal-iOS-SDK */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7168B4B8DE2060A42AB33AE4 /* Build configuration list for PBXNativeTarget "Pods-VHSMarketPlace-PayPal-iOS-SDK" */;
-			buildPhases = (
-				11D83F23D3CC15372DA90664 /* Sources */,
-				C127FAFEBB97BABADFA12DA9 /* Frameworks */,
-				8403017D8ED60ECD86C4E5DA /* Headers */,
+				D471E280608CC609E86B1F39 /* Sources */,
+				AD71951B9AD63EF59CD8A062 /* Frameworks */,
+				8E409C10ADA0161A0D7CA03A /* Headers */,
 			);
 			buildRules = (
 			);
@@ -817,16 +878,72 @@
 			);
 			name = "Pods-VHSMarketPlace-PayPal-iOS-SDK";
 			productName = "Pods-VHSMarketPlace-PayPal-iOS-SDK";
-			productReference = 77A2EABD098758FB48707310 /* PayPal_iOS_SDK.framework */;
+			productReference = 496B9752C1CF0D05EADC8865 /* PayPal_iOS_SDK.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		BF1D929D81FF16310D5E46B1 /* Pods-VHSMarketPlace-AFNetworking */ = {
+		49FCD25C3790B0A78EB29940 /* Pods-VHSMarketPlace-FMDB */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 073ECA277632F4BF10C830AA /* Build configuration list for PBXNativeTarget "Pods-VHSMarketPlace-AFNetworking" */;
+			buildConfigurationList = 491BE8C15301CCC7E88EB85A /* Build configuration list for PBXNativeTarget "Pods-VHSMarketPlace-FMDB" */;
 			buildPhases = (
-				39E094058874B029492EFEC9 /* Sources */,
-				DE507B348D9AAB2A847E1377 /* Frameworks */,
-				42A2F44447A7637721F548DB /* Headers */,
+				C4059F2E1214E95DDED7A549 /* Sources */,
+				95E1E192BCE24AC61507DC79 /* Frameworks */,
+				5D9ED69C32AB98B0C2C6C952 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-VHSMarketPlace-FMDB";
+			productName = "Pods-VHSMarketPlace-FMDB";
+			productReference = B8A3C04BF3323C1C9B09881D /* FMDB.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		65A62ED5BCA037E9A9EE65A1 /* Pods-VHSMarketPlace-CardIO */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6EC699956625BB86EE4D23E2 /* Build configuration list for PBXNativeTarget "Pods-VHSMarketPlace-CardIO" */;
+			buildPhases = (
+				3F476296A75EEB939326EDB5 /* Sources */,
+				36B9318B4F18E2CD7AA43CC3 /* Frameworks */,
+				A6E79440EBE372FEBAD6F458 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-VHSMarketPlace-CardIO";
+			productName = "Pods-VHSMarketPlace-CardIO";
+			productReference = 4B067A4FAAC6D639ECF36786 /* CardIO.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9BEA58D56CF14BFCB33BDB21 /* Pods-VHSMarketPlace */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C0786E18E8DBDCD5E731329 /* Build configuration list for PBXNativeTarget "Pods-VHSMarketPlace" */;
+			buildPhases = (
+				0516E4E56028A2E6A8A1405F /* Sources */,
+				8AF307135BF2501B77401D8A /* Frameworks */,
+				59A0CDC6F7A9C819CF5B4030 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FCD736F8895B574C33B8653D /* PBXTargetDependency */,
+				3C8D7876102C778E9954B652 /* PBXTargetDependency */,
+				D06DE2225BB367CEDD0BD86D /* PBXTargetDependency */,
+				E9899A79A8D45A6B1974F1E4 /* PBXTargetDependency */,
+				7808C576FD7AE6B4165EDD99 /* PBXTargetDependency */,
+			);
+			name = "Pods-VHSMarketPlace";
+			productName = "Pods-VHSMarketPlace";
+			productReference = 4FA20188440FEB26C3E25A74 /* Pods_VHSMarketPlace.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CF2065FE776F1688B403F7E0 /* Pods-VHSMarketPlace-AFNetworking */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A75598C51749E77496EF4608 /* Build configuration list for PBXNativeTarget "Pods-VHSMarketPlace-AFNetworking" */;
+			buildPhases = (
+				44DA0BAF2DDDB6A21A7F7269 /* Sources */,
+				2499E1C7345BF5BF26DED540 /* Frameworks */,
+				A49751325E420C558E82A86A /* Headers */,
 			);
 			buildRules = (
 			);
@@ -834,148 +951,181 @@
 			);
 			name = "Pods-VHSMarketPlace-AFNetworking";
 			productName = "Pods-VHSMarketPlace-AFNetworking";
-			productReference = 5686CBC66FB612366C6274C4 /* AFNetworking.framework */;
+			productReference = 560020269F325EF6E022BD23 /* AFNetworking.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F701668EBC742A563DF21353 /* Pods-VHSMarketPlace-BButton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F20AD58E68D79AB63DB892C0 /* Build configuration list for PBXNativeTarget "Pods-VHSMarketPlace-BButton" */;
+			buildPhases = (
+				81663AB83A588C2C8068C9B8 /* Sources */,
+				FACFB147514EAE5892C76F5A /* Frameworks */,
+				CA95769F7A30BF482C581A17 /* Headers */,
+				76E636E97514393922B39CF3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-VHSMarketPlace-BButton";
+			productName = "Pods-VHSMarketPlace-BButton";
+			productReference = 5380E450CE73EE8765ED98B9 /* BButton.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		71E176BE959E666CD90B470B /* Project object */ = {
+		2C8D598B39E909668142AA13 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
 			};
-			buildConfigurationList = 2F08BD3724B70E1B9CC2FD90 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 2E860942B1B6E126D22947C6 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 721E2B2E5992096FF453BCA4;
-			productRefGroup = 3991C515408E6623FB214F31 /* Products */;
+			mainGroup = 425A7DC2FC46B1996D3A2889;
+			productRefGroup = 36A56395F1EEFD95BA835664 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				95B08CAA6C9FD9F17559E238 /* Pods-VHSMarketPlace */,
-				BF1D929D81FF16310D5E46B1 /* Pods-VHSMarketPlace-AFNetworking */,
-				0E5692472A27BF437785B33A /* Pods-VHSMarketPlace-BButton */,
-				0DEC44196F66C63804C533FC /* Pods-VHSMarketPlace-FMDB */,
-				BEEEEAFC136571AEE16731CF /* Pods-VHSMarketPlace-PayPal-iOS-SDK */,
+				9BEA58D56CF14BFCB33BDB21 /* Pods-VHSMarketPlace */,
+				CF2065FE776F1688B403F7E0 /* Pods-VHSMarketPlace-AFNetworking */,
+				F701668EBC742A563DF21353 /* Pods-VHSMarketPlace-BButton */,
+				65A62ED5BCA037E9A9EE65A1 /* Pods-VHSMarketPlace-CardIO */,
+				49FCD25C3790B0A78EB29940 /* Pods-VHSMarketPlace-FMDB */,
+				1185B171098F58F38D499DCF /* Pods-VHSMarketPlace-PayPal-iOS-SDK */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		3B6A066037B4B23D060AAA67 /* Resources */ = {
+		76E636E97514393922B39CF3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				188C07B16BDA2D9A59BF2D25 /* FontAwesome.ttf in Resources */,
+				DF61DE7566043FE9BB2B321E /* FontAwesome.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		11D83F23D3CC15372DA90664 /* Sources */ = {
+		0516E4E56028A2E6A8A1405F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71C6327C84367B6E0377AB21 /* Pods-VHSMarketPlace-PayPal-iOS-SDK-dummy.m in Sources */,
+				82A3B8029F6AE18C7922DC76 /* Pods-VHSMarketPlace-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		126B5C63E42F2658BE22DDC0 /* Sources */ = {
+		3F476296A75EEB939326EDB5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74E82D734A03791DE787FF23 /* Pods-VHSMarketPlace-dummy.m in Sources */,
+				15FFDD576C8A14A1AE40F9FB /* Pods-VHSMarketPlace-CardIO-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		39E094058874B029492EFEC9 /* Sources */ = {
+		44DA0BAF2DDDB6A21A7F7269 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3C2B7811AEA35000740691B /* AFHTTPRequestOperation.m in Sources */,
-				B94CD4DD714FADE8D72D4E75 /* AFHTTPRequestOperationManager.m in Sources */,
-				0338D6EEF81A8392818B6CB1 /* AFHTTPSessionManager.m in Sources */,
-				7D1FFCFCD18BBCCEAEE6DAAA /* AFNetworkActivityIndicatorManager.m in Sources */,
-				3770AC1EC8D1448989DC9319 /* AFNetworkReachabilityManager.m in Sources */,
-				993D40BBAC5F8D690D463114 /* AFSecurityPolicy.m in Sources */,
-				06304EF2C74789CC72D0D67B /* AFURLConnectionOperation.m in Sources */,
-				98E478814080798C47812EF5 /* AFURLRequestSerialization.m in Sources */,
-				56CE9B9541E2BCFE6F019904 /* AFURLResponseSerialization.m in Sources */,
-				7C4D135FC4E8E9CE0887C7F6 /* AFURLSessionManager.m in Sources */,
-				2629FEB1A89E57A612821C43 /* Pods-VHSMarketPlace-AFNetworking-dummy.m in Sources */,
-				BB6CC1E3D3179EE69EE1CAD4 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
-				CE9C780B8B1382A1D038E5DC /* UIAlertView+AFNetworking.m in Sources */,
-				9BE7535303CEA8B7D5D23DAB /* UIButton+AFNetworking.m in Sources */,
-				79095585FE1ACE78BEAFC64E /* UIImageView+AFNetworking.m in Sources */,
-				570E0C884661471893CE6F73 /* UIProgressView+AFNetworking.m in Sources */,
-				899940AE4EE05708DFC8819A /* UIRefreshControl+AFNetworking.m in Sources */,
-				2BD7B16E64956756B12A0429 /* UIWebView+AFNetworking.m in Sources */,
+				3ECB9A7A89A9EA4A38153F18 /* AFHTTPRequestOperation.m in Sources */,
+				B143C450DE97C4EF5D8E4C94 /* AFHTTPRequestOperationManager.m in Sources */,
+				A18AD704BA1488D22635E7C2 /* AFHTTPSessionManager.m in Sources */,
+				C1B4643EF6AB7D02892B1DC7 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				4B1DDF4AD59FEB2502216572 /* AFNetworkReachabilityManager.m in Sources */,
+				8F7B3218209939CAB1E5F90F /* AFSecurityPolicy.m in Sources */,
+				5089963275E759AE95EE305B /* AFURLConnectionOperation.m in Sources */,
+				3875420AC5E82B224B4492A3 /* AFURLRequestSerialization.m in Sources */,
+				B1FE59E12CADD1B9B6D3EE57 /* AFURLResponseSerialization.m in Sources */,
+				D92EB20E801754BCB39E6340 /* AFURLSessionManager.m in Sources */,
+				3357C840B2B0EA48C0F3F40E /* Pods-VHSMarketPlace-AFNetworking-dummy.m in Sources */,
+				249BFA30113B64862CF9252F /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				EF2789DB0226340A93CAB2BA /* UIAlertView+AFNetworking.m in Sources */,
+				C61E8CBDFF7EB609E126ED4C /* UIButton+AFNetworking.m in Sources */,
+				5C84B34B0480732B61302303 /* UIImageView+AFNetworking.m in Sources */,
+				FA181A7D8B0DE3469A414389 /* UIProgressView+AFNetworking.m in Sources */,
+				0713963B590ADD79AB6BC229 /* UIRefreshControl+AFNetworking.m in Sources */,
+				6E9AA91617E021CD0270CEB7 /* UIWebView+AFNetworking.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3B6AEC7CE6AFE2BBF8A7D80B /* Sources */ = {
+		81663AB83A588C2C8068C9B8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3C727355D9ECA25089D3B60 /* BButton.m in Sources */,
-				98535AF503AD65B7719C4A5A /* NSString+FontAwesome.m in Sources */,
-				D0CAF46B7C2E1DECC3E52A63 /* Pods-VHSMarketPlace-BButton-dummy.m in Sources */,
-				1D65EEE3AB45CC82F7034F4E /* UIColor+BButton.m in Sources */,
+				6D718E8AD90671CF730D5EBF /* BButton.m in Sources */,
+				9ACAEDF92C2399A06E1CF3FB /* NSString+FontAwesome.m in Sources */,
+				EAFC45D0A1482CA03AFFA1FC /* Pods-VHSMarketPlace-BButton-dummy.m in Sources */,
+				071B71DF9708258E61FFB138 /* UIColor+BButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DCDADDCABBC42519B4304A32 /* Sources */ = {
+		C4059F2E1214E95DDED7A549 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4736B40CD42380CD63A9F0F /* FMDatabase.m in Sources */,
-				18F5DFF88DFD14E764EC4BA5 /* FMDatabaseAdditions.m in Sources */,
-				A06A48C431040FFAF7A88589 /* FMDatabasePool.m in Sources */,
-				9D09C47CBF9BEF792DB15EF8 /* FMDatabaseQueue.m in Sources */,
-				86664A36B479EA51521C2DF0 /* FMResultSet.m in Sources */,
-				F64F9747D50DCEB23CEC5264 /* Pods-VHSMarketPlace-FMDB-dummy.m in Sources */,
+				4B0CD7BE118F557F92A0D6C6 /* FMDatabase.m in Sources */,
+				FDFF13C57ADB277C5C2EA3ED /* FMDatabaseAdditions.m in Sources */,
+				2107E60659976136C86F8767 /* FMDatabasePool.m in Sources */,
+				6EA3DDEF46D8CC8C955F2C20 /* FMDatabaseQueue.m in Sources */,
+				49AE1CE5F8EDA194034B5E04 /* FMResultSet.m in Sources */,
+				8C780DFCB332CBA851DD04AC /* Pods-VHSMarketPlace-FMDB-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D471E280608CC609E86B1F39 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5711F28491FF7A1B160B229 /* Pods-VHSMarketPlace-PayPal-iOS-SDK-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		316CB8B5837B546E485887BE /* PBXTargetDependency */ = {
+		3C8D7876102C778E9954B652 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-VHSMarketPlace-BButton";
-			target = 0E5692472A27BF437785B33A /* Pods-VHSMarketPlace-BButton */;
-			targetProxy = BE46DA2E857616FDC7105A05 /* PBXContainerItemProxy */;
+			target = F701668EBC742A563DF21353 /* Pods-VHSMarketPlace-BButton */;
+			targetProxy = 40F6FFE4FDFA6A742FA9D4E1 /* PBXContainerItemProxy */;
 		};
-		5F58F3AF0B9285A0C3E93F75 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-VHSMarketPlace-FMDB";
-			target = 0DEC44196F66C63804C533FC /* Pods-VHSMarketPlace-FMDB */;
-			targetProxy = DF2FD00E4EFD9DE2204BF24E /* PBXContainerItemProxy */;
-		};
-		98575F25F92023F3B405262E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-VHSMarketPlace-AFNetworking";
-			target = BF1D929D81FF16310D5E46B1 /* Pods-VHSMarketPlace-AFNetworking */;
-			targetProxy = 02993D58A029BFB1B582B0B8 /* PBXContainerItemProxy */;
-		};
-		E877CB48209478998DF043D2 /* PBXTargetDependency */ = {
+		7808C576FD7AE6B4165EDD99 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-VHSMarketPlace-PayPal-iOS-SDK";
-			target = BEEEEAFC136571AEE16731CF /* Pods-VHSMarketPlace-PayPal-iOS-SDK */;
-			targetProxy = 172E03E9678A88E53798676F /* PBXContainerItemProxy */;
+			target = 1185B171098F58F38D499DCF /* Pods-VHSMarketPlace-PayPal-iOS-SDK */;
+			targetProxy = 1AA4AC16C552146F9FE09FD8 /* PBXContainerItemProxy */;
+		};
+		D06DE2225BB367CEDD0BD86D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-VHSMarketPlace-CardIO";
+			target = 65A62ED5BCA037E9A9EE65A1 /* Pods-VHSMarketPlace-CardIO */;
+			targetProxy = 4232A838BB11D571EC5FF9AF /* PBXContainerItemProxy */;
+		};
+		E9899A79A8D45A6B1974F1E4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-VHSMarketPlace-FMDB";
+			target = 49FCD25C3790B0A78EB29940 /* Pods-VHSMarketPlace-FMDB */;
+			targetProxy = 13FE7F97B7D4C7BB61EB7516 /* PBXContainerItemProxy */;
+		};
+		FCD736F8895B574C33B8653D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-VHSMarketPlace-AFNetworking";
+			target = CF2065FE776F1688B403F7E0 /* Pods-VHSMarketPlace-AFNetworking */;
+			targetProxy = 9A4A5F4F7CC2E80482243F63 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0977EFC1FA0EF4006EA7308D /* Debug */ = {
+		1A8E458F83B5A8CE01399937 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B710318B5AE3B8E0358145C1 /* Pods-VHSMarketPlace-PayPal-iOS-SDK-Private.xcconfig */;
+			baseConfigurationReference = 516FDDF2F92617C5B2B3978E /* Pods-VHSMarketPlace-BButton-Private.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -984,14 +1134,14 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-VHSMarketPlace-PayPal-iOS-SDK/Pods-VHSMarketPlace-PayPal-iOS-SDK-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-VHSMarketPlace-PayPal-iOS-SDK/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-VHSMarketPlace-BButton/Pods-VHSMarketPlace-BButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-VHSMarketPlace-BButton/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-VHSMarketPlace-PayPal-iOS-SDK/Pods-VHSMarketPlace-PayPal-iOS-SDK.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-VHSMarketPlace-BButton/Pods-VHSMarketPlace-BButton.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = PayPal_iOS_SDK;
+				PRODUCT_NAME = BButton;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1000,9 +1150,9 @@
 			};
 			name = Debug;
 		};
-		0DB09ACA73847293FF167737 /* Release */ = {
+		27F0131361B1A31F631A648B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FE5E8501A5F4BE3C445C36E9 /* Pods-VHSMarketPlace-AFNetworking-Private.xcconfig */;
+			baseConfigurationReference = C42CC35C152F0787585B3021 /* Pods-VHSMarketPlace-CardIO-Private.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1011,41 +1161,14 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-VHSMarketPlace-AFNetworking/Pods-VHSMarketPlace-AFNetworking-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-VHSMarketPlace-AFNetworking/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-VHSMarketPlace-CardIO/Pods-VHSMarketPlace-CardIO-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-VHSMarketPlace-CardIO/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-VHSMarketPlace-AFNetworking/Pods-VHSMarketPlace-AFNetworking.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = AFNetworking;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		14B1391E0F681B5792941DCA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4CF9ACAEA8BFD47FE32581FD /* Pods-VHSMarketPlace-FMDB-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-VHSMarketPlace-FMDB/Pods-VHSMarketPlace-FMDB-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-VHSMarketPlace-FMDB/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-VHSMarketPlace-FMDB/Pods-VHSMarketPlace-FMDB.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-VHSMarketPlace-CardIO/Pods-VHSMarketPlace-CardIO.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = FMDB;
+				PRODUCT_NAME = CardIO;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1054,63 +1177,9 @@
 			};
 			name = Debug;
 		};
-		2A5148160636C9407CB53FF7 /* Release */ = {
+		2F42E1B1033DD46E93BC5B03 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B710318B5AE3B8E0358145C1 /* Pods-VHSMarketPlace-PayPal-iOS-SDK-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-VHSMarketPlace-PayPal-iOS-SDK/Pods-VHSMarketPlace-PayPal-iOS-SDK-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-VHSMarketPlace-PayPal-iOS-SDK/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-VHSMarketPlace-PayPal-iOS-SDK/Pods-VHSMarketPlace-PayPal-iOS-SDK.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = PayPal_iOS_SDK;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		419988160EBB068CDBC45221 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4CF9ACAEA8BFD47FE32581FD /* Pods-VHSMarketPlace-FMDB-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-VHSMarketPlace-FMDB/Pods-VHSMarketPlace-FMDB-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-VHSMarketPlace-FMDB/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-VHSMarketPlace-FMDB/Pods-VHSMarketPlace-FMDB.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = FMDB;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		5593D2140A97A24731D512AA /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 350DFFD0D7CAAAE7E2B85B09 /* Pods-VHSMarketPlace-BButton-Private.xcconfig */;
+			baseConfigurationReference = 516FDDF2F92617C5B2B3978E /* Pods-VHSMarketPlace-BButton-Private.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1135,7 +1204,225 @@
 			};
 			name = Release;
 		};
-		5E80C9A95EC7E17D6577CE0E /* Debug */ = {
+		3758D1D7B877A2107754BBEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98697BF459AB07E01220C617 /* Pods-VHSMarketPlace-FMDB-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-VHSMarketPlace-FMDB/Pods-VHSMarketPlace-FMDB-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-VHSMarketPlace-FMDB/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-VHSMarketPlace-FMDB/Pods-VHSMarketPlace-FMDB.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = FMDB;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		52867609F561CA1509E1ABB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98697BF459AB07E01220C617 /* Pods-VHSMarketPlace-FMDB-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-VHSMarketPlace-FMDB/Pods-VHSMarketPlace-FMDB-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-VHSMarketPlace-FMDB/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-VHSMarketPlace-FMDB/Pods-VHSMarketPlace-FMDB.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = FMDB;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		64322E470448E78534EFDC58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E028AF7C968B77502A54509C /* Pods-VHSMarketPlace-AFNetworking-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-VHSMarketPlace-AFNetworking/Pods-VHSMarketPlace-AFNetworking-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-VHSMarketPlace-AFNetworking/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-VHSMarketPlace-AFNetworking/Pods-VHSMarketPlace-AFNetworking.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = AFNetworking;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6D88F0A88FBD3DC2A57CD092 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C42CC35C152F0787585B3021 /* Pods-VHSMarketPlace-CardIO-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-VHSMarketPlace-CardIO/Pods-VHSMarketPlace-CardIO-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-VHSMarketPlace-CardIO/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-VHSMarketPlace-CardIO/Pods-VHSMarketPlace-CardIO.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = CardIO;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		755A302CBEA9AC69B5BA284B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E028AF7C968B77502A54509C /* Pods-VHSMarketPlace-AFNetworking-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-VHSMarketPlace-AFNetworking/Pods-VHSMarketPlace-AFNetworking-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-VHSMarketPlace-AFNetworking/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-VHSMarketPlace-AFNetworking/Pods-VHSMarketPlace-AFNetworking.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = AFNetworking;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		878E88BB127635268CA2B38F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25D6D0FF3515F2BCA76FC590 /* Pods-VHSMarketPlace-PayPal-iOS-SDK-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-VHSMarketPlace-PayPal-iOS-SDK/Pods-VHSMarketPlace-PayPal-iOS-SDK-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-VHSMarketPlace-PayPal-iOS-SDK/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-VHSMarketPlace-PayPal-iOS-SDK/Pods-VHSMarketPlace-PayPal-iOS-SDK.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = PayPal_iOS_SDK;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9B59F431C71F07417DAEB6A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D12715643219DF425CFF586E /* Pods-VHSMarketPlace.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-VHSMarketPlace/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-VHSMarketPlace/Pods-VHSMarketPlace.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_VHSMarketPlace;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E62B7D37C7D43A62E1485705 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25D6D0FF3515F2BCA76FC590 /* Pods-VHSMarketPlace-PayPal-iOS-SDK-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-VHSMarketPlace-PayPal-iOS-SDK/Pods-VHSMarketPlace-PayPal-iOS-SDK-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-VHSMarketPlace-PayPal-iOS-SDK/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-VHSMarketPlace-PayPal-iOS-SDK/Pods-VHSMarketPlace-PayPal-iOS-SDK.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = PayPal_iOS_SDK;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E994272F06A18E643E5C8804 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1174,7 +1461,36 @@
 			};
 			name = Debug;
 		};
-		75AD35A017FEEEBB8F7487D1 /* Release */ = {
+		EA74EC9207F46C476E41D4CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8C5AE9122FD0C01AFF81949 /* Pods-VHSMarketPlace.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-VHSMarketPlace/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-VHSMarketPlace/Pods-VHSMarketPlace.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_VHSMarketPlace;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		ED6112AD4437E0C16E7DFB0B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1208,176 +1524,73 @@
 			};
 			name = Release;
 		};
-		7EEED0380D27CE4170E9AD1D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F8952597C06512F12A2E61DF /* Pods-VHSMarketPlace.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-VHSMarketPlace/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-VHSMarketPlace/Pods-VHSMarketPlace.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_VHSMarketPlace;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		97D0A92FC14F8E175AA1F0AB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FE5E8501A5F4BE3C445C36E9 /* Pods-VHSMarketPlace-AFNetworking-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-VHSMarketPlace-AFNetworking/Pods-VHSMarketPlace-AFNetworking-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-VHSMarketPlace-AFNetworking/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-VHSMarketPlace-AFNetworking/Pods-VHSMarketPlace-AFNetworking.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = AFNetworking;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		9B21C52BCBF6E423B085ABA3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 350DFFD0D7CAAAE7E2B85B09 /* Pods-VHSMarketPlace-BButton-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-VHSMarketPlace-BButton/Pods-VHSMarketPlace-BButton-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-VHSMarketPlace-BButton/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-VHSMarketPlace-BButton/Pods-VHSMarketPlace-BButton.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = BButton;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		C30FC2AD9190258CC74DA842 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E5575A2E451B730DD04F5B75 /* Pods-VHSMarketPlace.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-VHSMarketPlace/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-VHSMarketPlace/Pods-VHSMarketPlace.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_VHSMarketPlace;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		073ECA277632F4BF10C830AA /* Build configuration list for PBXNativeTarget "Pods-VHSMarketPlace-AFNetworking" */ = {
+		2E860942B1B6E126D22947C6 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				97D0A92FC14F8E175AA1F0AB /* Debug */,
-				0DB09ACA73847293FF167737 /* Release */,
+				E994272F06A18E643E5C8804 /* Debug */,
+				ED6112AD4437E0C16E7DFB0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		16F03C381C89A5AA21DD26EB /* Build configuration list for PBXNativeTarget "Pods-VHSMarketPlace" */ = {
+		491BE8C15301CCC7E88EB85A /* Build configuration list for PBXNativeTarget "Pods-VHSMarketPlace-FMDB" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C30FC2AD9190258CC74DA842 /* Debug */,
-				7EEED0380D27CE4170E9AD1D /* Release */,
+				52867609F561CA1509E1ABB5 /* Debug */,
+				3758D1D7B877A2107754BBEB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2F08BD3724B70E1B9CC2FD90 /* Build configuration list for PBXProject "Pods" */ = {
+		4C0786E18E8DBDCD5E731329 /* Build configuration list for PBXNativeTarget "Pods-VHSMarketPlace" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5E80C9A95EC7E17D6577CE0E /* Debug */,
-				75AD35A017FEEEBB8F7487D1 /* Release */,
+				EA74EC9207F46C476E41D4CD /* Debug */,
+				9B59F431C71F07417DAEB6A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7168B4B8DE2060A42AB33AE4 /* Build configuration list for PBXNativeTarget "Pods-VHSMarketPlace-PayPal-iOS-SDK" */ = {
+		6EC699956625BB86EE4D23E2 /* Build configuration list for PBXNativeTarget "Pods-VHSMarketPlace-CardIO" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0977EFC1FA0EF4006EA7308D /* Debug */,
-				2A5148160636C9407CB53FF7 /* Release */,
+				27F0131361B1A31F631A648B /* Debug */,
+				6D88F0A88FBD3DC2A57CD092 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		73EFE3FE1EFC53DDB298618C /* Build configuration list for PBXNativeTarget "Pods-VHSMarketPlace-BButton" */ = {
+		A0E021D25F98AADCDB8522DE /* Build configuration list for PBXNativeTarget "Pods-VHSMarketPlace-PayPal-iOS-SDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9B21C52BCBF6E423B085ABA3 /* Debug */,
-				5593D2140A97A24731D512AA /* Release */,
+				878E88BB127635268CA2B38F /* Debug */,
+				E62B7D37C7D43A62E1485705 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		87D2CFE833C28144753D4896 /* Build configuration list for PBXNativeTarget "Pods-VHSMarketPlace-FMDB" */ = {
+		A75598C51749E77496EF4608 /* Build configuration list for PBXNativeTarget "Pods-VHSMarketPlace-AFNetworking" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				14B1391E0F681B5792941DCA /* Debug */,
-				419988160EBB068CDBC45221 /* Release */,
+				64322E470448E78534EFDC58 /* Debug */,
+				755A302CBEA9AC69B5BA284B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F20AD58E68D79AB63DB892C0 /* Build configuration list for PBXNativeTarget "Pods-VHSMarketPlace-BButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A8E458F83B5A8CE01399937 /* Debug */,
+				2F42E1B1033DD46E93BC5B03 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 71E176BE959E666CD90B470B /* Project object */;
+	rootObject = 2C8D598B39E909668142AA13 /* Project object */;
 }
