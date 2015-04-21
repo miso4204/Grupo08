@@ -1,10 +1,14 @@
 package com.tsfactory.user.android.vhs.fragments;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +20,21 @@ import android.widget.Spinner;
 
 import com.tsfactory.user.android.vhs.MainActivity;
 import com.tsfactory.user.android.vhs.R;
+import com.tsfactory.user.android.vhs.util.Constants;
+import com.tsfactory.user.android.vhs.util.SessionManager;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.util.Date;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -63,14 +82,21 @@ public class AddPropertyFragment extends Fragment {
         // Required empty public constructor
     }
 
+    /**
+     * Keep track of the login task to ensure we can cancel it if requested.
+     */
+    private AddPropertyTask mPropertyTask = null;
+
     // UI references.
     private EditText mTitleView;
     private EditText mDescriptionView;
     private DatePicker mDatepickerView;
     private Spinner mCitySpinnerView;
     private Spinner mCategorySpinnerView;
+    private EditText mPriceView;
     private Spinner mCurrencySpinnerView;
     private Button mUploadPicView;
+    private String mPictureUrl;
     private Button mAddPropertyView;
 
     @Override
@@ -91,9 +117,13 @@ public class AddPropertyFragment extends Fragment {
 
         mTitleView = (EditText) view.findViewById(R.id.property_title);
         mDescriptionView = (EditText) view.findViewById(R.id.property_description);
+
         mDatepickerView = (DatePicker) view.findViewById(R.id.property_date);
+        initDatepicker();
+
         mCitySpinnerView = (Spinner) view.findViewById(R.id.property_location);
         mCategorySpinnerView = (Spinner) view.findViewById(R.id.property_category);
+        mPriceView = (EditText) view.findViewById(R.id.property_price);
         mCurrencySpinnerView = (Spinner) view.findViewById(R.id.property_currency);
 
         mUploadPicView = (Button) view.findViewById(R.id.property_add_photo_button);
@@ -108,13 +138,32 @@ public class AddPropertyFragment extends Fragment {
         mAddPropertyView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+                String title = mTitleView.getText().toString();
+                String description = mDescriptionView.getText().toString();
+                double price = Double.valueOf(mPriceView.getText().toString());
+                String date = mDatepickerView.getYear() + "-" + mDatepickerView.getMonth() + "-" + mDatepickerView.getDayOfMonth();
+                String pictureUrl = "https://ictericiadotme.files.wordpress.com/2014/05/canopy.jpg";
+                //showProgress(true);
+                mPropertyTask = new AddPropertyTask(getActivity(), title, description, price, date, pictureUrl);
+                mPropertyTask.execute((Void) null);
             }
         });
 
         setSpinnersAdapters();
 
         return view;
+    }
+
+    private void initDatepicker() {
+        int day = mDatepickerView.getDayOfMonth();
+        int month = mDatepickerView.getMonth();
+        int year = mDatepickerView.getYear();
+        mDatepickerView.init(year, month, day, new DatePicker.OnDateChangedListener() {
+            @Override
+            public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                Log.e("Date changed: ", year + " - " + monthOfYear + " - " + dayOfMonth);
+            }
+        });
     }
 
     private void setSpinnersAdapters() {
@@ -190,5 +239,113 @@ public class AddPropertyFragment extends Fragment {
         transaction.replace(R.id.container, cameraFragment);
         transaction.addToBackStack("AddPropertyFragment");
         transaction.commit();
+    }
+
+    /**
+     * Represents an asynchronous login/registration task used to authenticate
+     * the user.
+     */
+    public class AddPropertyTask extends AsyncTask<Void, Void, Boolean> {
+
+        private final Context mContext;
+        private final String title;
+        private final String description;
+        private final double price;
+        private final String date;
+        private final String pictureUrl;
+
+
+        AddPropertyTask(Context context, String title, String description, double price, String date, String pictureUrl) {
+            this.mContext = context;
+            this.title = title;
+            this.description = description;
+            this.price = price;
+            this.date = date;
+            this.pictureUrl = pictureUrl;
+        }
+
+        @Override
+        protected Boolean doInBackground(Void... params) {
+
+            try {
+                // Simulate network access.
+                //Thread.sleep(2000);
+                HttpClient httpClient = new DefaultHttpClient();
+                HttpPost httpPost = new HttpPost(Constants.API_URL + Constants.VHS_OFFER);
+
+                String json = "";
+
+                // Build jsonObject
+                JSONObject jsonObject = new JSONObject();
+                jsonObject.accumulate("shortName", title);
+                jsonObject.accumulate("description", description);
+                jsonObject.accumulate("price", price);
+                jsonObject.accumulate("mainImageUrl", pictureUrl);
+                jsonObject.accumulate("latitude", 100);
+                jsonObject.accumulate("longitude", 100);
+                jsonObject.accumulate("publishDate", date);
+
+                jsonObject.accumulate("offerCategory", new JSONObject().accumulate("idCategory", 1));
+
+                // Convert JSONObject to JSON to String
+                json = jsonObject.toString();
+
+                Log.e("JSON: ", json);
+
+                // Set json to StringEntity
+                StringEntity se = new StringEntity(json);
+
+                // Set httpPost Entity
+                httpPost.setEntity(se);
+
+                // Set some headers to inform server about the type of the content
+                httpPost.setHeader("Accept", "application/json");
+                httpPost.setHeader("Content-type", "application/json");
+
+                // Make the POST request.
+                HttpResponse response = httpClient.execute(httpPost);
+                // Write response to log
+
+                Log.e("RESPONSE: ", String.valueOf(response.getStatusLine().getStatusCode()));
+
+                //No Response 204 or OK 200
+                if (response.getStatusLine().getStatusCode() == 204 || response.getStatusLine().getStatusCode() == 200)
+                {
+                    //HttpEntity entity = response.getEntity();
+                    //Log.d("Res of POST request", EntityUtils.toString(entity));
+                    return true;
+                }
+
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            } catch (ClientProtocolException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            return false;
+        }
+
+        @Override
+        protected void onPostExecute(final Boolean success) {
+            mPropertyTask = null;
+            //showProgress(false);
+
+            if (success) {
+                Log.e("FUNCIONO", "Se agrego la promo");
+
+
+            } else {
+                Log.e("NO FUNCIONO", "No se agrego la promo");
+            }
+        }
+
+        @Override
+        protected void onCancelled() {
+            mPropertyTask = null;
+            //showProgress(false);
+        }
     }
 }
