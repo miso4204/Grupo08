@@ -31,6 +31,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.tsfactory.user.android.vhs.util.Constants;
+import com.tsfactory.user.android.vhs.util.SessionManager;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
@@ -63,6 +64,8 @@ public class SignupActivity extends ActionBarActivity implements LoaderCallbacks
     private EditText mFullNameView;
     private View mProgressView;
     private View mSignupFormView;
+
+    public SessionManager session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -388,7 +391,13 @@ public class SignupActivity extends ActionBarActivity implements LoaderCallbacks
             showProgress(false);
 
             if (success) {
+
+                session = new SessionManager(getApplicationContext());
+                session.createLoginSession(mFullNameView.getText().toString(), mEmailView.getText().toString());
+
                 startActivity(new Intent(mContext, MainActivity.class));
+                finish();
+
             } else {
                 mEmailView.setError(getString(R.string.error_sign_up));
                 mEmailView.requestFocus();

@@ -14,10 +14,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
+import android.widget.Toast;
 
 import com.tsfactory.user.android.vhs.fragments.AddPropertyFragment;
 import com.tsfactory.user.android.vhs.fragments.CameraFragment;
 import com.tsfactory.user.android.vhs.fragments.ItemFragment;
+import com.tsfactory.user.android.vhs.util.AlertDialogManager;
+import com.tsfactory.user.android.vhs.util.SessionManager;
+
+//import java.util.HashMap;
 
 
 public class MainActivity extends ActionBarActivity
@@ -36,6 +41,12 @@ public class MainActivity extends ActionBarActivity
      */
     private CharSequence mTitle;
 
+    // Alert Dialog Manager
+    AlertDialogManager alert = new AlertDialogManager();
+
+    // Session Manager Class
+    SessionManager session;
+
     /**
      * Class to manage the items on the Navigation Drawer.
      */
@@ -50,6 +61,22 @@ public class MainActivity extends ActionBarActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Session class instance
+        session = new SessionManager(getApplicationContext());
+        Toast.makeText(getApplicationContext(), "User Login Status: " + session.isLoggedIn(), Toast.LENGTH_LONG).show();
+
+        //Call this function whenever you want to check user login
+        session.checkLogin();
+
+        /**
+         * Get user data from session
+         * HashMap<String, String> user = session.getUserDetails();
+         * User name:
+         * String name = user.get(SessionManager.KEY_NAME);
+         * User email:
+         * String email = user.get(SessionManager.KEY_EMAIL);
+         */
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
@@ -87,7 +114,8 @@ public class MainActivity extends ActionBarActivity
                 break;
 
             case MenuItems.LOG_OUT:
-                fragmentTransaction.replace(R.id.container, PlaceholderFragment.newInstance(position + 1));
+                session.logoutUser();
+                //fragmentTransaction.replace(R.id.container, PlaceholderFragment.newInstance(position + 1));
                 break;
         }
         fragmentTransaction.commit();
