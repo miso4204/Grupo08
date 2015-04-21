@@ -36,7 +36,7 @@ mejores_ciudades = {{ mejores_ciudades|safe }};
 mejores_calificaciones = {{ mejores_calificaciones|safe }};
 peores_ciudades = {{ peores_ciudades|safe }};
 peores_calificaciones = {{ peores_calificaciones|safe }};
-fechaGeneracion = {{ fecha|safe }};
+fechaGeneracion = '{{ fecha|safe }}';
 
 $(function () {
     $('#container_best').highcharts({
@@ -47,7 +47,7 @@ $(function () {
             text: 'Reporte de Rating'
         },
         subtitle: {
-            text: 'Fecha de generación: ' + fechaGeneracion.date
+            text: 'Fecha de generación: ' + fechaGeneracion
         },
         xAxis: {
             categories: mejores_ciudades,

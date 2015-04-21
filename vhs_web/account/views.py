@@ -32,9 +32,9 @@ def auth_view(request):
 			response = requests.get('{0}/{1}/{2}/{3}'.format(url, method, username, password))
 
 			if response.status_code == 200:
-				element =  ElementTree.XML(response.text)	
+				element =  ElementTree.XML(response.text)
 
-				request.session['id_usuario'] = 4
+				request.session['id_usuario'] = element[3].text
 				
 				# Login ok
 				return HttpResponseRedirect('/account/index')

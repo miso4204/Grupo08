@@ -8,6 +8,7 @@ from django.http import HttpResponse
 import requests
 import json
 import operator
+from datetime import datetime, timedelta
 
 #Custom 
 
@@ -19,23 +20,50 @@ def rating_report(request):
 
 	if esta_autenticado(request):
 
+		fecha_inicio = ''
+		fecha_fin = ''
+
 		if request.method == 'POST':
 
 			form = RatingForm(request.POST)
 
 			if form.is_valid():
-				start_date = form.cleaned_data['start_date']
-				end_date = form.cleaned_data['end_date']
+				fecha_inicio = form.cleaned_data['start_date']
+				fecha_fin = form.cleaned_data['end_date']
 				
-		date = {'date': '03/04/2015 11:58:00 PM'}
+		# date = {'date': '03/04/2015 11:58:00 PM'}
+		date = datetime.today().strftime('%d/%m/%Y %I:%M:%S %p')
+		
+		url = 'http://jbossasvhsbackendservices-vhstourism.rhcloud.com/VhsBackEndServices/webresources'
+		method = 'vhsofferrating'
+		username = "andresvargasr@gmail.com"
 
-		listado_productos = {
-			"Paquete San Andres": 3.3,
-			"Paquete Barranquilla": 4.3,
-			"Paquete Cartagena": 3.8,
-			"Paquete Santa Marta": 3,
-			"Paquete Amazonas": 4.9
-		}
+		# Se convierten a Date, esto se debe mejorar
+
+		if fecha_inicio == '':
+			fecha_fin = datetime.today()
+			fecha_inicio = fecha_fin - timedelta(days=10)
+		else:
+			fecha_inicio = datetime.strptime(fecha_inicio, '%d/%m/%Y')
+			fecha_fin = datetime.strptime(fecha_fin, '%d/%m/%Y')
+	
+		# Se convierten a String
+
+		fecha_fin = fecha_fin.strftime('%d%m%Y')
+		fecha_inicio = fecha_inicio.strftime('%d%m%Y')
+
+		response = requests.get('{0}/{1}/{2}/{3}/{4}'.format(url, method, username, fecha_inicio, fecha_fin))
+
+		try:
+			if response.status_code == 200:
+				root =  ElementTree.XML(response.text)
+				
+				listado_productos = {}
+				for infoRating in root:
+					listado_productos[infoRating[1].text] = float(infoRating[0].text)
+
+		except Exception, e:
+			raise e
 
 		mejores_10 = sorted(listado_productos.iteritems(), key=lambda (k, v): (-v, k))[:10]
 		peores_10 = sorted(listado_productos.iteritems(), key=lambda (k, v): (v, k))[:10]
@@ -52,7 +80,7 @@ def rating_report(request):
 			'mejores_calificaciones': mejores_calificaciones, 
 			'peores_ciudades': peores_ciudades,
 			'peores_calificaciones': peores_calificaciones,
-			'fecha': date })
+			'fecha': str(date) })
 		
 	else:
 		form = LoginForm(request.POST)
