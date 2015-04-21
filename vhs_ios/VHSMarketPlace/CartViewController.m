@@ -165,13 +165,25 @@
     [self showAlertPayment];
 }
 -(void)showAlertPayment{
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    if ([appDelegate.shoppingCart count]>0 ) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Métodos de pago"
+                                                        message:@"Porfavor selecciona tu método de pago"
+                                                       delegate:self
+                                              cancelButtonTitle:@"Cancel"
+                                              otherButtonTitles:@"PayPal",@"Tarjeta de crédito", nil];
+        alert .tag = kAlertCheckOut;
+        
+        [alert show];
 
-    self.alert  = [[UIAlertView alloc]initWithTitle:@"Métodos de pago" message:@"Porfavor selecciona tu método de pago" delegate:nil cancelButtonTitle:@"Cancelar" otherButtonTitles:@"PayPal",@"Tarjeta de crédito",@"efectivo", nil];
+    }else{
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"No tienes productos en el carrito de compras"
+                                                           delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
     
-    self.alert .tag = kAlertCheckOut;
-    
-    [self.alert  show];
+    }
 
+    
 
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -247,7 +259,7 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (alertView.tag == kAlertCheckOut) {
         
-        if (buttonIndex == 0) {
+        if (buttonIndex == 1) {
             
             AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
             
@@ -287,11 +299,11 @@
             [self.navigationController presentViewController:paymentViewController animated:YES completion:nil];
             
             
-        }else if (buttonIndex ==1) {
+        }else if (buttonIndex ==2) {
             CardIOPaymentViewController *scanViewController = [[CardIOPaymentViewController alloc] initWithPaymentDelegate:self];
             [self presentViewController:scanViewController animated:YES completion:nil];
         
-        }else if (buttonIndex == 2){
+        }else if (buttonIndex == 3){
             
             // call the api with the payment and the products
         
@@ -312,5 +324,17 @@
     }
     
     [cardIOView removeFromSuperview];
+}
+-(void)userDidProvideCreditCardInfo:(CardIOCreditCardInfo *)cardInfo inPaymentViewController:(CardIOPaymentViewController *)paymentViewController{
+    NSLog(@"Received card info. Number: %@, expiry: %02i/%i, cvv: %@.", cardInfo.redactedCardNumber, cardInfo.expiryMonth, cardInfo.expiryYear, cardInfo.cvv);
+    // Use the card info...
+    [paymentViewController dismissViewControllerAnimated:YES completion:nil];
+
+}
+-(void)userDidCancelPaymentViewController:(CardIOPaymentViewController *)paymentViewController{
+
+
+    [paymentViewController dismissViewControllerAnimated:YES completion:nil];
+
 }
 @end

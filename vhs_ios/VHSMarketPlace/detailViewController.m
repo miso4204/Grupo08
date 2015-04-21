@@ -14,6 +14,7 @@
 #import "UIColor+FlatUI.h"
 #import "FUIButton.h"
 #import "detailViewController.h"
+#import "AppDelegate.h"
 @interface detailViewController (){
 
     NSMutableArray *markers;
@@ -48,14 +49,33 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self.btnAddtoCart setStyle:BButtonStyleBootstrapV3];
+    [self.btnAddtoCart setType:BButtonTypeWarning];
     
     _slideshow.delegate = self;
     [_slideshow setDelay:1]; // Delay between transitions
     [_slideshow setTransitionDuration:.5]; // Transition duration
     [_slideshow setTransitionType:KASlideShowTransitionFade]; // Choose a transition type (fade or slide)
     [_slideshow setImagesContentMode:UIViewContentModeScaleAspectFill]; // Choose a content mode for images to display
-    [_slideshow addImagesFromResources:@[@"hote1@2x.jpeg",@"hote2@2x.jpeg",@"hote3@2x.jpeg",@"hote4@2x.jpeg"]]; // Add images from resources
+ //   [_slideshow addImagesFromResources:@[@"hote1@2x.jpeg",@"hote2@2x.jpeg",@"hote3@2x.jpeg",@"hote4@2x.jpeg"]]; // Add images from resources
+    NSURL* url = [NSURL URLWithString:self.myProduct.image];
+    NSURLRequest* request = [NSURLRequest requestWithURL:url];
+    
+    
+    [NSURLConnection sendAsynchronousRequest:request
+                                       queue:[NSOperationQueue mainQueue]
+                           completionHandler:^(NSURLResponse * response,
+                                               NSData * data,
+                                               NSError * error) {
+                               if (!error){
+                                   
+                                   UIImage * image = [UIImage imageWithData:data];
+                                   [_slideshow addImage:image];
+
+                               }
+                               
+                           }];
+
     
     [_slideshow addGesture:KASlideShowGestureTap]; // Gesture to go previous/next directly on the image
     
@@ -345,4 +365,29 @@
 }
 
 
+- (IBAction)addToCart:(id)sender {
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    [appDelegate.shoppingCart addObject:self.myProduct];
+    
+    NSString *size = [NSString stringWithFormat:@"%lu",(unsigned long)[appDelegate.shoppingCart count]];
+    
+
+    [[[[[self tabBarController] tabBar] items]
+      objectAtIndex:1] setBadgeValue:size];
+    
+
+    
+    [self showAlert];
+}
+-(void)showAlert{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Éxito" message:@"Este producto se ha agregado exitosamente al carrito de compras"
+                                                       delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alertView show];
+
+
+
+
+}
 @end

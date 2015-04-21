@@ -58,12 +58,12 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d8R-lt-edh" customClass="GMSMapView">
-                                <rect key="frame" x="38" y="394" width="524" height="192"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d8R-lt-edh" customClass="GMSMapView">
+                                <rect key="frame" x="38" y="423" width="524" height="163"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="17" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMZ-Ew-Jz5">
-                                <rect key="frame" x="45" y="237" width="500" height="161"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="17" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMZ-Ew-Jz5">
+                                <rect key="frame" x="45" y="237" width="500" height="119"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="161" id="dZG-tn-ifn"/>
                                 </constraints>
@@ -92,6 +92,15 @@ Cócteles y gastronomía con buena música de fondo, mucha animación y un ambie
                                 <rect key="frame" x="45" y="101" width="232" height="136"/>
                                 <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FuM-xG-azH" customClass="BButton">
+                                <rect key="frame" x="91" y="338" width="140" height="46"/>
+                                <state key="normal" title="Agregar al carrito">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addToCart:" destination="Hwm-mT-Aoh" eventType="touchUpInside" id="td5-RW-hGR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -119,6 +128,7 @@ Cócteles y gastronomía con buena música de fondo, mucha animación y un ambie
                     </view>
                     <navigationItem key="navigationItem" id="pa5-cO-Xsa"/>
                     <connections>
+                        <outlet property="btnAddtoCart" destination="FuM-xG-azH" id="RdB-rF-MCF"/>
                         <outlet property="googleMapView" destination="d8R-lt-edh" id="dIa-mp-adr"/>
                         <outlet property="lblDescription" destination="cMZ-Ew-Jz5" id="t8i-D9-xM1"/>
                         <outlet property="lblName" destination="qrx-4o-zt8" id="D5l-kn-GYd"/>
@@ -715,6 +725,6 @@ Cócteles y gastronomía con buena música de fondo, mucha animación y un ambie
         <image name="search.png" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="d5s-1g-Yz3"/>
+        <segue reference="XTy-Yc-3ft"/>
     </inferredMetricsTieBreakers>
 </document>

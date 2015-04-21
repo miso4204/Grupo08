@@ -11,14 +11,15 @@
 
 @interface CartViewController : UIViewController<CardIOPaymentViewControllerDelegate,UIAlertViewDelegate>
 
-enum MapAlertViewTags {
-    kAlertCheckOut = 1,
-    kAlertAddCreditCard = 2,
-
-    
-};
 
 @property (strong, nonatomic) IBOutlet UITableView *tableviewCart;
 @property (strong, nonatomic) UIAlertView * alert;
+
+enum AlertViewTags {
+    kAlertCheckOut = 1,
+    kAlertAddCreditCard = 2,
+    
+    
+};
 
 @end

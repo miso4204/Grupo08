@@ -10,6 +10,7 @@
 #import "Product.h"
 #import <GoogleMaps/GoogleMaps.h>
 #import "KASlideShow.h"
+#import "BButton.h"
 
 @interface detailViewController : UIViewController<GMSMapViewDelegate,CLLocationManagerDelegate,KASlideShowDelegate>
 
@@ -28,7 +29,9 @@
 @property (strong, nonatomic) IBOutlet UIView *view5;
 @property (strong, nonatomic) IBOutlet UIImageView *imgProduct;
 
+@property (weak, nonatomic) IBOutlet BButton *btnAddtoCart;
 
+- (IBAction)addToCart:(id)sender;
 
 - (IBAction)next:(id)sender;
 - (IBAction)play:(id)sender;

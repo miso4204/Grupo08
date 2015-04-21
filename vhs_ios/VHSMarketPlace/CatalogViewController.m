@@ -100,7 +100,7 @@ Categoryc * cat;
    // recipeImageView.alpha = 0.2;
 
     
-    NSURL* url = [NSURL URLWithString:p.image];
+    NSURL* url = [NSURL URLWithString:@"http://www.touristas.info/wp-content/uploads/2011/10/Ecoturismo-en-Acapulco-Mexico.jpg"];
     NSURLRequest* request = [NSURLRequest requestWithURL:url];
     
     
