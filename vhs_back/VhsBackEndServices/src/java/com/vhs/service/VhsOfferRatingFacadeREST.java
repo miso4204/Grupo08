@@ -5,11 +5,19 @@
  */
 package com.vhs.service;
 
+import com.vhs.data.DatosReporteRating;
+import com.vhs.data.VhsCountry;
 import com.vhs.data.VhsOfferRating;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -76,6 +84,36 @@ public class VhsOfferRatingFacadeREST extends AbstractFacade<VhsOfferRating> {
     public List<VhsOfferRating> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
         return super.findRange(new int[]{from, to});
     }
+    
+    /**
+     * 
+     * @param mail
+     * @param begin final date format ddmmaaaa
+     * @param end final date format ddmmaaaa
+     * @return 
+     */
+    @GET
+    @Path("{mail}/{begin}/{end}")
+    @Produces({"application/xml", "application/json"})
+    public List<DatosReporteRating> findRating(@PathParam("mail") String mail, @PathParam("begin") String begin, @PathParam("end") String end  ) throws ParseException {
+        Query q = getEntityManager().createNativeQuery(VhsOfferRating.SQL_RATING);
+        Calendar cBegin = Calendar.getInstance();
+        Calendar cEnd = Calendar.getInstance();
+        SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyyy");
+        cBegin.setTime(sdf.parse(begin));
+        cEnd.setTime(sdf.parse(end));
+        List<DatosReporteRating> datos = new ArrayList();
+        q.setParameter(1, mail);
+        q.setParameter(2, cBegin.getTime());
+        q.setParameter(3, cEnd.getTime());
+        List<Object[]> ls= q.getResultList();
+        for ( Object[] o : ls)
+        {
+            DatosReporteRating dr = new DatosReporteRating(o[0].toString(), Double.parseDouble(o[1].toString()));
+            datos.add(dr);
+        }
+        return datos;
+     }
 
     @GET
     @Path("count")

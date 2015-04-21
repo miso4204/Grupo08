@@ -18,6 +18,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
@@ -141,7 +142,7 @@ public class VhsSpecialOffer implements Serializable
     /**
      * Associated offers
      */
-    @OneToMany(mappedBy = "specialOffer" )
+    @OneToMany(mappedBy = "specialOffer")
     @LazyCollection(LazyCollectionOption.FALSE)
     private Collection<VhsOfferRating> vhsOfferRating;
     
@@ -305,7 +306,7 @@ public class VhsSpecialOffer implements Serializable
         this.offerCity = offerCity;
     }
 
-    
+    @XmlTransient
     public Collection<VhsOfferRating> getVhsOfferRating()
     {
         return vhsOfferRating;
@@ -315,7 +316,7 @@ public class VhsSpecialOffer implements Serializable
     {
         this.vhsOfferRating = vhsOfferRating;
     }
-    
+    @XmlTransient
     public Collection<VhsOfferSale> getVhsOfferSale()
     {
         return vhsOfferSale;
@@ -335,7 +336,8 @@ public class VhsSpecialOffer implements Serializable
     {
         this.currency = currency;
     }
-
+    
+    @XmlTransient
     public Collection<VhsOfferImage> getVhsOfferImages()
     {
         return vhsOfferImages;
