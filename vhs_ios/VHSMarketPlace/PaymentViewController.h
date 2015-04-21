@@ -7,7 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Connections.h"
+#import "BButton.h"
+#import "CardIO.h"
 
-@interface PaymentViewController : UIViewController
+@interface PaymentViewController : UIViewController<CardIOPaymentViewControllerDelegate,UITextFieldDelegate,UITextViewDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *txtName;
+@property (weak, nonatomic) IBOutlet UITextField *txtAddress;
+@property (weak, nonatomic) IBOutlet UITextField *txtCreditCardNumber;
+@property (weak, nonatomic) IBOutlet UITextField *txtDate;
+@property (weak, nonatomic) IBOutlet UITextField *txtCvv;
+@property (weak, nonatomic) IBOutlet BButton *btnPay;
+- (IBAction)pay:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *btnScan;
+- (IBAction)scan:(id)sender;
 
 @end

@@ -300,8 +300,8 @@
             
             
         }else if (buttonIndex ==2) {
-            CardIOPaymentViewController *scanViewController = [[CardIOPaymentViewController alloc] initWithPaymentDelegate:self];
-            [self presentViewController:scanViewController animated:YES completion:nil];
+            [self performSegueWithIdentifier:@"credit" sender:self];
+         
         
         }else if (buttonIndex == 3){
             

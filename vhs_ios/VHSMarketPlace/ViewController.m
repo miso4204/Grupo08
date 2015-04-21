@@ -50,6 +50,9 @@
     [self.tableviewProducts registerNib:[UINib nibWithNibName:@"ProductCell" bundle:nil] forCellReuseIdentifier:@"ProductCell"];
 
     // Do any additional setup after loading the view, typically from a nib.
+    
+    [self loadProducts];
+
 
 }
 - (void)loadProducts
@@ -279,12 +282,7 @@
     
     
 }
--(void)viewDidAppear:(BOOL)animated{
 
-    [self loadProducts];
-
-
-}
 -(void)GetProductsDidFinishWithFailure:(NSDictionary*)responseObject{
 
 
