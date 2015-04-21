@@ -26,16 +26,42 @@
                 android:hint="@string/main_description"
                 android:minLines="2"/>
 
-            <EditText android:id="@+id/property_location" android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:hint="@string/property_location"
-                android:inputType="textCapSentences"
-                android:maxLines="1" android:singleLine="true" />
-
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:gravity="center_vertical">
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:id="@+id/property_location_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:text="Location: "
+                    android:layout_toLeftOf="@+id/property_location"/>
+
+                <Spinner
+                    android:id="@+id/property_location"
+                    android:layout_width="150dp"
+                    android:layout_height="46dp"
+                    android:layout_alignParentRight="true"/>
+
+                <TextView
+                    android:id="@+id/property_category_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:text="Category: "
+                    android:layout_toLeftOf="@+id/property_category"
+                    android:layout_below="@+id/property_location_title"/>
+
+                <Spinner
+                    android:id="@+id/property_category"
+                    android:layout_width="150dp"
+                    android:layout_height="46dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/property_location"/>
 
                 <EditText
                     android:id="@+id/property_price"
@@ -45,16 +71,32 @@
                     android:layout_alignParentStart="true"
                     android:inputType="numberDecimal"
                     android:layout_toLeftOf="@+id/property_currency"
+                    android:layout_below="@+id/property_category_title"
                     android:hint="@string/property_price" />
 
                 <Spinner
                     android:id="@+id/property_currency"
                     android:layout_width="150dp"
                     android:layout_height="46dp"
-                    android:layout_alignParentRight="true"/>
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/property_category"/>
 
 
             </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/property_date_message" />
+
+            <DatePicker
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/property_date"
+                android:datePickerMode="spinner"
+                android:calendarViewShown="false"
+                android:layout_gravity="center_horizontal" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -68,9 +110,7 @@
                 android:background="#99CC00" android:layout_gravity="right"
                 android:textStyle="bold" />
 
-
-
-            <Button android:id="@+id/email_sign_in_button" style="?android:textAppearanceSmall"
+            <Button android:id="@+id/create_property_button" style="?android:textAppearanceSmall"
                 android:layout_width="match_parent" android:layout_height="wrap_content"
                 android:layout_marginTop="16dp" android:text="@string/title_section2"
                 android:textStyle="bold" />

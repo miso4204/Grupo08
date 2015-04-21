@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.tsfactory.user.android.vhs.MainActivity;
@@ -62,8 +64,14 @@ public class AddPropertyFragment extends Fragment {
     }
 
     // UI references.
-    private Spinner mSpinnerView;
+    private EditText mTitleView;
+    private EditText mDescriptionView;
+    private DatePicker mDatepickerView;
+    private Spinner mCitySpinnerView;
+    private Spinner mCategorySpinnerView;
+    private Spinner mCurrencySpinnerView;
     private Button mUploadPicView;
+    private Button mAddPropertyView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -81,7 +89,12 @@ public class AddPropertyFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_add_property, container, false);
 
-        mSpinnerView = (Spinner) view.findViewById(R.id.property_currency);
+        mTitleView = (EditText) view.findViewById(R.id.property_title);
+        mDescriptionView = (EditText) view.findViewById(R.id.property_description);
+        mDatepickerView = (DatePicker) view.findViewById(R.id.property_date);
+        mCitySpinnerView = (Spinner) view.findViewById(R.id.property_location);
+        mCategorySpinnerView = (Spinner) view.findViewById(R.id.property_category);
+        mCurrencySpinnerView = (Spinner) view.findViewById(R.id.property_currency);
 
         mUploadPicView = (Button) view.findViewById(R.id.property_add_photo_button);
         mUploadPicView.setOnClickListener(new View.OnClickListener() {
@@ -91,14 +104,40 @@ public class AddPropertyFragment extends Fragment {
             }
         });
 
-        // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
-                R.array.currency_array, android.R.layout.simple_spinner_item);
-        // Specify the layout to use when the list of choices appears
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        // Apply the adapter to the spinner
-        mSpinnerView.setAdapter(adapter);
+        mAddPropertyView = (Button) view.findViewById(R.id.create_property_button);
+        mAddPropertyView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                
+            }
+        });
+
+        setSpinnersAdapters();
+
         return view;
+    }
+
+    private void setSpinnersAdapters() {
+
+        ArrayAdapter<CharSequence> mAdapter;
+
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        mAdapter = ArrayAdapter.createFromResource(getActivity(),
+                R.array.city_array, android.R.layout.simple_spinner_item);
+        // Specify the layout to use when the list of choices appears
+        mAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        mCitySpinnerView.setAdapter(mAdapter);
+
+        mAdapter = ArrayAdapter.createFromResource(getActivity(),
+                R.array.category_array, android.R.layout.simple_spinner_item);
+        mAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        mCategorySpinnerView.setAdapter(mAdapter);
+
+        mAdapter = ArrayAdapter.createFromResource(getActivity(),
+                R.array.currency_array, android.R.layout.simple_spinner_item);
+        mAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        mCurrencySpinnerView.setAdapter(mAdapter);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -152,5 +191,4 @@ public class AddPropertyFragment extends Fragment {
         transaction.addToBackStack("AddPropertyFragment");
         transaction.commit();
     }
-
 }

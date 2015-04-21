@@ -27,6 +27,7 @@
     <string name="main_description">Main description</string>
     <string name="property_location">Town, city or village</string>
     <string name="property_price">Default nightly price</string>
+    <string name="property_date_message">Pick the date that your property will be available to potential guests</string>
     <string name="property_photo_message">Upload a photo to really sell your property to potential guests. Click <b>Add photo</b> and choose a picture to <b>upload</b></string>
     <string name="property_add_photo">Add photo</string>
 
@@ -34,6 +35,14 @@
         <item>US Dollar</item>
         <item>Colombian Peso</item>
         <item>Euro</item>
+    </string-array>
+
+    <string-array name="city_array">
+        <item>Bogota</item>
+    </string-array>
+
+    <string-array name="category_array">
+        <item>Ecotourism</item>
     </string-array>
 
 <!-- TODO: Remove or change this placeholder text -->
