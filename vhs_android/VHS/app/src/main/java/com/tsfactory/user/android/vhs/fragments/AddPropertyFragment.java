@@ -2,7 +2,6 @@ package com.tsfactory.user.android.vhs.fragments;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -17,6 +16,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.tsfactory.user.android.vhs.MainActivity;
 import com.tsfactory.user.android.vhs.R;
@@ -34,7 +34,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.util.Date;
+import java.util.HashMap;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -87,6 +87,11 @@ public class AddPropertyFragment extends Fragment {
      */
     private AddPropertyTask mPropertyTask = null;
 
+    // Session Manager Class
+    SessionManager session;
+    // User Data
+    HashMap<String, String> user;
+
     // UI references.
     private EditText mTitleView;
     private EditText mDescriptionView;
@@ -115,6 +120,9 @@ public class AddPropertyFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_add_property, container, false);
 
+        session = new SessionManager(getActivity().getApplicationContext());
+        user = session.getUserDetails();
+
         mTitleView = (EditText) view.findViewById(R.id.property_title);
         mDescriptionView = (EditText) view.findViewById(R.id.property_description);
 
@@ -142,7 +150,7 @@ public class AddPropertyFragment extends Fragment {
                 String description = mDescriptionView.getText().toString();
                 double price = Double.valueOf(mPriceView.getText().toString());
                 String date = mDatepickerView.getYear() + "-" + mDatepickerView.getMonth() + "-" + mDatepickerView.getDayOfMonth();
-                String pictureUrl = "https://ictericiadotme.files.wordpress.com/2014/05/canopy.jpg";
+                String pictureUrl = "http://media-cdn.tripadvisor.com/media/photo-s/01/d0/40/da/hotel-hacienda-merida.jpg";
                 //showProgress(true);
                 mPropertyTask = new AddPropertyTask(getActivity(), title, description, price, date, pictureUrl);
                 mPropertyTask.execute((Void) null);
@@ -281,9 +289,18 @@ public class AddPropertyFragment extends Fragment {
                 jsonObject.accumulate("description", description);
                 jsonObject.accumulate("price", price);
                 jsonObject.accumulate("mainImageUrl", pictureUrl);
-                jsonObject.accumulate("latitude", 100);
-                jsonObject.accumulate("longitude", 100);
+                jsonObject.accumulate("latitude", 4.601586);
+                jsonObject.accumulate("longitude", -74.065274);
                 jsonObject.accumulate("publishDate", date);
+                jsonObject.accumulate("endDate", "2015-12-24");
+
+                JSONObject userDataJson = new JSONObject();
+                userDataJson.accumulate("fullName", user.get(SessionManager.KEY_NAME));
+                userDataJson.accumulate("mail", user.get(SessionManager.KEY_EMAIL));
+                userDataJson.accumulate("password", user.get(SessionManager.KEY_PASSWORD));
+                userDataJson.accumulate("userId", Integer.valueOf(user.get(SessionManager.KEY_UID)));
+
+                jsonObject.accumulate("serviceProviderUser", userDataJson);
 
                 jsonObject.accumulate("offerCategory", new JSONObject().accumulate("idCategory", 1));
 
@@ -335,10 +352,12 @@ public class AddPropertyFragment extends Fragment {
 
             if (success) {
                 Log.e("FUNCIONO", "Se agrego la promo");
+                Toast.makeText(getActivity() , "Added Property: " + "success.", Toast.LENGTH_LONG).show();
 
 
             } else {
                 Log.e("NO FUNCIONO", "No se agrego la promo");
+                Toast.makeText(getActivity() , "Added Property: " + "ERROR.", Toast.LENGTH_LONG).show();
             }
         }
 

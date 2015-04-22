@@ -65,7 +65,6 @@ public class SignupActivity extends ActionBarActivity implements LoaderCallbacks
     private View mProgressView;
     private View mSignupFormView;
 
-    public SessionManager session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -391,11 +390,7 @@ public class SignupActivity extends ActionBarActivity implements LoaderCallbacks
             showProgress(false);
 
             if (success) {
-
-                session = new SessionManager(getApplicationContext());
-                session.createLoginSession(mFullNameView.getText().toString(), mEmailView.getText().toString());
-
-                startActivity(new Intent(mContext, MainActivity.class));
+                startActivity(new Intent(mContext, LoginActivity.class));
                 finish();
 
             } else {

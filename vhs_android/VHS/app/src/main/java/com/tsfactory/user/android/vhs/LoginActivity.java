@@ -67,6 +67,8 @@ public class LoginActivity extends ActionBarActivity implements LoaderCallbacks<
     public SessionManager session;
     public String userName;
     public String userEmail;
+    public String userPassword;
+    public int userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -324,6 +326,8 @@ public class LoginActivity extends ActionBarActivity implements LoaderCallbacks<
                     JSONObject myObject = new JSONObject(EntityUtils.toString(entity));
                     userName = myObject.getString("fullName");
                     userEmail = myObject.getString("mail");
+                    userPassword = myObject.getString("password");
+                    userId = myObject.getInt("userId");
 
                     return true;
                 }
@@ -350,7 +354,7 @@ public class LoginActivity extends ActionBarActivity implements LoaderCallbacks<
             if (success) {
 
                 session = new SessionManager(getApplicationContext());
-                session.createLoginSession(userName, userEmail);
+                session.createLoginSession(userName, userEmail, userPassword, userId);
 
                 startActivity(new Intent(mContext, MainActivity.class));
                 finish();
