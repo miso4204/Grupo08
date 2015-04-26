@@ -58,12 +58,12 @@
     </div>
     {% block content %}
     {{ form.non_field_errors }}
-    <form action='/account/register/' method='post'>
+    <form action='/account/register/' method='post' enctype="multipart/form-data">
     	
       <div class="row">
 	      <div class="col-lg-8 col-lg-offset-2 centered">
 	        <p>Ingresa tus datos para registrarte en la plataforma VHS como proveedor.</p>
-	        <form id="contact" method="post" class="form" role="form">
+	        <form id="contact" method="post" class="form" role="form"  >
 	        	{% csrf_token %}
 	          <div class="row">
 	            <div class="col-xs-10 col-sm-8 col-md-6 col-centered form-group">
@@ -80,218 +80,11 @@
                 <input class="form-control" id="password" name="password" placeholder="Contraseña" type="password" required />
               </div>
             </div>
-
-
-
-
-
-<!-- ==== PORTFOLIO ==== -->
-<div id="portfolio" name="portfolio">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 centered">
-        <p class="large">Escoge cualquiera de estas opciones para que tu producto sea único!</p>
-      </div>
-    </div>
-    <!-- /row -->
-    <div class="container">
-      <div class="row"> 
-        
-        <!-- PORTFOLIO IMAGE 1 -->
-        <div class="col-md-4 ">
-          <div class="grid mask">
-            <figure> <img class="img-responsive" src="{% static "assets/img/portfolio/folio01.jpg" %}" alt="">
-              <figcaption>
-                <h5>Ofertas</h5>
-              <!-- /figcaption --> 
-            </figure>
-            <input type="checkbox" name="special_offer" id="special_offer"> Quiero esta funcionalidad
-            <!-- /figure --> 
-          </div>
-          <!-- /grid-mask --> 
-        </div>
-
-        <!-- PORTFOLIO IMAGE 2 -->
-        <div class="col-md-4">
-          <div class="grid mask">
-            <figure> <img class="img-responsive" src="{% static "assets/img/portfolio/folio03.jpg" %}" alt="">
-              <figcaption>
-                <h5>Monedas</h5>
-              <!-- /figcaption --> 
-            </figure>
-            <input type="checkbox" name="currency_administration" id="currency_administration"> Quiero esta funcionalidad
-            <!-- /figure --> 
-          </div>
-          <!-- /grid-mask --> 
-        </div>
-        
-        <!-- PORTFOLIO IMAGE 3 -->
-        <div class="col-md-4">
-          <div class="grid mask">
-            <figure> <img class="img-responsive" src="{% static "assets/img/portfolio/folio02.jpg" %}" alt="">
-              <figcaption>
-                <h5>Reporte Rating</h5>
-              <!-- /figcaption --> 
-            </figure>
-            <input type="checkbox" name="rating_report" id="rating_report"> Quiero esta funcionalidad
-            <!-- /figure --> 
-          </div>
-          <!-- /grid-mask --> 
-        </div>
-
-        <!-- PORTFOLIO IMAGE 4 -->
-        <div class="col-md-4">
-          <div class="grid mask">
-            <figure> <img class="img-responsive" src="{% static "assets/img/portfolio/folio02.jpg" %}" alt="">
-              <figcaption>
-                <h5>Reporte de Ventas</h5>
-              <!-- /figcaption --> 
-            </figure>
-            <input type="checkbox" name="sale_report" id="sale_report"> Quiero esta funcionalidad
-            <!-- /figure --> 
-          </div>
-          <!-- /grid-mask --> 
-        </div>
-
-        <!-- PORTFOLIO IMAGE 5 -->
-        <div class="col-md-4">
-          <div class="grid mask">
-            <figure> <img class="img-responsive" src="{% static "assets/img/portfolio/folio04.jpg" %}" alt="">
-              <figcaption>
-                <h5>Redes Sociales</h5>
-              <!-- /figcaption --> 
-            </figure>
-            <input type="checkbox" name="social_network" id="social_network"> Quiero esta funcionalidad
-            <!-- /figure --> 
-          </div>
-          <!-- /grid-mask --> 
-        </div>
-
-        <!-- PORTFOLIO IMAGE 6 -->
-        <div class="col-md-4">
-          <div class="grid mask">
-            <figure> <img class="img-responsive" src="{% static "assets/img/portfolio/folio06.jpg" %}" alt="">
-              <figcaption>
-                <h5>Búsqueda por ubicación</h5>
-              <!-- /figcaption --> 
-            </figure>
-            <input type="checkbox" name="location_search" id="location_search"> Quiero esta funcionalidad
-            <!-- /figure --> 
-          </div>
-          <!-- /grid-mask --> 
-        </div>
-
-        <!-- PORTFOLIO IMAGE 7 -->
-        <div class="col-md-4">
-          <div class="grid mask">
-            <figure> <img class="img-responsive" src="{% static "assets/img/portfolio/folio05.jpg" %}" alt="">
-              <figcaption>
-                <h5>Pay on Delivery</h5>
-              <!-- /figcaption --> 
-            </figure>
-            <input type="checkbox" name="pay_on_delivery" id="pay_on_delivery"> Quiero esta funcionalidad
-            <!-- /figure --> 
-          </div>
-          <!-- /grid-mask --> 
-        </div>
-
-        <!-- PORTFOLIO IMAGE 8 -->
-        <div class="col-md-4">
-          <div class="grid mask">
-            <figure> <img class="img-responsive" src="{% static "assets/img/portfolio/folio06.jpg" %}" alt="">
-              <figcaption>
-                <h5>Videos</h5>
-              <!-- /figcaption --> 
-            </figure>
-            <input type="checkbox" name="multimedia_video" id="multimedia_video"> Quiero esta funcionalidad
-            <!-- /figure --> 
-          </div>
-          <!-- /grid-mask --> 
-        </div>
-
-        <!-- PORTFOLIO IMAGE 9 -->
-        <div class="col-md-4">
-          <div class="grid mask">
-            <figure> <img class="img-responsive" src="{% static "assets/img/portfolio/folio04.jpg" %}" alt="">
-              <figcaption>
-                <h5>Imagenes</h5>
-              <!-- /figcaption --> 
-            </figure>
-            <input type="checkbox" name="multimedia_image" id="multimedia_image"> Quiero esta funcionalidad
-            <!-- /figure --> 
-          </div>
-          <!-- /grid-mask --> 
-        </div>
-
-        <!-- PORTFOLIO IMAGE 10 -->
-        <div class="col-md-4">
-          <div class="grid mask">
-            <figure> <img class="img-responsive" src="{% static "assets/img/portfolio/folio04.jpg" %}" alt="">
-              <figcaption>
-                <h5>Móvil</h5>
-              <!-- /figcaption --> 
-            </figure>
-            <input type="checkbox" name="mobile" id="mobile"> Quiero esta funcionalidad
-            <!-- /figure --> 
-          </div>
-          <!-- /grid-mask --> 
-        </div>
-
-        <!-- PORTFOLIO IMAGE 11 -->
-        <div class="col-md-4">
-          <div class="grid mask">
-            <figure> <img class="img-responsive" src="{% static "assets/img/portfolio/folio04.jpg" %}" alt="">
-              <figcaption>
-                <h5>Mapas Interactivos</h5>
-              <!-- /figcaption --> 
-            </figure>
-            <input type="checkbox" name="maps" id="maps"> Quiero esta funcionalidad
-            <!-- /figure --> 
-          </div>
-          <!-- /grid-mask --> 
-        </div>
-
-        <!-- PORTFOLIO IMAGE 12 -->
-        <div class="col-md-4">
-          <div class="grid mask">
-            <figure> <img class="img-responsive" src="{% static "assets/img/portfolio/folio01.jpg" %}" alt="">
-              <figcaption>
-                <h5>Escalable</h5>
-              <!-- /figcaption --> 
-            </figure>
-            <input type="checkbox" name="scalability" id="scalability"> Quiero esta funcionalidad
-            <!-- /figure --> 
-          </div>
-          <!-- /grid-mask --> 
-        </div>
-
-        <!-- PORTFOLIO IMAGE 13 -->
-        <div class="col-md-4">
-          <div class="grid mask">
-            <figure> <img class="img-responsive" src="{% static "assets/img/portfolio/folio02.jpg" %}" alt="">
-              <figcaption>
-                <h5>Alto Rendimiento</h5>
-              <!-- /figcaption --> 
-            </figure>
-            <input type="checkbox" name="performance" id="performance"> Quiero esta funcionalidad
-            <!-- /figure --> 
-          </div>
-          <!-- /grid-mask --> 
-        </div>
-
-
-      </div>
-      <!-- /row --> 
-    </div>
-    <!-- /row --> 
-  </div>
-</div>
-<!-- /container --> 
-
-
-
-
-            
+            <div class="row">
+              <div class="col-xs-10 col-sm-8 col-md-6 col-centered form-group">
+                {{form.file}}
+              </div>
+            </div>
             <div class="row">
 	            <div class="col-xs-12 col-md-12">
 	              <button class="btn btn btn-lg" type="submit" value="login">Crear mi cuenta!</button>
