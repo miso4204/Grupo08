@@ -70,6 +70,12 @@ public class VhsUser implements Serializable
     private String fullName;
     
     /**
+     * The current user is base user for variabilty properties
+     */
+    @Column(name = "base_user")
+    private Boolean baseUser;
+    
+    /**
      * Optional feature used to determinate if the service provider could manage special offer in their turistic products
      */
     @Column(name = "optional_feature_special_offer")
@@ -344,6 +350,14 @@ public class VhsUser implements Serializable
         this.optionalFeatureGoogleMapsEnabled = optionalFeatureGoogleMapsEnabled;
     }
 
+    public Boolean getBaseUser() {
+        return baseUser;
+    }
+
+    public void setBaseUser(Boolean baseUser) {
+        this.baseUser = baseUser;
+    }
+    
     @Override
     public int hashCode() 
     {

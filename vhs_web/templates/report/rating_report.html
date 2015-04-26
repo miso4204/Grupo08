@@ -10,6 +10,7 @@
 
 <!-- Bootstrap core CSS -->
 <link href="{% static "assets/css/bootstrap.css" %}" rel="stylesheet">
+<link href="{% static "assets/css/bootstrap-datepicker.css" %}" rel="stylesheet">
 
 
 <!-- Custom CSS -->
@@ -31,40 +32,140 @@
 
 <script type="text/javascript">
 
-data = {{ data|safe }};
-fechaGeneracion = {{ fecha|safe }};
+mejores_ciudades = {{ mejores_ciudades|safe }};
+mejores_calificaciones = {{ mejores_calificaciones|safe }};
+peores_ciudades = {{ peores_ciudades|safe }};
+peores_calificaciones = {{ peores_calificaciones|safe }};
+fechaGeneracion = '{{ fecha|safe }}';
 
 $(function () {
-    $('#container').highcharts({
+    $('#container_best').highcharts({
+        chart: {
+            type: 'bar'
+        },
         title: {
-            text: 'Reporte de Rating',
-            x: -20 //center
+            text: 'Reporte de Rating'
         },
         subtitle: {
-            text: 'Fecha de generación: ' + fechaGeneracion.date,
-            x: -20
+            text: 'Fecha de generación: ' + fechaGeneracion
         },
         xAxis: {
-            categories: ['1 Estrella', '2 Estrellas', '3 Estrellas', '4 Estrellas', '5 Estrellas', '6 Estrellas', '7 Estrellas', '8 Estrellas', '9 Estrellas', '10 Estrellas']},
-        yAxis: {
+            categories: mejores_ciudades,
             title: {
-                text: 'Suma de rating'
+                text: 'Paquetes'
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Calificación por estrellas',
+                align: 'high'
             },
-            plotLines: [{
-                value: 0,
-                width: 1,
-                color: '#808080'
-            }]
+            labels: {
+                overflow: 'justify'
+            }
+        },
+        tooltip: {
+            valueSuffix: ' Estrellas'
+        },
+        plotOptions: {
+            bar: {
+                dataLabels: {
+                    enabled: true
+                }
+            }
         },
         legend: {
             layout: 'vertical',
             align: 'right',
-            verticalAlign: 'middle',
-            borderWidth: 0
+            verticalAlign: 'top',
+            x: -40,
+            y: 100,
+            floating: true,
+            borderWidth: 1,
+            backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+            shadow: true
         },
-        series: data
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'Estrellas',
+            data: mejores_calificaciones
+        }]
+    });
+
+    $('#container_worst').highcharts({
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Reporte de Rating'
+        },
+        subtitle: {
+            text: 'Fecha de generación: ' + fechaGeneracion.date
+        },
+        xAxis: {
+            categories: peores_ciudades,
+            title: {
+                text: 'Paquetes'
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Calificación por estrellas',
+                align: 'high'
+            },
+            labels: {
+                overflow: 'justify'
+            }
+        },
+        tooltip: {
+            valueSuffix: ' Estrellas'
+        },
+        plotOptions: {
+            bar: {
+                dataLabels: {
+                    enabled: true
+                }
+            }
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            x: -40,
+            y: 100,
+            floating: true,
+            borderWidth: 1,
+            backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+            shadow: true
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'Estrellas',
+            data: peores_calificaciones
+        }]
+    });
+
+    $('.datepicker_start').datepicker({
+      format: 'dd/mm/yyyy',
+      autoclose: true,
+      clearBtn: true
+    });
+
+    $('.datepicker_end').datepicker({
+      format: 'dd/mm/yyyy',
+      autoclose: true,
+      clearBtn: true
     });
 });
+
+
+
 </script>
 
 </head>
@@ -90,22 +191,63 @@ $(function () {
   </div>
 </div>
 
+<!-- ==== CONTACT ==== -->
+<div id="contact" name="contact">
+  <div class="container">
+    <div class="row">
+      <h2 class="centered">REPORTE DE RATING</h2>
+      <hr>
+    </div>
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 centered">
+        <p>Por favor escoge las fechas para la generación de tu reporte.</p>
+        {% block content %}
+        <form action='/report/rating/' id="dates" method="post" class="form" role="form">
+          {% csrf_token %}
+          <div class="row form-group">
+            <input id="start_date" name="start_date" placeholder="Fecha Inicial" class="datepicker_start" type="text" >
+          </div>
+          <div class="row form-group">
+            <input id="end_date" name="end_date" placeholder="Fecha Final" class="datepicker_end" type="text" >  
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-md-12">
+              <button class="btn btn btn-lg" type="submit">Graficar</button>
+            </div>
+          </div>
+        </form>
+        {% endblock %}
+        <!-- form --> 
+      </div>
+    </div>
+    <!-- row --> 
+    
+  </div>
+</div>
+
 <!-- ==== SERVICES ==== -->
 <div id="services" name="services">
   <div class="container">
     <div class="row">
-      <h2 class="centered">Reporte de Rating</h2>
+      <h2 class="centered">Reporte de Rating - Mejores 10</h2>
       <hr>
       <div class="col-lg-8 col-lg-offset-2">
-        <p class="large">En este reporte muestra cuales fueron los 5 paquetes que mejor calificación tuvieron.</p>
+        <p class="large">Este reporte muestra los 10 mejores paquetes.</p>
       </div>
-      <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+      <div id="container_best" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+    </div>
+    <div class="row">
+      <h2 class="centered">Reporte de Rating - Mejores 10</h2>
+      <hr>
+      <div class="col-lg-8 col-lg-offset-2">
+        <p class="large">Este reporte muestra los 10 peores paquetes.</p>
+      </div>
+      <div id="container_worst" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
     </div>
     <!-- row --> 
   </div>
 </div>
 <!-- container --> 
-
 
 
 <div id="footerwrap">
@@ -129,6 +271,7 @@ $(function () {
 <!-- Placed at the end of the document so the pages load faster --> 
 
 <script type="text/javascript" src="{% static "assets/js/bootstrap.min.js" %}" ></script> 
+<script type="text/javascript" src="{% static "assets/js/bootstrap-datepicker.js" %}" ></script> 
 <script type="text/javascript" src="{% static "assets/js/retina.js" %}" ></script> 
 <script type="text/javascript" src="{% static "assets/js/jquery.easing.1.3.js" %}" ></script> 
 <script type="text/javascript" src="{% static "assets/js/smoothscroll.js" %}" ></script> 
