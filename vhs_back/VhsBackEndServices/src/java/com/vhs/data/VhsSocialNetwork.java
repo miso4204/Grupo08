@@ -15,84 +15,61 @@ import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- * Available payment method entity
  *
- * @author Andres Vargas (ja.vargas147@uniandes.edu.co)
- * @author Alex Vicente ChacOn JimEnez (av.chacon10@uniandes.edu.co)
+ * @author ivanfgarcias
  */
 @Entity
 @XmlRootElement
-@Table(name = "vhspaymentmethod")
-public class VhsPaymentMethod implements Serializable
+@Table(name = "vhssocialnetwork")
+public class VhsSocialNetwork implements Serializable
 {
-    /**
-     * Default serial version UID
-     */
     private static final long serialVersionUID = 1L;
-    
-     /**
-     * Payment method identifier
-     */
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_payment")
-     Long id;
-
-    /**
-     * Payment method name
-     */
+    @Column(name = "id_social_network")
+    private Long id;
+    
     @Column(name = "name")
     private String name;
-    
-    /**
-     * Optional flag. If true this payment method will not available in some products (i.e. Cash payment method).
-     */
-    @Column(name = "optional")
+
+      @Column(name = "optional")
     private Boolean optional;
-    
-    public Long getId()
-    {
-        return id;
-    }
 
-    public void setId(Long id)
-    {
-        this.id = id;
-    }
-
-    public String getName()
-    {
-        return name;
-    }
-
-    public void setName(String name)
-    {
-        this.name = name;
-    }
-
-    public Boolean getOptional()
-    {
+    public Boolean getOptional() {
         return optional;
     }
 
-    public void setOptional(Boolean optional)
-    {
+    public void setOptional(Boolean optional) {
         this.optional = optional;
+    }
+    
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
-    public int hashCode()
-    {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
+    public String toString() {
+        return "VhsSocialNetwork{" + "id=" + id + ", name=" + name + ", optional=" + optional + '}';
     }
-
+    
     @Override
     public boolean equals(Object object)
     {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof VhsPaymentMethod))
+        if (!(object instanceof VhsSocialNetwork))
         {
             return false;
         }
@@ -105,9 +82,9 @@ public class VhsPaymentMethod implements Serializable
     }
 
     @Override
-    public String toString()
-    {
-        return "com.vhs.data.VhsPaymentMethod[ id=" + id + " ]";
+    public int hashCode() {
+        int hash = 0;
+        hash += (id != null ? id.hashCode() : 0);
+        return hash;
     }
-    
 }

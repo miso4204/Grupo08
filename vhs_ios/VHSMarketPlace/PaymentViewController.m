@@ -14,6 +14,7 @@
 #import "UIColor+FlatUI.h"
 #import "FUIButton.h"
 @interface PaymentViewController ()
+@property (strong, nonatomic)   Connections *ConnectionDelegate;
 
 
 
@@ -23,14 +24,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.ConnectionDelegate = [[Connections alloc]init];
+
     self.title = @"Pagos";
     self.navigationController.navigationBar.titleTextAttributes = @{UITextAttributeFont: [UIFont boldFlatFontOfSize:18],
                                                                     UITextAttributeTextColor: [UIColor whiteColor]};
     
     [self.navigationController.navigationBar configureFlatNavigationBarWithColor:[UIColor colorFromHexCode:@"#e75659"]];
     
+    self.txtAddress.delegate = self;
+    self.txtCreditCardNumber.delegate = self;
+    self.txtCvv.delegate = self;
+    self.txtDate.delegate = self;
+    self.txtName.delegate = self;
 
+    
     // Do any additional setup after loading the view.
 }
 
@@ -58,7 +66,7 @@
 - (void)cardIOView:(CardIOView *)cardIOView didScanCard:(CardIOCreditCardInfo *)info {
     if (info) {
         // The full card number is available as info.cardNumber, but don't log that!
-        NSLog(@"Received card info. Number: %@, expiry: %02i/%i, cvv: %@.", info.redactedCardNumber, info.expiryMonth, info.expiryYear, info.cvv);
+        NSLog(@"Received card info. Number: %@, expiry: %02i/%i, cvv: %@. card Type: %@.", info.redactedCardNumber, info.expiryMonth, info.expiryYear, info.cvv,info.cardType);
         // Use the card info...
         
         self.txtCreditCardNumber.text = info.redactedCardNumber;
@@ -76,6 +84,8 @@
 }
 -(void)userDidProvideCreditCardInfo:(CardIOCreditCardInfo *)cardInfo inPaymentViewController:(CardIOPaymentViewController *)paymentViewController{
 
+    
+    NSLog(@"card information %ld",(long)cardInfo.cardType);
     self.txtCreditCardNumber.text = cardInfo.redactedCardNumber;
     
     self.txtCvv.text = cardInfo.cvv;
@@ -91,5 +101,13 @@
     [paymentViewController dismissViewControllerAnimated:YES completion:nil];
     
 }
-
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [self.txtAddress resignFirstResponder];
+    [self.txtCvv resignFirstResponder];
+    [self.txtCreditCardNumber resignFirstResponder];
+    [self.txtDate resignFirstResponder];
+    [self.txtName resignFirstResponder];
+    return YES;
+    
+}
 @end

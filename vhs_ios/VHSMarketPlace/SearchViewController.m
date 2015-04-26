@@ -24,6 +24,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.viewForDate.layer.cornerRadius = 10.0f;
+    self.viewForDate.layer.masksToBounds = YES;
+    
+    self.viewForDate.backgroundColor = [UIColor lightGrayColor];
+    
+    self.viewForDate.hidden = YES;
     self.title = @"Search";
     self.navigationController.navigationBar.titleTextAttributes = @{UITextAttributeFont: [UIFont boldFlatFontOfSize:18],
                                                                     UITextAttributeTextColor: [UIColor whiteColor]};
@@ -59,8 +65,13 @@
 }
 
 - (IBAction)setBeginDate:(id)sender {
+    self.viewForDate.hidden = NO;
 }
 
 - (IBAction)setEndDate:(id)sender {
+    self.viewForDate.hidden = NO;
+}
+- (IBAction)close:(id)sender {
+    self.viewForDate.hidden = YES;
 }
 @end

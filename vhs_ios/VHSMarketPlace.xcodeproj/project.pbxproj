@@ -60,6 +60,7 @@
 		10EBE1B31AD217BF00CC496D /* photo-frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 10EBE1B21AD217BF00CC496D /* photo-frame.png */; };
 		10EBE1B61AD228DE00CC496D /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10EBE1B51AD228DE00CC496D /* SearchViewController.m */; };
 		542B5F0B19F5C9B78F477854 /* Pods_VHSMarketPlace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F87363710C9210C32DE1462F /* Pods_VHSMarketPlace.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		F247CF9C1AE6FD8A001C0286 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = F247CF9B1AE6FD8A001C0286 /* close.png */; };
 		F27F38881ADF61EB0060DFC1 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = F27F38871ADF61EB0060DFC1 /* XMLReader.m */; };
 		F2FB24A31AE328C800F4F3ED /* PaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2FB24A21AE328C800F4F3ED /* PaymentViewController.m */; };
 /* End PBXBuildFile section */
@@ -155,6 +156,7 @@
 		10EBE1B51AD228DE00CC496D /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		640271BA198B2935FBC51021 /* Pods-VHSMarketPlace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VHSMarketPlace.release.xcconfig"; path = "Pods/Target Support Files/Pods-VHSMarketPlace/Pods-VHSMarketPlace.release.xcconfig"; sourceTree = "<group>"; };
 		9195B48D2D97B7F1339C7902 /* Pods-VHSMarketPlace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VHSMarketPlace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VHSMarketPlace/Pods-VHSMarketPlace.debug.xcconfig"; sourceTree = "<group>"; };
+		F247CF9B1AE6FD8A001C0286 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = close.png; path = Resources/close.png; sourceTree = "<group>"; };
 		F27F38861ADF61EB0060DFC1 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMLReader.h; path = "../../../../../Downloads/XMLReader-master/XMLReader.h"; sourceTree = "<group>"; };
 		F27F38871ADF61EB0060DFC1 /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XMLReader.m; path = "../../../../../Downloads/XMLReader-master/XMLReader.m"; sourceTree = "<group>"; };
 		F2FB24A11AE328C800F4F3ED /* PaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentViewController.h; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				1055DEB21AD3A01A00B23D3E /* hote3@2x.jpeg */,
 				1055DEB31AD3A01A00B23D3E /* hote2@2x.jpeg */,
 				1055DEB41AD3A01A00B23D3E /* hote1@2x.jpeg */,
+				F247CF9B1AE6FD8A001C0286 /* close.png */,
 				10A149031AC8DA510038DEF8 /* Cells */,
 				10B52F331AD7877500D241E7 /* ApiConnection */,
 				10A148CE1AC8D8E20038DEF8 /* AppDelegate.h */,
@@ -459,6 +462,7 @@
 				10A148D91AC8D8E20038DEF8 /* Main.storyboard in Resources */,
 				10A1490E1AC8DA570038DEF8 /* CheckoutHeaderView.xib in Resources */,
 				10A149101AC8DA570038DEF8 /* ProductCartCell.xib in Resources */,
+				F247CF9C1AE6FD8A001C0286 /* close.png in Resources */,
 				10A1491F1AC8F0E00038DEF8 /* home@2x.png in Resources */,
 				107E922E1AD38FC400328F6C /* location@2x.png in Resources */,
 				103D4BEB1AD39A38004F65E9 /* tsFactory@2x.png in Resources */,

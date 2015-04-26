@@ -21,5 +21,8 @@
 - (IBAction)setEndDate:(id)sender;
 @property (strong, nonatomic) IBOutlet BButton *btnBeginDate;
 @property (strong, nonatomic) IBOutlet BButton *btnEndDate;
+@property (weak, nonatomic) IBOutlet UIView *viewForDate;
+@property (weak, nonatomic) IBOutlet UIView *datePicker;
+- (IBAction)close:(id)sender;
 
 @end

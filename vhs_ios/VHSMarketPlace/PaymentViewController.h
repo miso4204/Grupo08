@@ -10,8 +10,9 @@
 #import "Connections.h"
 #import "BButton.h"
 #import "CardIO.h"
+#import "Connections.h"
 
-@interface PaymentViewController : UIViewController<CardIOPaymentViewControllerDelegate,UITextFieldDelegate,UITextViewDelegate>
+@interface PaymentViewController : UIViewController<CardIOPaymentViewControllerDelegate,UITextFieldDelegate,UITextViewDelegate,ConnectionsDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *txtName;
 @property (weak, nonatomic) IBOutlet UITextField *txtAddress;
 @property (weak, nonatomic) IBOutlet UITextField *txtCreditCardNumber;

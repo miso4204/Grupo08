@@ -37,6 +37,7 @@ public class ApplicationConfig extends Application {
         resources.add(com.vhs.service.VhsOfferRatingFacadeREST.class);
         resources.add(com.vhs.service.VhsOfferSaleFacadeREST.class);
         resources.add(com.vhs.service.VhsPaymentMethodFacadeREST.class);
+        resources.add(com.vhs.service.VhsSocialNetworkFacadeREST.class);
         resources.add(com.vhs.service.VhsSpecialOfferFacadeREST.class);
         resources.add(com.vhs.service.VhsSupportedCurrencyFacadeREST.class);
         resources.add(com.vhs.service.VhsUserFacadeREST.class);
