@@ -20,6 +20,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [GMSServices provideAPIKey:@"AIzaSyBs91b1nVPXNg8k3VOtD7Q9UECnCbskJ5Q"];
+    
+    self.shoppingCart = [[NSMutableArray alloc]init];
 
     
     return YES;

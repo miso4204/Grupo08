@@ -120,7 +120,60 @@
 }
 -(void)payProducts:(NSDictionary *)params{
 
+    [[Client sharedInstance] POST:@"vhsoffersale" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        // Parse the XML into a dictionary
+        NSError *parseError = nil;
+        NSDictionary *xmlDictionary = [XMLReader dictionaryForXMLString:string error:&parseError];
+        // Print the dictionary
+        
+        NSLog(@"The response to the VHS Special offer request is:  %@", xmlDictionary);
+        @try {
+            [self.delegate payProductsDidFinishSuccessfully:xmlDictionary];
+        }
+        @catch (NSException *exception) {
+        }
+        @finally {
+        }
+        
+    }
+                         failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                             NSLog(@"error report %@",error);
+                             
+                             
+                             
+                             
+                         }];
+}
+-(void)getPaymentMethods{
+
+    [[Client sharedInstance] GET:@"vhspaymentmethod" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        // Parse the XML into a dictionary
+        NSError *parseError = nil;
+        NSDictionary *xmlDictionary = [XMLReader dictionaryForXMLString:string error:&parseError];
+        // Print the dictionary
+        
+        NSLog(@"The response to the VHS Special offer request is:  %@", xmlDictionary);
+        @try {
+            [self.delegate getPaymentMethodsFinishSuccessfully:xmlDictionary];
+        }
+        @catch (NSException *exception) {
+        }
+        @finally {
+        }
+        
+    }
+                         failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                             NSLog(@"error report %@",error);
+                             
+                             
+                             
+                             
+                         }];
+    
+
+
 
 }
-
 @end

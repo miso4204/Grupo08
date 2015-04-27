@@ -8,12 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "CardIO.h"
+#import "Connections.h"
 
-@interface CartViewController : UIViewController<CardIOPaymentViewControllerDelegate,UIAlertViewDelegate>
+@interface CartViewController : UIViewController<CardIOPaymentViewControllerDelegate,UIAlertViewDelegate,ConnectionsDelegate>
 
 
 @property (strong, nonatomic) IBOutlet UITableView *tableviewCart;
 @property (strong, nonatomic) UIAlertView * alert;
+@property (nonatomic, retain) NSMutableArray *returnP;
+
+
+@property (strong, nonatomic) NSMutableArray * productCart;
+@property (weak, nonatomic) IBOutlet UITableView *tableviewPayment;
 
 enum AlertViewTags {
     kAlertCheckOut = 1,

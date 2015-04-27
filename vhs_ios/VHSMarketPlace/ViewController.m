@@ -45,7 +45,6 @@
     
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 
-    appDelegate.shoppingCart = [[NSMutableArray alloc]init];
     
     [self.tableviewProducts registerNib:[UINib nibWithNibName:@"ProductCell" bundle:nil] forCellReuseIdentifier:@"ProductCell"];
 
@@ -131,6 +130,7 @@
     [cell.ViewDetailButton addTarget:self action:@selector(viewDetail:) forControlEvents:UIControlEventTouchUpInside];
 
     cell.ViewDetailButton.tag=[indexPath row];
+
     
     return cell;
 }
@@ -146,7 +146,7 @@
    NSString *size = [NSString stringWithFormat:@"%lu",(unsigned long)[appDelegate.shoppingCart count]];
     
   
-
+    NSLog(@"product in cart %d",product.id );
     
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:2];

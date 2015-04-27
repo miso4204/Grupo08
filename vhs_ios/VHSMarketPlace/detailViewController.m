@@ -371,6 +371,8 @@
     
     [appDelegate.shoppingCart addObject:self.myProduct];
     
+    NSLog(@"self my product %d",self.myProduct.id);
+    
     NSString *size = [NSString stringWithFormat:@"%lu",(unsigned long)[appDelegate.shoppingCart count]];
     
 

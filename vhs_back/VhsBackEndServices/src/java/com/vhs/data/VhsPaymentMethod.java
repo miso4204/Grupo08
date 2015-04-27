@@ -36,7 +36,7 @@ public class VhsPaymentMethod implements Serializable
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_payment")
-     Long id;
+      Long id;
 
     /**
      * Payment method name

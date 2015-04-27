@@ -15,10 +15,13 @@
     static Client *_sharedInstance;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        
         _sharedInstance = [[Client alloc] initWithBaseURL:[NSURL URLWithString:@"http://jbossasvhsbackendservices-vhstourism.rhcloud.com/VhsBackEndServices/webresources/"]];
         
+        /*
+                _sharedInstance = [[Client alloc] initWithBaseURL:[NSURL URLWithString:@"http://localhost:8080/VhsBackEndServices/webresources/"]];
+       */
         _sharedInstance.responseSerializer = [AFHTTPResponseSerializer serializer];
+        _sharedInstance.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
 
         
     

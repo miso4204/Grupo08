@@ -27,13 +27,23 @@
                                     <outlet property="delegate" destination="xEP-6j-mTY" id="3jm-bV-IRz"/>
                                 </connections>
                             </tableView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="264-GX-trn">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="xEP-6j-mTY" id="Cnn-Wv-oQk"/>
+                                    <outlet property="delegate" destination="xEP-6j-mTY" id="RgA-wm-zYt"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="0fv-UY-WUS"/>
                     <connections>
                         <outlet property="tableviewCart" destination="Jka-8n-VYv" id="3rq-1d-xt9"/>
+                        <outlet property="tableviewPayment" destination="264-GX-trn" id="FzO-FK-7FJ"/>
                         <segue destination="Zfr-tx-38d" kind="presentation" identifier="credit" id="kgw-w2-Ici"/>
+                        <segue destination="Rzq-Uw-dVo" kind="presentation" identifier="cash" id="A1P-VP-JuH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x6q-Zh-8vI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -584,7 +594,85 @@ Cócteles y gastronomía con buena música de fondo, mucha animación y un ambie
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PeU-7p-8uB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4750" y="1209"/>
+            <point key="canvasLocation" x="5086" y="993"/>
+        </scene>
+        <!--Cash Payment View Controller-->
+        <scene sceneID="2bZ-u1-gSJ">
+            <objects>
+                <viewController id="pxp-6U-KDB" customClass="CashPaymentViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Kep-dw-TCE"/>
+                        <viewControllerLayoutGuide type="bottom" id="soZ-qA-ot4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Mt9-B2-Kit">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c0G-H4-ohL">
+                                <rect key="frame" x="37" y="78" width="526" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Wbc-CH-Idq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dirección" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oSw-vf-VYg">
+                                <rect key="frame" x="37" y="115" width="526" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="PnX-n4-Qvx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Correo electrónico" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bnd-4n-d2a">
+                                <rect key="frame" x="37" y="153" width="526" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="5sw-Ev-0dM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5mg-Zt-BzS" customClass="BButton">
+                                <rect key="frame" x="385" y="207" width="178" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="178" id="uW0-Vl-fGW"/>
+                                </constraints>
+                                <state key="normal" title="Pagar">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pay:" destination="pxp-6U-KDB" eventType="touchUpInside" id="zGS-B2-gfe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="c0G-H4-ohL" firstAttribute="top" secondItem="Kep-dw-TCE" secondAttribute="bottom" constant="14" id="1Uj-Rv-odH"/>
+                            <constraint firstItem="Bnd-4n-d2a" firstAttribute="top" secondItem="oSw-vf-VYg" secondAttribute="bottom" constant="8" symbolic="YES" id="8zU-Xi-kJ6"/>
+                            <constraint firstItem="oSw-vf-VYg" firstAttribute="top" secondItem="c0G-H4-ohL" secondAttribute="bottom" constant="7" id="9BF-4g-fwz"/>
+                            <constraint firstItem="soZ-qA-ot4" firstAttribute="top" secondItem="5mg-Zt-BzS" secondAttribute="bottom" constant="359" id="EZ4-Gd-prd"/>
+                            <constraint firstItem="c0G-H4-ohL" firstAttribute="trailing" secondItem="oSw-vf-VYg" secondAttribute="trailing" id="JFj-qe-oxv"/>
+                            <constraint firstItem="oSw-vf-VYg" firstAttribute="leading" secondItem="c0G-H4-ohL" secondAttribute="leading" id="OKt-17-rly"/>
+                            <constraint firstItem="Bnd-4n-d2a" firstAttribute="trailing" secondItem="5mg-Zt-BzS" secondAttribute="trailing" id="VwW-fz-INg"/>
+                            <constraint firstItem="oSw-vf-VYg" firstAttribute="trailing" secondItem="Bnd-4n-d2a" secondAttribute="trailing" id="ZqS-To-pbX"/>
+                            <constraint firstItem="c0G-H4-ohL" firstAttribute="leading" secondItem="Mt9-B2-Kit" secondAttribute="leadingMargin" constant="21" id="l0E-G7-OZ2"/>
+                            <constraint firstItem="Bnd-4n-d2a" firstAttribute="centerX" secondItem="Mt9-B2-Kit" secondAttribute="centerX" id="mvU-4X-FCA"/>
+                            <constraint firstItem="oSw-vf-VYg" firstAttribute="leading" secondItem="Bnd-4n-d2a" secondAttribute="leading" id="r6L-Us-KxU"/>
+                            <constraint firstItem="5mg-Zt-BzS" firstAttribute="top" secondItem="Bnd-4n-d2a" secondAttribute="bottom" constant="24" id="xJE-lq-01b"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="eiI-5O-tG3"/>
+                    <connections>
+                        <outlet property="btnPay" destination="5mg-Zt-BzS" id="02u-70-Idb"/>
+                        <outlet property="txtAddress" destination="oSw-vf-VYg" id="ozs-Oh-VXj"/>
+                        <outlet property="txtMail" destination="Bnd-4n-d2a" id="k7v-cX-GEE"/>
+                        <outlet property="txtName" destination="c0G-H4-ohL" id="slI-qb-COL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0lh-eZ-CKy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6002" y="1781"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4uc-gL-79W">
@@ -890,7 +978,25 @@ Cócteles y gastronomía con buena música de fondo, mucha animación y un ambie
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JP3-ry-tkO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3706" y="1289"/>
+            <point key="canvasLocation" x="3954" y="1289"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bTY-h4-QHc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rzq-Uw-dVo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bNE-Ut-Ci2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="pxp-6U-KDB" kind="relationship" relationship="rootViewController" id="QwE-bd-qax"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nbR-PR-vHy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3938" y="2105"/>
         </scene>
     </scenes>
     <resources>
@@ -902,6 +1008,6 @@ Cócteles y gastronomía con buena música de fondo, mucha animación y un ambie
         <image name="search.png" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="XTy-Yc-3ft"/>
+        <segue reference="Y2o-AQ-ncW"/>
     </inferredMetricsTieBreakers>
 </document>

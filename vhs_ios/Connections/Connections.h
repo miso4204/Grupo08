@@ -31,6 +31,11 @@
 -(void)GetCategoriesDidFinishSuccessfully:(NSDictionary*)responseObject; //  CatalogViewController
 -(void)GetCategoriesDidFinishWithFailure:(NSDictionary*)responseObject; //  CatalogViewController
 
+-(void)getPaymentMethodsFinishSuccessfully:(NSDictionary*)responseObject; //  CatalogViewController
+-(void)getPaymentMethodsDidFinishWithFailure:(NSDictionary*)responseObject; //  CatalogViewController
+
+-(void)payProductsDidFinishSuccessfully:(NSDictionary*)responseObject; //  CatalogViewController
+-(void)payProductsDidFinishWithFailure:(NSDictionary*)responseObject; //  CatalogViewController
 
 @end
 
@@ -54,6 +59,9 @@
 -(void)getProducts;
 
 -(void)payProducts:(NSDictionary *)params;
+
+-(void)getPaymentMethods;
+
 
 
 @end

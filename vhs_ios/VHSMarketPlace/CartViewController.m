@@ -18,16 +18,22 @@
 #import "UINavigationBar+FlatUI.h"
 #import "UIColor+FlatUI.h"
 #import "FUIButton.h"
+#import "Payment.h"
 @interface CartViewController ()
 @property (strong, nonatomic, readwrite) PayPalConfiguration *payPalConfiguration;
+@property (strong, nonatomic)   Connections *ConnectionDelegate;
 
 @end
-@implementation CartViewController
+@implementation CartViewController{
+    Payment * p;
+
+}
 @synthesize alert=_alert;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.ConnectionDelegate = [[Connections alloc]init];
+
     self.title = @"Cart";
     self.navigationController.navigationBar.titleTextAttributes = @{UITextAttributeFont: [UIFont boldFlatFontOfSize:18],
                                                                     UITextAttributeTextColor: [UIColor whiteColor]};
@@ -39,6 +45,7 @@
                                              selector:@selector(receiveTestNotification:)
                                                  name:@"TestNotification"
                                                object:nil];
+    self.tableviewPayment.hidden =YES;
 
     // Do any additional setup after loading the view.
 }
@@ -79,13 +86,19 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    if (tableView == self.tableviewCart) {
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        
+        return [appDelegate.shoppingCart count];
+    }else
+        return self.returnP.count;
 
-    return [appDelegate.shoppingCart count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (tableView== self.tableviewCart) {
+        
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 
     
@@ -128,14 +141,99 @@
     cell.deleteButton.tag = [indexPath row];
     
     return cell;
+        
+    }else{
+    
+        
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+        //NSString * cellString;
+        if (cell==nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Cell"];
+            
+        }
+        cell.textLabel.textColor = [UIColor blackColor];
+        cell.detailTextLabel.textColor = [UIColor blackColor];
+        
+        [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+        [tableView setSeparatorInset:UIEdgeInsetsZero];
+        if ([tableView respondsToSelector:@selector(setSeparatorInset:)]) {
+            [tableView setSeparatorInset:UIEdgeInsetsZero];
+        }
+        
+        Payment *pays = [[Payment alloc]init];
+        pays=[self.returnP objectAtIndex:indexPath.row];
+        
+        cell.textLabel.text = pays.name;
+        
+        
+        return cell;
+    
+    }
+
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (tableView == self.tableviewPayment) {
+        
+  
+    Payment *pays = [[Payment alloc]init];
+    pays=[self.returnP objectAtIndex:indexPath.row];
+    
+    if ([pays.idPayment isEqualToString:@"1"]) {
+        [self performSegueWithIdentifier:@"cash" sender:self];
 
+    }else if ([pays.idPayment isEqualToString:@"2"]){
+        [self performSegueWithIdentifier:@"credit" sender:self];
+
+    }else{
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        
+        // Create a PayPalPayment
+        PayPalPayment *payment = [[PayPalPayment alloc] init];
+        
+        // Amount, currency, and description
+        payment.amount = [NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithDouble:[appDelegate totalAmount]] decimalValue]];
+        payment.currencyCode = @"USD";
+        payment.shortDescription = @"VHS MarketPlace";
+        
+        // Use the intent property to indicate that this is a "sale" payment,
+        // meaning combined Authorization + Capture. To perform Authorization only,
+        // and defer Capture to your server, use PayPalPaymentIntentAuthorize.
+        payment.intent = PayPalPaymentIntentSale;
+        
+        // Check whether payment is processable.
+        if (!payment.processable) {
+            // If, for example, the amount was negative or the shortDescription was empty, then
+            // this payment would not be processable. You would want to handle that here.
+            
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Payment not processable"
+                                                                message:@"The payment is not processable"
+                                                               delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alertView show];
+            
+            return;
+        }
+        
+        // Create a PayPalPaymentViewController.
+        PayPalPaymentViewController *paymentViewController;
+        paymentViewController = [[PayPalPaymentViewController alloc] initWithPayment:payment
+                                                                       configuration:self.payPalConfiguration
+                                                                            delegate:self];
+        
+        // Present the PayPalPaymentViewController.
+        [self.navigationController presentViewController:paymentViewController animated:YES completion:nil];
+        
+        
+
+    
+    }
+}
+
+}
 - (void)deleteProduct:(UIButton *)button
 {
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-
-    Product *item = [appDelegate.shoppingCart objectAtIndex:button.tag];
 
     [appDelegate.shoppingCart removeObjectAtIndex:button.tag];
    
@@ -149,7 +247,7 @@
     NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CheckoutHeaderView" owner:self options:nil];
     CheckoutHeaderview *checkoutHeaderview = [nib objectAtIndex:0];
     
-    checkoutHeaderview.subtotal.text = [NSString stringWithFormat:@"Subtotal %lu:", (unsigned long)[appDelegate.shoppingCart count]];
+    checkoutHeaderview.subtotal.text = [NSString stringWithFormat:@"#items: %lu", (unsigned long)[appDelegate.shoppingCart count]];
     
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setMaximumFractionDigits:2];
@@ -162,7 +260,26 @@
 }
 - (void)checkout:(UIButton *)button
 {
-    [self showAlertPayment];
+    self.ConnectionDelegate.delegate = self;
+    
+    [self.ConnectionDelegate getPaymentMethods];
+    
+    self.tableviewPayment.hidden =NO;
+    
+    UIButton *button2 = [UIButton buttonWithType:UIButtonTypeCustom];
+    button2.frame = CGRectMake(0, 0, 32, 32);
+    [button2 setImage:[UIImage imageNamed:@"flechablanca@2x.png"] forState:UIControlStateNormal];
+    [button2 addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *barButton=[[UIBarButtonItem alloc] init];
+    [barButton setCustomView:button2];
+    self.navigationItem.leftBarButtonItem=barButton;
+
+}
+-(void)back{
+
+    self.tableviewPayment.hidden = YES;
+    self.navigationItem.leftBarButtonItem=nil;
 }
 -(void)showAlertPayment{
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -255,49 +372,18 @@
 
     [[[[[self tabBarController] tabBar] items]
       objectAtIndex:1] setBadgeValue:nil];
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+
+    [self.tableviewCart reloadData];
+    NSLog(@"selpshopping %@",self.productCart);
 }
+
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (alertView.tag == kAlertCheckOut) {
         
         if (buttonIndex == 1) {
-            
-            AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-            
-            // Create a PayPalPayment
-            PayPalPayment *payment = [[PayPalPayment alloc] init];
-            
-            // Amount, currency, and description
-            payment.amount = [NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithDouble:[appDelegate totalAmount]] decimalValue]];
-            payment.currencyCode = @"USD";
-            payment.shortDescription = @"VHS MarketPlace";
-            
-            // Use the intent property to indicate that this is a "sale" payment,
-            // meaning combined Authorization + Capture. To perform Authorization only,
-            // and defer Capture to your server, use PayPalPaymentIntentAuthorize.
-            payment.intent = PayPalPaymentIntentSale;
-            
-            // Check whether payment is processable.
-            if (!payment.processable) {
-                // If, for example, the amount was negative or the shortDescription was empty, then
-                // this payment would not be processable. You would want to handle that here.
-                
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Payment not processable"
-                                                                    message:@"The payment is not processable"
-                                                                   delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-                [alertView show];
-                
-                return;
-            }
-            
-            // Create a PayPalPaymentViewController.
-            PayPalPaymentViewController *paymentViewController;
-            paymentViewController = [[PayPalPaymentViewController alloc] initWithPayment:payment
-                                                                           configuration:self.payPalConfiguration
-                                                                                delegate:self];
-            
-            // Present the PayPalPaymentViewController.
-            [self.navigationController presentViewController:paymentViewController animated:YES completion:nil];
-            
             
         }else if (buttonIndex ==2) {
             [self performSegueWithIdentifier:@"credit" sender:self];
@@ -335,6 +421,48 @@
 
 
     [paymentViewController dismissViewControllerAnimated:YES completion:nil];
+
+}
+
+-(void)getPaymentMethodsFinishSuccessfully:(NSDictionary*)responseObject{
+
+
+    NSLog(@"all payments %@",responseObject);
+    NSArray *items = [responseObject valueForKeyPath:@"collection.vhsPaymentMethod"];
+
+    NSEnumerator *enumerator = [items objectEnumerator];
+    NSDictionary* item;
+    int count = 0;
+    self.returnP= [[NSMutableArray alloc]init];
+    
+    while (item = (NSDictionary*)[enumerator nextObject]) {
+        
+        if (count ==0) {
+            p = [[Payment alloc]init];
+            p.idPayment = [item objectForKey:@"text"];
+            count ++;
+            
+            
+        }else if (count ==1){
+            p.name =[item objectForKey:@"text"];
+            count=0;
+            
+            [self.returnP addObject:p];
+        }
+        
+    }
+    NSLog(@"self return tt %@",self.returnP);
+    
+    [self.tableviewPayment reloadData];
+
+}
+-(void)loadPayments:(NSArray *)payment{
+
+   
+}
+-(void)getPaymentMethodsDidFinishWithFailure:(NSDictionary*)responseObject{
+
+
 
 }
 @end
