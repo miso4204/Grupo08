@@ -35,6 +35,7 @@ def auth_view(request):
 				element =  ElementTree.XML(response.text)
 
 				request.session['id_usuario'] = element[3].text
+				request.session['mail_usuario'] = element[1].text
 				
 				# Login ok
 				return HttpResponseRedirect('/account/index')
@@ -85,11 +86,12 @@ def register(request):
 			data = { 
 				'mail': email,
 				'password': password,
-				'fullName': full_name,
-				'archivo': archivo
+				'fullName': full_name
+				# 'archivo': archivo
 			}
 			headers = {'Content-Type': 'application/json'}
 			response = requests.post(url, data=json.dumps(data), headers=headers)
+
 			return HttpResponseRedirect('/account/login/')
 	else:
 		form = RegisterForm()

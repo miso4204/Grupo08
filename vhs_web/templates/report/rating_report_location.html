@@ -182,7 +182,8 @@ $(function () {
         <ul class="nav navbar-nav navbar-right">
           <li><a href="/account/index/" class="smoothScroll"> Home</a></li>
           <li><a href="/report/sale/" class="smoothScroll"> Reporte Ventas</a></li>
-          <li><a href="/report/rating/" class="smoothScroll"> Reporte Rating</a></li>
+          <li><a href="/report/ratingPackage/" class="smoothScroll"> Reporte Rating Package</a></li>
+          <li><a href="/report/ratingLocation/" class="smoothScroll"> Reporte Rating Location</a></li>
           <li><a href="/account/logout/" class="smoothScroll">Logout</a></li>
         </ul>
       </div>
@@ -195,14 +196,14 @@ $(function () {
 <div id="contact" name="contact">
   <div class="container">
     <div class="row">
-      <h2 class="centered">REPORTE DE RATING</h2>
+      <h2 class="centered">REPORTE DE RATING - UBICACIÓN</h2>
       <hr>
     </div>
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 centered">
         <p>Por favor escoge las fechas para la generación de tu reporte.</p>
         {% block content %}
-        <form action='/report/rating/' id="dates" method="post" class="form" role="form">
+        <form action='/report/ratingLocation/' id="dates" method="post" class="form" role="form">
           {% csrf_token %}
           <div class="row form-group">
             <input id="start_date" name="start_date" placeholder="Fecha Inicial" class="datepicker_start" type="text" >
