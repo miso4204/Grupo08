@@ -108,6 +108,16 @@
     UIBarButtonItem *barButton=[[UIBarButtonItem alloc] init];
     [barButton setCustomView:button];
     self.navigationItem.leftBarButtonItem=barButton;
+    
+    
+    UIButton *button2 = [UIButton buttonWithType:UIButtonTypeCustom];
+    button2.frame = CGRectMake(0, 0, 32, 32);
+    [button2 setImage:[UIImage imageNamed:@"share@2x.png"] forState:UIControlStateNormal];
+    [button2 addTarget:self action:@selector(shareSocial) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *barButton2=[[UIBarButtonItem alloc] init];
+    [barButton2 setCustomView:button2];
+    self.navigationItem.rightBarButtonItem=barButton2;
 
     self.view1.backgroundColor =[UIColor colorFromHexCode:@"#e75659"];
     self.view2.backgroundColor =[UIColor colorFromHexCode:@"#e75659"];
@@ -391,5 +401,82 @@
 
 
 
+}
+-(void)facebook{
+    if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) //check if Facebook Account is linked
+    {
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        
+        mySLComposerSheet = [[SLComposeViewController alloc] init]; //initiate the Social Controller
+        mySLComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook]; //Tell him with what social plattform to use it, e.g. facebook or twitter
+        NSString *shareMessage = [NSString stringWithFormat:@"%@ %@ %@ %@ %@ %f",@"Mira este increíble plan turístico" ,self.myProduct.name,@"que oferce:",self.myProduct.descriptions,@"con un costo de:",self.myProduct.price];
+        
+        [mySLComposerSheet setInitialText:[NSString stringWithFormat:shareMessage,mySLComposerSheet.serviceType]]; //the message you want to post
+        [mySLComposerSheet addImage:[UIImage imageNamed:@"76x76.png"]]; //an image you could post
+        //for more instance methodes, go here:https://developer.apple.com/library/ios/#documentation/NetworkingInternet/Reference/SLComposeViewController_Class/Reference/Reference.html#//apple_ref/doc/uid/TP40012205
+        [self presentViewController:mySLComposerSheet animated:YES completion:nil];
+    }
+    [mySLComposerSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
+        NSString *output;
+        switch (result) {
+            case SLComposeViewControllerResultCancelled:
+                output = @"Action Cancelled";
+                break;
+            case SLComposeViewControllerResultDone:
+                output = @"Post Successfull";
+                break;
+            default:
+                break;
+        } //check if everything worked properly. Give out a message on the state.
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Facebook" message:output delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alert show];
+    }];
+    
+}
+- (void)tweet {  //!!JCS.25sep2012.Move this to MVC?
+    //[SHKTwitter shareImage:pic.image title:@"Emoji Message"];
+   NSString *msg = [NSString stringWithFormat:@"%@ %@ %@ %@ %@ %f",@"Mira este increíble plan turístico" ,self.myProduct.name,@"que oferce:",self.myProduct.descriptions,@"con un costo de:",self.myProduct.price];
+    
+
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+    {
+        SLComposeViewController *tweetSheet = [SLComposeViewController
+                                               composeViewControllerForServiceType:SLServiceTypeTwitter];
+        [tweetSheet setInitialText:msg];
+        [self presentViewController:tweetSheet animated:YES completion:nil];
+    }
+}
+-(void)shareSocial{
+
+    UIAlertView * alert=[[UIAlertView alloc]initWithTitle:NSLocalizedString(@"Redes Sociales", nil)
+                                         message:NSLocalizedString(@"Selecciona la red social en donde quieres compartir la oferta", nil)
+                                        delegate:self
+                               cancelButtonTitle:NSLocalizedString(@"Cancelar", nil)
+                               otherButtonTitles:@"Facebook", @"Twitter",nil]; //!!JCS.8aug2012.Agregar FB
+    [alert setTag:1];
+    [alert show];
+
+
+}
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (alertView.tag == 1){
+    
+        switch (buttonIndex) {
+            case 0:
+                //Do nothing, cancelled;
+                break;
+            case 1:{
+                [self facebook];
+                
+            break;
+                
+            }
+            case 2:{
+                [self tweet];
+                break;
+            }
+    
+        }
+   }
 }
 @end
