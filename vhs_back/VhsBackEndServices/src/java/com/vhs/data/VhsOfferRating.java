@@ -33,7 +33,7 @@ public class VhsOfferRating implements Serializable {
      */
     private static final long serialVersionUID = 1L;
 
-    public static final String SQL_RATING = "SELECT \n"
+    public static final String SQL_RATING_PRODUCT = "SELECT \n"
             + "  vhs_special_offer.short_name,\n"
             + "  avg(vhsofferrating.score)\n"
             + "FROM \n"
@@ -48,6 +48,24 @@ public class VhsOfferRating implements Serializable {
             + "  vhs_user.mail = ? AND\n"
             + "  vhsoffersale.sale_date BETWEEN ? AND ? \n"
             + "group by vhs_special_offer.short_name\n"
+            + ";";
+    public static final String SQL_RATING_LOCATION = "SELECT         \n"
+            + "        vhs_city.description,        \n"
+            + "        avg(vhsofferrating.score)        \n"
+            + "FROM \n"
+            + "        public.vhsofferrating,         \n"
+            + "        public.vhs_special_offer,        \n"
+            + "        public.vhsoffersale,        \n"
+            + "        public.vhs_user,\n"
+            + "        public.vhs_city        \n"
+            + "WHERE \n"
+            + "        vhsofferrating.special_offer = vhs_special_offer.id_special_offers AND        \n"
+            + "        vhsoffersale.special_offer = vhs_special_offer.id_special_offers AND        \n"
+            + "        vhs_user.user_id = vhs_special_offer.service_provider AND\n"
+            + "        vhs_city.id_city =  vhs_special_offer.offer_city  AND   \n"
+            + "        vhs_user.mail = ? AND        \n"
+            + "        vhsoffersale.sale_date BETWEEN  ? AND ? \n" 
+            + "group by vhs_city.description \n"
             + ";";
 
     /**

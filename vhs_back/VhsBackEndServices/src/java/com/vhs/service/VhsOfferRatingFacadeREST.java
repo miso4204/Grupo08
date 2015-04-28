@@ -90,13 +90,23 @@ public class VhsOfferRatingFacadeREST extends AbstractFacade<VhsOfferRating> {
      * @param mail
      * @param begin final date format ddmmaaaa
      * @param end final date format ddmmaaaa
+     * @param type tipo de reporte location or package
+     * @throws ParseException
      * @return 
      */
     @GET
-    @Path("{mail}/{begin}/{end}")
+    @Path("{mail}/{begin}/{end}/{type}")
     @Produces({"application/xml", "application/json"})
-    public List<DatosReporteRating> findRating(@PathParam("mail") String mail, @PathParam("begin") String begin, @PathParam("end") String end  ) throws ParseException {
-        Query q = getEntityManager().createNativeQuery(VhsOfferRating.SQL_RATING);
+    public List<DatosReporteRating> findRating(@PathParam("mail") String mail, @PathParam("begin") String begin, @PathParam("end") String end,  @PathParam("type") String type ) throws ParseException {
+        Query q;
+        if(type.equalsIgnoreCase("location"))
+        {
+            q = getEntityManager().createNativeQuery(VhsOfferRating.SQL_RATING_LOCATION);
+        }
+        else
+        {
+            q = getEntityManager().createNativeQuery(VhsOfferRating.SQL_RATING_PRODUCT);
+        }
         Calendar cBegin = Calendar.getInstance();
         Calendar cEnd = Calendar.getInstance();
         SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyyy");
