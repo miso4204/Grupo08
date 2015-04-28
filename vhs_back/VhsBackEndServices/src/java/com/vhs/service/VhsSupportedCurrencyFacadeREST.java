@@ -5,6 +5,7 @@
  */
 package com.vhs.service;
 
+import com.vhs.builders.VhsCurrencyBuilder;
 import com.vhs.data.VhsSupportedCurrency;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -67,7 +68,8 @@ public class VhsSupportedCurrencyFacadeREST extends AbstractFacade<VhsSupportedC
     @Override
     @Produces({"application/xml", "application/json"})
     public List<VhsSupportedCurrency> findAll() {
-        return super.findAll();
+        VhsCurrencyBuilder builder = new VhsCurrencyBuilder();
+        return builder.prepareCurrency(em);
     }
 
     @GET
