@@ -52,7 +52,7 @@ def rating_report_package(request):
 		fecha_fin = fecha_fin.strftime('%d%m%Y')
 		fecha_inicio = fecha_inicio.strftime('%d%m%Y')
 
-		response = requests.get('{0}/{1}/{2}/{3}/{4}'.format(url, method, username, fecha_inicio, fecha_fin))
+		response = requests.get('{0}/{1}/{2}/{3}/{4}/product'.format(url, method, username, fecha_inicio, fecha_fin))
 
 		try:
 			if response.status_code == 200:
@@ -125,7 +125,7 @@ def rating_report_location(request):
 		fecha_fin = fecha_fin.strftime('%d%m%Y')
 		fecha_inicio = fecha_inicio.strftime('%d%m%Y')
 
-		response = requests.get('{0}/{1}/{2}/{3}/{4}'.format(url, method, username, fecha_inicio, fecha_fin))
+		response = requests.get('{0}/{1}/{2}/{3}/{4}/location'.format(url, method, username, fecha_inicio, fecha_fin))
 
 		try:
 			if response.status_code == 200:
