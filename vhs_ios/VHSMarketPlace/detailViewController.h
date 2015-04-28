@@ -11,8 +11,15 @@
 #import <GoogleMaps/GoogleMaps.h>
 #import "KASlideShow.h"
 #import "BButton.h"
+#import <Social/Social.h>
+#import <Accounts/Accounts.h>
+#import <MessageUI/MessageUI.h>
 
-@interface detailViewController : UIViewController<GMSMapViewDelegate,CLLocationManagerDelegate,KASlideShowDelegate>
+@interface detailViewController : UIViewController<GMSMapViewDelegate,CLLocationManagerDelegate,KASlideShowDelegate>{
+
+    SLComposeViewController *mySLComposerSheet;
+
+}
 
 
 @property (strong, nonatomic)   Product *myProduct;

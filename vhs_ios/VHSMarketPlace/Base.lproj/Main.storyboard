@@ -589,6 +589,7 @@ Cócteles y gastronomía con buena música de fondo, mucha animación y un ambie
                         <outlet property="txtAddress" destination="LHr-a1-guX" id="Ka2-Xr-9eK"/>
                         <outlet property="txtCvv" destination="J87-QY-8vB" id="5wg-ka-CCt"/>
                         <outlet property="txtDate" destination="ZgB-8A-V1e" id="flw-A2-5qo"/>
+                        <outlet property="txtMail" destination="rcK-fk-6kF" id="RfH-n6-VwN"/>
                         <outlet property="txtName" destination="7sx-88-EV4" id="0Ju-SX-X7z"/>
                     </connections>
                 </viewController>
