@@ -167,6 +167,15 @@ public class VhsSpecialOffer implements Serializable
     @ManyToOne (fetch = FetchType.EAGER)
     private VhsSupportedCurrency currency;
     
+    
+    /**
+     * Associated sales
+     */
+    @OneToMany(mappedBy = "specialOffer" )
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private Collection<AdditionalValues> additionalValues;
+    
+    
     public VhsSpecialOffer()
     {
     }
@@ -346,6 +355,17 @@ public class VhsSpecialOffer implements Serializable
     public void setVhsOfferImages(Collection<VhsOfferImage> vhsOfferImages)
     {
         this.vhsOfferImages = vhsOfferImages;
+    }
+    
+    @XmlTransient
+    public Collection<AdditionalValues> getAdditionalValues()
+    {
+        return additionalValues;
+    }
+
+    public void setAdditionalValues(Collection<AdditionalValues> additionalValues)
+    {
+        this.additionalValues = additionalValues;
     }
 
     @Override
