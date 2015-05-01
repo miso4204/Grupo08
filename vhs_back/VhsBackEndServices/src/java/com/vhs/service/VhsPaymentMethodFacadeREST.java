@@ -5,6 +5,7 @@
  */
 package com.vhs.service;
 
+import com.vhs.builders.VhsPaymentMethodBuilder;
 import com.vhs.data.VhsPaymentMethod;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -67,7 +68,8 @@ public class VhsPaymentMethodFacadeREST extends AbstractFacade<VhsPaymentMethod>
     @Override
     @Produces({"application/xml", "application/json"})
     public List<VhsPaymentMethod> findAll() {
-        return super.findAll();
+        VhsPaymentMethodBuilder builder = new VhsPaymentMethodBuilder();
+        return builder.prepare(em);
     }
 
     @GET

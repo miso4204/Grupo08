@@ -6,13 +6,8 @@
 package com.vhs.service;
 
 import com.vhs.data.DatosReporte;
-import com.vhs.data.VhsCountry;
 import com.vhs.data.VhsOfferRating;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;

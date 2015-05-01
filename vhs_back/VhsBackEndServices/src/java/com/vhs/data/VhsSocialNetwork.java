@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -21,6 +23,12 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @XmlRootElement
 @Table(name = "vhssocialnetwork")
+@NamedQueries(
+        {
+            @NamedQuery(name="VhsSocialNetwork.findAll",query=" select v from VhsSocialNetwork v"),
+            @NamedQuery(name="VhsSocialNetwork.findAllBasic",query=" select v from VhsSocialNetwork v WHERE v.optional = false"),
+        }
+)
 public class VhsSocialNetwork implements Serializable
 {
     private static final long serialVersionUID = 1L;
@@ -73,7 +81,7 @@ public class VhsSocialNetwork implements Serializable
         {
             return false;
         }
-        VhsPaymentMethod other = (VhsPaymentMethod) object;
+        VhsSocialNetwork other = (VhsSocialNetwork) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id)))
         {
             return false;

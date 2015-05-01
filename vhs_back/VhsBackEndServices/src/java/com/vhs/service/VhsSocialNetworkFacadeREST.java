@@ -5,6 +5,7 @@
  */
 package com.vhs.service;
 
+import com.vhs.builders.VhsSocialNetworkBuilder;
 import com.vhs.data.VhsSocialNetwork;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -64,7 +65,8 @@ public class VhsSocialNetworkFacadeREST extends AbstractFacade<VhsSocialNetwork>
     @Override
     @Produces({"application/xml", "application/json"})
     public List<VhsSocialNetwork> findAll() {
-        return super.findAll();
+        VhsSocialNetworkBuilder builder = new VhsSocialNetworkBuilder();
+        return builder.prepare(em);
     }
 
     @GET

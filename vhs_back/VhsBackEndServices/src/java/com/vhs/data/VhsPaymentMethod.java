@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -23,6 +25,12 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @XmlRootElement
 @Table(name = "vhspaymentmethod")
+@NamedQueries(
+        {
+            @NamedQuery(name="VhsPaymentMethod.findAll",query=" select v from VhsPaymentMethod v"),
+            @NamedQuery(name="VhsPaymentMethod.findAllBasic",query=" select v from VhsPaymentMethod v WHERE v.optional = false"),
+        }
+)
 public class VhsPaymentMethod implements Serializable
 {
     /**

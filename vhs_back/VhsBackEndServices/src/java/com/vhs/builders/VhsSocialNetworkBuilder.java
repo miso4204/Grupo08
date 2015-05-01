@@ -6,6 +6,7 @@
 package com.vhs.builders;
 
 import com.vhs.builders.util.Utilities;
+import com.vhs.data.VhsSocialNetwork;
 import com.vhs.data.VhsSupportedCurrency;
 import com.vhs.data.VhsUser;
 import java.util.List;
@@ -16,41 +17,43 @@ import javax.persistence.Query;
  *
  * @author andresvargas
  */
-public class VhsCurrencyBuilder implements BuilderContract{
-
+public class VhsSocialNetworkBuilder {
+    
     /**
      *
      * @param em
      * @return
      */
-    public List<VhsSupportedCurrency> prepare(EntityManager em) {
+    public List<VhsSocialNetwork> prepare(EntityManager em) {
         VhsUser u = Utilities.getBaseUser(em);
-        if (u != null && u.getOptionalFeatureCurrencyManagement()) {
+        if (u != null && u.getOptionalFeatureSocialNetworks()) {
             return prepareBasicAndOptional(em);
         } else {
             return prepareBasic(em);
         }
 
     }
-
+    
     /**
      *
      * @param em
      * @return
      */
-    public List<VhsSupportedCurrency> prepareBasic(EntityManager em) {
-        Query q = em.createNamedQuery("VhsSupportedCurrency.findAllBasic");
-        return (List<VhsSupportedCurrency>) q.getResultList();
+    private List<VhsSocialNetwork> prepareBasic(EntityManager em) {
+        Query q = em.createNamedQuery("VhsSocialNetwork.findAllBasic");
+        return (List<VhsSocialNetwork>) q.getResultList();
     }
-
-    /**
+    
+        /**
      *
      * @param em
      * @return
      */
-    public  List<VhsSupportedCurrency> prepareBasicAndOptional(EntityManager em) {
-        Query q = em.createNamedQuery("VhsSupportedCurrency.findAll");
-        return (List<VhsSupportedCurrency>) q.getResultList();
+    public  List<VhsSocialNetwork> prepareBasicAndOptional(EntityManager em) {
+        Query q = em.createNamedQuery("VhsSocialNetwork.findAll");
+        return (List<VhsSocialNetwork>) q.getResultList();
     }
 
+
+    
 }

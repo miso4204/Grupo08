@@ -6,6 +6,7 @@
 package com.vhs.builders;
 
 import com.vhs.builders.util.Utilities;
+import com.vhs.data.VhsPaymentMethod;
 import com.vhs.data.VhsSupportedCurrency;
 import com.vhs.data.VhsUser;
 import java.util.List;
@@ -16,31 +17,31 @@ import javax.persistence.Query;
  *
  * @author andresvargas
  */
-public class VhsCurrencyBuilder implements BuilderContract{
-
+public class VhsPaymentMethodBuilder {
+    
     /**
      *
      * @param em
      * @return
      */
-    public List<VhsSupportedCurrency> prepare(EntityManager em) {
+    public List<VhsPaymentMethod> prepare(EntityManager em) {
         VhsUser u = Utilities.getBaseUser(em);
-        if (u != null && u.getOptionalFeatureCurrencyManagement()) {
+        if (u != null && u.getOptionalFeatureCashPayOnDelivery()) {
             return prepareBasicAndOptional(em);
         } else {
             return prepareBasic(em);
         }
 
     }
-
+    
     /**
      *
      * @param em
      * @return
      */
-    public List<VhsSupportedCurrency> prepareBasic(EntityManager em) {
-        Query q = em.createNamedQuery("VhsSupportedCurrency.findAllBasic");
-        return (List<VhsSupportedCurrency>) q.getResultList();
+    private List<VhsPaymentMethod> prepareBasic(EntityManager em) {
+        Query q = em.createNamedQuery("VhsPaymentMethod.findAllBasic");
+        return (List<VhsPaymentMethod>) q.getResultList();
     }
 
     /**
@@ -48,9 +49,9 @@ public class VhsCurrencyBuilder implements BuilderContract{
      * @param em
      * @return
      */
-    public  List<VhsSupportedCurrency> prepareBasicAndOptional(EntityManager em) {
-        Query q = em.createNamedQuery("VhsSupportedCurrency.findAll");
-        return (List<VhsSupportedCurrency>) q.getResultList();
+    private List<VhsPaymentMethod> prepareBasicAndOptional(EntityManager em) {
+        Query q = em.createNamedQuery("VhsPaymentMethod.findAll");
+        return (List<VhsPaymentMethod>) q.getResultList();
     }
-
+    
 }

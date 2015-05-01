@@ -69,7 +69,7 @@ public class VhsSupportedCurrencyFacadeREST extends AbstractFacade<VhsSupportedC
     @Produces({"application/xml", "application/json"})
     public List<VhsSupportedCurrency> findAll() {
         VhsCurrencyBuilder builder = new VhsCurrencyBuilder();
-        return builder.prepareCurrency(em);
+        return builder.prepare(em);
     }
 
     @GET
