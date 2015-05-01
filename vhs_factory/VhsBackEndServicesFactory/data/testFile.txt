@@ -1,3 +1,30 @@
-Caracteristica 1
-Caracteristica 2
-Caracteristica 3
+User
+Session
+LogIn
+LogOut
+UpdateProfile
+ChangePassword
+CreateAccount
+ShoppingCart
+Pay
+CreditCard
+PSE
+Reports
+Rating
+Location
+Sales
+ReportByPeriod
+SpecialOffers_5
+UpdatePromo
+SocialNetwork
+Twitter
+AdminMoneda
+Dolar
+Euro
+PRoduct
+Search
+ByPrice
+ByDate
+QualityAttributes
+Configuratiblity
+Functionality
