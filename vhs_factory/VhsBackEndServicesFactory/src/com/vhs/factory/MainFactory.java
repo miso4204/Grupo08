@@ -17,6 +17,12 @@ public class MainFactory
 	 */
 	public static void main(String[] args)
 	{
+		// Reading the file
+		
+		MyFileReader mfr = new MyFileReader("data/testFile.txt");
+		mfr.readFile();
+		mfr.printFile();
+		
 		//
 		// Velocity variability implementation
 		
