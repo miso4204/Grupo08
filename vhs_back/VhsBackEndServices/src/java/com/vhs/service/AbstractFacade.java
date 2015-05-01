@@ -5,8 +5,14 @@
  */
 package com.vhs.service;
 
+import com.vhs.data.DatosReporte;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 /**
  *
@@ -59,6 +65,27 @@ public abstract class AbstractFacade<T> {
         cq.select(getEntityManager().getCriteriaBuilder().count(rt));
         javax.persistence.Query q = getEntityManager().createQuery(cq);
         return ((Long) q.getSingleResult()).intValue();
+    }
+    
+    
+    protected List<DatosReporte> getReport(Query q,  String mail, String begin, String end) throws ParseException
+    {
+        Calendar cBegin = Calendar.getInstance();
+        Calendar cEnd = Calendar.getInstance();
+        SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyyy");
+        cBegin.setTime(sdf.parse(begin));
+        cEnd.setTime(sdf.parse(end));
+        List<DatosReporte> datos = new ArrayList();
+        q.setParameter(1, mail);
+        q.setParameter(2, cBegin.getTime());
+        q.setParameter(3, cEnd.getTime());
+        List<Object[]> ls= q.getResultList();
+        for ( Object[] o : ls)
+        {
+            DatosReporte dr = new DatosReporte(o[0].toString(), Double.parseDouble(o[1].toString()));
+            datos.add(dr);
+        }
+        return datos;
     }
     
 }

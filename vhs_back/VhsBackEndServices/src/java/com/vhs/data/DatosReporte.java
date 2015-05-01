@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author andresvargas
  */
 @XmlRootElement
-public class DatosReporteRating implements Serializable {
+public class DatosReporte implements Serializable {
     private String name;
     private Double data;
     
@@ -24,12 +24,12 @@ public class DatosReporteRating implements Serializable {
      */
     private static final long serialVersionUID = 1L;
     
-    public DatosReporteRating()
+    public DatosReporte()
     {
         
     }
     
-    public DatosReporteRating(String name, Double data) {
+    public DatosReporte(String name, Double data) {
         this.name = name;
         this.data = data;
     }

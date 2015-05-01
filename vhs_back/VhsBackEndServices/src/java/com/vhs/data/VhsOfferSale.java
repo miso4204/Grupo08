@@ -29,13 +29,41 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @XmlRootElement
 @Table(name = "vhsoffersale")
-public class VhsOfferSale implements Serializable
-{
+public class VhsOfferSale implements Serializable {
+
     /**
      * Default serial version UID
      */
     private static final long serialVersionUID = 1L;
-    
+
+    public static final String SQL_SALES_LOCATION = "SELECT  vhs_city.description,        \n"
+            + "        sum(vhsoffersale.total_sale)        \n"
+            + "FROM         \n"
+            + "        public.vhs_special_offer,        \n"
+            + "        public.vhsoffersale,        \n"
+            + "        public.vhs_user,\n"
+            + "        public.vhs_city        \n"
+            + "WHERE         \n"
+            + "        vhsoffersale.special_offer = vhs_special_offer.id_special_offers AND        \n"
+            + "        vhs_user.user_id = vhs_special_offer.service_provider AND\n"
+            + "        vhs_city.id_city =  vhs_special_offer.offer_city  AND   \n"
+            + "        vhs_user.mail = ? AND        \n"
+            + "        vhsoffersale.sale_date BETWEEN ? AND ?         \n"
+            + "group by vhs_city.description";
+    public static final String SQL_SALES_PRODUCT = "SELECT  vhs_special_offer.short_name,        \n"
+            + "        sum(vhsoffersale.total_sale)        \n"
+            + "FROM         \n"
+            + "        public.vhs_special_offer,        \n"
+            + "        public.vhsoffersale,        \n"
+            + "        public.vhs_user,\n"
+            + "        public.vhs_city        \n"
+            + "WHERE         \n"
+            + "        vhsoffersale.special_offer = vhs_special_offer.id_special_offers AND        \n"
+            + "        vhs_user.user_id = vhs_special_offer.service_provider AND\n"
+            + "        vhs_city.id_city =  vhs_special_offer.offer_city  AND   \n"
+            + "        vhs_user.mail = ? AND        \n"
+            + "        vhsoffersale.sale_date BETWEEN ? AND ?         \n"
+            + "group by   vhs_special_offer.short_name";
     /**
      * Sale identifier
      */
@@ -49,80 +77,80 @@ public class VhsOfferSale implements Serializable
      */
     @Column(name = "email")
     private String buyerEmail;
-    
+
     /**
      * Buyer address
      */
     @Column(name = "address")
     private String buyerAddress;
-    
+
     /**
      * Buyer name
      */
     @Column(name = "name")
     private String buyerName;
-    
+
     /**
      * Buyer city
      */
     @JoinColumn(name = "city", referencedColumnName = "id_city")
-    @ManyToOne ( fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER)
     private VhsCity buyerCity;
-    
+
     /**
      * Credit card number
      */
     @Column(name = "credit_card_number")
     private String creditCardNumber;
-    
+
     /**
      * Credit card franchise
      */
     @Column(name = "credit_card_franchise")
     private String creditCardFranchise;
-    
+
     /**
      * Credit card verification code
      */
     @Column(name = "credit_card_verification_code")
     private String creditCardVerificationCode;
-    
+
     /**
      * Credit card expiration month
      */
     @Column(name = "credit_card_expiration_month")
     private String creditCardExpirationMonth;
-    
+
     /**
      * Credit card expiration year
      */
     @Column(name = "credit_card_expiration_year")
     private String creditCardExpirationYear;
-    
+
     /**
      * PSE associated bank
      */
     @Column(name = "pse_bank_name")
     private String pseBankName;
-    
+
     /**
      * PSE associated account number
      */
     @Column(name = "pse_account_number")
     private String pseAccountNumber;
-    
+
     /**
      * Number of products bought
      */
     @Column(name = "sale_quantity")
     private String saleQuantity;
-    
+
     /**
      * Total sale
      */
     @Column(name = "total_sale")
     private Double totalSale;
-    
+
     /**
      * Current date
      */
@@ -133,214 +161,175 @@ public class VhsOfferSale implements Serializable
      * Associated payment method
      */
     @JoinColumn(name = "payment_method", referencedColumnName = "id_payment")
-    @ManyToOne (fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER)
     private VhsPaymentMethod paymentMethod;
-    
+
     /**
      * Associated special offer
      */
     @JoinColumn(name = "special_offer", referencedColumnName = "id_special_offers")
-    @ManyToOne (fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER)
     private VhsSpecialOffer specialOffer;
-    
-    public Long getId()
-    {
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(Long id)
-    {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public VhsSpecialOffer getSpecialOffer()
-    {
+    public VhsSpecialOffer getSpecialOffer() {
         return specialOffer;
     }
 
-    public void setSpecialOffer(VhsSpecialOffer specialOffer)
-    {
+    public void setSpecialOffer(VhsSpecialOffer specialOffer) {
         this.specialOffer = specialOffer;
     }
 
-    public String getBuyerEmail()
-    {
+    public String getBuyerEmail() {
         return buyerEmail;
     }
 
-    public void setBuyerEmail(String buyerEmail)
-    {
+    public void setBuyerEmail(String buyerEmail) {
         this.buyerEmail = buyerEmail;
     }
 
-    public String getBuyerAddress()
-    {
+    public String getBuyerAddress() {
         return buyerAddress;
     }
 
-    public void setBuyerAddress(String buyerAddress)
-    {
+    public void setBuyerAddress(String buyerAddress) {
         this.buyerAddress = buyerAddress;
     }
 
-    public String getBuyerName()
-    {
+    public String getBuyerName() {
         return buyerName;
     }
 
-    public void setBuyerName(String buyerName)
-    {
+    public void setBuyerName(String buyerName) {
         this.buyerName = buyerName;
     }
 
-    public VhsCity getBuyerCity()
-    {
+    public VhsCity getBuyerCity() {
         return buyerCity;
     }
 
-    public void setBuyerCity(VhsCity buyerCity)
-    {
+    public void setBuyerCity(VhsCity buyerCity) {
         this.buyerCity = buyerCity;
     }
 
-    public String getCreditCardNumber()
-    {
+    public String getCreditCardNumber() {
         return creditCardNumber;
     }
 
-    public void setCreditCardNumber(String creditCardNumber)
-    {
+    public void setCreditCardNumber(String creditCardNumber) {
         this.creditCardNumber = creditCardNumber;
     }
 
-    public String getCreditCardFranchise()
-    {
+    public String getCreditCardFranchise() {
         return creditCardFranchise;
     }
 
-    public void setCreditCardFranchise(String creditCardFranchise)
-    {
+    public void setCreditCardFranchise(String creditCardFranchise) {
         this.creditCardFranchise = creditCardFranchise;
     }
 
-    public String getCreditCardVerificationCode()
-    {
+    public String getCreditCardVerificationCode() {
         return creditCardVerificationCode;
     }
 
-    public void setCreditCardVerificationCode(String creditCardVerificationCode)
-    {
+    public void setCreditCardVerificationCode(String creditCardVerificationCode) {
         this.creditCardVerificationCode = creditCardVerificationCode;
     }
 
-    public String getCreditCardExpirationMonth()
-    {
+    public String getCreditCardExpirationMonth() {
         return creditCardExpirationMonth;
     }
 
-    public void setCreditCardExpirationMonth(String creditCardExpirationMonth)
-    {
+    public void setCreditCardExpirationMonth(String creditCardExpirationMonth) {
         this.creditCardExpirationMonth = creditCardExpirationMonth;
     }
 
-    public String getCreditCardExpirationYear()
-    {
+    public String getCreditCardExpirationYear() {
         return creditCardExpirationYear;
     }
 
-    public void setCreditCardExpirationYear(String creditCardExpirationYear)
-    {
+    public void setCreditCardExpirationYear(String creditCardExpirationYear) {
         this.creditCardExpirationYear = creditCardExpirationYear;
     }
 
-    public String getPseBankName()
-    {
+    public String getPseBankName() {
         return pseBankName;
     }
 
-    public void setPseBankName(String pseBankName)
-    {
+    public void setPseBankName(String pseBankName) {
         this.pseBankName = pseBankName;
     }
 
-    public String getPseAccountNumber()
-    {
+    public String getPseAccountNumber() {
         return pseAccountNumber;
     }
 
-    public void setPseAccountNumber(String pseAccountNumber)
-    {
+    public void setPseAccountNumber(String pseAccountNumber) {
         this.pseAccountNumber = pseAccountNumber;
     }
 
-    public String getSaleQuantity()
-    {
+    public String getSaleQuantity() {
         return saleQuantity;
     }
 
-    public void setSaleQuantity(String saleQuantity)
-    {
+    public void setSaleQuantity(String saleQuantity) {
         this.saleQuantity = saleQuantity;
     }
 
-    public Double getTotalSale()
-    {
+    public Double getTotalSale() {
         return totalSale;
     }
 
-    public void setTotalSale(Double totalSale)
-    {
+    public void setTotalSale(Double totalSale) {
         this.totalSale = totalSale;
     }
 
-    public VhsPaymentMethod getPaymentMethod()
-    {
+    public VhsPaymentMethod getPaymentMethod() {
         return paymentMethod;
     }
 
-    public void setPaymentMethod(VhsPaymentMethod paymentMethod)
-    {
+    public void setPaymentMethod(VhsPaymentMethod paymentMethod) {
         this.paymentMethod = paymentMethod;
     }
 
-    public Date getSaleDate()
-    {
+    public Date getSaleDate() {
         return saleDate;
     }
 
-    public void setSaleDate(Date saleDate)
-    {
+    public void setSaleDate(Date saleDate) {
         this.saleDate = saleDate;
     }
 
     @Override
-    public int hashCode()
-    {
+    public int hashCode() {
         int hash = 0;
         hash += (id != null ? id.hashCode() : 0);
         return hash;
     }
 
     @Override
-    public boolean equals(Object object)
-    {
+    public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof VhsOfferSale))
-        {
+        if (!(object instanceof VhsOfferSale)) {
             return false;
         }
         VhsOfferSale other = (VhsOfferSale) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id)))
-        {
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
         return true;
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         return "com.vhs.data.VhsOfferSale[ id=" + id + " ]";
     }
-    
+
 }

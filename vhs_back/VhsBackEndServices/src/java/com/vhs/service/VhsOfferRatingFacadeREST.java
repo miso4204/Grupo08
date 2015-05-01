@@ -5,7 +5,7 @@
  */
 package com.vhs.service;
 
-import com.vhs.data.DatosReporteRating;
+import com.vhs.data.DatosReporte;
 import com.vhs.data.VhsCountry;
 import com.vhs.data.VhsOfferRating;
 import java.text.ParseException;
@@ -97,7 +97,7 @@ public class VhsOfferRatingFacadeREST extends AbstractFacade<VhsOfferRating> {
     @GET
     @Path("{mail}/{begin}/{end}/{type}")
     @Produces({"application/xml", "application/json"})
-    public List<DatosReporteRating> findRating(@PathParam("mail") String mail, @PathParam("begin") String begin, @PathParam("end") String end,  @PathParam("type") String type ) throws ParseException {
+    public List<DatosReporte> findRating(@PathParam("mail") String mail, @PathParam("begin") String begin, @PathParam("end") String end,  @PathParam("type") String type )  throws ParseException{
         Query q;
         if(type.equalsIgnoreCase("location"))
         {
@@ -107,22 +107,8 @@ public class VhsOfferRatingFacadeREST extends AbstractFacade<VhsOfferRating> {
         {
             q = getEntityManager().createNativeQuery(VhsOfferRating.SQL_RATING_PRODUCT);
         }
-        Calendar cBegin = Calendar.getInstance();
-        Calendar cEnd = Calendar.getInstance();
-        SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyyy");
-        cBegin.setTime(sdf.parse(begin));
-        cEnd.setTime(sdf.parse(end));
-        List<DatosReporteRating> datos = new ArrayList();
-        q.setParameter(1, mail);
-        q.setParameter(2, cBegin.getTime());
-        q.setParameter(3, cEnd.getTime());
-        List<Object[]> ls= q.getResultList();
-        for ( Object[] o : ls)
-        {
-            DatosReporteRating dr = new DatosReporteRating(o[0].toString(), Double.parseDouble(o[1].toString()));
-            datos.add(dr);
-        }
-        return datos;
+        return getReport(q, mail, begin, end );
+        
      }
 
     @GET
