@@ -33,9 +33,9 @@
 <script type="text/javascript">
 
 mejores_ciudades = {{ mejores_ciudades|safe }};
-mejores_calificaciones = {{ mejores_calificaciones|safe }};
+mejores_ventas = {{ mejores_ventas|safe }};
 peores_ciudades = {{ peores_ciudades|safe }};
-peores_calificaciones = {{ peores_calificaciones|safe }};
+peores_ventas = {{ peores_ventas|safe }};
 fechaGeneracion = '{{ fecha|safe }}';
 
 $(function () {
@@ -44,7 +44,7 @@ $(function () {
             type: 'bar'
         },
         title: {
-            text: 'Reporte de Rating'
+            text: 'Reporte de Ventas'
         },
         subtitle: {
             text: 'Fecha de generación: ' + fechaGeneracion
@@ -52,13 +52,13 @@ $(function () {
         xAxis: {
             categories: mejores_ciudades,
             title: {
-                text: 'Paquetes'
+                text: 'Ciudades'
             }
         },
         yAxis: {
             min: 0,
             title: {
-                text: 'Calificación por estrellas',
+                text: 'Ganancias',
                 align: 'high'
             },
             labels: {
@@ -66,7 +66,7 @@ $(function () {
             }
         },
         tooltip: {
-            valueSuffix: ' Estrellas'
+            valueSuffix: ' COP'
         },
         plotOptions: {
             bar: {
@@ -90,8 +90,8 @@ $(function () {
             enabled: false
         },
         series: [{
-            name: 'Estrellas',
-            data: mejores_calificaciones
+            name: 'Ganancias',
+            data: mejores_ventas
         }]
     });
 
@@ -100,7 +100,7 @@ $(function () {
             type: 'bar'
         },
         title: {
-            text: 'Reporte de Rating'
+            text: 'Reporte de Ventas'
         },
         subtitle: {
             text: 'Fecha de generación: ' + fechaGeneracion.date
@@ -108,13 +108,13 @@ $(function () {
         xAxis: {
             categories: peores_ciudades,
             title: {
-                text: 'Paquetes'
+                text: 'Ciudades'
             }
         },
         yAxis: {
             min: 0,
             title: {
-                text: 'Calificación por estrellas',
+                text: 'Ganancias',
                 align: 'high'
             },
             labels: {
@@ -122,7 +122,7 @@ $(function () {
             }
         },
         tooltip: {
-            valueSuffix: ' Estrellas'
+            valueSuffix: ' COP'
         },
         plotOptions: {
             bar: {
@@ -146,8 +146,8 @@ $(function () {
             enabled: false
         },
         series: [{
-            name: 'Estrellas',
-            data: peores_calificaciones
+            name: 'Ganancias',
+            data: peores_ventas
         }]
     });
 
@@ -196,14 +196,14 @@ $(function () {
 <div id="contact" name="contact">
   <div class="container">
     <div class="row">
-      <h2 class="centered">REPORTE DE RATING - PAQUETE</h2>
+      <h2 class="centered">REPORTE DE VENTAS - UBICACIÓN</h2>
       <hr>
     </div>
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 centered">
         <p>Por favor escoge las fechas para la generación de tu reporte.</p>
         {% block content %}
-        <form action='/report/ratingPackage/' id="dates" method="post" class="form" role="form">
+        <form action='/report/salesLocation/' id="dates" method="post" class="form" role="form">
           {% csrf_token %}
           <div class="row form-group">
             <input id="start_date" name="start_date" placeholder="Fecha Inicial" class="datepicker_start" type="text" >
@@ -230,18 +230,18 @@ $(function () {
 <div id="services" name="services">
   <div class="container">
     <div class="row">
-      <h2 class="centered">Reporte de Rating - Mejores 10</h2>
+      <h2 class="centered">Reporte de Ventas - Mejores 10</h2>
       <hr>
       <div class="col-lg-8 col-lg-offset-2">
-        <p class="large">Este reporte muestra los 10 mejores paquetes.</p>
+        <p class="large">Este reporte muestra las 10 mejores ciudades.</p>
       </div>
       <div id="container_best" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
     </div>
     <div class="row">
-      <h2 class="centered">Reporte de Rating - Mejores 10</h2>
+      <h2 class="centered">Reporte de Ventas - Peores 10</h2>
       <hr>
       <div class="col-lg-8 col-lg-offset-2">
-        <p class="large">Este reporte muestra los 10 peores paquetes.</p>
+        <p class="large">Este reporte muestra las 10 peores ciudades.</p>
       </div>
       <div id="container_worst" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
     </div>
