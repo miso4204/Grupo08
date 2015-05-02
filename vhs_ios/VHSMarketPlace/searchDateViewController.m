@@ -65,16 +65,7 @@
     
     [components setMonth:([components month] - 1)];
     // NSDate *lastMonth = [cal dateFromComponents:components];
-    
-    
-    
-    //UIDatePicker *datePicker = [[UIDatePicker alloc] init];
-    NSLog(@"TODAY %@",today);
-    NSLog(@"This Week %@",nextWeek);
-    
-    [self.picker
-     setMinimumDate:today];
-    
+
     [self.btnDate setStyle:BButtonStyleBootstrapV3];
     [self.btnDate setType:BButtonTypePrimary];
     

@@ -66,7 +66,7 @@
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(0, 0, 32, 32);
     [button setImage:[UIImage imageNamed:@"flechablanca@2x.png"] forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(back2) forControlEvents:UIControlEventTouchUpInside];
     
     UIBarButtonItem *barButton=[[UIBarButtonItem alloc] init];
     [barButton setCustomView:button];
@@ -103,7 +103,7 @@
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(0, 0, 32, 32);
     [button setImage:[UIImage imageNamed:@"flechablanca@2x.png"] forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(back2) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     
     UIBarButtonItem *barButton=[[UIBarButtonItem alloc] init];
     [barButton setCustomView:button];
@@ -231,8 +231,14 @@
 
     self.tableviewLocation.hidden = YES;
 
-    self.navigationItem.leftBarButtonItem=nil;
-
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(0, 0, 32, 32);
+    [button setImage:[UIImage imageNamed:@"flechablanca@2x.png"] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(back2) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *barButton=[[UIBarButtonItem alloc] init];
+    [barButton setCustomView:button];
+    self.navigationItem.leftBarButtonItem=barButton;
 }
 
 - (IBAction)search:(id)sender {

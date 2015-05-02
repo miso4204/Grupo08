@@ -30,6 +30,7 @@ public class ApplicationConfig extends Application {
      */
     private void addRestResourceClasses(Set<Class<?>> resources) 
     {    
+        resources.add(com.vhs.service.AdditionalValuesFacadeREST.class);
         resources.add(com.vhs.service.VhsCategoryFacadeREST.class);
         resources.add(com.vhs.service.VhsCityFacadeREST.class);
         resources.add(com.vhs.service.VhsCountryFacadeREST.class);
