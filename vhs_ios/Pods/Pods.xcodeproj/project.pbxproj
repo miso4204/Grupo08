@@ -979,6 +979,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
+				TargetAttributes = {
+					F701668EBC742A563DF21353 = {
+						DevelopmentTeam = FN8L3433RM;
+					};
+				};
 			};
 			buildConfigurationList = 2E860942B1B6E126D22947C6 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1127,6 +1132,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 516FDDF2F92617C5B2B3978E /* Pods-VHSMarketPlace-BButton-Private.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1142,6 +1148,7 @@
 				MODULEMAP_FILE = "Target Support Files/Pods-VHSMarketPlace-BButton/Pods-VHSMarketPlace-BButton.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = BButton;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1181,6 +1188,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 516FDDF2F92617C5B2B3978E /* Pods-VHSMarketPlace-BButton-Private.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1196,6 +1204,7 @@
 				MODULEMAP_FILE = "Target Support Files/Pods-VHSMarketPlace-BButton/Pods-VHSMarketPlace-BButton.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = BButton;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
