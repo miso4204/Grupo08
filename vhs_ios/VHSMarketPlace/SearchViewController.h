@@ -16,6 +16,7 @@
 #import "BButton.h"
 #import "Connections.h"
 @interface SearchViewController : UIViewController<ConnectionsDelegate>
+@property (weak, nonatomic) IBOutlet BButton *btnPriceRange;
 - (IBAction)getLocation:(id)sender;
 - (IBAction)setBeginDate:(id)sender;
 - (IBAction)setEndDate:(id)sender;
@@ -31,5 +32,8 @@
 - (IBAction)search:(id)sender;
 @property (weak, nonatomic) IBOutlet UIView *viewForDateEnd;
 - (IBAction)closeEndDate:(id)sender;
+
+@property (weak, nonatomic) IBOutlet NSString *city;
+
 
 @end

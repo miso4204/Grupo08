@@ -208,4 +208,103 @@
 
 
 }
+-(void)searchPlace:(NSDictionary *)params{
+    
+    NSString * city = [params objectForKey:@"city"];
+    NSString * path =[NSString stringWithFormat:@"%@%@",@"vhsspecialoffer/city/",city];
+    [[Client sharedInstance] GET:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        // Parse the XML into a dictionary
+        NSError *parseError = nil;
+        NSDictionary *xmlDictionary = [XMLReader dictionaryForXMLString:string error:&parseError];
+        // Print the dictionary
+        
+        NSLog(@"The response to the VHS Special offer request is:  %@", xmlDictionary);
+        @try {
+            [self.delegate searchPlaceDidFinishSuccessfully:xmlDictionary];
+        }
+        @catch (NSException *exception) {
+        }
+        @finally {
+        }
+        
+    }
+                         failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                             NSLog(@"error report %@",error);
+                             
+                             
+                             
+                             
+                         }];
+    
+    
+
+    
+    
+}
+-(void)searchDate:(NSDictionary *)params{
+
+    NSString * date = [params objectForKey:@"date"];
+    NSString * path =[NSString stringWithFormat:@"%@%@",@"vhsspecialoffer/date/",date];
+    [[Client sharedInstance] GET:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        // Parse the XML into a dictionary
+        NSError *parseError = nil;
+        NSDictionary *xmlDictionary = [XMLReader dictionaryForXMLString:string error:&parseError];
+        // Print the dictionary
+        
+        NSLog(@"The response to the VHS  search request is:  %@", xmlDictionary);
+        @try {
+            [self.delegate searchDateDidFinishSuccessfully:xmlDictionary];
+        }
+        @catch (NSException *exception) {
+        }
+        @finally {
+        }
+        
+    }
+                         failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                             NSLog(@"error report %@",error);
+                             
+                             
+                             
+                             
+                         }];
+    
+    
+}
+-(void)searchPrice:(NSDictionary *)params{
+
+    NSString * price = [params objectForKey:@"price"];
+
+    NSString * path =[NSString stringWithFormat:@"%@%@",@"vhsspecialoffer/price/",price];
+    [[Client sharedInstance] GET:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        // Parse the XML into a dictionary
+        NSError *parseError = nil;
+        NSDictionary *xmlDictionary = [XMLReader dictionaryForXMLString:string error:&parseError];
+        // Print the dictionary
+        
+        NSLog(@"The response to the VHS Special search request is:  %@", xmlDictionary);
+        @try {
+            [self.delegate searchPriceDidFinishSuccessfully:xmlDictionary];
+        }
+        @catch (NSException *exception) {
+        }
+        @finally {
+        }
+        
+    }
+                         failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                             NSLog(@"error report %@",error);
+                             
+                             
+                             
+                             
+                         }];
+    
+
+
+}
+
 @end

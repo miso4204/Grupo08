@@ -48,6 +48,8 @@
                                                                     UITextAttributeTextColor: [UIColor whiteColor]};
     
     [self.navigationController.navigationBar configureFlatNavigationBarWithColor:[UIColor colorFromHexCode:@"#e75659"]];
+    [self.btnPriceRange setStyle:BButtonStyleBootstrapV3];
+    [self.btnPriceRange setType:BButtonTypeFacebook];
     
     
     [self.btnBeginDate setStyle:BButtonStyleBootstrapV3];
@@ -59,6 +61,17 @@
     [self.btnSearch setStyle:BButtonStyleBootstrapV3];
     [self.btnSearch setType:BButtonTypePrimary];
     [self loadCity];
+    
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(0, 0, 32, 32);
+    [button setImage:[UIImage imageNamed:@"flechablanca@2x.png"] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *barButton=[[UIBarButtonItem alloc] init];
+    [barButton setCustomView:button];
+    self.navigationItem.leftBarButtonItem=barButton;
+
 
 }
 -(void)loadCity{
@@ -90,13 +103,16 @@
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(0, 0, 32, 32);
     [button setImage:[UIImage imageNamed:@"flechablanca@2x.png"] forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(back2) forControlEvents:UIControlEventTouchUpInside];
     
     UIBarButtonItem *barButton=[[UIBarButtonItem alloc] init];
     [barButton setCustomView:button];
     self.navigationItem.leftBarButtonItem=barButton;
 }
+-(void)back2{
 
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 - (IBAction)setBeginDate:(id)sender {
     self.viewForDate.hidden = NO;
 }
@@ -199,6 +215,7 @@
     
     LocationSe * location = [[LocationSe alloc]init];
     location = [self.returnP objectAtIndex:indexPath.row];
+    self.city = location.city;
     
     self.lblCity.text = location.city;
     self.tableviewLocation.hidden = YES;
@@ -219,9 +236,31 @@
 }
 
 - (IBAction)search:(id)sender {
+    
+    self.ConnectionDelegate.delegate=self;
+    NSMutableDictionary * params= [[NSMutableDictionary alloc]init];
+    
+    [params setObject:self.city forKey:@"city"];
+    
+    [self.ConnectionDelegate searchPlace:params];
 }
 - (IBAction)closeEndDate:(id)sender {
     self.viewForDateEnd.hidden =YES;
     
 }
+- (IBAction)priceRange:(id)sender {
+    
+    
+}
+-(void)searchPlaceDidFinishSuccessfully:(NSDictionary*)responseObject{
+
+
+
+}
+-(void)searchPlaceFinishWithFailure:(NSDictionary*)responseObject{
+
+
+
+}
+
 @end

@@ -40,6 +40,18 @@
 -(void)getCityDidFinishSuccessfully:(NSDictionary*)responseObject; //  CatalogViewController
 -(void)getCityDidFinishWithFailure:(NSDictionary*)responseObject; //  CatalogViewController
 
+
+-(void)searchPlaceDidFinishSuccessfully:(NSDictionary*)responseObject; //  searchViewController
+-(void)searchPlaceFinishWithFailure:(NSDictionary*)responseObject; //  searchViewController
+
+
+-(void)searchDateDidFinishSuccessfully:(NSDictionary*)responseObject; //  searchDateViewController
+-(void)searchDateFinishWithFailure:(NSDictionary*)responseObject; //  searchDateViewController
+
+
+-(void)searchPriceDidFinishSuccessfully:(NSDictionary*)responseObject; //  searchPriceViewController
+-(void)searchPriceFinishWithFailure:(NSDictionary*)responseObject; //  searchPriceViewController
+
 @end
 
 
@@ -66,6 +78,12 @@
 -(void)getPaymentMethods;
 
 -(void)getCity;
+
+-(void)searchPlace:(NSDictionary *)params;
+
+-(void)searchDate:(NSDictionary *)params;
+
+-(void)searchPrice:(NSDictionary *)params;
 
 
 @end
