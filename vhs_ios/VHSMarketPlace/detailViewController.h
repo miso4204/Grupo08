@@ -10,8 +10,16 @@
 #import "Product.h"
 #import <GoogleMaps/GoogleMaps.h>
 #import "KASlideShow.h"
+#import "BButton.h"
+#import <Social/Social.h>
+#import <Accounts/Accounts.h>
+#import <MessageUI/MessageUI.h>
 
-@interface detailViewController : UIViewController<GMSMapViewDelegate,CLLocationManagerDelegate,KASlideShowDelegate>
+@interface detailViewController : UIViewController<GMSMapViewDelegate,CLLocationManagerDelegate,KASlideShowDelegate>{
+
+    SLComposeViewController *mySLComposerSheet;
+
+}
 
 
 @property (strong, nonatomic)   Product *myProduct;
@@ -28,7 +36,9 @@
 @property (strong, nonatomic) IBOutlet UIView *view5;
 @property (strong, nonatomic) IBOutlet UIImageView *imgProduct;
 
+@property (weak, nonatomic) IBOutlet BButton *btnAddtoCart;
 
+- (IBAction)addToCart:(id)sender;
 
 - (IBAction)next:(id)sender;
 - (IBAction)play:(id)sender;

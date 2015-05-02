@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "95B08CAA6C9FD9F17559E238"
+               BlueprintIdentifier = "9BEA58D56CF14BFCB33BDB21"
                BuildableName = "Pods_VHSMarketPlace.framework"
                BlueprintName = "Pods-VHSMarketPlace"
                ReferencedContainer = "container:Pods.xcodeproj">

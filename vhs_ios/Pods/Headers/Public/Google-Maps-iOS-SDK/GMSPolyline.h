@@ -1,1 +1,1 @@
-../../../Google-Maps-iOS-SDK/googlemaps.framework/versions/current/Headers/GMSPolyline.h
+../../../Google-Maps-iOS-SDK/GoogleMaps.framework/Versions/current/Headers/GMSPolyline.h

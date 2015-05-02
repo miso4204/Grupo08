@@ -24,6 +24,22 @@
 -(void)RegisterDidFinishWithFailure:(NSDictionary*)responseObject; //  LoginViewController
 
 
+-(void)GetProductsDidFinishSuccessfully:(NSDictionary*)responseObject; //  ViewController
+-(void)GetProductsDidFinishWithFailure:(NSDictionary*)responseObject; //  ViewController
+
+
+-(void)GetCategoriesDidFinishSuccessfully:(NSDictionary*)responseObject; //  CatalogViewController
+-(void)GetCategoriesDidFinishWithFailure:(NSDictionary*)responseObject; //  CatalogViewController
+
+-(void)getPaymentMethodsFinishSuccessfully:(NSDictionary*)responseObject; //  CatalogViewController
+-(void)getPaymentMethodsDidFinishWithFailure:(NSDictionary*)responseObject; //  CatalogViewController
+
+-(void)payProductsDidFinishSuccessfully:(NSDictionary*)responseObject; //  CatalogViewController
+-(void)payProductsDidFinishWithFailure:(NSDictionary*)responseObject; //  CatalogViewController
+
+-(void)getCityDidFinishSuccessfully:(NSDictionary*)responseObject; //  CatalogViewController
+-(void)getCityDidFinishWithFailure:(NSDictionary*)responseObject; //  CatalogViewController
+
 @end
 
 
@@ -39,10 +55,17 @@
 
 -(void)Register:(NSDictionary *)params;
 
--(void)getCategories:(NSDictionary *)params;
+-(void)getCategories;
 
 -(void)subCategories:(NSDictionary *)params;
 
--(void)getProducts:(NSDictionary *)params;
+-(void)getProducts;
+
+-(void)payProducts:(NSDictionary *)params;
+
+-(void)getPaymentMethods;
+
+-(void)getCity;
+
 
 @end

@@ -14,12 +14,22 @@
 #import "UIColor+FlatUI.h"
 #import "FUIButton.h"
 #import "BButton.h"
-
-@interface SearchViewController : UIViewController
+#import "Connections.h"
+@interface SearchViewController : UIViewController<ConnectionsDelegate>
 - (IBAction)getLocation:(id)sender;
 - (IBAction)setBeginDate:(id)sender;
 - (IBAction)setEndDate:(id)sender;
 @property (strong, nonatomic) IBOutlet BButton *btnBeginDate;
 @property (strong, nonatomic) IBOutlet BButton *btnEndDate;
+@property (weak, nonatomic) IBOutlet UIView *viewForDate;
+@property (weak, nonatomic) IBOutlet UIView *datePicker;
+- (IBAction)close:(id)sender;
+@property (nonatomic, retain) NSMutableArray *returnP;
+@property (weak, nonatomic) IBOutlet UITableView *tableviewLocation;
+@property (weak, nonatomic) IBOutlet UITextField *lblCity;
+@property (weak, nonatomic) IBOutlet BButton *btnSearch;
+- (IBAction)search:(id)sender;
+@property (weak, nonatomic) IBOutlet UIView *viewForDateEnd;
+- (IBAction)closeEndDate:(id)sender;
 
 @end

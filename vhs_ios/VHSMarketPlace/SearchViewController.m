@@ -14,7 +14,13 @@
 #import "UIColor+FlatUI.h"
 #import "FUIButton.h"
 #import "detailViewController.h"
-@interface SearchViewController ()
+#import "LocationSe.h"
+@interface SearchViewController (){
+
+    LocationSe * p;
+
+}
+@property (strong, nonatomic)   Connections *ConnectionDelegate;
 
 @end
 
@@ -23,7 +29,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.ConnectionDelegate = [[Connections alloc]init];
+
+    self.viewForDate.layer.cornerRadius = 10.0f;
+    self.viewForDate.layer.masksToBounds = YES;
     
+    self.viewForDate.backgroundColor = [UIColor lightGrayColor];
+    self.viewForDate.hidden = YES;
+
+    self.viewForDateEnd.layer.cornerRadius = 10.0f;
+    self.viewForDateEnd.layer.masksToBounds = YES;
+    
+    self.viewForDateEnd.backgroundColor = [UIColor lightGrayColor];
+    self.viewForDateEnd.hidden = YES;
+    self.tableviewLocation.hidden =YES;
     self.title = @"Search";
     self.navigationController.navigationBar.titleTextAttributes = @{UITextAttributeFont: [UIFont boldFlatFontOfSize:18],
                                                                     UITextAttributeTextColor: [UIColor whiteColor]};
@@ -37,9 +56,19 @@
     [self.btnEndDate setStyle:BButtonStyleBootstrapV3];
     [self.btnEndDate setType:BButtonTypeFacebook];
     
+    [self.btnSearch setStyle:BButtonStyleBootstrapV3];
+    [self.btnSearch setType:BButtonTypePrimary];
+    [self loadCity];
 
 }
+-(void)loadCity{
+    self.ConnectionDelegate.delegate = self;
+    
+    [self.ConnectionDelegate getCity];
 
+
+
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -56,11 +85,143 @@
 */
 
 - (IBAction)getLocation:(id)sender {
+    self.tableviewLocation.hidden = NO;
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(0, 0, 32, 32);
+    [button setImage:[UIImage imageNamed:@"flechablanca@2x.png"] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *barButton=[[UIBarButtonItem alloc] init];
+    [barButton setCustomView:button];
+    self.navigationItem.leftBarButtonItem=barButton;
 }
 
 - (IBAction)setBeginDate:(id)sender {
+    self.viewForDate.hidden = NO;
 }
 
 - (IBAction)setEndDate:(id)sender {
+    self.viewForDateEnd.hidden = NO;
+}
+- (IBAction)close:(id)sender {
+    self.viewForDate.hidden = YES;
+}
+-(void)getCityDidFinishSuccessfully:(NSDictionary*)responseObject{
+
+    
+    NSArray *items = [responseObject valueForKeyPath:@"collection.vhsCity"];
+
+    NSEnumerator *enumerator = [items objectEnumerator];
+    NSDictionary* item;
+    int count = 0;
+    self.returnP= [[NSMutableArray alloc]init];
+    
+    while (item = (NSDictionary*)[enumerator nextObject]) {
+        
+        p = [[LocationSe alloc]init];
+
+        NSDictionary *citya=[item objectForKey:@"description"];
+        p.city = [citya objectForKey:@"text"];
+        NSLog(@"all cities %@",p.city);
+        [self.returnP addObject:p];
+        count ++;
+        
+    
+    }
+    [self.tableviewLocation reloadData];
+
+}
+-(void)getCityDidFinishWithFailure:(NSDictionary*)responseObject{
+
+
+
+
+}
+
+
+#pragma mark - Table View
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+#pragma mark - TableView Datasource Methods
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    
+    //return tourlist.count;
+    return self.returnP.count;
+    
+    
+}
+#pragma mark - TableView Delegate Methods
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    //NSString * cellString;
+    if (cell==nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Cell"];
+        
+    }
+    cell.textLabel.textColor = [UIColor blackColor];
+    cell.detailTextLabel.textColor = [UIColor blackColor];
+    
+    [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+    [tableView setSeparatorInset:UIEdgeInsetsZero];
+    if ([tableView respondsToSelector:@selector(setSeparatorInset:)]) {
+        [tableView setSeparatorInset:UIEdgeInsetsZero];
+    }
+    
+    LocationSe * location = [[LocationSe alloc]init];
+    location = [self.returnP objectAtIndex:indexPath.row];
+    cell.textLabel.text =location.city;
+    
+    
+    return cell;
+}
+
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+    
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 70;
+}
+
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    LocationSe * location = [[LocationSe alloc]init];
+    location = [self.returnP objectAtIndex:indexPath.row];
+    
+    self.lblCity.text = location.city;
+    self.tableviewLocation.hidden = YES;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    // cell.backgroundColor = [self colorWithHexString:@"4A706A"];
+    cell.backgroundColor = [UIColor clearColor];
+    cell.backgroundView.backgroundColor = [UIColor clearColor];
+}
+
+-(void)back{
+
+    self.tableviewLocation.hidden = YES;
+
+    self.navigationItem.leftBarButtonItem=nil;
+
+}
+
+- (IBAction)search:(id)sender {
+}
+- (IBAction)closeEndDate:(id)sender {
+    self.viewForDateEnd.hidden =YES;
+    
 }
 @end

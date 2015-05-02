@@ -1,1 +1,1 @@
-../../../Google-Maps-iOS-SDK/googlemaps.framework/versions/current/Headers/GMSProjection.h
+../../../Google-Maps-iOS-SDK/GoogleMaps.framework/Versions/current/Headers/GMSProjection.h

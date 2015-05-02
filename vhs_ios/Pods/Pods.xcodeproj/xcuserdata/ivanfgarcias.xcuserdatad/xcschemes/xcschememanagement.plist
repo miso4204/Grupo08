@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-VHSMarketPlace-CardIO.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-VHSMarketPlace-FMDB.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,27 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0DEC44196F66C63804C533FC</key>
+		<key>1185B171098F58F38D499DCF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0E5692472A27BF437785B33A</key>
+		<key>49FCD25C3790B0A78EB29940</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>95B08CAA6C9FD9F17559E238</key>
+		<key>65A62ED5BCA037E9A9EE65A1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BEEEEAFC136571AEE16731CF</key>
+		<key>9BEA58D56CF14BFCB33BDB21</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BF1D929D81FF16310D5E46B1</key>
+		<key>CF2065FE776F1688B403F7E0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F701668EBC742A563DF21353</key>
 		<dict>
 			<key>primary</key>
 			<true/>

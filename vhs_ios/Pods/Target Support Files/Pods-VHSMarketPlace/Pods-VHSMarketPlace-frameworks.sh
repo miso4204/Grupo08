@@ -50,12 +50,14 @@ code_sign() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'AFNetworking.framework'
   install_framework 'BButton.framework'
+  install_framework 'CardIO.framework'
   install_framework 'FMDB.framework'
   install_framework 'PayPal_iOS_SDK.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'AFNetworking.framework'
   install_framework 'BButton.framework'
+  install_framework 'CardIO.framework'
   install_framework 'FMDB.framework'
   install_framework 'PayPal_iOS_SDK.framework'
 fi

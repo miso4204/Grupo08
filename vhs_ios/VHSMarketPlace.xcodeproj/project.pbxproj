@@ -60,6 +60,13 @@
 		10EBE1B31AD217BF00CC496D /* photo-frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 10EBE1B21AD217BF00CC496D /* photo-frame.png */; };
 		10EBE1B61AD228DE00CC496D /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10EBE1B51AD228DE00CC496D /* SearchViewController.m */; };
 		542B5F0B19F5C9B78F477854 /* Pods_VHSMarketPlace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F87363710C9210C32DE1462F /* Pods_VHSMarketPlace.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		F247CF9C1AE6FD8A001C0286 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = F247CF9B1AE6FD8A001C0286 /* close.png */; };
+		F24DF8531AF02C69001BC3AF /* LocationSe.m in Sources */ = {isa = PBXBuildFile; fileRef = F24DF8521AF02C69001BC3AF /* LocationSe.m */; };
+		F261CE431AEF3F69003D8A34 /* share@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F261CE421AEF3F69003D8A34 /* share@2x.png */; };
+		F27F38881ADF61EB0060DFC1 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = F27F38871ADF61EB0060DFC1 /* XMLReader.m */; };
+		F2CA293F1AEDB49100555375 /* Payment.m in Sources */ = {isa = PBXBuildFile; fileRef = F2CA293E1AEDB49100555375 /* Payment.m */; };
+		F2CA29421AEDBFFD00555375 /* CashPaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2CA29411AEDBFFD00555375 /* CashPaymentViewController.m */; };
+		F2FB24A31AE328C800F4F3ED /* PaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2FB24A21AE328C800F4F3ED /* PaymentViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +160,18 @@
 		10EBE1B51AD228DE00CC496D /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		640271BA198B2935FBC51021 /* Pods-VHSMarketPlace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VHSMarketPlace.release.xcconfig"; path = "Pods/Target Support Files/Pods-VHSMarketPlace/Pods-VHSMarketPlace.release.xcconfig"; sourceTree = "<group>"; };
 		9195B48D2D97B7F1339C7902 /* Pods-VHSMarketPlace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VHSMarketPlace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VHSMarketPlace/Pods-VHSMarketPlace.debug.xcconfig"; sourceTree = "<group>"; };
+		F247CF9B1AE6FD8A001C0286 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = close.png; path = Resources/close.png; sourceTree = "<group>"; };
+		F24DF8511AF02C69001BC3AF /* LocationSe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationSe.h; sourceTree = "<group>"; };
+		F24DF8521AF02C69001BC3AF /* LocationSe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationSe.m; sourceTree = "<group>"; };
+		F261CE421AEF3F69003D8A34 /* share@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "share@2x.png"; path = "Resources/share@2x.png"; sourceTree = "<group>"; };
+		F27F38861ADF61EB0060DFC1 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMLReader.h; path = "../../../../../Downloads/XMLReader-master/XMLReader.h"; sourceTree = "<group>"; };
+		F27F38871ADF61EB0060DFC1 /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XMLReader.m; path = "../../../../../Downloads/XMLReader-master/XMLReader.m"; sourceTree = "<group>"; };
+		F2CA293D1AEDB49100555375 /* Payment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Payment.h; sourceTree = "<group>"; };
+		F2CA293E1AEDB49100555375 /* Payment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Payment.m; sourceTree = "<group>"; };
+		F2CA29401AEDBFFD00555375 /* CashPaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CashPaymentViewController.h; sourceTree = "<group>"; };
+		F2CA29411AEDBFFD00555375 /* CashPaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CashPaymentViewController.m; sourceTree = "<group>"; };
+		F2FB24A11AE328C800F4F3ED /* PaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentViewController.h; sourceTree = "<group>"; };
+		F2FB24A21AE328C800F4F3ED /* PaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentViewController.m; sourceTree = "<group>"; };
 		F87363710C9210C32DE1462F /* Pods_VHSMarketPlace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VHSMarketPlace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -214,10 +233,15 @@
 			children = (
 				1055DEAD1AD39D8F00B23D3E /* tutorial */,
 				10DAF6D11ACDAD28000CC7B8 /* Design */,
+				F24DF8511AF02C69001BC3AF /* LocationSe.h */,
+				F24DF8521AF02C69001BC3AF /* LocationSe.m */,
 				10A149191AC8DC360038DEF8 /* Product.h */,
 				10A1491A1AC8DC360038DEF8 /* Product.m */,
 				10EBE1AF1AD2070D00CC496D /* Category.h */,
 				10EBE1B01AD2070D00CC496D /* Category.m */,
+				F2CA293D1AEDB49100555375 /* Payment.h */,
+				F2CA293E1AEDB49100555375 /* Payment.m */,
+				F261CE421AEF3F69003D8A34 /* share@2x.png */,
 				10BBADDC1AD063A400E8297D /* catalog@2x.png */,
 				10A1491C1AC8F0E00038DEF8 /* cart@2x.png */,
 				10A1491D1AC8F0E00038DEF8 /* home@2x.png */,
@@ -230,6 +254,7 @@
 				1055DEB21AD3A01A00B23D3E /* hote3@2x.jpeg */,
 				1055DEB31AD3A01A00B23D3E /* hote2@2x.jpeg */,
 				1055DEB41AD3A01A00B23D3E /* hote1@2x.jpeg */,
+				F247CF9B1AE6FD8A001C0286 /* close.png */,
 				10A149031AC8DA510038DEF8 /* Cells */,
 				10B52F331AD7877500D241E7 /* ApiConnection */,
 				10A148CE1AC8D8E20038DEF8 /* AppDelegate.h */,
@@ -245,12 +270,16 @@
 				10A149201AC8F7220038DEF8 /* CartViewController.h */,
 				10A149211AC8F7220038DEF8 /* CartViewController.m */,
 				10A148D71AC8D8E20038DEF8 /* Main.storyboard */,
+				F2CA29401AEDBFFD00555375 /* CashPaymentViewController.h */,
+				F2CA29411AEDBFFD00555375 /* CashPaymentViewController.m */,
 				10BBADDE1AD0672B00E8297D /* CatalogViewController.h */,
 				10BBADDF1AD0672B00E8297D /* CatalogViewController.m */,
 				10DAF7121ACDCA83000CC7B8 /* detailViewController.h */,
 				10DAF7131ACDCA83000CC7B8 /* detailViewController.m */,
 				10EBE1B41AD228DE00CC496D /* SearchViewController.h */,
 				10EBE1B51AD228DE00CC496D /* SearchViewController.m */,
+				F2FB24A11AE328C800F4F3ED /* PaymentViewController.h */,
+				F2FB24A21AE328C800F4F3ED /* PaymentViewController.m */,
 				10A148DA1AC8D8E20038DEF8 /* Images.xcassets */,
 				10A148DC1AC8D8E20038DEF8 /* LaunchScreen.xib */,
 				10A148D11AC8D8E20038DEF8 /* VHSMarketPlace.xcdatamodeld */,
@@ -315,6 +344,8 @@
 		10DAF6D11ACDAD28000CC7B8 /* Design */ = {
 			isa = PBXGroup;
 			children = (
+				F27F38861ADF61EB0060DFC1 /* XMLReader.h */,
+				F27F38871ADF61EB0060DFC1 /* XMLReader.m */,
 				10DAF6EE1ACDAE66000CC7B8 /* FUIButton.h */,
 				10DAF6EF1ACDAE66000CC7B8 /* FUIButton.m */,
 				10DAF6F01ACDAE66000CC7B8 /* Lato-Black.ttf */,
@@ -449,6 +480,7 @@
 				10A148D91AC8D8E20038DEF8 /* Main.storyboard in Resources */,
 				10A1490E1AC8DA570038DEF8 /* CheckoutHeaderView.xib in Resources */,
 				10A149101AC8DA570038DEF8 /* ProductCartCell.xib in Resources */,
+				F247CF9C1AE6FD8A001C0286 /* close.png in Resources */,
 				10A1491F1AC8F0E00038DEF8 /* home@2x.png in Resources */,
 				107E922E1AD38FC400328F6C /* location@2x.png in Resources */,
 				103D4BEB1AD39A38004F65E9 /* tsFactory@2x.png in Resources */,
@@ -457,6 +489,7 @@
 				10A148DE1AC8D8E20038DEF8 /* LaunchScreen.xib in Resources */,
 				10DAF7001ACDAE66000CC7B8 /* Lato-Black.ttf in Resources */,
 				1055DEB71AD3A01A00B23D3E /* hote2@2x.jpeg in Resources */,
+				F261CE431AEF3F69003D8A34 /* share@2x.png in Resources */,
 				10DAF7031ACDAE66000CC7B8 /* Lato-Regular.ttf in Resources */,
 				10DAF7021ACDAE66000CC7B8 /* Lato-Italic.ttf in Resources */,
 				10A148DB1AC8D8E20038DEF8 /* Images.xcassets in Resources */,
@@ -532,10 +565,15 @@
 				10A148CD1AC8D8E20038DEF8 /* main.m in Sources */,
 				10A148D61AC8D8E20038DEF8 /* ViewController.m in Sources */,
 				10EBE1B61AD228DE00CC496D /* SearchViewController.m in Sources */,
+				F2FB24A31AE328C800F4F3ED /* PaymentViewController.m in Sources */,
+				F27F38881ADF61EB0060DFC1 /* XMLReader.m in Sources */,
 				10DAF6FF1ACDAE66000CC7B8 /* FUIButton.m in Sources */,
 				10EBE1B11AD2070E00CC496D /* Category.m in Sources */,
 				10A148D31AC8D8E20038DEF8 /* VHSMarketPlace.xcdatamodeld in Sources */,
+				F2CA293F1AEDB49100555375 /* Payment.m in Sources */,
+				F24DF8531AF02C69001BC3AF /* LocationSe.m in Sources */,
 				10A1491B1AC8DC360038DEF8 /* Product.m in Sources */,
+				F2CA29421AEDBFFD00555375 /* CashPaymentViewController.m in Sources */,
 				10A149111AC8DA570038DEF8 /* ProductCell.m in Sources */,
 				10B52F3F1AD7887C00D241E7 /* RegisterViewController.m in Sources */,
 				10DAF7141ACDCA83000CC7B8 /* detailViewController.m in Sources */,
