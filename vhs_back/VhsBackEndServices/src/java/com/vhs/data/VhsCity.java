@@ -6,6 +6,7 @@
 package com.vhs.data;
 
 import java.io.Serializable;
+import java.util.Collection;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -14,8 +15,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 /**
  * Service provider offer associated city entity.
@@ -60,6 +64,11 @@ public class VhsCity implements Serializable
     @JoinColumn(name = "country_city", referencedColumnName = "id_country")
     @ManyToOne (fetch = FetchType.EAGER)
     private VhsCountry countryCity;
+    
+    
+    @OneToMany(mappedBy = "offerCity")
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private Collection<VhsSpecialOffer> vhsSpecialOffer;
 
     public VhsCity()
     {
@@ -100,6 +109,14 @@ public class VhsCity implements Serializable
         this.countryCity = countryCity;
     }
 
+    public Collection<VhsSpecialOffer> getVhsSpecialOffer() {
+        return vhsSpecialOffer;
+    }
+
+    public void setVhsSpecialOffer(Collection<VhsSpecialOffer> vhsSpecialOffer) {
+        this.vhsSpecialOffer = vhsSpecialOffer;
+    }
+    
     @Override
     public int hashCode()
     {

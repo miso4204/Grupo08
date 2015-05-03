@@ -5,11 +5,16 @@
  */
 package com.vhs.service;
 
+import com.vhs.data.VhsCity;
 import com.vhs.data.VhsSpecialOffer;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -76,7 +81,55 @@ public class VhsSpecialOfferFacadeREST extends AbstractFacade<VhsSpecialOffer> {
     public List<VhsSpecialOffer> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
         return super.findRange(new int[]{from, to});
     }
-
+    
+    /**
+     * 
+     * @param from initial range
+     * @param to final range
+     * @return VhsSpecialOffer List
+     */
+    @GET
+    @Path("price/{from}/{to}")
+    @Produces({"application/xml", "application/json"})
+    public List<VhsSpecialOffer> findByRangePrice(@PathParam("from") Double from, @PathParam("to") Double to)
+    {
+         Query q = em.createNamedQuery("VhsSpecialOffer.findByRangePrice");
+         q.setParameter("priceMin", from);
+         q.setParameter("priceMax", to);
+         return q.getResultList();
+        
+    }
+    
+    /**
+     * 
+     * @param date date about the trip plan
+     * @return VhsSpecialOffer List
+     * @throws java.text.ParseException
+     */
+    @GET
+    @Path("date/{date}")
+    @Produces({"application/xml", "application/json"})
+    public List<VhsSpecialOffer> findByRangeDate(@PathParam("date") String date) throws ParseException
+    {
+         Query q = em.createNamedQuery("VhsSpecialOffer.findByRangeDate");
+         Calendar cdate = Calendar.getInstance();
+         SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyyy");
+         cdate.setTime(sdf.parse(date));
+         q.setParameter("date", cdate.getTime());
+         return q.getResultList();
+        
+    }
+    
+    @GET
+    @Path("city/{city}")
+    @Produces({"application/xml", "application/json"})
+    public List<VhsSpecialOffer> findByCityName(@PathParam("city") String cityName)
+    {
+         Query q = em.createNamedQuery("VhsSpecialOffer.findByCity");
+         q.setParameter("cityName", cityName);
+         return q.getResultList();
+    }
+    
     @GET
     @Path("count")
     @Produces("text/plain")

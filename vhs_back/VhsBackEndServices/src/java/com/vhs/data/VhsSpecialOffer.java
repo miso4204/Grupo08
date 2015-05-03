@@ -39,10 +39,13 @@ import org.hibernate.annotations.LazyCollectionOption;
                 @NamedQuery(name = "VhsSpecialOffer.findByShortName", query = "SELECT v FROM VhsSpecialOffer v WHERE v.shortName = :shortName"),
                 @NamedQuery(name = "VhsSpecialOffer.findByDescription", query = "SELECT v FROM VhsSpecialOffer v WHERE v.description = :description"),
                 @NamedQuery(name = "VhsSpecialOffer.findByPrice", query = "SELECT v FROM VhsSpecialOffer v WHERE v.price = :price"),
+                @NamedQuery(name = "VhsSpecialOffer.findByRangePrice", query = "SELECT v FROM VhsSpecialOffer v WHERE v.price >= :priceMin and v.price <= :priceMax"),
                 @NamedQuery(name = "VhsSpecialOffer.findByMainImageUrl", query = "SELECT v FROM VhsSpecialOffer v WHERE v.mainImageUrl = :mainImageUrl"),
                 @NamedQuery(name = "VhsSpecialOffer.findByLatitude", query = "SELECT v FROM VhsSpecialOffer v WHERE v.latitude = :latitude"),
                 @NamedQuery(name = "VhsSpecialOffer.findByLongitude", query = "SELECT v FROM VhsSpecialOffer v WHERE v.longitude = :longitude"),
+                @NamedQuery(name = "VhsSpecialOffer.findByRangeDate", query = "SELECT v FROM VhsSpecialOffer v WHERE v.publishDate >= :date and v.endDate >= :date"),
                 @NamedQuery(name = "VhsSpecialOffer.findByPublishDate", query = "SELECT v FROM VhsSpecialOffer v WHERE v.publishDate = :publishDate"),
+                @NamedQuery(name = "VhsSpecialOffer.findByCity", query = "SELECT v FROM VhsSpecialOffer v JOIN v.offerCity c WHERE c.description = :cityName"),
                 @NamedQuery(name = "VhsSpecialOffer.findByEndDate", query = "SELECT v FROM VhsSpecialOffer v WHERE v.endDate = :endDate")
             }
         )
@@ -135,8 +138,8 @@ public class VhsSpecialOffer implements Serializable
     /**
      * Product city
      */
-    @JoinColumn(name = "city", referencedColumnName = "id_city")
-    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "offer_city", referencedColumnName = "id_city")
+    @ManyToOne(fetch = FetchType.EAGER) 
     private VhsCity offerCity;
     
     /**
@@ -309,7 +312,7 @@ public class VhsSpecialOffer implements Serializable
     {
         return offerCity;
     }
-
+    @XmlTransient
     public void setOfferCity(VhsCity offerCity)
     {
         this.offerCity = offerCity;
