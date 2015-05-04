@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<featureModel chosenLayoutAlgorithm="4">
+		<struct>
+			<and abstract="true" mandatory="true" name="VHSVariabilityModel">
+				<and mandatory="true" name="User">
+					<and mandatory="true" name="Session">
+						<feature mandatory="true" name="Login"/>
+						<feature mandatory="true" name="Logout"/>
+					</and>
+					<and mandatory="true" name="UpdateProfile">
+						<feature name="ChangePassword"/>
+						<feature name="ChangeProfile"/>
+					</and>
+					<feature mandatory="true" name="CreateAccount"/>
+				</and>
+				<feature mandatory="true" name="ShoopingCart"/>
+				<and mandatory="true" name="Pay">
+					<feature mandatory="true" name="CreditCard"/>
+					<feature mandatory="true" name="PSE"/>
+					<feature name="CashOnDelivery"/>
+				</and>
+				<and mandatory="true" name="Reports">
+					<and name="Rating">
+						<feature mandatory="true" name="Location"/>
+						<feature name="Package"/>
+					</and>
+					<and name="Sales">
+						<feature name="ReportByLocation"/>
+						<feature name="ReportByPeriod"/>
+					</and>
+				</and>
+				<or name="SpecialOffers">
+					<feature mandatory="true" name="CreatePromo"/>
+					<feature mandatory="true" name="UpdatePromo"/>
+				</or>
+				<alt name="SocialNetworks">
+					<feature mandatory="true" name="Facebook"/>
+					<feature mandatory="true" name="Twitter"/>
+				</alt>
+				<and name="CurrencyAdministration">
+					<feature mandatory="true" name="Dollar"/>
+					<feature name="Euro"/>
+					<feature name="Peso"/>
+				</and>
+				<and mandatory="true" name="Product">
+					<and mandatory="true" name="Search">
+						<feature name="ByLocation"/>
+						<feature mandatory="true" name="ByPrice"/>
+						<feature mandatory="true" name="ByDate"/>
+					</and>
+					<feature name="ExtendedProductDescription"/>
+					<feature name="VideoSupported"/>
+					<feature name="GallerySupported"/>
+					<feature name="MobileDisplay"/>
+					<feature name="GoogleMapsSupported"/>
+				</and>
+				<and name="QualityAttributes">
+					<feature mandatory="true" name="Configurability"/>
+					<feature name="Scalability"/>
+					<feature mandatory="true" name="Functionality"/>
+					<feature name="Performance"/>
+				</and>
+			</and>
+		</struct>
+		<constraints>
+			<rule>
+				<imp>
+					<var>VideoSupported</var>
+					<var>ExtendedProductDescription</var>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<var>GallerySupported</var>
+					<var>ExtendedProductDescription</var>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<var>MobileDisplay</var>
+					<var>ExtendedProductDescription</var>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<var>GoogleMapsSupported</var>
+					<var>ExtendedProductDescription</var>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<var>VideoSupported</var>
+					<not>
+						<var>GallerySupported</var>
+					</not>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<var>Rating</var>
+					<not>
+						<var>Sales</var>
+					</not>
+				</imp>
+			</rule>
+		</constraints>
+		<calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+		<comments/>
+		<featureOrder userDefined="false"/>
+	</featureModel>
