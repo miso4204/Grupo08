@@ -7,7 +7,6 @@ package com.vhs.builders;
 
 import com.vhs.builders.util.Utilities;
 import com.vhs.data.VhsSocialNetwork;
-import com.vhs.data.VhsSupportedCurrency;
 import com.vhs.data.VhsUser;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -26,7 +25,7 @@ public class VhsSocialNetworkBuilder {
      */
     public List<VhsSocialNetwork> prepare(EntityManager em) {
         VhsUser u = Utilities.getBaseUser(em);
-        if (u != null && u.getOptionalFeatureSocialNetworks()) {
+        if (u != null && u.getOptionalFeatureSocialNetworksFacebook()) {
             return prepareBasicAndOptional(em);
         } else {
             return prepareBasic(em);

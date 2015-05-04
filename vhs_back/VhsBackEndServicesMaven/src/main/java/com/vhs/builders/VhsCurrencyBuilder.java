@@ -25,7 +25,7 @@ public class VhsCurrencyBuilder implements BuilderContract{
      */
     public List<VhsSupportedCurrency> prepare(EntityManager em) {
         VhsUser u = Utilities.getBaseUser(em);
-        if (u != null && u.getOptionalFeatureCurrencyManagement()) {
+        if (u != null && u.getOptionalFeatureCurrencyManagementPeso()) {
             return prepareBasicAndOptional(em);
         } else {
             return prepareBasic(em);
