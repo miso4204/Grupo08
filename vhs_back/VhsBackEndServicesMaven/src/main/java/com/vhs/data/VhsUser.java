@@ -75,6 +75,12 @@ public class VhsUser implements Serializable
     @Column(name = "base_user")
     private Boolean baseUser;
     
+     /**
+     * Optional feature used to determinate if the service provider could create turistic packages with a extended description
+     */
+    @Column(name = "optional_feature_extended_product")
+    private Boolean optionalFeatureExtendedProductDescription;
+    
     /**
      * Optional feature used to determinate if the service provider could manage special offer in their turistic products
      */
@@ -356,6 +362,16 @@ public class VhsUser implements Serializable
 
     public void setBaseUser(Boolean baseUser) {
         this.baseUser = baseUser;
+    }
+
+    public Boolean getOptionalFeatureExtendedProductDescription()
+    {
+        return optionalFeatureExtendedProductDescription;
+    }
+
+    public void setOptionalFeatureExtendedProductDescription(Boolean optionalFeatureExtendedProductDescription)
+    {
+        this.optionalFeatureExtendedProductDescription = optionalFeatureExtendedProductDescription;
     }
     
     @Override
