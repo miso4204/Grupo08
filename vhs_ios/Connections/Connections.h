@@ -52,6 +52,10 @@
 -(void)searchPriceDidFinishSuccessfully:(NSDictionary*)responseObject; //  searchPriceViewController
 -(void)searchPriceFinishWithFailure:(NSDictionary*)responseObject; //  searchPriceViewController
 
+
+-(void)GetPromotionsDidFinishSuccessfully:(NSDictionary*)responseObject; //  PromotionsViewController
+-(void)GetPromotionsDidFinishWithFailure:(NSDictionary*)responseObject; //  PromotionsViewController
+
 @end
 
 
@@ -85,5 +89,6 @@
 
 -(void)searchPrice:(NSDictionary *)params;
 
+-(void)getPromotions;
 
 @end

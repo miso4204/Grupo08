@@ -174,12 +174,8 @@
 
 -(void)searchDateDidFinishSuccessfully:(NSDictionary*)responseObject{
 
-
 }
 -(void)searchDateFinishWithFailure:(NSDictionary*)responseObject{
 
-
 }
-
-
 @end
