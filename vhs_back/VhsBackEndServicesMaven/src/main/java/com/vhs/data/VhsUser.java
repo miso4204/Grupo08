@@ -75,17 +75,35 @@ public class VhsUser implements Serializable
     @Column(name = "base_user")
     private Boolean baseUser;
     
+     /**
+     * Optional feature used to determinate if the service provider could create turistic packages with a extended description
+     */
+    @Column(name = "optional_feature_extended_product")
+    private Boolean optionalFeatureExtendedProductDescription;
+    
     /**
      * Optional feature used to determinate if the service provider could manage special offer in their turistic products
      */
-    @Column(name = "optional_feature_special_offer")
-    private Boolean optionalFeatureSpecialOffer;
+    @Column(name = "optional_feature_special_offer_create_promo")
+    private Boolean optionalFeatureSpecialOfferCreatePromo;
+    
+     /**
+     * Optional feature used to determinate if the service provider could manage special offer in their turistic products
+     */
+    @Column(name = "optional_feature_special_offer_update_promo")
+    private Boolean optionalFeatureSpecialOfferUpdatePromo;
     
     /**
      * Optional feature used to determinate if the service provider could manage other currencies
      */
-    @Column(name = "optional_feature_currency_management")
-    private Boolean optionalFeatureCurrencyManagement;
+    @Column(name = "optional_feature_currency_management_euro")
+    private Boolean optionalFeatureCurrencyManagementEuro;
+    
+    /**
+     * Optional feature used to determinate if the service provider could manage other currencies
+     */
+    @Column(name = "optional_feature_currency_management_peso")
+    private Boolean optionalFeatureCurrencyManagementPeso;
     
     /**
      * Optional feature used to determinate if the productos associated to the service provider could be found in a search by location
@@ -102,9 +120,14 @@ public class VhsUser implements Serializable
     /**
      * Optional feature used to determinate if the productos associated to the service provider could be published in the facebook wall or could be twitted
      */
-    @Column(name = "optional_feature_social_networks")
-    private Boolean optionalFeatureSocialNetworks; 
+    @Column(name = "optional_feature_social_networks_facebook")
+    private Boolean optionalFeatureSocialNetworksFacebook; 
     
+    /**
+     * Optional feature used to determinate if the productos associated to the service provider could be published in the facebook wall or could be twitted
+     */
+    @Column(name = "optional_feature_social_networks_twitter")
+    private Boolean optionalFeatureSocialNetworksTwitter; 
     /**
      * Optional feature used to determinate if the service provider could geerated reports by rating
      */
@@ -114,8 +137,14 @@ public class VhsUser implements Serializable
     /**
      * Optional feature used to determinate if the service provider could geerated reports by sales
      */
-    @Column(name = "optional_feature_reports_by_sales")
-    private Boolean optionalFeatureReportsBySales; 
+    @Column(name = "optional_feature_reports_by_sales_location")
+    private Boolean optionalFeatureReportsBySalesLocation; 
+    
+    /**
+     * Optional feature used to determinate if the service provider could geerated reports by period
+     */
+    @Column(name = "optional_feature_reports_by_sales_period")
+    private Boolean optionalFeatureReportsBySalesPeriod; 
     
     /**
      * Optional feature used to determinate if the service provider products could be associated with a video
@@ -152,6 +181,20 @@ public class VhsUser implements Serializable
      */
     @Column(name = "optional_feature_performance")
     private Boolean optionalFeaturePerformance;
+    
+    
+    /**
+     * Optional feature used to determinate if the user can change his password
+     */
+    @Column(name = "optional_feature_user_update_profile_change_password")
+    private Boolean optionalFeatureUserUpdateProfileChangePassword;
+    
+    /**
+     * Optional feature used to determinate if the user can change his profile
+     */
+    @Column(name = "optional_feature_user_update_profile_change_profile")
+    private Boolean optionalFeatureUserUpdateProfileChangeProfile;
+    
     
     /**
      * Service provider turistic products
@@ -209,26 +252,6 @@ public class VhsUser implements Serializable
         this.fullName = fullName;
     }
 
-    public Boolean getOptionalFeatureSpecialOffer() 
-    {
-        return optionalFeatureSpecialOffer;
-    }
-
-    public void setOptionalFeatureSpecialOffer(Boolean optionalFeatureSpecialOffer) 
-    {
-        this.optionalFeatureSpecialOffer = optionalFeatureSpecialOffer;
-    }
-
-    public Boolean getOptionalFeatureCurrencyManagement() 
-    {
-        return optionalFeatureCurrencyManagement;
-    }
-
-    public void setOptionalFeatureCurrencyManagement(Boolean optionalFeatureCurrencyManagement) 
-    {
-        this.optionalFeatureCurrencyManagement = optionalFeatureCurrencyManagement;
-    }
-
     public Boolean getOptionalFeatureSearchByLocation() 
     {
         return optionalFeatureSearchByLocation;
@@ -249,16 +272,6 @@ public class VhsUser implements Serializable
         this.optionalFeatureCashPayOnDelivery = optionalFeatureCashPayOnDelivery;
     }
 
-    public Boolean getOptionalFeatureSocialNetworks() 
-    {
-        return optionalFeatureSocialNetworks;
-    }
-
-    public void setOptionalFeatureSocialNetworks(Boolean optionalFeatureSocialNetworks) 
-    {
-        this.optionalFeatureSocialNetworks = optionalFeatureSocialNetworks;
-    }
-
     public Boolean getOptionalFeatureReportsByRating() 
     {
         return optionalFeatureReportsByRating;
@@ -267,16 +280,6 @@ public class VhsUser implements Serializable
     public void setOptionalFeatureReportsByRating(Boolean optionalFeatureReportsByRating) 
     {
         this.optionalFeatureReportsByRating = optionalFeatureReportsByRating;
-    }
-
-    public Boolean getOptionalFeatureReportsBySales() 
-    {
-        return optionalFeatureReportsBySales;
-    }
-
-    public void setOptionalFeatureReportsBySales(Boolean optionalFeatureReportsBySales) 
-    {
-        this.optionalFeatureReportsBySales = optionalFeatureReportsBySales;
     }
 
     public Boolean getOptionalFeatureScalability() 
@@ -356,6 +359,116 @@ public class VhsUser implements Serializable
 
     public void setBaseUser(Boolean baseUser) {
         this.baseUser = baseUser;
+    }
+
+    public Boolean getOptionalFeatureExtendedProductDescription()
+    {
+        return optionalFeatureExtendedProductDescription;
+    }
+
+    public void setOptionalFeatureExtendedProductDescription(Boolean optionalFeatureExtendedProductDescription)
+    {
+        this.optionalFeatureExtendedProductDescription = optionalFeatureExtendedProductDescription;
+    }
+
+    public Boolean getOptionalFeatureSocialNetworksFacebook()
+    {
+        return optionalFeatureSocialNetworksFacebook;
+    }
+
+    public void setOptionalFeatureSocialNetworksFacebook(Boolean optionalFeatureSocialNetworksFacebook)
+    {
+        this.optionalFeatureSocialNetworksFacebook = optionalFeatureSocialNetworksFacebook;
+    }
+
+    public Boolean getOptionalFeatureSocialNetworksTwitter()
+    {
+        return optionalFeatureSocialNetworksTwitter;
+    }
+
+    public void setOptionalFeatureSocialNetworksTwitter(Boolean optionalFeatureSocialNetworksTwitter)
+    {
+        this.optionalFeatureSocialNetworksTwitter = optionalFeatureSocialNetworksTwitter;
+    }
+
+    public Boolean getOptionalFeatureSpecialOfferCreatePromo()
+    {
+        return optionalFeatureSpecialOfferCreatePromo;
+    }
+
+    public void setOptionalFeatureSpecialOfferCreatePromo(Boolean optionalFeatureSpecialOfferCreatePromo)
+    {
+        this.optionalFeatureSpecialOfferCreatePromo = optionalFeatureSpecialOfferCreatePromo;
+    }
+
+    public Boolean getOptionalFeatureSpecialOfferUpdatePromo()
+    {
+        return optionalFeatureSpecialOfferUpdatePromo;
+    }
+
+    public void setOptionalFeatureSpecialOfferUpdatePromo(Boolean optionalFeatureSpecialOfferUpdatePromo)
+    {
+        this.optionalFeatureSpecialOfferUpdatePromo = optionalFeatureSpecialOfferUpdatePromo;
+    }
+
+    public Boolean getOptionalFeatureCurrencyManagementEuro()
+    {
+        return optionalFeatureCurrencyManagementEuro;
+    }
+
+    public void setOptionalFeatureCurrencyManagementEuro(Boolean optionalFeatureCurrencyManagementEuro)
+    {
+        this.optionalFeatureCurrencyManagementEuro = optionalFeatureCurrencyManagementEuro;
+    }
+
+    public Boolean getOptionalFeatureCurrencyManagementPeso()
+    {
+        return optionalFeatureCurrencyManagementPeso;
+    }
+
+    public void setOptionalFeatureCurrencyManagementPeso(Boolean optionalFeatureCurrencyManagementPeso)
+    {
+        this.optionalFeatureCurrencyManagementPeso = optionalFeatureCurrencyManagementPeso;
+    }
+
+    public Boolean getOptionalFeatureReportsBySalesLocation()
+    {
+        return optionalFeatureReportsBySalesLocation;
+    }
+
+    public void setOptionalFeatureReportsBySalesLocation(Boolean optionalFeatureReportsBySalesLocation)
+    {
+        this.optionalFeatureReportsBySalesLocation = optionalFeatureReportsBySalesLocation;
+    }
+
+    public Boolean getOptionalFeatureReportsBySalesPeriod()
+    {
+        return optionalFeatureReportsBySalesPeriod;
+    }
+
+    public void setOptionalFeatureReportsBySalesPeriod(Boolean optionalFeatureReportsBySalesPeriod)
+    {
+        this.optionalFeatureReportsBySalesPeriod = optionalFeatureReportsBySalesPeriod;
+    }
+
+    public Boolean getOptionalFeatureUserUpdateProfileChangePassword()
+    {
+        return optionalFeatureUserUpdateProfileChangePassword;
+    }
+
+    public void setOptionalFeatureUserUpdateProfileChangePassword(Boolean optionalFeatureUserUpdateProfileChangePassword)
+    {
+        this.optionalFeatureUserUpdateProfileChangePassword = optionalFeatureUserUpdateProfileChangePassword;
+    }
+
+    public Boolean getOptionalFeatureUserUpdateProfileChangeProfile()
+    {
+        return optionalFeatureUserUpdateProfileChangeProfile;
+    }
+
+    public void setOptionalFeatureUserUpdateProfileChangeProfile(Boolean optionalFeatureUserUpdateProfileChangeProfile)
+    {
+        this.optionalFeatureUserUpdateProfileChangeProfile = optionalFeatureUserUpdateProfileChangeProfile;
     }
     
     @Override
