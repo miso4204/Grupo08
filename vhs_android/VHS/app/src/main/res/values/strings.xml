@@ -31,6 +31,10 @@
     <string name="property_photo_message">Upload a photo to really sell your property to potential guests. Click <b>Add photo</b> and choose a picture to <b>upload</b></string>
     <string name="property_add_photo">Add photo</string>
 
+    <!-- PROFILE -->
+    <string name="profile_save">Save</string>
+    <string name="profile_update_error">Unable to save the changes</string>
+
     <string-array name="currency_array">
         <item>US Dollar</item>
         <item>Colombian Peso</item>

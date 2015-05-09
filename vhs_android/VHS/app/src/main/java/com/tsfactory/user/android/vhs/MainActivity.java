@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.tsfactory.user.android.vhs.fragments.AddPropertyFragment;
 import com.tsfactory.user.android.vhs.fragments.CameraFragment;
 import com.tsfactory.user.android.vhs.fragments.ItemFragment;
+import com.tsfactory.user.android.vhs.fragments.ProfileFragment;
 import com.tsfactory.user.android.vhs.util.AlertDialogManager;
 import com.tsfactory.user.android.vhs.util.SessionManager;
 
@@ -29,7 +30,8 @@ public class MainActivity extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks,
                    ItemFragment.OnItemFragmentInteractionListener,
                    AddPropertyFragment.OnAddPropertyFragmentInteractionListener,
-                   CameraFragment.OnCameraFragmentInteractionListener{
+                   CameraFragment.OnCameraFragmentInteractionListener,
+                   ProfileFragment.OnProfileFragmentInteractionListener {
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -110,7 +112,7 @@ public class MainActivity extends ActionBarActivity
                 break;
 
             case MenuItems.MY_PROFILE:
-                fragmentTransaction.replace(R.id.container, PlaceholderFragment.newInstance(position + 1));
+                fragmentTransaction.replace(R.id.container, ProfileFragment.newInstance());
                 break;
 
             case MenuItems.LOG_OUT:
@@ -229,4 +231,8 @@ public class MainActivity extends ActionBarActivity
         Log.e("Main" , "Uri: " + uri);
     }
 
+    @Override
+    public void onProfileFragmentInteraction(Uri uri) {
+        Log.e("Main" , "Uri: " + uri);
+    }
 }
