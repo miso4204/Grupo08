@@ -5,10 +5,19 @@
  */
 package com.vhs.service;
 
+import com.vhs.annotations.VHSFeature;
+import com.vhs.builders.BuilderContract;
 import com.vhs.builders.VhsPaymentMethodBuilder;
+import com.vhs.builders.VhsSocialNetworkBuilder;
 import com.vhs.data.VhsPaymentMethod;
+import com.vhs.data.VhsSocialNetwork;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.ejb.Stateless;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.ws.rs.Consumes;
@@ -25,69 +34,109 @@ import javax.ws.rs.core.Response;
 
 /**
  *
- * @author andresvargas
+ * @author Andres Vargas (ja.vargas147@uniandes.edu.co)
  */
 @Stateless
 @Path("vhspaymentmethod")
-public class VhsPaymentMethodFacadeREST extends AbstractFacade<VhsPaymentMethod> {
+public class VhsPaymentMethodFacadeREST extends AbstractFacade<VhsPaymentMethod> 
+{
+    
+    private String getConcreteBuilder()
+    {
+        try
+        {
+            String className = this.getClass().getSimpleName();
+            Context env = (Context)new InitialContext().lookup("java:comp/env");
+            return (String)env.lookup("concreteBuilder" + className);
+            
+            
+        } 
+        catch (NamingException ex)
+        {
+            Logger.getLogger(VhsPaymentMethodFacadeREST.class.getName()).log(Level.SEVERE, "Error inicializando el constructor concreto", ex);
+            return "com.vhs.builders.VhsPaymentMethodBuilder";
+        }
+    }
+    
     @PersistenceContext(unitName = "VhsBackEndServicesPU")
     private EntityManager em;
 
-    public VhsPaymentMethodFacadeREST() {
+    public VhsPaymentMethodFacadeREST()
+    {
         super(VhsPaymentMethod.class);
     }
 
     @POST
     @Override
     @Consumes({"application/xml", "application/json"})
-    public void create(VhsPaymentMethod entity) {
+    public void create(VhsPaymentMethod entity) 
+    {
         super.create(entity);
     }
 
     @PUT
     @Path("{id}")
     @Consumes({"application/xml", "application/json"})
-    public void edit(@PathParam("id") Long id, VhsPaymentMethod entity) {
+    public void edit(@PathParam("id") Long id, VhsPaymentMethod entity) 
+    {
         super.edit(entity);
     }
 
     @DELETE
     @Path("{id}")
-    public void remove(@PathParam("id") Long id) {
+    public void remove(@PathParam("id") Long id) 
+    {
         super.remove(super.find(id));
     }
 
     @GET
     @Path("{id}")
     @Produces({"application/xml", "application/json"})
-    public VhsPaymentMethod find(@PathParam("id") Long id) {
+    public VhsPaymentMethod find(@PathParam("id") Long id) 
+    {
         return super.find(id);
     }
 
     @GET
     @Override
     @Produces({"application/xml", "application/json"})
-    public List<VhsPaymentMethod> findAll() {
-        VhsPaymentMethodBuilder builder = new VhsPaymentMethodBuilder();
-        return builder.prepare(em);
+    @VHSFeature(featurePresent = false, name = "Pay", type = VHSFeature.Type.OPTIONAL)
+    public List<VhsPaymentMethod> findAll() 
+    {
+        //BuilderContract builder = new VhsPaymentMethodBuilder();
+        try
+        {
+            BuilderContract builder = (BuilderContract)Class.forName(getConcreteBuilder()).newInstance();
+            return (List<VhsPaymentMethod>)builder.prepare(em);
+        }
+        catch (ClassNotFoundException | InstantiationException | IllegalAccessException e)
+        {
+            Logger.getLogger(VhsPaymentMethodFacadeREST.class.getName()).log(Level.SEVERE, "Error inicializando el constructor concreto", e);
+            BuilderContract builder = new VhsPaymentMethodBuilder();
+            return (List<VhsPaymentMethod>)builder.prepare(em);
+        }
+        
     }
 
     @GET
     @Path("{from}/{to}")
     @Produces({"application/xml", "application/json"})
-    public List<VhsPaymentMethod> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
+    public List<VhsPaymentMethod> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) 
+    {
         return super.findRange(new int[]{from, to});
     }
 
     @GET
     @Path("count")
     @Produces("text/plain")
-    public String countREST() {
+    public String countREST() 
+    {
         return String.valueOf(super.count());
     }
 
     @Override
-    protected EntityManager getEntityManager() {
+    protected EntityManager getEntityManager() 
+    {
         return em;
     }
     

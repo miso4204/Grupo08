@@ -32,7 +32,9 @@ import javax.xml.bind.annotation.XmlTransient;
                     @NamedQuery(name = "VhsUser.findByMail", query = "SELECT v FROM VhsUser v WHERE v.mail = :mail"),
                     @NamedQuery(name = "VhsUser.findByLogin", query = "SELECT v FROM VhsUser v WHERE v.mail = :mail and v.password = :password"),
                     @NamedQuery(name = "VhsUser.findByPassword", query = "SELECT v FROM VhsUser v WHERE v.password = :password"),
-                    @NamedQuery(name = "VhsUser.findByFullName", query = "SELECT v FROM VhsUser v WHERE v.fullName = :fullName")
+                    @NamedQuery(name = "VhsUser.findByFullName", query = "SELECT v FROM VhsUser v WHERE v.fullName = :fullName"),
+                    @NamedQuery(name = "VhsUser.findActiveUser", query = "SELECT v FROM VhsUser v WHERE v.baseUser = true"),
+                    @NamedQuery(name = "VhsUser.findLastUsers", query = "SELECT v FROM VhsUser v order by v.userId DESC")
                 }
         )
 public class VhsUser implements Serializable 

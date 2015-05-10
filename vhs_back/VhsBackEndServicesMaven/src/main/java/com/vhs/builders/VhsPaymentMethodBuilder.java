@@ -7,7 +7,6 @@ package com.vhs.builders;
 
 import com.vhs.builders.util.Utilities;
 import com.vhs.data.VhsPaymentMethod;
-import com.vhs.data.VhsSupportedCurrency;
 import com.vhs.data.VhsUser;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -15,43 +14,45 @@ import javax.persistence.Query;
 
 /**
  *
- * @author andresvargas
+ * @author Andres Vargas (ja.vargas147@uniandes.edu.co)
  */
-public class VhsPaymentMethodBuilder {
+public class VhsPaymentMethodBuilder implements BuilderContract
+{
     
     /**
      *
-     * @param em
-     * @return
+     * @param em entity manager
+     * @return current builders
      */
-    public List<VhsPaymentMethod> prepare(EntityManager em) {
+    @Override
+    public List<VhsPaymentMethod> prepare(EntityManager em) 
+    {
         VhsUser u = Utilities.getBaseUser(em);
-        if (u != null && u.getOptionalFeatureCashPayOnDelivery()) {
-            return prepareBasicAndOptional(em);
-        } else {
-            return prepareBasic(em);
+        List<VhsPaymentMethod> supportedPayments = prepareBasic(em);
+        
+        if (u == null)
+        {
+            return supportedPayments;
         }
-
+        
+        for (VhsPaymentMethod currentPayment : supportedPayments)
+        {
+            if (currentPayment.getName().toLowerCase().contains("cash") && !u.getOptionalFeatureCashPayOnDelivery())
+            {
+                supportedPayments.remove(currentPayment);
+            }
+        }
+        return supportedPayments;
     }
     
     /**
      *
-     * @param em
-     * @return
+     * @param em entity manager
+     * @return filtered elements
      */
-    private List<VhsPaymentMethod> prepareBasic(EntityManager em) {
-        Query q = em.createNamedQuery("VhsPaymentMethod.findAllBasic");
-        return (List<VhsPaymentMethod>) q.getResultList();
-    }
-
-    /**
-     *
-     * @param em
-     * @return
-     */
-    private List<VhsPaymentMethod> prepareBasicAndOptional(EntityManager em) {
+    private List<VhsPaymentMethod> prepareBasic(EntityManager em) 
+    {
         Query q = em.createNamedQuery("VhsPaymentMethod.findAll");
         return (List<VhsPaymentMethod>) q.getResultList();
     }
-    
 }

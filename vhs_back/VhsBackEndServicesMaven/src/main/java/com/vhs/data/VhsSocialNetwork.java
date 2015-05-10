@@ -26,7 +26,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQueries(
         {
             @NamedQuery(name="VhsSocialNetwork.findAll",query=" select v from VhsSocialNetwork v"),
-            @NamedQuery(name="VhsSocialNetwork.findAllBasic",query=" select v from VhsSocialNetwork v WHERE v.optional = false"),
         }
 )
 public class VhsSocialNetwork implements Serializable

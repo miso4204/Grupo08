@@ -9,30 +9,15 @@ import java.util.List;
 import javax.persistence.EntityManager;
 
 /**
- *
- * @author andresvargas
+ * Builder contrar pattern
+ * @author Andres Vargas (ja.vargas147@uniandes.edu.co)
  */
-public interface BuilderContract {
-    
+public interface BuilderContract 
+{
     /**
      *
-     * @param em
-     * @return
+     * @param em entity manager
+     * @return list of objects filtered according the product features
      */
-    List prepare(EntityManager em);
-
-    /**
-     *
-     * @param em
-     * @return
-     */
-    List prepareBasic(EntityManager em);
-
-    /**
-     *
-     * @param em
-     * @return
-     */
-    List prepareBasicAndOptional(EntityManager em);
-    
+    public List<?> prepare(EntityManager em);
 }

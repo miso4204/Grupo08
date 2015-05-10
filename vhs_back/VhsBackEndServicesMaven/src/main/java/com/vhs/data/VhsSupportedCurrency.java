@@ -28,8 +28,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQueries
         (
             {
-                @NamedQuery(name = "VhsSupportedCurrency.findAll", query = "SELECT v FROM VhsSupportedCurrency v"),
-                @NamedQuery(name = "VhsSupportedCurrency.findAllBasic", query = "SELECT v FROM VhsSupportedCurrency v WHERE v.optional = false")
+                @NamedQuery(name = "VhsSupportedCurrency.findAll", query = "SELECT v FROM VhsSupportedCurrency v")
             }
         )
 public class VhsSupportedCurrency implements Serializable

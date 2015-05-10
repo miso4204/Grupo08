@@ -5,10 +5,17 @@
  */
 package com.vhs.service;
 
+import com.vhs.annotations.VHSFeature;
+import com.vhs.builders.BuilderContract;
 import com.vhs.builders.VhsCurrencyBuilder;
 import com.vhs.data.VhsSupportedCurrency;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.ejb.Stateless;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.ws.rs.Consumes;
@@ -24,70 +31,109 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
 /**
- *
- * @author andresvargas
+ * Currency REST Services back end support
+ * 
+ * @author Andres Vargas (ja.vargas147@uniandes.edu.co)
+ * @author Alex Vicente ChacOn JimEnez (av.chacon10@uniandes.edu.co)
  */
 @Stateless
 @Path("vhssupportedcurrency")
-public class VhsSupportedCurrencyFacadeREST extends AbstractFacade<VhsSupportedCurrency> {
+public class VhsSupportedCurrencyFacadeREST extends AbstractFacade<VhsSupportedCurrency> 
+{
+    private String getConcreteBuilder()
+    {
+        try
+        {
+            String className = this.getClass().getSimpleName();
+            Context env = (Context)new InitialContext().lookup("java:comp/env");
+            return (String)env.lookup("concreteBuilder" + className);
+        } 
+        catch (NamingException ex)
+        {
+            Logger.getLogger(VhsPaymentMethodFacadeREST.class.getName()).log(Level.SEVERE, "Error inicializando el constructor concreto", ex);
+            return "com.vhs.builders.VhsPaymentMethodBuilder";
+        }
+    }
+    
     @PersistenceContext(unitName = "VhsBackEndServicesPU")
+    
     private EntityManager em;
 
-    public VhsSupportedCurrencyFacadeREST() {
+    public VhsSupportedCurrencyFacadeREST() 
+    {
         super(VhsSupportedCurrency.class);
     }
 
     @POST
     @Override
     @Consumes({"application/xml", "application/json"})
-    public void create(VhsSupportedCurrency entity) {
+    public void create(VhsSupportedCurrency entity)
+    {
         super.create(entity);
     }
 
     @PUT
     @Path("{id}")
     @Consumes({"application/xml", "application/json"})
-    public void edit(@PathParam("id") Long id, VhsSupportedCurrency entity) {
+    public void edit(@PathParam("id") Long id, VhsSupportedCurrency entity) 
+    {
         super.edit(entity);
     }
 
     @DELETE
     @Path("{id}")
-    public void remove(@PathParam("id") Long id) {
+    public void remove(@PathParam("id") Long id) 
+    {
         super.remove(super.find(id));
     }
 
     @GET
     @Path("{id}")
     @Produces({"application/xml", "application/json"})
-    public VhsSupportedCurrency find(@PathParam("id") Long id) {
+    public VhsSupportedCurrency find(@PathParam("id") Long id) 
+    {
         return super.find(id);
     }
 
     @GET
     @Override
     @Produces({"application/xml", "application/json"})
-    public List<VhsSupportedCurrency> findAll() {
-        VhsCurrencyBuilder builder = new VhsCurrencyBuilder();
-        return builder.prepare(em);
+    @VHSFeature(featurePresent = false, name = "CurrencyAdministration", type = VHSFeature.Type.OPTIONAL)
+    public List<VhsSupportedCurrency> findAll() 
+    {
+        //BuilderContract builder = new VhsCurrencyBuilder();
+        try
+        {
+            BuilderContract builder = (BuilderContract)Class.forName(getConcreteBuilder()).newInstance();
+            return (List<VhsSupportedCurrency>) builder.prepare(em);
+        }
+        catch (ClassNotFoundException | InstantiationException | IllegalAccessException e)
+        {
+            Logger.getLogger(VhsPaymentMethodFacadeREST.class.getName()).log(Level.SEVERE, "Error inicializando el constructor concreto", e);
+            BuilderContract builder = new VhsCurrencyBuilder();
+            return (List<VhsSupportedCurrency>) builder.prepare(em);
+        }
     }
 
     @GET
     @Path("{from}/{to}")
     @Produces({"application/xml", "application/json"})
-    public List<VhsSupportedCurrency> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
+    public List<VhsSupportedCurrency> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) 
+    {
         return super.findRange(new int[]{from, to});
     }
 
     @GET
     @Path("count")
     @Produces("text/plain")
-    public String countREST() {
+    public String countREST() 
+    {
         return String.valueOf(super.count());
     }
 
     @Override
-    protected EntityManager getEntityManager() {
+    protected EntityManager getEntityManager() 
+    {
         return em;
     }
     

@@ -14,43 +14,49 @@ import javax.persistence.Query;
 
 /**
  *
- * @author andresvargas
+ * @author Andres Vargas (ja.vargas147@uniandes.edu.co)
  */
-public class VhsCurrencyBuilder implements BuilderContract{
-
+public class VhsCurrencyBuilder implements BuilderContract
+{
+    
     /**
      *
-     * @param em
-     * @return
+     * @param em entity manager
+     * @return supported currencies according with the client
      */
-    public List<VhsSupportedCurrency> prepare(EntityManager em) {
+    @Override
+    public List<VhsSupportedCurrency> prepare(EntityManager em) 
+    {
         VhsUser u = Utilities.getBaseUser(em);
-        if (u != null && u.getOptionalFeatureCurrencyManagementPeso()) {
-            return prepareBasicAndOptional(em);
-        } else {
-            return prepareBasic(em);
+        List<VhsSupportedCurrency> supportedCurrencies = prepareBasic(em);
+        
+        if (u == null)
+        {
+            return supportedCurrencies;
         }
-
+        
+        for (VhsSupportedCurrency currentCurrency : supportedCurrencies)
+        {
+            if (currentCurrency.getName().toLowerCase().contains("peso") && !u.getOptionalFeatureCurrencyManagementPeso())
+            {
+                supportedCurrencies.remove(currentCurrency);
+            }
+            if (currentCurrency.getName().toLowerCase().contains("euro") && !u.getOptionalFeatureCurrencyManagementEuro())
+            {
+                supportedCurrencies.remove(currentCurrency);
+            }
+        }
+        return supportedCurrencies;
     }
-
+    
     /**
      *
-     * @param em
-     * @return
+     * @param em entity manager
+     * @return all mandatory currencies
      */
-    public List<VhsSupportedCurrency> prepareBasic(EntityManager em) {
-        Query q = em.createNamedQuery("VhsSupportedCurrency.findAllBasic");
-        return (List<VhsSupportedCurrency>) q.getResultList();
-    }
-
-    /**
-     *
-     * @param em
-     * @return
-     */
-    public  List<VhsSupportedCurrency> prepareBasicAndOptional(EntityManager em) {
+    private List<VhsSupportedCurrency> prepareBasic(EntityManager em) 
+    {
         Query q = em.createNamedQuery("VhsSupportedCurrency.findAll");
         return (List<VhsSupportedCurrency>) q.getResultList();
     }
-
 }

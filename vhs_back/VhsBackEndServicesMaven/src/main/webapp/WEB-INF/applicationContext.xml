@@ -30,5 +30,5 @@
     <bean class="com.vhs.aspects.TestAspect" factory-method="aspectOf">
         <property name="message" value="Hello from test service TSFactory"/>
     </bean>
-
+    
 </beans>

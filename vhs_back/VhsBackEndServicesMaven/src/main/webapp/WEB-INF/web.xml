@@ -16,4 +16,23 @@
             org.springframework.web.context.ContextLoaderListener
         </listener-class>
     </listener>
+    
+    <env-entry> 
+        <env-entry-name>concreteBuilderVhsPaymentMethodFacadeREST</env-entry-name>
+        <env-entry-type>java.lang.String</env-entry-type>
+        <env-entry-value>com.vhs.builders.VhsPaymentMethodBuilder</env-entry-value> 
+    </env-entry>
+    
+    <env-entry> 
+        <env-entry-name>concreteBuilderVhsSocialNetworkFacadeREST</env-entry-name>
+        <env-entry-type>java.lang.String</env-entry-type>
+        <env-entry-value>com.vhs.builders.VhsSocialNetworkBuilder</env-entry-value> 
+    </env-entry>
+    
+    <env-entry> 
+        <env-entry-name>concreteBuilderVhsSupportedCurrencyFacadeREST</env-entry-name>
+        <env-entry-type>java.lang.String</env-entry-type>
+        <env-entry-value>com.vhs.builders.VhsCurrencyBuilder</env-entry-value> 
+    </env-entry>
+    
 </web-app>

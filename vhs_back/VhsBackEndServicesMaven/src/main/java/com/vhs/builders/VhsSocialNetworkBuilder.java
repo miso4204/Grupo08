@@ -14,45 +14,49 @@ import javax.persistence.Query;
 
 /**
  *
- * @author andresvargas
+ * @author Andres Vargas (ja.vargas147@uniandes.edu.co)
  */
-public class VhsSocialNetworkBuilder {
+public class VhsSocialNetworkBuilder implements BuilderContract
+{
     
     /**
      *
-     * @param em
-     * @return
+     * @param em entity manager
+     * @return current builders
      */
-    public List<VhsSocialNetwork> prepare(EntityManager em) {
+    @Override
+    public List<VhsSocialNetwork> prepare(EntityManager em) 
+    {
         VhsUser u = Utilities.getBaseUser(em);
-        if (u != null && u.getOptionalFeatureSocialNetworksFacebook()) {
-            return prepareBasicAndOptional(em);
-        } else {
-            return prepareBasic(em);
+        List<VhsSocialNetwork> supportedNetworks = prepareBasic(em);
+        
+        if (u == null)
+        {
+            return supportedNetworks;
         }
-
+                
+        for (VhsSocialNetwork currentNetwork : supportedNetworks)
+        {
+            if (currentNetwork.getName().toLowerCase().contains("facebook") && !u.getOptionalFeatureSocialNetworksFacebook())
+            {
+                supportedNetworks.remove(currentNetwork);
+            }
+            if (currentNetwork.getName().toLowerCase().contains("twitter") && !u.getOptionalFeatureSocialNetworksTwitter())
+            {
+                supportedNetworks.remove(currentNetwork);
+            }
+        }
+        return supportedNetworks;
     }
     
     /**
      *
-     * @param em
-     * @return
+     * @param em entity manager
+     * @return filtered elements
      */
-    private List<VhsSocialNetwork> prepareBasic(EntityManager em) {
-        Query q = em.createNamedQuery("VhsSocialNetwork.findAllBasic");
-        return (List<VhsSocialNetwork>) q.getResultList();
-    }
-    
-        /**
-     *
-     * @param em
-     * @return
-     */
-    public  List<VhsSocialNetwork> prepareBasicAndOptional(EntityManager em) {
+    private List<VhsSocialNetwork> prepareBasic(EntityManager em) 
+    {
         Query q = em.createNamedQuery("VhsSocialNetwork.findAll");
         return (List<VhsSocialNetwork>) q.getResultList();
     }
-
-
-    
 }
