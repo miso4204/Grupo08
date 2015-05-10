@@ -104,6 +104,55 @@ def esta_autenticado(request):
 	return False
 
 def allUsers(request):
+	# if esta_autenticado(request):
+
+	#Realizar el llamado al método REST para obtener la información
+
+	# try:
+	# 	url = 'http://jbossasvhsbackendservices-vhstourism.rhcloud.com/VhsBackEndServices/webresources'
+	# 	method = 'vhsspecialoffer'
+	# 	username = request.session['mail_usuario'] #"andresvargasr@gmail.com"
+
+	# 	response = requests.get('{0}/{1}/{2}'.format(url, method, username))
+	# except Exception, e:
+	# 	raise e
+
+	# Manual
+
+	try:
+		listado_usuarios = [
+			{
+				'name': 'Ernesto Nobmann', 
+				'email': 'ef.nobmann10@uniandes.edu.co',
+				'features': [
+					'f1': True,
+					'f2': False,
+					'f3': True
+				]
+			},
+			{
+				'name': 'Paquete Santa Marta', 
+				'description': 'Nota: El paquete NO incluye tiquetes aereos. Incluye alojamiento en hotel 5 estrellas para 5 personas 3 noches y 4 dias.',
+				'price': 120000,
+				'image': 'http://www.ikea.com/us/en/images/products/karit-bedspread-and-cushion-covers-turquoise__0143940_PE303324_S4.JPG'
+			},
+			{
+				'name': 'Paquete Amazonas', 
+				'description': 'El paquete incluye viaje a isla de los micos, avistamiento de delfines y alojamiento por 10 dias para 2 personas.',
+				'price': 120000,
+				'image': 'http://www.ikea.com/us/en/images/products/nockeby-sofa-brown__0250428_PE388702_S4.JPG'
+			},
+			{
+				'name': 'Paquete San Andres', 
+				'description': 'El paquete incluye viaje a isla de los micos, avistamiento de delfines y alojamiento por 10 dias para 2 personas.',
+				'price': 120000,
+				'image': 'http://www.ikea.com/us/en/media/categories/bedroom__bedroom_lighting_160_PE364867.jpg'
+			}
+		]
+
+	except Exception, e:
+		print 'Error generando el listado de productos'
+		raise e
 	return render_to_response('account/allUsers.html')
 		
 	
