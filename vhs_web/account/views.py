@@ -1,3 +1,4 @@
+# -*- encoding: utf-8 -*-
 from django.shortcuts import render_to_response
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
@@ -73,23 +74,32 @@ def register(request):
 
 		if form.is_valid():
 			
+			# Se lee lo escrito por el usaurio
+
 			email = form.cleaned_data['email']
 			password = form.cleaned_data['password']
 			full_name = form.cleaned_data['name']
-
 			archivo = request.FILES['file']
 
-			archivo = [line.strip() for line in archivo]
+			# Se procede a generar variable 'feature' con las caracteristicas del archivo separadas por coma
 
-			url = 'http://jbossasvhsbackendservices-vhstourism.rhcloud.com/VhsBackEndServices/webresources/vhsuser/'
-			
+			features = ''
+			for line in archivo:
+				features = features + line.strip() + ','
+
+			# Se crea el diccionario a enviar
+
 			data = { 
 				'mail': email,
 				'password': password,
-				'fullName': full_name
-				# 'archivo': archivo
+				'fullName': full_name + '|' + features
 			}
+
+			# Se realiza conexión con el servicio
+
+			url = 'http://192.168.0.199:8080/VhsBackEndServices/webresources/vhsuser/'
 			headers = {'Content-Type': 'application/json'}
+			print json.dumps(data)
 			response = requests.post(url, data=json.dumps(data), headers=headers)
 
 			return HttpResponseRedirect('/account/login/')
@@ -124,11 +134,11 @@ def allUsers(request):
 			{
 				'name': 'Ernesto Nobmann', 
 				'email': 'ef.nobmann10@uniandes.edu.co',
-				'features': [
+				'features': {
 					'f1': True,
 					'f2': False,
 					'f3': True
-				]
+				}
 			},
 			{
 				'name': 'Paquete Santa Marta', 
