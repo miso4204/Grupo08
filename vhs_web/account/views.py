@@ -102,5 +102,8 @@ def esta_autenticado(request):
 		id_usuario = request.session['id_usuario']
 		return True
 	return False
+
+def allUsers(request):
+	return render_to_response('account/allUsers.html')
 		
 	
