@@ -47,6 +47,7 @@ import org.hibernate.annotations.LazyCollectionOption;
                 @NamedQuery(name = "VhsSpecialOffer.findByRangeDate", query = "SELECT v FROM VhsSpecialOffer v WHERE v.publishDate >= :date and v.endDate >= :date"),
                 @NamedQuery(name = "VhsSpecialOffer.findByPublishDate", query = "SELECT v FROM VhsSpecialOffer v WHERE v.publishDate = :publishDate"),
                 @NamedQuery(name = "VhsSpecialOffer.findByCity", query = "SELECT v FROM VhsSpecialOffer v JOIN v.offerCity c WHERE c.description = :cityName"),
+                @NamedQuery(name = "VhsSpecialOffer.findByUser", query = "SELECT v FROM VhsSpecialOffer v JOIN v.serviceProviderUser u WHERE u.userId = :userId"),
                 @NamedQuery(name = "VhsSpecialOffer.findByEndDate", query = "SELECT v FROM VhsSpecialOffer v WHERE v.endDate = :endDate")
             }
         )
