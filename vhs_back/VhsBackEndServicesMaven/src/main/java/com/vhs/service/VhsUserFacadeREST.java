@@ -26,7 +26,7 @@ import javax.ws.rs.core.Response.ResponseBuilder;
 
 /**
  *
- * @author andresvargas
+ * @author Andres Vargas (ja.vargas147@uniandes.edu.co)
  */
 @Stateless
 @Path("vhsuser")
