@@ -49,9 +49,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tableviewAdditionalVaues.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+
+    self.viewDescription.hidden =NO;
+    self.viewOther.hidden=YES;
     [self.btnAddtoCart setStyle:BButtonStyleBootstrapV3];
     [self.btnAddtoCart setType:BButtonTypeWarning];
     
+    [self.btnVideo setStyle:BButtonStyleBootstrapV3];
+    [self.btnVideo setType:BButtonTypeWarning];
+    
+    [self.btnClose setStyle:BButtonStyleBootstrapV3];
+    [self.btnClose setType:BButtonTypeDanger];
+    
+    
+    self.btnClose.hidden = YES;
+    self.webView.hidden = YES;
+
     _slideshow.delegate = self;
     [_slideshow setDelay:1]; // Delay between transitions
     [_slideshow setTransitionDuration:.5]; // Transition duration
@@ -202,7 +216,7 @@
         
     }
 
-        [_googleMapView animateWithCameraUpdate:[GMSCameraUpdate fitBounds:bounds withPadding:10.0f]];
+        [_googleMapView animateWithCameraUpdate:[GMSCameraUpdate fitBounds:bounds withPadding:100.0f]];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -219,7 +233,7 @@
 }
 */
 -(void)viewDidAppear:(BOOL)animated{
-    [self loadMap];
+   // [self loadMap];
 
 
 
@@ -479,4 +493,140 @@
         }
    }
 }
+- (IBAction)ViewVideo:(id)sender {
+    self.btnClose.hidden = NO;
+    self.webView.hidden = NO;
+
+    
+
+
+    [self.webView setAllowsInlineMediaPlayback:YES];
+    [self.webView setMediaPlaybackRequiresUserAction:NO];
+    
+    [self.view addSubview:self.webView];
+    NSString * video = @"8kUU-DWOqmI";
+    NSString* embedHTML = [NSString stringWithFormat:@"\
+                           <html>\
+                           <body style='margin:0px;padding:0px;'>\
+                           <script type='text/javascript' src='http://www.youtube.com/iframe_api'></script>\
+                           <script type='text/javascript'>\
+                           function onYouTubeIframeAPIReady()\
+                           {\
+                           ytplayer=new YT.Player('playerId',{events:{onReady:onPlayerReady}})\
+                           }\
+                           function onPlayerReady(a)\
+                           { \
+                           a.target.playVideo(); \
+                           }\
+                           </script>\
+                           <iframe id='playerId' type='text/html' width='%d' height='%d' src='http://www.youtube.com/embed/%@?enablejsapi=1&rel=0&playsinline=1&autoplay=1' frameborder='0'>\
+                           </body>\
+                           </html>", 300, 200, video];
+    [self.webView loadHTMLString:embedHTML baseURL:[[NSBundle mainBundle] resourceURL]];
+}
+- (IBAction)closeVideo:(id)sender {
+    self.btnClose.hidden = YES;
+    self.webView.hidden = YES;
+}
+
+- (IBAction)selectSection:(id)sender {
+    UISegmentedControl *segmentedControl = (UISegmentedControl *) sender;
+    NSInteger selectedSegment = segmentedControl.selectedSegmentIndex;
+
+    if (selectedSegment == 0) {
+    // Description view
+        self.viewDescription.hidden =NO;
+        self.viewOther.hidden=YES;
+        
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationDuration:0.75];
+        [UIView setAnimationDelegate:self];
+        [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:self.viewDescription cache:YES];
+        [UIView commitAnimations];
+        
+    }else{
+    //More services View
+        self.viewDescription.hidden =YES;
+        self.viewOther.hidden=NO;
+        
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationDuration:0.75];
+        [UIView setAnimationDelegate:self];
+        [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:self.viewOther cache:YES];
+        [UIView commitAnimations];
+        
+    }
+}
+
+
+#pragma mark - Table View
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+#pragma mark - TableView Datasource Methods
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    
+    //return tourlist.count;
+    return 1;
+    
+    
+}
+#pragma mark - TableView Delegate Methods
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    //NSString * cellString;
+    if (cell==nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Cell"];
+        
+    }
+    cell.textLabel.textColor = [UIColor blackColor];
+    cell.detailTextLabel.textColor = [UIColor blackColor];
+    
+    [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+    [tableView setSeparatorInset:UIEdgeInsetsZero];
+    if ([tableView respondsToSelector:@selector(setSeparatorInset:)]) {
+        [tableView setSeparatorInset:UIEdgeInsetsZero];
+    }
+    
+    cell.textLabel.text = @"Cannopy";
+    
+    cell.detailTextLabel.text = @"Atrévete al mejor canoppy de la ciudad";
+    
+    UIImageView *imgView2 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+    imgView2.image = [UIImage imageNamed:@"travel@2x.png"];
+    cell.imageView.image = imgView2.image;
+    
+    return cell;
+}
+
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+    
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 70;
+}
+
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    // cell.backgroundColor = [self colorWithHexString:@"4A706A"];
+    cell.backgroundColor = [UIColor clearColor];
+    cell.backgroundView.backgroundColor = [UIColor clearColor];
+}
+
+
+
 @end

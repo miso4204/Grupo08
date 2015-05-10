@@ -15,6 +15,7 @@
 #import "FUIButton.h"
 #import "BButton.h"
 #import "Connections.h"
+#import "Product.h"
 @interface SearchViewController : UIViewController<ConnectionsDelegate>
 @property (weak, nonatomic) IBOutlet BButton *btnPriceRange;
 - (IBAction)getLocation:(id)sender;
@@ -35,5 +36,15 @@
 
 @property (weak, nonatomic) IBOutlet NSString *city;
 
+
+
+@property (strong, nonatomic) IBOutlet UITableView *tableviewProducts;
+@property (nonatomic, retain) NSMutableArray *productsArray;
+
+
+@property (strong, nonatomic)   Product *myProduct;
+@property (weak, nonatomic) IBOutlet BButton *btnTryAgain;
+- (IBAction)tryAgain:(id)sender;
+@property (weak, nonatomic) IBOutlet UIView *viewSearchAgain;
 
 @end
