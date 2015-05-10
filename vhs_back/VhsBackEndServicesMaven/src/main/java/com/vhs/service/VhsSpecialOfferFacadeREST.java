@@ -100,6 +100,15 @@ public class VhsSpecialOfferFacadeREST extends AbstractFacade<VhsSpecialOffer> {
         
     }
     
+        @GET
+    @Path("special")
+    @Produces({"application/xml", "application/json"})
+    public List<VhsSpecialOffer> findByReallySpecialOffer()
+    {
+         Query q = em.createNamedQuery("VhsSpecialOffer.findAllReallySpecial");
+         return q.getResultList();
+    }
+    
     /**
      * 
      * @param date date about the trip plan
