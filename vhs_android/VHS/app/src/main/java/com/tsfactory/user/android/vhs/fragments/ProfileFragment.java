@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.tsfactory.user.android.vhs.MainActivity;
 import com.tsfactory.user.android.vhs.R;
 import com.tsfactory.user.android.vhs.util.Constants;
 
@@ -53,14 +54,23 @@ public class ProfileFragment extends Fragment {
     private OnProfileFragmentInteractionListener mListener;
 
     /**
+     * The fragment argument representing the section number for this
+     * fragment.
+     */
+    private static final String ARG_SECTION_NUMBER = "section_number";
+
+    /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
 
      * @return A new instance of fragment ProfileFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ProfileFragment newInstance() {
+    public static ProfileFragment newInstance(int sectionNumber) {
         ProfileFragment fragment = new ProfileFragment();
+        Bundle args = new Bundle();
+        args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+        fragment.setArguments(args);
         return fragment;
     }
 
@@ -93,7 +103,7 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_add_property, container, false);
+        View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
         // Set up the profile form.
         mEmailView = (EditText) view.findViewById(R.id.profile_email);
@@ -126,6 +136,9 @@ public class ProfileFragment extends Fragment {
         super.onAttach(activity);
         try {
             mListener = (OnProfileFragmentInteractionListener) activity;
+
+            ((MainActivity) activity).onSectionAttached(
+                    getArguments().getInt(ARG_SECTION_NUMBER));
         } catch (ClassCastException e) {
             throw new ClassCastException(activity.toString()
                     + " must implement OnProfileFragmentInteractionListener");
