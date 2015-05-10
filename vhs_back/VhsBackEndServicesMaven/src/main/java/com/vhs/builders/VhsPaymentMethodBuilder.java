@@ -8,6 +8,8 @@ package com.vhs.builders;
 import com.vhs.builders.util.Utilities;
 import com.vhs.data.VhsPaymentMethod;
 import com.vhs.data.VhsUser;
+import static java.util.Collections.list;
+import java.util.Iterator;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
@@ -35,13 +37,18 @@ public class VhsPaymentMethodBuilder implements BuilderContract
             return supportedPayments;
         }
         
-        for (VhsPaymentMethod currentPayment : supportedPayments)
+        boolean option = (u.getOptionalFeatureCashPayOnDelivery() != null)?(u.getOptionalFeatureCashPayOnDelivery()):(false);
+        
+        for (Iterator<VhsPaymentMethod> iter = supportedPayments.listIterator(); iter.hasNext(); ) 
         {
-            if (currentPayment.getName().toLowerCase().contains("cash") && !u.getOptionalFeatureCashPayOnDelivery())
+            VhsPaymentMethod currentPayment = iter.next();
+            
+            if (currentPayment.getName().toLowerCase().contains("cash") && !option)
             {
-                supportedPayments.remove(currentPayment);
+                iter.remove();
             }
         }
+        
         return supportedPayments;
     }
     

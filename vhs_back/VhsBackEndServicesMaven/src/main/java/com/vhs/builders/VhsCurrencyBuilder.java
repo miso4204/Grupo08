@@ -6,8 +6,10 @@
 package com.vhs.builders;
 
 import com.vhs.builders.util.Utilities;
+import com.vhs.data.VhsSocialNetwork;
 import com.vhs.data.VhsSupportedCurrency;
 import com.vhs.data.VhsUser;
+import java.util.Iterator;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
@@ -35,15 +37,19 @@ public class VhsCurrencyBuilder implements BuilderContract
             return supportedCurrencies;
         }
         
-        for (VhsSupportedCurrency currentCurrency : supportedCurrencies)
+        boolean optionPeso = (u.getOptionalFeatureCurrencyManagementPeso() != null)?(u.getOptionalFeatureCurrencyManagementPeso()):(false);
+        boolean optionEuro = (u.getOptionalFeatureCurrencyManagementEuro() != null)?(u.getOptionalFeatureCurrencyManagementEuro()):(false);
+        
+        for (Iterator<VhsSupportedCurrency> iter = supportedCurrencies.listIterator(); iter.hasNext(); ) 
         {
-            if (currentCurrency.getName().toLowerCase().contains("peso") && !u.getOptionalFeatureCurrencyManagementPeso())
+            VhsSupportedCurrency currentCurrency = iter.next();
+            if (currentCurrency.getName().toLowerCase().contains("peso") && !optionPeso)
             {
-                supportedCurrencies.remove(currentCurrency);
+                iter.remove();
             }
-            if (currentCurrency.getName().toLowerCase().contains("euro") && !u.getOptionalFeatureCurrencyManagementEuro())
+            if (currentCurrency.getName().toLowerCase().contains("euro") && !optionEuro)
             {
-                supportedCurrencies.remove(currentCurrency);
+                iter.remove();
             }
         }
         return supportedCurrencies;

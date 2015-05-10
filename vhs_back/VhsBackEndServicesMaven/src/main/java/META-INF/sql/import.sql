@@ -4322,3 +4322,5 @@ INSERT INTO vhspaymentmethod VALUES (3,'Cash on delivery',true);
 INSERT INTO vhssupportedcurrency VALUES (1,1,'Dollar', false);
 INSERT INTO vhssupportedcurrency VALUES (2,2570,'Colombian Peso', true);
 INSERT INTO vhssupportedcurrency VALUES (3,0.917,'Euro', true);
+INSERT INTO vhssocialnetwork VALUES (1,'Facebook', true);
+INSERT INTO vhssocialnetwork VALUES (2,'Twitter', true);

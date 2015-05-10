@@ -6,8 +6,10 @@
 package com.vhs.builders;
 
 import com.vhs.builders.util.Utilities;
+import com.vhs.data.VhsPaymentMethod;
 import com.vhs.data.VhsSocialNetwork;
 import com.vhs.data.VhsUser;
+import java.util.Iterator;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
@@ -34,16 +36,21 @@ public class VhsSocialNetworkBuilder implements BuilderContract
         {
             return supportedNetworks;
         }
-                
-        for (VhsSocialNetwork currentNetwork : supportedNetworks)
+        
+        boolean optionFace = (u.getOptionalFeatureSocialNetworksFacebook() != null)?(u.getOptionalFeatureSocialNetworksFacebook()):(false);
+        boolean optionTwitter = (u.getOptionalFeatureSocialNetworksTwitter() != null)?(u.getOptionalFeatureSocialNetworksTwitter()):(false);
+        
+        for (Iterator<VhsSocialNetwork> iter = supportedNetworks.listIterator(); iter.hasNext(); ) 
         {
-            if (currentNetwork.getName().toLowerCase().contains("facebook") && !u.getOptionalFeatureSocialNetworksFacebook())
+            VhsSocialNetwork currentNetwork = iter.next();
+            
+            if (currentNetwork.getName().toLowerCase().contains("facebook") && !optionFace)
             {
-                supportedNetworks.remove(currentNetwork);
+                iter.remove();
             }
-            if (currentNetwork.getName().toLowerCase().contains("twitter") && !u.getOptionalFeatureSocialNetworksTwitter())
+            if (currentNetwork.getName().toLowerCase().contains("twitter") && !optionTwitter)
             {
-                supportedNetworks.remove(currentNetwork);
+                iter.remove();
             }
         }
         return supportedNetworks;
