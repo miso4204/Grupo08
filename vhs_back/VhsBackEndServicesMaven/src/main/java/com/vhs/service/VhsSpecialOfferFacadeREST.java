@@ -5,7 +5,6 @@
  */
 package com.vhs.service;
 
-import com.vhs.data.VhsCity;
 import com.vhs.data.VhsSpecialOffer;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -33,52 +32,60 @@ import javax.ws.rs.core.Response;
  */
 @Stateless
 @Path("vhsspecialoffer")
-public class VhsSpecialOfferFacadeREST extends AbstractFacade<VhsSpecialOffer> {
+public class VhsSpecialOfferFacadeREST extends AbstractFacade<VhsSpecialOffer> 
+{
     @PersistenceContext(unitName = "VhsBackEndServicesPU")
     private EntityManager em;
 
-    public VhsSpecialOfferFacadeREST() {
+    public VhsSpecialOfferFacadeREST() 
+    {
         super(VhsSpecialOffer.class);
     }
 
     @POST
     @Override
     @Consumes({"application/xml", "application/json"})
-    public void create(VhsSpecialOffer entity) {
+    public void create(VhsSpecialOffer entity) 
+    {
         super.create(entity);
     }
 
     @PUT
     @Path("{id}")
     @Consumes({"application/xml", "application/json"})
-    public void edit(@PathParam("id") Integer id, VhsSpecialOffer entity) {
+    public void edit(@PathParam("id") Integer id, VhsSpecialOffer entity) 
+    {
         super.edit(entity);
     }
 
     @DELETE
     @Path("{id}")
-    public void remove(@PathParam("id") Integer id) {
+    public void remove(@PathParam("id") Integer id) 
+    {
         super.remove(super.find(id));
     }
 
     @GET
     @Path("{id}")
     @Produces({"application/xml", "application/json"})
-    public VhsSpecialOffer find(@PathParam("id") Integer id) {
+    public VhsSpecialOffer find(@PathParam("id") Integer id) 
+    {
         return super.find(id);
     }
 
     @GET
     @Override
     @Produces({"application/xml", "application/json"})
-    public List<VhsSpecialOffer> findAll() {
+    public List<VhsSpecialOffer> findAll() 
+    {
         return super.findAll();
     }
 
     @GET
     @Path("{from}/{to}")
     @Produces({"application/xml", "application/json"})
-    public List<VhsSpecialOffer> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
+    public List<VhsSpecialOffer> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) 
+    {
         return super.findRange(new int[]{from, to});
     }
     
@@ -133,12 +140,14 @@ public class VhsSpecialOfferFacadeREST extends AbstractFacade<VhsSpecialOffer> {
     @GET
     @Path("count")
     @Produces("text/plain")
-    public String countREST() {
+    public String countREST() 
+    {
         return String.valueOf(super.count());
     }
 
     @Override
-    protected EntityManager getEntityManager() {
+    protected EntityManager getEntityManager() 
+    {
         return em;
     }
     
