@@ -35,6 +35,7 @@ import org.hibernate.annotations.LazyCollectionOption;
         (
             {
                 @NamedQuery(name = "VhsSpecialOffer.findAll", query = "SELECT v FROM VhsSpecialOffer v"),
+                @NamedQuery(name = "VhsSpecialOffer.findAllReallySpecial", query = "SELECT v FROM VhsSpecialOffer v where v.servicePromo = true"),
                 @NamedQuery(name = "VhsSpecialOffer.findByIdSpecialOffers", query = "SELECT v FROM VhsSpecialOffer v WHERE v.idSpecialOffers = :idSpecialOffers"),
                 @NamedQuery(name = "VhsSpecialOffer.findByShortName", query = "SELECT v FROM VhsSpecialOffer v WHERE v.shortName = :shortName"),
                 @NamedQuery(name = "VhsSpecialOffer.findByDescription", query = "SELECT v FROM VhsSpecialOffer v WHERE v.description = :description"),

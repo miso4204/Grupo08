@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -21,6 +23,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity 
 @XmlRootElement
 @Table(name = "additionalvalues")
+@NamedQueries({
+    @NamedQuery(name="VhsAdditionalValues.findBySpecialOffer", query="SELECT v FROM AdditionalValues v JOIN v.specialOffer o where  o.idSpecialOffers = :idSpecialOffers")
+}
+)
 public class AdditionalValues implements Serializable
 {
     /**
@@ -54,6 +60,14 @@ public class AdditionalValues implements Serializable
     @JoinColumn(name = "special_offer", referencedColumnName = "id_special_offers")
     @ManyToOne (fetch = FetchType.EAGER)
     private VhsSpecialOffer specialOffer;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
     
     public String getTitle()
     {

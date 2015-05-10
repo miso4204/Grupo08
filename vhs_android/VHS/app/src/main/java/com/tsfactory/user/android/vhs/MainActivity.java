@@ -112,12 +112,11 @@ public class MainActivity extends ActionBarActivity
                 break;
 
             case MenuItems.MY_PROFILE:
-                fragmentTransaction.replace(R.id.container, ProfileFragment.newInstance());
+                fragmentTransaction.replace(R.id.container, ProfileFragment.newInstance(position + 1));
                 break;
 
             case MenuItems.LOG_OUT:
                 session.logoutUser();
-                //fragmentTransaction.replace(R.id.container, PlaceholderFragment.newInstance(position + 1));
                 break;
         }
         fragmentTransaction.commit();
