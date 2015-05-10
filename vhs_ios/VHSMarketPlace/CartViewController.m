@@ -427,31 +427,22 @@
 -(void)getPaymentMethodsFinishSuccessfully:(NSDictionary*)responseObject{
 
 
-    NSLog(@"all payments %@",responseObject);
     NSArray *items = [responseObject valueForKeyPath:@"collection.vhsPaymentMethod"];
-
-    NSEnumerator *enumerator = [items objectEnumerator];
-    NSDictionary* item;
-    int count = 0;
+    NSLog(@"all payments %@",items);
     self.returnP= [[NSMutableArray alloc]init];
-    
-    while (item = (NSDictionary*)[enumerator nextObject]) {
-        
-        if (count ==0) {
-            p = [[Payment alloc]init];
-            p.idPayment = [item objectForKey:@"text"];
-            count ++;
-            
-            
-        }else if (count ==1){
-            p.name =[item objectForKey:@"text"];
-            count=0;
-            
-            [self.returnP addObject:p];
-        }
-        
+    for (NSDictionary * test in items) {
+
+        NSDictionary *idt = [test objectForKey:@"id"];
+        NSDictionary *namet = [test objectForKey:@"name"];
+
+        NSString * stringid = [idt objectForKey:@"text"];
+        NSString * stringname = [namet objectForKey:@"text"];
+        p = [[Payment alloc]init];
+        p.name =stringname;
+        p.idPayment = stringid;
+        [self.returnP addObject:p];
     }
-    NSLog(@"self return tt %@",self.returnP);
+       NSLog(@"self return tt %@",self.returnP);
     
     [self.tableviewPayment reloadData];
 

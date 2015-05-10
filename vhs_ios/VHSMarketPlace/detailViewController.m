@@ -20,6 +20,7 @@
     NSMutableArray *markers;
 
 }
+@property (nonatomic, strong) Connections *APIConnection;
 
 @end
 
@@ -51,6 +52,7 @@
     [super viewDidLoad];
     self.tableviewAdditionalVaues.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 
+    self.APIConnection = [[Connections alloc]init];
     self.viewDescription.hidden =NO;
     self.viewOther.hidden=YES;
     [self.btnAddtoCart setStyle:BButtonStyleBootstrapV3];
@@ -544,6 +546,8 @@
         [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:self.viewDescription cache:YES];
         [UIView commitAnimations];
         
+     
+        
     }else{
     //More services View
         self.viewDescription.hidden =YES;
@@ -554,6 +558,14 @@
         [UIView setAnimationDelegate:self];
         [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:self.viewOther cache:YES];
         [UIView commitAnimations];
+        
+        self.APIConnection.delegate = self;
+        
+        NSMutableDictionary * params= [[NSMutableDictionary alloc]init];
+        NSString *strFromInt = [NSString stringWithFormat:@"%d",self.myProduct.id];
+
+        [params setObject:strFromInt forKey:@"idproduct"];
+        [self.APIConnection getAdditionalValues: params];
         
     }
 }
@@ -569,7 +581,7 @@
 {
     
     //return tourlist.count;
-    return 1;
+    return self.returnP.count;
     
     
 }
@@ -626,7 +638,16 @@
     cell.backgroundColor = [UIColor clearColor];
     cell.backgroundView.backgroundColor = [UIColor clearColor];
 }
+-(void)getAdditionalValuesDidFinishSuccessfully:(NSDictionary*)responseObject{
+    self.returnP = [[NSMutableArray alloc]init];
+    
+    NSLog(@"additional values %@",responseObject);
 
+}
+-(void)getAdditionalValuesDidFinishWithFailure:(NSDictionary*)responseObject{
+
+
+}
 
 
 @end
