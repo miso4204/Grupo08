@@ -62,6 +62,7 @@
 		542B5F0B19F5C9B78F477854 /* Pods_VHSMarketPlace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F87363710C9210C32DE1462F /* Pods_VHSMarketPlace.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		F246D1F71AFEA80B00C52AAB /* promotions@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F246D1F61AFEA80B00C52AAB /* promotions@2x.png */; };
 		F246D1FA1AFEA88700C52AAB /* PromotionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F246D1F91AFEA88700C52AAB /* PromotionsViewController.m */; };
+		F246D1FC1AFFF00800C52AAB /* travel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F246D1FB1AFFF00800C52AAB /* travel@2x.png */; };
 		F247CF9C1AE6FD8A001C0286 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = F247CF9B1AE6FD8A001C0286 /* close.png */; };
 		F24DF8531AF02C69001BC3AF /* LocationSe.m in Sources */ = {isa = PBXBuildFile; fileRef = F24DF8521AF02C69001BC3AF /* LocationSe.m */; };
 		F261CE431AEF3F69003D8A34 /* share@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F261CE421AEF3F69003D8A34 /* share@2x.png */; };
@@ -168,6 +169,7 @@
 		F246D1F61AFEA80B00C52AAB /* promotions@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "promotions@2x.png"; path = "Resources/promotions@2x.png"; sourceTree = "<group>"; };
 		F246D1F81AFEA88700C52AAB /* PromotionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromotionsViewController.h; sourceTree = "<group>"; };
 		F246D1F91AFEA88700C52AAB /* PromotionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromotionsViewController.m; sourceTree = "<group>"; };
+		F246D1FB1AFFF00800C52AAB /* travel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "travel@2x.png"; path = "Resources/travel@2x.png"; sourceTree = "<group>"; };
 		F247CF9B1AE6FD8A001C0286 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = close.png; path = Resources/close.png; sourceTree = "<group>"; };
 		F24DF8511AF02C69001BC3AF /* LocationSe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationSe.h; sourceTree = "<group>"; };
 		F24DF8521AF02C69001BC3AF /* LocationSe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationSe.m; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 				10EBE1B01AD2070D00CC496D /* Category.m */,
 				F2CA293D1AEDB49100555375 /* Payment.h */,
 				F2CA293E1AEDB49100555375 /* Payment.m */,
+				F246D1FB1AFFF00800C52AAB /* travel@2x.png */,
 				F246D1F61AFEA80B00C52AAB /* promotions@2x.png */,
 				F261CE421AEF3F69003D8A34 /* share@2x.png */,
 				10BBADDC1AD063A400E8297D /* catalog@2x.png */,
@@ -510,6 +513,7 @@
 				103D4BEB1AD39A38004F65E9 /* tsFactory@2x.png in Resources */,
 				1055DEB51AD3A01A00B23D3E /* hote4@2x.jpeg in Resources */,
 				10A149121AC8DA570038DEF8 /* ProductCell.xib in Resources */,
+				F246D1FC1AFFF00800C52AAB /* travel@2x.png in Resources */,
 				10A148DE1AC8D8E20038DEF8 /* LaunchScreen.xib in Resources */,
 				10DAF7001ACDAE66000CC7B8 /* Lato-Black.ttf in Resources */,
 				1055DEB71AD3A01A00B23D3E /* hote2@2x.jpeg in Resources */,

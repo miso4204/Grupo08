@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BButton.h"
 #import "Connections.h"
+#import "Product.h"
 
 @interface searchDateViewController : UIViewController<ConnectionsDelegate>
 @property (weak, nonatomic) IBOutlet BButton *btnDate;
@@ -21,5 +22,14 @@
 - (IBAction)getDate:(id)sender;
 @property (strong, nonatomic) NSString *dateFinal;
 
+@property (strong, nonatomic) IBOutlet UITableView *tableviewProducts;
+@property (nonatomic, retain) NSMutableArray *returnP;
+
+
 @property (weak, nonatomic) IBOutlet UIView *viewPicker;
+@property (strong, nonatomic)   Product *myProduct;
+@property (weak, nonatomic) IBOutlet BButton *btnTryAgain;
+- (IBAction)tryAgain:(id)sender;
+@property (weak, nonatomic) IBOutlet UIView *viewSearchAgain;
+
 @end

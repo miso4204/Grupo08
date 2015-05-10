@@ -185,7 +185,6 @@
         NSDictionary *xmlDictionary = [XMLReader dictionaryForXMLString:string error:&parseError];
         // Print the dictionary
         
-        NSLog(@"The response to the VHS Special offer request is:  %@", xmlDictionary);
         @try {
             [self.delegate getCityDidFinishSuccessfully:xmlDictionary];
         }
@@ -307,7 +306,7 @@
 
 }
 -(void)getPromotions{
-    [[Client sharedInstance] GET:@"vhspromotions" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [[Client sharedInstance] GET:@"vhsspecialoffer/special" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         // Parse the XML into a dictionary
         NSError *parseError = nil;

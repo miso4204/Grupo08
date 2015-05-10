@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BButton.h"
 #import "Connections.h"
-
+#import "Product.h"
 @interface SearchPriceViewController : UIViewController<ConnectionsDelegate>
 enum Search {
     kAlertSearch = 1,
@@ -19,5 +19,14 @@ enum Search {
 - (IBAction)search:(id)sender;
 @property (weak, nonatomic) IBOutlet BButton *btnPrices;
 @property (weak, nonatomic) IBOutlet BButton *btnDates;
+
+@property (strong, nonatomic) IBOutlet UITableView *tableviewProducts;
+@property (nonatomic, retain) NSMutableArray *returnP;
+
+
+@property (strong, nonatomic)   Product *myProduct;
+@property (weak, nonatomic) IBOutlet BButton *btnTryAgain;
+- (IBAction)tryAgain:(id)sender;
+@property (weak, nonatomic) IBOutlet UIView *viewSearchAgain;
 
 @end
