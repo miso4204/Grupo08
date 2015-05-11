@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.tsfactory.user.android.vhs.MainActivity;
 import com.tsfactory.user.android.vhs.R;
@@ -336,7 +337,11 @@ public class ProfileFragment extends Fragment {
                 if (response.getStatusLine().getStatusCode() == 204 || response.getStatusLine().getStatusCode() == 200)
                 {
                     //HttpEntity entity = response.getEntity();
-                    //Log.d("Res of POST request", EntityUtils.toString(entity));
+                    //Log.e("Res of POST request", EntityUtils.toString(entity));
+                    user.put(SessionManager.KEY_EMAIL, mEmail);
+                    user.put(SessionManager.KEY_NAME, mFullName);
+                    user.put(SessionManager.KEY_PASSWORD, mPassword);
+                    Log.e("RESPONSE: ", "EXITO");
                     return true;
                 }
 
@@ -358,7 +363,8 @@ public class ProfileFragment extends Fragment {
             showProgress(false);
 
             if (success) {
-                Log.e("RESPONSE: ", "EXITO");
+
+                Toast.makeText(getActivity(), "Profile updated successfully...", Toast.LENGTH_LONG).show();
 
             } else {
                 mEmailView.setError(getString(R.string.profile_update_error));
