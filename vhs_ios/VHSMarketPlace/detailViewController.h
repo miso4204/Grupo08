@@ -14,8 +14,8 @@
 #import <Social/Social.h>
 #import <Accounts/Accounts.h>
 #import <MessageUI/MessageUI.h>
-
-@interface detailViewController : UIViewController<GMSMapViewDelegate,CLLocationManagerDelegate,KASlideShowDelegate,UITabBarControllerDelegate,UITabBarDelegate>{
+#import "Connections.h"
+@interface detailViewController : UIViewController<GMSMapViewDelegate,CLLocationManagerDelegate,KASlideShowDelegate,UITabBarControllerDelegate,UITabBarDelegate,ConnectionsDelegate>{
 
     SLComposeViewController *mySLComposerSheet;
 
@@ -65,6 +65,8 @@
 
 @property (weak, nonatomic) IBOutlet UIView *viewDescription;
 @property (weak, nonatomic) IBOutlet UIView *viewOther;
+
+@property (nonatomic, retain) NSMutableArray *returnP;
 
 
 @end
