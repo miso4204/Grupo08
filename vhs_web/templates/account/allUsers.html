@@ -68,24 +68,14 @@
         </tr>
       </thead>
       <tbody>
+        {% for usuario in usuarios %} 
         <tr>
-          <th scope="row">2</th>
-          <td>Mark</td>
-          <td>mark@gmail.com</td>
+          <th scope="row">{{ forloop.counter }}</th>
+          <td>{{ usuario.name }}</td>
+          <td>{{ usuario.email }}</td>
           <td>@mdo</td>
         </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Jacob</td>
-          <td>Thornton@gmail.com</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">4</th>
-          <td>Larry</td>
-          <td>theBird@gmail.com</td>
-          <td>@twitter</td>
-        </tr>
+        {% endfor %}
       </tbody>
     </table>
     
