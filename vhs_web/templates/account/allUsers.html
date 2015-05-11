@@ -64,7 +64,15 @@
           <th style="text-align: center;">#</th>
           <th style="text-align: center;">Nombres</th>
           <th style="text-align: center;">Email</th>
-          <th style="text-align: center;">Username</th>
+          <th style="text-align: center;">PoD</th>
+          <th style="text-align: center;">Maps</th>
+          <th style="text-align: center;">Mobile</th>
+          <th style="text-align: center;">Images</th>
+          <th style="text-align: center;">Video</th>
+          <th style="text-align: center;">Performance</th>
+          <th style="text-align: center;">R. Rating</th>
+          <th style="text-align: center;">Scalability</th>
+          <th style="text-align: center;">S. Location</th>
         </tr>
       </thead>
       <tbody>
@@ -73,7 +81,15 @@
           <th scope="row">{{ forloop.counter }}</th>
           <td>{{ usuario.name }}</td>
           <td>{{ usuario.email }}</td>
-          <td>@mdo</td>
+          <td>{{ usuario.optionalFeatureCashPayOnDelivery }}</td>
+          <td>{{ usuario.optionalFeatureGoogleMapsEnabled }}</td>
+          <td>{{ usuario.optionalFeatureMobile }}</td>
+          <td>{{ usuario.optionalFeatureMultimediaImages }}</td>
+          <td>{{ usuario.optionalFeatureMultimediaVideo }}</td>
+          <td>{{ usuario.optionalFeaturePerformance }}</td>
+          <td>{{ usuario.optionalFeatureReportsByRating }}</td>
+          <td>{{ usuario.optionalFeatureScalability }}</td>
+          <td>{{ usuario.optionalFeatureSearchByLocation }}</td>
         </tr>
         {% endfor %}
       </tbody>

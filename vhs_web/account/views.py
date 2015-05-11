@@ -118,7 +118,7 @@ def allUsers(request):
 	#Realizar el llamado al método REST para obtener la información
 
 	try:
-		url = 'http://192.168.0.199:8080/VhsBackEndServices/webresources/vhsuser/'
+		url = 'http://localhost:8080/VhsBackEndServices/webresources/vhsuser/'
 		# headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
 		# response = requests.get(url, headers=headers)
 		response = requests.get(url)
@@ -138,12 +138,51 @@ def allUsers(request):
 			try:
 				usuario['name'] = element['fullName']
 				usuario['email'] = element['mail']
+				# Features
+				usuario['optionalFeatureCashPayOnDelivery'] = 'T' if (element['optionalFeatureCashPayOnDelivery'] == 'true') else 'F'
+				usuario['optionalFeatureGoogleMapsEnabled'] = 'T' if (element['optionalFeatureGoogleMapsEnabled'] == 'true') else 'F'
+				usuario['optionalFeatureMobile'] = 'T' if (element['optionalFeatureMobile'] == 'true') else 'F'
+				usuario['optionalFeatureMultimediaImages'] = 'T' if (element['optionalFeatureMultimediaImages'] == 'true') else 'F'
+				usuario['optionalFeatureMultimediaVideo'] = 'T' if (element['optionalFeatureMultimediaVideo'] == 'true') else 'F'
+				usuario['optionalFeaturePerformance'] = 'T' if (element['optionalFeaturePerformance'] == 'true') else 'F'
+				usuario['optionalFeatureReportsByRating'] = 'T' if (element['optionalFeatureReportsByRating'] == 'true') else 'F'
+				usuario['optionalFeatureScalability'] = 'T' if (element['optionalFeatureScalability'] == 'true') else 'F'
+				usuario['optionalFeatureSearchByLocation'] = 'T' if (element['optionalFeatureSearchByLocation'] == 'true') else 'F'
 
 				if usuario['name'] == None:
 					usuario['name'] = 'None'
 
 				if usuario['email'] == None:
 					usuario['email'] = 'None'
+
+				# Features
+
+				if usuario['optionalFeatureCashPayOnDelivery'] == None:
+					usuario['optionalFeatureCashPayOnDelivery'] = 'F'
+				
+				if usuario['optionalFeatureGoogleMapsEnabled'] == None:
+					usuario['optionalFeatureGoogleMapsEnabled'] = 'F'
+				
+				if usuario['optionalFeatureMobile'] == None:
+					usuario['optionalFeatureMobile'] = 'F'
+				
+				if usuario['optionalFeatureMultimediaImages'] == None:
+					usuario['optionalFeatureMultimediaImages'] = 'F'
+				
+				if usuario['optionalFeatureMultimediaVideo'] == None:
+					usuario['optionalFeatureMultimediaVideo'] = 'F'
+				
+				if usuario['optionalFeaturePerformance'] == None:
+					usuario['optionalFeaturePerformance'] = 'F'
+				
+				if usuario['optionalFeatureReportsByRating'] == None:
+					usuario['optionalFeatureReportsByRating'] = 'F'
+				
+				if usuario['optionalFeatureScalability'] == None:
+					usuario['optionalFeatureScalability'] = 'F'
+				
+				if usuario['optionalFeatureSearchByLocation'] == None:
+					usuario['optionalFeatureSearchByLocation'] = 'F'
 
 				usuarios.append(usuario)
 			except Exception, e:
