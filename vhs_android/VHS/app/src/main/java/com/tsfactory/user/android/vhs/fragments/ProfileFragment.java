@@ -20,11 +20,13 @@ import android.widget.EditText;
 import com.tsfactory.user.android.vhs.MainActivity;
 import com.tsfactory.user.android.vhs.R;
 import com.tsfactory.user.android.vhs.util.Constants;
+import com.tsfactory.user.android.vhs.util.SessionManager;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.methods.HttpPut;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONException;
@@ -32,6 +34,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.util.HashMap;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -79,6 +82,11 @@ public class ProfileFragment extends Fragment {
      */
     private UpdateUserTask mSaveTask = null;
 
+    // Session Manager Class
+    SessionManager session;
+    // User Data
+    HashMap<String, String> user;
+
     // UI references.
     private EditText mEmailView;
     private EditText mPasswordView;
@@ -105,10 +113,18 @@ public class ProfileFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
+        session = new SessionManager(getActivity().getApplicationContext());
+        user = session.getUserDetails();
+
         // Set up the profile form.
         mEmailView = (EditText) view.findViewById(R.id.profile_email);
+        mEmailView.setText(user.get(SessionManager.KEY_EMAIL));
+
         mPasswordView = (EditText) view.findViewById(R.id.profile_password);
+        mPasswordView.setText(user.get(SessionManager.KEY_PASSWORD));
+
         mFullNameView = (EditText) view.findViewById(R.id.profile_full_name);
+        mFullNameView.setText(user.get(SessionManager.KEY_NAME));
 
         Button mSaveProfileButton = (Button) view.findViewById(R.id.profile_save_button);
         mSaveProfileButton.setOnClickListener(new View.OnClickListener() {
@@ -282,12 +298,16 @@ public class ProfileFragment extends Fragment {
                 // Simulate network access.
                 //Thread.sleep(2000);
                 HttpClient httpClient = new DefaultHttpClient();
-                HttpPost httpPost = new HttpPost(Constants.API_URL + Constants.VHS_USER);
+                //HttpPost httpPost = new HttpPost(Constants.API_URL + Constants.VHS_USER);
+                HttpPut httpPut = new HttpPut(Constants.API_URL + Constants.VHS_USER + user.get(SessionManager.KEY_UID));
+
+                Log.e("URL: ", Constants.API_URL + Constants.VHS_USER + user.get(SessionManager.KEY_UID));
 
                 String json = "";
 
                 // Build jsonObject
                 JSONObject jsonObject = new JSONObject();
+                jsonObject.accumulate("userId", user.get(SessionManager.KEY_UID));
                 jsonObject.accumulate("mail", mEmail);
                 jsonObject.accumulate("password", mPassword);
                 jsonObject.accumulate("fullName", mFullName);
@@ -301,14 +321,13 @@ public class ProfileFragment extends Fragment {
                 StringEntity se = new StringEntity(json);
 
                 // Set httpPost Entity
-                httpPost.setEntity(se);
+                httpPut.setEntity(se);
 
                 // Set some headers to inform server about the type of the content
-                httpPost.setHeader("Accept", "application/json");
-                httpPost.setHeader("Content-type", "application/json");
+                httpPut.setHeader("Content-type", "application/json");
 
                 // Make the POST request.
-                HttpResponse response = httpClient.execute(httpPost);
+                HttpResponse response = httpClient.execute(httpPut);
                 // Write response to log
 
                 Log.e("RESPONSE: ", String.valueOf(response.getStatusLine().getStatusCode()));
@@ -339,8 +358,7 @@ public class ProfileFragment extends Fragment {
             showProgress(false);
 
             if (success) {
-                //startActivity(new Intent(mContext, LoginActivity.class));
-                //finish();
+                Log.e("RESPONSE: ", "EXITO");
 
             } else {
                 mEmailView.setError(getString(R.string.profile_update_error));
