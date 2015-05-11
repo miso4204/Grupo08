@@ -5,11 +5,13 @@
  */
 package com.vhs.service;
 
+import com.vhs.data.AdditionalValues;
 import com.vhs.data.VhsOfferImage;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -62,6 +64,17 @@ public class VhsOfferImageFacadeREST extends AbstractFacade<VhsOfferImage> {
     public VhsOfferImage find(@PathParam("id") Long id) {
         return super.find(id);
     }
+    
+    @GET
+    @Path("specialoffer/{idSpecialOffers}")
+    @Produces({"application/xml", "application/json"})
+    public List<VhsOfferImage> findBySpecialOffer(@PathParam("idSpecialOffers") Integer idSpecialOffers) {
+        Query q = em.createNamedQuery("VhsOfferImage.findBySpecialOffer");
+        q.setParameter("idSpecialOffers", idSpecialOffers);
+        return (List<VhsOfferImage>) q.getResultList();
+    }
+
+
 
     @GET
     @Override

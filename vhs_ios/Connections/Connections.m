@@ -185,7 +185,6 @@
         NSDictionary *xmlDictionary = [XMLReader dictionaryForXMLString:string error:&parseError];
         // Print the dictionary
         
-        NSLog(@"The response to the VHS Special offer request is:  %@", xmlDictionary);
         @try {
             [self.delegate getCityDidFinishSuccessfully:xmlDictionary];
         }
@@ -307,7 +306,7 @@
 
 }
 -(void)getPromotions{
-    [[Client sharedInstance] GET:@"vhspromotions" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [[Client sharedInstance] GET:@"vhsspecialoffer/special" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         // Parse the XML into a dictionary
         NSError *parseError = nil;
@@ -333,5 +332,32 @@
                          }];
 
 
+}
+-(void)getAdditionalValues:(NSDictionary *)params{
+    NSString *path = [NSString stringWithFormat:@"%@/%@",@"vhsadditionalvalues/specialoffer",[params objectForKey:@"idproduct"]];
+
+    [[Client sharedInstance] GET:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        // Parse the XML into a dictionary
+        NSError *parseError = nil;
+        NSDictionary *xmlDictionary = [XMLReader dictionaryForXMLString:string error:&parseError];
+        // Print the dictionary
+        
+        @try {
+            [self.delegate getAdditionalValuesDidFinishSuccessfully:xmlDictionary];
+        }
+        @catch (NSException *exception) {
+        }
+        @finally {
+        }
+        
+    }
+                         failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                             NSLog(@"error report %@",error);
+                             
+                             
+                             
+                             
+                         }];
 }
 @end

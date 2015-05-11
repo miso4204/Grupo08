@@ -14,8 +14,8 @@
 #import <Social/Social.h>
 #import <Accounts/Accounts.h>
 #import <MessageUI/MessageUI.h>
-
-@interface detailViewController : UIViewController<GMSMapViewDelegate,CLLocationManagerDelegate,KASlideShowDelegate>{
+#import "Connections.h"
+@interface detailViewController : UIViewController<GMSMapViewDelegate,CLLocationManagerDelegate,KASlideShowDelegate,UITabBarControllerDelegate,UITabBarDelegate,ConnectionsDelegate>{
 
     SLComposeViewController *mySLComposerSheet;
 
@@ -43,9 +43,30 @@
 - (IBAction)next:(id)sender;
 - (IBAction)play:(id)sender;
 - (IBAction)previous:(id)sender;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+- (IBAction)selectSection:(id)sender;
 
 @property (strong,nonatomic) IBOutlet KASlideShow * slideshow;
 @property (weak, nonatomic) IBOutlet UIButton *startStopButton;
 @property (weak, nonatomic) IBOutlet UIButton *previousButton;
 @property (weak, nonatomic) IBOutlet UIButton *nextButton;
+
+@property (weak, nonatomic) IBOutlet BButton *btnVideo;
+- (IBAction)ViewVideo:(id)sender;
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (weak, nonatomic) IBOutlet BButton *btnClose;
+- (IBAction)closeVideo:(id)sender;
+@property (weak, nonatomic) IBOutlet UITabBar *tabBar;
+@property (weak, nonatomic) IBOutlet UITabBarItem *itemDescription;
+@property (weak, nonatomic) IBOutlet UITabBarItem *itemMore;
+@property (weak, nonatomic) IBOutlet UITableView *tableviewAdditionalVaues;
+
+@property (weak, nonatomic) IBOutlet UIView *viewForVideo;
+
+@property (weak, nonatomic) IBOutlet UIView *viewDescription;
+@property (weak, nonatomic) IBOutlet UIView *viewOther;
+
+@property (nonatomic, retain) NSMutableArray *returnP;
+
+
 @end

@@ -1,3 +1,4 @@
+# -*- encoding: utf-8 -*-
 from django.shortcuts import render_to_response
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
@@ -11,6 +12,7 @@ from django.contrib.auth.models import User
 import requests
 import json
 from xml.etree import ElementTree
+import xmltodict
 
 def login(request):
 	c = {}
@@ -35,6 +37,7 @@ def auth_view(request):
 				element =  ElementTree.XML(response.text)
 
 				request.session['id_usuario'] = element[3].text
+				request.session['mail_usuario'] = element[1].text
 				
 				# Login ok
 				return HttpResponseRedirect('/account/index')
@@ -67,54 +70,37 @@ def logout(request):
 def register(request):
 	
 	if request.method == 'POST':
-		
-		form = RegisterForm(request.POST)
+
+		form = RegisterForm(request.POST, request.FILES)
 
 		if form.is_valid():
+			
+			# Se lee lo escrito por el usaurio
 
 			email = form.cleaned_data['email']
 			password = form.cleaned_data['password']
 			full_name = form.cleaned_data['name']
-			
-			# Opciones de productos
+			archivo = request.FILES['file']
 
-			special_offer = form.cleaned_data['special_offer']
-			currency_administration = form.cleaned_data['currency_administration']
-			rating_report = form.cleaned_data['rating_report']
-			sale_report = form.cleaned_data['sale_report']
-			social_network = form.cleaned_data['social_network']
-			location_search = form.cleaned_data['location_search']
-			pay_on_delivery = form.cleaned_data['pay_on_delivery']
-			multimedia_video = form.cleaned_data['multimedia_video']
-			multimedia_image = form.cleaned_data['multimedia_image']
-			mobile = form.cleaned_data['mobile']
-			maps = form.cleaned_data['maps']
-			scalability = form.cleaned_data['scalability']
-			performance = form.cleaned_data['performance']
+			# Se procede a generar variable 'feature' con las caracteristicas del archivo separadas por coma
 
-			url = 'http://jbossasvhsbackendservices-vhstourism.rhcloud.com/VhsBackEndServices/webresources/vhsuser/'
-			
+			features = ''
+			for line in archivo:
+				features = features + line.strip() + ','
+
+			# Se crea el diccionario a enviar
+
 			data = { 
 				'mail': email,
 				'password': password,
-				'fullName': full_name,
-				'optionalFeatureSpecialOffer': special_offer,
-				'optionalFeatureCurrencyManagement': currency_administration,
-				'optionalFeatureSearchByLocation': location_search,
-				'optionalFeatureCashPayOnDelivery': pay_on_delivery,
-				'optionalFeatureSocialNetworks': social_network,
-				'optionalFeatureReportsByRating': rating_report,
-				'optionalFeatureReportsBySales': sale_report,
-				'optionalFeatureMultimediaVideo': multimedia_video,
-				'optionalFeatureMultimediaImages': multimedia_image,
-				'optionalFeatureMobile': mobile,
-				'optionalFeatureGoogleMapsEnabled': maps,
-				'optionalFeatureScalability': scalability,
-				'optionalFeaturePerformance': performance 
+				'fullName': full_name + '|' + features
 			}
-			
+
+			# Se realiza conexión con el servicio
+
+			url = 'http://192.168.0.199:8080/VhsBackEndServices/webresources/vhsuser/'
 			headers = {'Content-Type': 'application/json'}
-			
+			print json.dumps(data)
 			response = requests.post(url, data=json.dumps(data), headers=headers)
 
 			return HttpResponseRedirect('/account/login/')
@@ -127,5 +113,60 @@ def esta_autenticado(request):
 		id_usuario = request.session['id_usuario']
 		return True
 	return False
+
+def allUsers(request):
+	#Realizar el llamado al método REST para obtener la información
+
+	try:
+		url = 'http://192.168.0.199:8080/VhsBackEndServices/webresources/vhsuser/'
+		# headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
+		# response = requests.get(url, headers=headers)
+		response = requests.get(url)
+	except Exception, e:
+		raise e
+
+	if response.status_code == 200:
+		tree =  ElementTree.XML(response.text)
+		# tree = json.dumps(xmltodict.parse(response.text))
+
+		tree = xmltodict.parse(response.text)['collection']['vhsUser']
+
+		usuarios = []
+
+		for element in tree:
+			usuario = {}
+			try:
+				usuario['name'] = element['fullName']
+				usuario['email'] = element['mail']
+
+				if usuario['name'] == None:
+					usuario['name'] = 'None'
+
+				if usuario['email'] == None:
+					usuario['email'] = 'None'
+
+				usuarios.append(usuario)
+			except Exception, e:
+				print 'No se encontro el parametro'
+			
+		print usuarios
+
+	# try:
+	# 	listado_usuarios = [
+	# 		{
+	# 			'name': 'Ernesto Nobmann', 
+	# 			'email': 'ef.nobmann10@uniandes.edu.co',
+	# 			'features': {
+	# 				'f1': True,
+	# 				'f2': False,
+	# 				'f3': True
+	# 			}
+	# 		}
+	# 	]
+
+	# except Exception, e:
+	# 	print 'Error generando el listado de productos'
+	# 	raise e
+	return render_to_response('account/allUsers.html', {'usuarios': usuarios})
 		
 	
