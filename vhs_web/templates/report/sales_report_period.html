@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>VHS</title>
+
+<!-- Bootstrap core CSS -->
+<link href="{% static "assets/css/bootstrap.css" %}" rel="stylesheet">
+<link href="{% static "assets/css/bootstrap-datepicker.css" %}" rel="stylesheet">
+
+
+<!-- Custom CSS -->
+<link href="{% static "assets/css/main.css" %}" rel="stylesheet">
+<link href="{% static "assets/css/font-awesome.min.css" %}" rel="stylesheet">
+<link href="{% static "assets/css/animate-custom.css" %}" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+<script src="{% static "assets/js/jquery.min.js" %}"></script>
+<script src="{% static "assets/highcharts/highcharts.js" %}"></script>
+<script type="text/javascript" src="{% static "assets/js/modernizr.custom.js" %}"></script>
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<script type="text/javascript">
+
+mejores_productos = {{ mejores_productos|safe }};
+mejores_ventas = {{ mejores_ventas|safe }};
+peores_productos = {{ peores_productos|safe }};
+peores_ventas = {{ peores_ventas|safe }};
+fechaGeneracion = '{{ fecha|safe }}';
+
+$(function () {
+    $('#container_best').highcharts({
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Reporte de Ventas'
+        },
+        subtitle: {
+            text: 'Fecha de generación: ' + fechaGeneracion
+        },
+        xAxis: {
+            categories: mejores_productos,
+            title: {
+                text: 'Productos'
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Ganancias',
+                align: 'high'
+            },
+            labels: {
+                overflow: 'justify'
+            }
+        },
+        tooltip: {
+            valueSuffix: ' COP'
+        },
+        plotOptions: {
+            bar: {
+                dataLabels: {
+                    enabled: true
+                }
+            }
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            x: -40,
+            y: 100,
+            floating: true,
+            borderWidth: 1,
+            backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+            shadow: true
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'Ganancias',
+            data: mejores_ventas
+        }]
+    });
+
+    $('#container_worst').highcharts({
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Reporte de Ventas'
+        },
+        subtitle: {
+            text: 'Fecha de generación: ' + fechaGeneracion.date
+        },
+        xAxis: {
+            categories: peores_productos,
+            title: {
+                text: 'Ciudades'
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Ganancias',
+                align: 'high'
+            },
+            labels: {
+                overflow: 'justify'
+            }
+        },
+        tooltip: {
+            valueSuffix: ' COP'
+        },
+        plotOptions: {
+            bar: {
+                dataLabels: {
+                    enabled: true
+                }
+            }
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            x: -40,
+            y: 100,
+            floating: true,
+            borderWidth: 1,
+            backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+            shadow: true
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'Ganancias',
+            data: peores_ventas
+        }]
+    });
+
+    $('.datepicker_start').datepicker({
+      format: 'dd/mm/yyyy',
+      autoclose: true,
+      clearBtn: true
+    });
+
+    $('.datepicker_end').datepicker({
+      format: 'dd/mm/yyyy',
+      autoclose: true,
+      clearBtn: true
+    });
+});
+
+
+
+</script>
+
+</head>
+
+<body data-spy="scroll" data-offset="0" data-target="#navbar-main">
+<div id="navbar-main"> 
+  <!-- Fixed navbar -->
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        <a class="navbar-brand" href="#home">VHS</a> </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/account/index/" class="smoothScroll"> Home</a></li>
+          <li><a href="/product/all/" class="smoothScroll"> Productos</a></li>
+          <li><a href="/report/salesLocation/" class="smoothScroll"> Ventas Location</a></li>
+          <li><a href="/report/salesPeriod/" class="smoothScroll"> Ventas Period</a></li>
+          <li><a href="/report/ratingPackage/" class="smoothScroll"> Rating Package</a></li>
+          <li><a href="/report/ratingLocation/" class="smoothScroll"> Rating Location</a></li>
+          <li><a href="/account/logout/" class="smoothScroll">Logout</a></li>
+        </ul>
+      </div>
+      <!--/.nav-collapse --> 
+    </div>
+  </div>
+</div>
+
+<!-- ==== CONTACT ==== -->
+<div id="contact" name="contact">
+  <div class="container">
+    <div class="row">
+      <h2 class="centered">REPORTE DE VENTAS - PERIODO</h2>
+      <hr>
+    </div>
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 centered">
+        <p>Por favor escoge las fechas para la generación de tu reporte.</p>
+        {% block content %}
+        <form action='/report/salesPeriod/' id="dates" method="post" class="form" role="form">
+          {% csrf_token %}
+          <div class="row form-group">
+            <input id="start_date" name="start_date" placeholder="Fecha Inicial" class="datepicker_start" type="text" >
+          </div>
+          <div class="row form-group">
+            <input id="end_date" name="end_date" placeholder="Fecha Final" class="datepicker_end" type="text" >  
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-md-12">
+              <button class="btn btn btn-lg" type="submit">Graficar</button>
+            </div>
+          </div>
+        </form>
+        {% endblock %}
+        <!-- form --> 
+      </div>
+    </div>
+    <!-- row --> 
+    
+  </div>
+</div>
+
+<!-- ==== SERVICES ==== -->
+<div id="services" name="services">
+  <div class="container">
+    <div class="row">
+      <h2 class="centered">Reporte de Ventas - Mejores 10</h2>
+      <hr>
+      <div class="col-lg-8 col-lg-offset-2">
+        <p class="large">Este reporte muestra los 10 mejores paquetes.</p>
+      </div>
+      <div id="container_best" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+    </div>
+    <div class="row">
+      <h2 class="centered">Reporte de Ventas - Peores 10</h2>
+      <hr>
+      <div class="col-lg-8 col-lg-offset-2">
+        <p class="large">Este reporte muestra los 10 peores paquetes.</p>
+      </div>
+      <div id="container_worst" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+    </div>
+    <!-- row --> 
+  </div>
+</div>
+<!-- container --> 
+
+
+<div id="footerwrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8"> <span class="copyright">Copyright &copy; 2015 Your Website Name. Design by <a href="http://www.templategarden.com" rel="nofollow">TemplateGarden</a></span> </div>
+      <div class="col-md-4">
+        <ul class="list-inline social-buttons">
+          <li><a href="#"><i class="fa fa-twitter"></i></a> </li>
+          <li><a href="#"><i class="fa fa-facebook"></i></a> </li>
+          <li><a href="#"><i class="fa fa-google-plus"></i></a> </li>
+          <li><a href="#"><i class="fa fa-linkedin"></i></a> </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap core JavaScript
+    ================================================== --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+
+<script type="text/javascript" src="{% static "assets/js/bootstrap.min.js" %}" ></script> 
+<script type="text/javascript" src="{% static "assets/js/bootstrap-datepicker.js" %}" ></script> 
+<script type="text/javascript" src="{% static "assets/js/retina.js" %}" ></script> 
+<script type="text/javascript" src="{% static "assets/js/jquery.easing.1.3.js" %}" ></script> 
+<script type="text/javascript" src="{% static "assets/js/smoothscroll.js" %}" ></script> 
+<script type="text/javascript" src="{% static "assets/js/jquery-func.js" %}" ></script>
+</body>
+</html>

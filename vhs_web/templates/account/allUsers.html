@@ -33,14 +33,14 @@
 <body data-spy="scroll" data-offset="0" data-target="#navbar-main">
 <div id="navbar-main"> 
   <!-- Fixed navbar -->
-  <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: #1886C7;">
+  <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-        <a class="navbar-brand" style="color: #FFF;" href="#home">VHS</a> </div>
+        <a class="navbar-brand" href="#home">VHS</a> </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="/account/login/" style="color: #FFF;" class="smoothScroll">Login</a></li>
+          <li><a href="/account/login/" class="smoothScroll">Login</a></li>
         </ul>
       </div>
       <!--/.nav-collapse --> 
@@ -48,67 +48,53 @@
   </div>
 </div>
 
-<!-- ==== register ==== -->
+<!-- ==== LOGIN ==== -->
 
 <div id="contact" name="contact">
   <div class="container">
     <div class="row">
-      <h2 class="centered">CREA TU CUENTA</h2>
+      <h2 class="centered">USUARIO</h2>
       <hr>
     </div>
-    {% block content %}
-    {{ form.non_field_errors }}
-    <form action='/account/register/' method='post' enctype="multipart/form-data">
-    	
-      <div class="row">
-	      <div class="col-lg-8 col-lg-offset-2 centered">
-	        <p>Ingresa tus datos para registrarte en la plataforma VHS como proveedor.</p>
-	        <form id="contact" method="post" class="form" role="form"  >
-	        	{% csrf_token %}
-	          <div class="row">
-	            <div class="col-xs-10 col-sm-8 col-md-6 col-centered form-group">
-	              <input class="form-control" id="name" name="name" placeholder="Nombres y Apellidos" type="text" required />
-	            </div>
-	          </div>
-	          <div class="row">
-              <div class="col-xs-10 col-sm-8 col-md-6 col-centered form-group">
-                <input class="form-control" id="email" name="email" placeholder="Dirección de email" type="email" required />
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-xs-10 col-sm-8 col-md-6 col-centered form-group">
-                <input class="form-control" id="password" name="password" placeholder="Contraseña" type="password" required />
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-xs-10 col-sm-8 col-md-6 col-centered form-group">
-                {{form.file}}
-              </div>
-            </div>
-            <div class="row">
-	            <div class="col-xs-12 col-md-12">
-	              <button class="btn btn btn-lg" type="submit" value="login">Crear mi cuenta!</button>
-	            </div>
-	          </div>
-	        </form>
-	        <!-- form --> 
-	      </div>
-	    </div>
-	    <!-- row --> 
-	</form>
-    <!-- form --> 
-    {% endblock %}
+    
+    <table class="table table-striped">
+      <caption>Actuales usuarios de la plataforma VHS.</caption>
+      <thead>
+        <tr>
+          <th style="text-align: center;">#</th>
+          <th style="text-align: center;">Nombres</th>
+          <th style="text-align: center;">Email</th>
+          <th style="text-align: center;">Username</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for usuario in usuarios %} 
+        <tr>
+          <th scope="row">{{ forloop.counter }}</th>
+          <td>{{ usuario.name }}</td>
+          <td>{{ usuario.email }}</td>
+          <td>@mdo</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    
   </div>
 </div>
 <!-- container -->
 
-
-
-<div id="footerwrap" style="background-color: #FFF;">
+<div id="footerwrap">
   <div class="container">
     <div class="row">
       <div class="col-md-8"> <span class="copyright">Copyright &copy; 2015 Your Website Name. Design by <a href="http://www.templategarden.com" rel="nofollow">TemplateGarden</a></span> </div>
-      
+      <div class="col-md-4">
+        <ul class="list-inline social-buttons">
+          <li><a href="#"><i class="fa fa-twitter"></i></a> </li>
+          <li><a href="#"><i class="fa fa-facebook"></i></a> </li>
+          <li><a href="#"><i class="fa fa-google-plus"></i></a> </li>
+          <li><a href="#"><i class="fa fa-linkedin"></i></a> </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

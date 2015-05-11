@@ -19,6 +19,8 @@ class RegisterForm(forms.Form):
 	maps = forms.BooleanField(required=False)
 	scalability = forms.BooleanField(required=False)
 	performance = forms.BooleanField(required=False)
+	# Archivo
+	file = forms.FileField()
 
 class LoginForm(forms.Form):
 	username = forms.CharField(max_length=100, required = True)
