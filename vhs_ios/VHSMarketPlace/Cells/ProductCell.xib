@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,7 +13,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="149"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wOW-ov-FpG">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="placeHolderImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="wOW-ov-FpG">
                         <rect key="frame" x="10" y="3" width="125" height="143"/>
                     </imageView>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="157" translatesAutoresizingMaskIntoConstraints="NO" id="lmA-Ed-znU">
@@ -39,11 +39,15 @@
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="promotion.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="G2V-Iu-hff">
+                        <rect key="frame" x="42" y="1" width="97" height="63"/>
+                    </imageView>
                 </subviews>
             </tableViewCellContentView>
             <connections>
                 <outlet property="ViewDetailButton" destination="Bvm-wL-ALi" id="O7P-0t-qCN"/>
                 <outlet property="addToCartButton" destination="0b2-9K-uNu" id="dIh-zp-4mA"/>
+                <outlet property="imgPromotion" destination="G2V-Iu-hff" id="u4J-OH-PL9"/>
                 <outlet property="productImage" destination="wOW-ov-FpG" id="xYi-fT-dQg"/>
                 <outlet property="productPrice" destination="GA9-cc-IHX" id="kym-7Z-E3I"/>
                 <outlet property="productTitle" destination="lmA-Ed-znU" id="zNh-bk-bkr"/>
@@ -51,6 +55,10 @@
             <point key="canvasLocation" x="481" y="300"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="placeHolderImage.png" width="210" height="210"/>
+        <image name="promotion.jpg" width="139" height="146"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

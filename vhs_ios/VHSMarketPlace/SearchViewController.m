@@ -206,7 +206,7 @@
     location = [self.returnP objectAtIndex:indexPath.row];
     cell.textLabel.text =location.city;
     
-    
+
     return cell;
     }else{
         static NSString *CellIdentifier = @"ProductCell";
@@ -238,7 +238,8 @@
         
         cell.productImage.contentMode = UIViewContentModeScaleAspectFit;
         cell.productTitle.text = product.name;
-        
+        cell.imgPromotion.hidden = YES;
+
         
         NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
         [formatter setMaximumFractionDigits:2];

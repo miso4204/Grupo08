@@ -19,5 +19,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *productPrice;
 @property (strong, nonatomic) IBOutlet BButton *addToCartButton;
 @property (strong, nonatomic) IBOutlet BButton *ViewDetailButton;
+@property (weak, nonatomic) IBOutlet UIImageView *imgPromotion;
 
 @end

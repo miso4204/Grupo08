@@ -119,7 +119,7 @@
     cell.productImage.contentMode = UIViewContentModeScaleAspectFit;
     cell.productTitle.text = product.name;
     
-    
+    cell.imgPromotion.hidden = YES;
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setMaximumFractionDigits:2];
     [formatter setRoundingMode: NSNumberFormatterRoundDown];
