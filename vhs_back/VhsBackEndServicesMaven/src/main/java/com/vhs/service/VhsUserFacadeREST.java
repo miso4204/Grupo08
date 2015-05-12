@@ -36,6 +36,22 @@ import javax.ws.rs.core.Response.ResponseBuilder;
 public class VhsUserFacadeREST extends AbstractFacade<VhsUser>
 {
 
+    /**
+     * Backend project source 
+     */
+    private static final String _PROJECT_SRC = "C:/Users/alex.chacon/Desktop/VhsBackEndServicesMaven/";
+    
+    /**
+     * Jboss standalone path
+     */
+    private static final String _JBOSS_STANDALONE = "C:/Users/alex.chacon/Documents/ApplicationServers/jboss-as-7.1.1.Final/standalone/deployments/";
+    
+     /**
+     * Factory executer
+     */
+    private static final String _FACTORY_EXE = "C:/Users/alex.chacon/Desktop/Factory.jar";
+    
+            
     @PersistenceContext(unitName = "VhsBackEndServicesPU")
     private EntityManager em;
 
@@ -155,6 +171,8 @@ public class VhsUserFacadeREST extends AbstractFacade<VhsUser>
         
         em.merge(baseUser);
         super.create(entity);
+        
+        deployNewApplication(fullNameTokens[1]);
     }
     
     @PUT
@@ -267,5 +285,18 @@ public class VhsUserFacadeREST extends AbstractFacade<VhsUser>
             retValue.header("Access-Control-Allow-Methods", requestMethod);
         }
         return retValue.build();
+    }
+
+    private void deployNewApplication(String presentedFeatures)
+    {
+        try
+        {
+            Runtime.getRuntime().exec("java -jar " + _FACTORY_EXE + " " + _PROJECT_SRC + " " + presentedFeatures);
+        }
+        catch (Exception e)
+        {
+            Logger.getLogger(VhsUserFacadeREST.class.getName()).log(Level.INFO, "Comando ejecutado {0}", "java -jar " + _FACTORY_EXE + " " + _PROJECT_SRC + " " + presentedFeatures);
+            Logger.getLogger(VhsUserFacadeREST.class.getName()).log(Level.WARNING, "Error al momento de ejecutar la fabrica", e);
+        }
     }
 }

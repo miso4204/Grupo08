@@ -32,7 +32,8 @@ public class SourceCodeGenerator
 	/**
 	 * Base feature extension
 	 */
-	private final static String _BASE_ASPECT = "@VHSFeature(featurePresent = false, name = \"NAME\", type = VHSFeature.Type.OPTIONAL)";
+	private final static String _BASE_ASPECT = "@com.vhs.annotations.VHSFeature(featurePresent = false, name = \"NAME\", type = com.vhs.annotations.VHSFeature.Type.OPTIONAL)";
+	
 	
 	/**
 	 * Current project spider
@@ -72,6 +73,7 @@ public class SourceCodeGenerator
 	public void generateCode () throws Exception
 	{
 		this.context = new FactoryVelocityContext(this.rawPresentFeatures);
+		this.context.loadFeatures();
 		
 		this.spider.find(this.projectPath);
 		

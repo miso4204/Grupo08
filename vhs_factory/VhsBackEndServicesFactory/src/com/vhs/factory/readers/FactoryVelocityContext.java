@@ -1,7 +1,5 @@
 package com.vhs.factory.readers;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +14,9 @@ public class FactoryVelocityContext
 	/**
 	 * Reference features path
 	 */
-	private final static String _REFERECE_FEATURE_PATH = "features/referenceVHSFeatures.txt";
+	//private final static String _REFERECE_FEATURE_PATH = "features/referenceVHSFeatures.txt";
+	private final static String _REFERECE_FEATURE_PATH = "User,Session,Login,Logout,UpdateProfile,ChangePassword,ChangeProfile,CreateAccount,ShoopingCart,Pay,CreditCard,PSE,CashOnDelivery,Reports,Rating,Location,Package,SpecialOffers,CreatePromo,UpdatePromo,SocialNetworks,Facebook,CurrencyAdministration,Dollar,Euro,Peso,Product,Search,ByLocation,ByPrice,ByDate,ExtendedProductDescription,VideoSupported,MobileDisplay,GoogleMapsSupported,QualityAttributes,Configurability,Scalability,Functionality,Performance,GallerySupported,Twitter,ReportByLocation,ReportByPeriod";
+	
 	
 	/**
 	 * Reference features
@@ -50,12 +50,18 @@ public class FactoryVelocityContext
 		this.presentFeatures = new ArrayList<String>();
 		this.referenceFeatures = new ArrayList<String>();
 		this.notPresentFeatures = new ArrayList<String>();
-		
+	}
+
+	/**
+	 * Load features global logic
+	 */
+	public void loadFeatures()
+	{
 		loadReferenceFeatures();
 		loadPresentFeatures();
 		loadNotPresentFeatures();
 	}
-
+	
 	/**
 	 * Loads not present features
 	 */
@@ -98,6 +104,13 @@ public class FactoryVelocityContext
 	 */
 	private void loadReferenceFeatures() 
 	{
+		String[] featuresArray = _REFERECE_FEATURE_PATH.split(",");
+		
+		for (String currentFeature : featuresArray)
+		{
+			this.referenceFeatures.add(currentFeature);
+		}
+		/*
 		try(BufferedReader br = new BufferedReader(new FileReader(_REFERECE_FEATURE_PATH))) 
 		{
 			String feature = br.readLine();
@@ -112,7 +125,8 @@ public class FactoryVelocityContext
 		catch(Exception e)
 		{
 			System.out.println(e.getMessage());
-		}
+		}*/
+		
 	}
 
 	/**
