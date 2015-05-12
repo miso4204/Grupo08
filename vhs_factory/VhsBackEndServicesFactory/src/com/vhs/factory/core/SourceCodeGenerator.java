@@ -101,6 +101,7 @@ public class SourceCodeGenerator
 	        
 	        template.merge( context, writer );
 	        
+	        writer.close();
 	        System.out.println(current);
 		}
 	}
