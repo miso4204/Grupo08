@@ -46,7 +46,7 @@
     self.viewForDateEnd.backgroundColor = [UIColor lightGrayColor];
     self.viewForDateEnd.hidden = YES;
     self.tableviewLocation.hidden =YES;
-    self.title = @"Search";
+    self.title = @"Búsqueda por localización";
     self.navigationController.navigationBar.titleTextAttributes = @{UITextAttributeFont: [UIFont boldFlatFontOfSize:18],
                                                                     UITextAttributeTextColor: [UIColor whiteColor]};
     

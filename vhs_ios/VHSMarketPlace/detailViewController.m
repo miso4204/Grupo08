@@ -115,7 +115,7 @@
     markers = [[NSMutableArray alloc]init];
     [markers addObject:markerCC];
     
-    self.title = @"Desctiption";
+    self.title = @"Descripción";
     self.navigationController.navigationBar.titleTextAttributes = @{UITextAttributeFont: [UIFont boldFlatFontOfSize:18],
                                                                     UITextAttributeTextColor: [UIColor whiteColor]};
     

@@ -29,7 +29,7 @@ Categoryc * cat;
     // Do any additional setup after loading the view.
     self.ConnectionDelegate = [[Connections alloc]init];
 
-    self.title = @"Categories";
+    self.title = @"Categorias";
     self.navigationController.navigationBar.titleTextAttributes = @{UITextAttributeFont: [UIFont boldFlatFontOfSize:18],
                                                                     UITextAttributeTextColor: [UIColor whiteColor]};
     
@@ -127,39 +127,28 @@ Categoryc * cat;
 
 
 -(void)GetCategoriesDidFinishSuccessfully:(NSDictionary*)responseObject{
-
     NSArray *items = [responseObject valueForKeyPath:@"collection.vhsCategory"];
     NSLog(@"arraty %@",items);
     
-    NSEnumerator *enumerator = [items objectEnumerator];
-    NSDictionary* item;
-    int count = 0;
-    while (item = (NSDictionary*)[enumerator nextObject]) {
-        NSLog(@"clientId = %@",  [item objectForKey:@"text"]);
+    for (NSDictionary * test in items) {
+        NSDictionary *description = [test objectForKey:@"description"];
+        NSDictionary *idCategory = [test objectForKey:@"idCategory"];
         
-        if (count ==0) {
-            cat = [[Categoryc alloc]init];
-            cat.id = [[item objectForKey:@"text"] intValue];
-            count ++;
+        NSString *idCate = [idCategory objectForKey:@"text"];
 
-            
-        }else if (count ==1){
-            cat.name =[item objectForKey:@"text"];
-            count=0;
-            
-           [self.returnP addObject:cat];
-        }
-        
-    
+        NSString *desc = [description objectForKey:@"text"];
+        cat = [[Categoryc alloc]init];
+        cat.id = [idCate intValue];
+        cat.name =desc;
+        [self.returnP addObject:cat];
+
     }
-    [self.collections reloadData];
-
+    
+       [self.collections reloadData];
 }
 -(void)GetCategoriesDidFinishWithFailure:(NSDictionary*)responseObject{
 
 
 
 }
-
-
 @end

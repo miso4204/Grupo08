@@ -34,7 +34,7 @@
 
     // Do any additional setup after loading the view.
     self.tableviewProducts.hidden = YES;
-    self.title = @"Search";
+    self.title = @"Búsqueda por fecha";
         [self.tableviewProducts registerNib:[UINib nibWithNibName:@"ProductCell" bundle:nil] forCellReuseIdentifier:@"ProductCell"];
     self.navigationController.navigationBar.titleTextAttributes = @{UITextAttributeFont: [UIFont boldFlatFontOfSize:18],
                                                                     UITextAttributeTextColor: [UIColor whiteColor]};

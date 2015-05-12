@@ -34,7 +34,7 @@
     [super viewDidLoad];
     self.ConnectionDelegate = [[Connections alloc]init];
 
-    self.title = @"Cart";
+    self.title = @"Carrito";
     self.navigationController.navigationBar.titleTextAttributes = @{UITextAttributeFont: [UIFont boldFlatFontOfSize:18],
                                                                     UITextAttributeTextColor: [UIColor whiteColor]};
     

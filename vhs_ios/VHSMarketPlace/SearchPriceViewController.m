@@ -35,7 +35,7 @@
     
     self.ConnectionDelegate = [[Connections alloc]init];
     
-    self.title = @"Search";
+    self.title = @"Búsqueda por precio";
     self.navigationController.navigationBar.titleTextAttributes = @{UITextAttributeFont: [UIFont boldFlatFontOfSize:18],
                                                                     UITextAttributeTextColor: [UIColor whiteColor]};
     

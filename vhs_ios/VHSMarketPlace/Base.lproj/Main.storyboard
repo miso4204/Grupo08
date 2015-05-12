@@ -366,11 +366,11 @@ Cócteles y gastronomía con buena música de fondo, mucha animación y un ambie
             </objects>
             <point key="canvasLocation" x="1079" y="-159"/>
         </scene>
-        <!--Tienda-->
+        <!--Productos-->
         <scene sceneID="OlL-w6-mCN">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wfz-3V-Dgp" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Tienda" image="home.png" id="O2b-xK-U2F"/>
+                    <tabBarItem key="tabBarItem" title="Productos" image="home.png" id="O2b-xK-U2F"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="sze-OZ-M5F">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -385,11 +385,11 @@ Cócteles y gastronomía con buena música de fondo, mucha animación y un ambie
             </objects>
             <point key="canvasLocation" x="1616" y="395"/>
         </scene>
-        <!--Cart-->
+        <!--Carrito-->
         <scene sceneID="Jbf-no-xQ0">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TV6-eD-uLU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Cart" image="cart.png" id="UOm-Jz-XtK"/>
+                    <tabBarItem key="tabBarItem" title="Carrito" image="cart.png" id="UOm-Jz-XtK"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eEz-6T-d1o">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -894,11 +894,11 @@ Cócteles y gastronomía con buena música de fondo, mucha animación y un ambie
             </objects>
             <point key="canvasLocation" x="4072" y="2463"/>
         </scene>
-        <!--Categories-->
+        <!--Categorias-->
         <scene sceneID="NRz-KS-q2z">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IEg-oX-PMC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Categories" image="catalog.png" id="rw7-yl-1RX"/>
+                    <tabBarItem key="tabBarItem" title="Categorias" image="catalog.png" id="rw7-yl-1RX"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4uB-Jg-wYl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1202,11 +1202,11 @@ Cócteles y gastronomía con buena música de fondo, mucha animación y un ambie
             </objects>
             <point key="canvasLocation" x="5002" y="2105"/>
         </scene>
-        <!--search-->
+        <!--Buscar-->
         <scene sceneID="gQ7-Dv-fZJ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aJY-vy-9w2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="search" image="search.png" id="kRe-Yd-Qfz"/>
+                    <tabBarItem key="tabBarItem" title="Buscar" image="search.png" id="kRe-Yd-Qfz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="A88-ff-o7t">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1257,11 +1257,11 @@ Cócteles y gastronomía con buena música de fondo, mucha animación y un ambie
             </objects>
             <point key="canvasLocation" x="2206" y="3329"/>
         </scene>
-        <!--promotions-->
+        <!--Promociones-->
         <scene sceneID="tP8-2x-OT3">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eBN-51-rEd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="promotions" image="promotions.png" id="5M6-Oi-WwC"/>
+                    <tabBarItem key="tabBarItem" title="Promociones" image="promotions.png" id="5M6-Oi-WwC"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="a6y-9e-fVg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

@@ -28,7 +28,7 @@
     [super viewDidLoad];
     self.ConnectionDelegate = [[Connections alloc]init];
 
-    self.title = @"Pagos";
+    self.title = @"Pago con tarjeta";
     self.navigationController.navigationBar.titleTextAttributes = @{UITextAttributeFont: [UIFont boldFlatFontOfSize:18],
                                                                     UITextAttributeTextColor: [UIColor whiteColor]};
     

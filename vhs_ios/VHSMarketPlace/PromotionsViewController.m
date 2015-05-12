@@ -35,7 +35,7 @@
     
     self.ConnectionDelegate = [[Connections alloc]init];
     
-    self.title = @"Promotions";
+    self.title = @"Promociones";
     self.navigationController.navigationBar.titleTextAttributes = @{UITextAttributeFont: [UIFont boldFlatFontOfSize:18],
                                                                     UITextAttributeTextColor: [UIColor whiteColor]};
     

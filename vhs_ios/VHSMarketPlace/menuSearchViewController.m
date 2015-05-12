@@ -38,6 +38,7 @@
                                                                     UITextAttributeTextColor: [UIColor whiteColor]};
     
     [self.navigationController.navigationBar configureFlatNavigationBarWithColor:[UIColor colorFromHexCode:@"#e75659"]];
+    self.title = @"Búsqueda";
 
     
 }

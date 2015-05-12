@@ -28,7 +28,7 @@
     [self.btnPay setType:BButtonTypeTwitter];
     self.ConnectionDelegate = [[Connections alloc]init];
 
-    self.title = @"Pay";
+    self.title = @"Pago en efectivo";
     self.navigationController.navigationBar.titleTextAttributes = @{UITextAttributeFont: [UIFont boldFlatFontOfSize:18],
                                                                     UITextAttributeTextColor: [UIColor whiteColor]};
     
