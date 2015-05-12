@@ -40,6 +40,7 @@
         <a class="navbar-brand" href="#home">VHS</a> </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
+          <li><a href="/account/allUsers/" class="smoothScroll">User List</a></li>
           <li><a href="/account/login/" class="smoothScroll">Login</a></li>
         </ul>
       </div>
@@ -61,19 +62,35 @@
       <caption>Actuales usuarios de la plataforma VHS.</caption>
       <thead>
         <tr>
-          <th style="text-align: center;">#</th>
+          <th style="text-align: center;">BaseUser</th>
           <th style="text-align: center;">Nombres</th>
           <th style="text-align: center;">Email</th>
-          <th style="text-align: center;">Username</th>
+          <th style="text-align: center;">PoD</th>
+          <th style="text-align: center;">Maps</th>
+          <th style="text-align: center;">Mobile</th>
+          <th style="text-align: center;">Images</th>
+          <th style="text-align: center;">Video</th>
+          <th style="text-align: center;">Performance</th>
+          <th style="text-align: center;">R. Rating</th>
+          <th style="text-align: center;">Scalability</th>
+          <th style="text-align: center;">S. Location</th>
         </tr>
       </thead>
       <tbody>
         {% for usuario in usuarios %} 
         <tr>
-          <th scope="row">{{ forloop.counter }}</th>
+          <td><img src="{% static "assets/img/" %}{{ usuario.baseuser }}" width="16" height="16"></td>
           <td>{{ usuario.name }}</td>
           <td>{{ usuario.email }}</td>
-          <td>@mdo</td>
+          <td><img src="{% static "assets/img/" %}{{ usuario.optionalFeatureCashPayOnDelivery }}" width="16" height="16"></td>
+          <td><img src="{% static "assets/img/" %}{{ usuario.optionalFeatureGoogleMapsEnabled }}" width="16" height="16"></td>
+          <td><img src="{% static "assets/img/" %}{{ usuario.optionalFeatureMobile }}" width="16" height="16"></td>
+          <td><img src="{% static "assets/img/" %}{{ usuario.optionalFeatureMultimediaImages }}" width="16" height="16"></td>
+          <td><img src="{% static "assets/img/" %}{{ usuario.optionalFeatureMultimediaVideo }}" width="16" height="16"></td>
+          <td><img src="{% static "assets/img/" %}{{ usuario.optionalFeaturePerformance }}" width="16" height="16"></td>
+          <td><img src="{% static "assets/img/" %}{{ usuario.optionalFeatureReportsByRating }}" width="16" height="16"></td>
+          <td><img src="{% static "assets/img/" %}{{ usuario.optionalFeatureScalability }}" width="16" height="16"></td>
+          <td><img src="{% static "assets/img/" %}{{ usuario.optionalFeatureSearchByLocation }}" width="16" height="16"></td>
         </tr>
         {% endfor %}
       </tbody>
