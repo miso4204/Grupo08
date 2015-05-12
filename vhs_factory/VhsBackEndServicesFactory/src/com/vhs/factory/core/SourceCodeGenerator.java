@@ -32,7 +32,7 @@ public class SourceCodeGenerator
 	/**
 	 * Base feature extension
 	 */
-	private final static String _BASE_ASPECT = "@Feature";
+	private final static String _BASE_ASPECT = "@VHSFeature(featurePresent = false, name = \"NAME\", type = VHSFeature.Type.OPTIONAL)";
 	
 	/**
 	 * Current project spider
@@ -94,7 +94,7 @@ public class SourceCodeGenerator
 	        
 	        for (String notPresentFeatures : this.context.getNotPresentFeatures())
 	        {
-	        	context.put(notPresentFeatures, _BASE_ASPECT);
+	        	context.put(notPresentFeatures, _BASE_ASPECT.replaceFirst("NAME", notPresentFeatures));
 	        }
 	        
 	        FileWriter writer = new FileWriter(current.replaceAll(_BASE_EXT, _BASE_EXT_JAVA));
