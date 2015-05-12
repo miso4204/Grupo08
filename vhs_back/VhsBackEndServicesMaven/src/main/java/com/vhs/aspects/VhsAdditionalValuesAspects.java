@@ -5,6 +5,7 @@
  */
 package com.vhs.aspects;
 
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -24,6 +25,6 @@ public class VhsAdditionalValuesAspects
     public Object adviceFindBySpecialOffer(ProceedingJoinPoint pjp) throws Throwable
     {
         Logger.getLogger(VhsAdditionalValuesAspects.class.getName()).log(Level.INFO, "Feature interceptado: ExtendedProductDescription");
-        return null;
+        return new ArrayList<>();
     }
 }

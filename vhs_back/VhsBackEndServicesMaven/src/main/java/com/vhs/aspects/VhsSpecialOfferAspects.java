@@ -5,6 +5,7 @@
  */
 package com.vhs.aspects;
 
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -24,13 +25,13 @@ public class VhsSpecialOfferAspects
     public Object adviceFindByReallySpecialOffer(ProceedingJoinPoint pjp) throws Throwable
     {
         Logger.getLogger(VhsSpecialOfferAspects.class.getName()).log(Level.INFO, "Feature interceptado: MobileDisplay");
-        return null;
+        return new ArrayList<>();
     }
     
     @Around("execution(@com.vhs.annotations.VHSFeature * com.vhs.service.VhsSpecialOfferFacadeREST.findByCityName(..))")
     public Object adviceFindByCityName(ProceedingJoinPoint pjp) throws Throwable
     {
         Logger.getLogger(VhsSpecialOfferAspects.class.getName()).log(Level.INFO, "Feature interceptado: ByLocation");
-        return null;
+        return new ArrayList<>();
     }
 }

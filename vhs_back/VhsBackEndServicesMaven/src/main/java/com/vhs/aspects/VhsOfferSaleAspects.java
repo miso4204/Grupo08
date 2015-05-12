@@ -5,6 +5,7 @@
  */
 package com.vhs.aspects;
 
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -24,6 +25,6 @@ public class VhsOfferSaleAspects
     public Object adviceFindSale(ProceedingJoinPoint pjp) throws Throwable
     {
         Logger.getLogger(VhsOfferSaleAspects.class.getName()).log(Level.INFO, "Feature interceptado: ReportByLocation");
-        return null;
+        return new ArrayList<>();
     }
 }

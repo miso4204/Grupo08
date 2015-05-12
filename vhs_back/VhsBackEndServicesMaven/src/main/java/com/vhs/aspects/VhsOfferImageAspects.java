@@ -5,6 +5,7 @@
  */
 package com.vhs.aspects;
 
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -24,6 +25,6 @@ public class VhsOfferImageAspects
     public Object adviceFindBySpecialOfferGallery(ProceedingJoinPoint pjp) throws Throwable
     {
         Logger.getLogger(VhsOfferImageAspects.class.getName()).log(Level.INFO, "Feature interceptado: GallerySupported");
-        return null;
+        return new ArrayList<>();
     }
 }
