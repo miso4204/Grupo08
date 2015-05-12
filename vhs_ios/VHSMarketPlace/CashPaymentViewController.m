@@ -63,8 +63,9 @@
 
 - (IBAction)pay:(id)sender {
     self.ConnectionDelegate.delegate = self;
+    
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-
+    
     NSMutableDictionary * params= [[NSMutableDictionary alloc]init];
     
     [params setObject:self.txtAddress.text forKey:@"buyerAddress"];

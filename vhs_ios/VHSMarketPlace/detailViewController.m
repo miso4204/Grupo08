@@ -20,6 +20,9 @@
 
     NSMutableArray *markers;
     AdditionalValue * prod;
+    
+    BOOL twitter;
+    BOOL facebook;
 
 }
 @property (nonatomic, strong) Connections *APIConnection;
@@ -53,7 +56,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableviewAdditionalVaues.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-
+    twitter = false;
+    facebook = false;
     self.APIConnection = [[Connections alloc]init];
     self.viewDescription.hidden =NO;
     self.viewOther.hidden=YES;
@@ -205,8 +209,29 @@
         
     }
     [self ShowAllMarkers];
+    
+    
+    [self loadSocialNetworks];
 
+    
+    [self loadValues];
     // Do any additional setup after loading the view.
+}
+-(void)loadValues{
+    self.APIConnection.delegate = self;
+    
+    NSMutableDictionary * params= [[NSMutableDictionary alloc]init];
+    NSString *strFromInt = [NSString stringWithFormat:@"%d",self.myProduct.id];
+    
+    [params setObject:strFromInt forKey:@"idproduct"];
+    [self.APIConnection getAdditionalValues: params];
+
+}
+-(void)loadSocialNetworks{
+    self.APIConnection.delegate = self;
+    [self.APIConnection getSocialNetworks];
+    
+
 }
 - (void)ShowAllMarkers
 {
@@ -423,14 +448,12 @@
 -(void)facebook{
     if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) //check if Facebook Account is linked
     {
-        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         
         mySLComposerSheet = [[SLComposeViewController alloc] init]; //initiate the Social Controller
         mySLComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook]; //Tell him with what social plattform to use it, e.g. facebook or twitter
         NSString *shareMessage = [NSString stringWithFormat:@"%@ %@ %@ %@ %@ %f",@"Mira este increíble plan turístico" ,self.myProduct.name,@"que oferce:",self.myProduct.descriptions,@"con un costo de:",self.myProduct.price];
         
         [mySLComposerSheet setInitialText:[NSString stringWithFormat:shareMessage,mySLComposerSheet.serviceType]]; //the message you want to post
-        [mySLComposerSheet addImage:[UIImage imageNamed:@"76x76.png"]]; //an image you could post
         //for more instance methodes, go here:https://developer.apple.com/library/ios/#documentation/NetworkingInternet/Reference/SLComposeViewController_Class/Reference/Reference.html#//apple_ref/doc/uid/TP40012205
         [self presentViewController:mySLComposerSheet animated:YES completion:nil];
     }
@@ -466,13 +489,46 @@
 }
 -(void)shareSocial{
 
-    UIAlertView * alert=[[UIAlertView alloc]initWithTitle:NSLocalizedString(@"Redes Sociales", nil)
-                                         message:NSLocalizedString(@"Selecciona la red social en donde quieres compartir la oferta", nil)
-                                        delegate:self
-                               cancelButtonTitle:NSLocalizedString(@"Cancelar", nil)
-                               otherButtonTitles:@"Facebook", @"Twitter",nil]; //!!JCS.8aug2012.Agregar FB
-    [alert setTag:1];
-    [alert show];
+    if (facebook && twitter) {
+        UIAlertView * alert=[[UIAlertView alloc]initWithTitle:NSLocalizedString(@"Redes Sociales", nil)
+                                                      message:NSLocalizedString(@"Selecciona la red social en donde quieres compartir la oferta", nil)
+                                                     delegate:self
+                                            cancelButtonTitle:NSLocalizedString(@"Cancelar", nil)
+                                            otherButtonTitles:@"Facebook", @"Twitter",nil]; //!!JCS.8aug2012.Agregar FB
+        [alert setTag:1];
+        [alert show];
+        return;
+    }else if (twitter){
+        UIAlertView * alert=[[UIAlertView alloc]initWithTitle:NSLocalizedString(@"Redes Sociales", nil)
+                                                      message:NSLocalizedString(@"Selecciona la red social en donde quieres compartir la oferta", nil)
+                                                     delegate:self
+                                            cancelButtonTitle:NSLocalizedString(@"Cancelar", nil)
+                                            otherButtonTitles:@"Twitter",nil]; //!!JCS.8aug2012.Agregar FB
+        [alert setTag:2];
+        [alert show];
+    
+        return;
+    }else if (facebook){
+        UIAlertView * alert=[[UIAlertView alloc]initWithTitle:NSLocalizedString(@"Redes Sociales", nil)
+                                                      message:NSLocalizedString(@"Selecciona la red social en donde quieres compartir la oferta", nil)
+                                                     delegate:self
+                                            cancelButtonTitle:NSLocalizedString(@"Cancelar", nil)
+                                            otherButtonTitles:@"Facebook",nil]; //!!JCS.8aug2012.Agregar FB
+        [alert setTag:3];
+        [alert show];
+        return;
+    }else{
+        UIAlertView * alert=[[UIAlertView alloc]initWithTitle:NSLocalizedString(@"Redes Sociales", nil)
+                                                      message:NSLocalizedString(@"No hay redes sociales en nuestro sistema", nil)
+                                                     delegate:self
+                                            cancelButtonTitle:NSLocalizedString(@"Cancelar", nil)
+                                            otherButtonTitles:nil]; //!!JCS.8aug2012.Agregar FB
+        [alert setTag:4];
+        [alert show];
+    
+    }
+    
+
 
 
 }
@@ -496,6 +552,42 @@
     
         }
    }
+    if (alertView.tag == 2){
+        switch (buttonIndex) {
+            case 0:
+                //Do nothing, cancelled;
+                break;
+            case 1:{
+                [self tweet];
+                
+                break;
+                
+            }
+            case 2:{
+                break;
+            }
+                
+        }
+        
+    }
+    if (alertView.tag == 3){
+        switch (buttonIndex) {
+            case 0:
+                //Do nothing, cancelled;
+                break;
+            case 1:{
+                [self facebook];
+                
+                break;
+                
+            }
+            case 2:{
+                break;
+            }
+                
+        }
+        
+    }
 }
 - (IBAction)ViewVideo:(id)sender {
     self.btnClose.hidden = NO;
@@ -561,13 +653,7 @@
         [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:self.viewOther cache:YES];
         [UIView commitAnimations];
         
-        self.APIConnection.delegate = self;
-        
-        NSMutableDictionary * params= [[NSMutableDictionary alloc]init];
-        NSString *strFromInt = [NSString stringWithFormat:@"%d",self.myProduct.id];
-
-        [params setObject:strFromInt forKey:@"idproduct"];
-        [self.APIConnection getAdditionalValues: params];
+ 
         
     }
 }
@@ -669,5 +755,26 @@
 
 }
 
+-(void)getSocialNetworksDidFinishSuccessfully:(NSDictionary*)responseObject{
+    NSLog(@"social networks %@",responseObject);
+    
+    
+    NSArray *items = [responseObject valueForKeyPath:@"collection.vhsSocialNetwork"];
+    NSLog(@"arraty %@",items);
+    self.returnP = [[NSMutableArray alloc]init];
+    NSLog(@"items count %lu",(unsigned long)items.count);
+    for (NSDictionary * test in items) {
+        NSDictionary *namesocial = [test objectForKey:@"name"];
+        NSString *name = [namesocial objectForKey:@"text"];
+        if ([name isEqualToString:@"Twitter"]) {
+            twitter = true;
+            
+        }else if ([name isEqualToString:@"Facebook"]){
+            facebook = true;
+        }
+    }
+}
+-(void)getSocialNetworksDidFinishWithFailure:(NSDictionary*)responseObject{
 
+}
 @end
