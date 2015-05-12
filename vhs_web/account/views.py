@@ -35,13 +35,22 @@ def auth_view(request):
 			response = requests.get('{0}/{1}/{2}/{3}'.format(url, method, username, password))
 
 			if response.status_code == 200:
-				element =  ElementTree.XML(response.text)
 
-				request.session['id_usuario'] = element[3].text
-				request.session['mail_usuario'] = element[1].text
-				
-				# Login ok
-				return HttpResponseRedirect('/account/index')
+				request.session['id_usuario'] = ''
+				request.session['mail_usuario'] = ''
+
+				try:
+					tree = xmltodict.parse(response.text)['vhsUser']
+
+					request.session['id_usuario'] = tree['userId']
+					request.session['mail_usuario'] = tree['mail']
+
+					# Login ok
+					return HttpResponseRedirect('/account/index')
+				except Exception, e:
+					#Bad login
+					form.add_error(None, "Please check your username and password")
+					return render(request, 'account/login.html', {'form': form})
 			else:
 				#Bad login
 				form.add_error(None, "Please check your username and password")
@@ -91,9 +100,6 @@ def index(request):
 						raise e
 					finally:
 						productos.append(producto)
-				
-				print productos	
-
 		except Exception, e:
 			raise e
 		return render(request, 'product/productos.html', { 'response': True,  'productos': productos })
