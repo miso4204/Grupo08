@@ -1,5 +1,6 @@
 # -*- encoding: utf-8 -*-
 from django.shortcuts import render
+from django.conf import settings
 
 # Custom
 
@@ -11,7 +12,7 @@ def listar_productos(request):
 	#Realizar el llamado al método REST para obtener la información
 
 	# try:
-	# 	url = 'http://jbossasvhsbackendservices-vhstourism.rhcloud.com/VhsBackEndServices/webresources'
+	# 	url = settings.CUSTOM_BASE_URL + '/VhsBackEndServices/webresources'
 	# 	method = 'vhsspecialoffer'
 	# 	username = request.session['mail_usuario'] #"andresvargasr@gmail.com"
 
