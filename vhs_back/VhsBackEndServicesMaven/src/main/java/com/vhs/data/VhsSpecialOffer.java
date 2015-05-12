@@ -91,6 +91,12 @@ public class VhsSpecialOffer implements Serializable
     @Column(name = "main_image_url")
     private String mainImageUrl;
     
+     /**
+     * Offer thumbnail image absolute URL
+     */
+    @Column(name = "video_url")
+    private String videoUrl;
+    
     /**
      * Turistic product latitude
      */
@@ -371,6 +377,16 @@ public class VhsSpecialOffer implements Serializable
     public void setAdditionalValues(Collection<AdditionalValues> additionalValues)
     {
         this.additionalValues = additionalValues;
+    }
+
+    public String getVideoUrl()
+    {
+        return videoUrl;
+    }
+
+    public void setVideoUrl(String videoUrl)
+    {
+        this.videoUrl = videoUrl;
     }
 
     @Override
