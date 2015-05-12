@@ -10,6 +10,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -61,6 +62,14 @@ public class VhsCityFacadeREST extends AbstractFacade<VhsCity> {
     @Produces({"application/xml", "application/json"})
     public VhsCity find(@PathParam("id") Integer id) {
         return super.find(id);
+    }
+
+    @GET
+    @Path("main")
+    @Produces({"application/xml", "application/json"})
+    public List<VhsCity> findByMain() {
+        Query q = em.createNamedQuery("VhsCity.findByMain");
+        return q.getResultList();
     }
 
     @GET
