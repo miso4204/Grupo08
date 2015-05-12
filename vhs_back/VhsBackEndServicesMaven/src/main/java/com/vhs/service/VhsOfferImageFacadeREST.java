@@ -5,7 +5,6 @@
  */
 package com.vhs.service;
 
-import com.vhs.data.AdditionalValues;
 import com.vhs.data.VhsOfferImage;
 import java.util.List;
 import javax.ejb.Stateless;

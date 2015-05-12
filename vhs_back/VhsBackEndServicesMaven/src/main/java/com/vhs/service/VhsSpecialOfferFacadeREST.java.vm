@@ -121,6 +121,7 @@ public class VhsSpecialOfferFacadeREST extends AbstractFacade<VhsSpecialOffer>
     @GET
     @Path("special")
     @Produces({"application/xml", "application/json"})
+    $MobileDisplay
     public List<VhsSpecialOffer> findByReallySpecialOffer()
     {
          Query q = em.createNamedQuery("VhsSpecialOffer.findAllReallySpecial");
@@ -135,7 +136,7 @@ public class VhsSpecialOfferFacadeREST extends AbstractFacade<VhsSpecialOffer>
          Query q = em.createNamedQuery("VhsSpecialOffer.findAllReallySpecial");
          return q.getResultList();
     }
-    
+
     /**
      * 
      * @param date date about the trip plan
@@ -158,6 +159,7 @@ public class VhsSpecialOfferFacadeREST extends AbstractFacade<VhsSpecialOffer>
     @GET
     @Path("city/{city}")
     @Produces({"application/xml", "application/json"})
+    $ByLocation
     public List<VhsSpecialOffer> findByCityName(@PathParam("city") String cityName)
     {
          Query q = em.createNamedQuery("VhsSpecialOffer.findByCity");

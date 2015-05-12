@@ -5,9 +5,7 @@
  */
 package com.vhs.service;
 
-import com.vhs.data.DatosReporte;
-import com.vhs.data.VhsOfferSale;
-import java.text.ParseException;
+import com.vhs.data.VhsOfferImage;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -30,36 +28,26 @@ import javax.ws.rs.core.Response;
  * @author andresvargas
  */
 @Stateless
-@Path("vhsoffersale")
-public class VhsOfferSaleFacadeREST extends AbstractFacade<VhsOfferSale> {
+@Path("vhsofferimage")
+public class VhsOfferImageFacadeREST extends AbstractFacade<VhsOfferImage> {
     @PersistenceContext(unitName = "VhsBackEndServicesPU")
     private EntityManager em;
 
-    public VhsOfferSaleFacadeREST() {
-        super(VhsOfferSale.class);
+    public VhsOfferImageFacadeREST() {
+        super(VhsOfferImage.class);
     }
 
     @POST
     @Override
     @Consumes({"application/xml", "application/json"})
-    public void create(VhsOfferSale entity) {
+    public void create(VhsOfferImage entity) {
         super.create(entity);
-    }
-    
-    
-    @POST
-    @Consumes({"application/xml", "application/json"})
-    public void create(List<VhsOfferSale> entities) {
-        for ( VhsOfferSale entity: entities)
-        {
-           super.create(entity);
-        }
     }
 
     @PUT
     @Path("{id}")
     @Consumes({"application/xml", "application/json"})
-    public void edit(@PathParam("id") Long id, VhsOfferSale entity) {
+    public void edit(@PathParam("id") Long id, VhsOfferImage entity) {
         super.edit(entity);
     }
 
@@ -72,39 +60,35 @@ public class VhsOfferSaleFacadeREST extends AbstractFacade<VhsOfferSale> {
     @GET
     @Path("{id}")
     @Produces({"application/xml", "application/json"})
-    public VhsOfferSale find(@PathParam("id") Long id) {
+    public VhsOfferImage find(@PathParam("id") Long id) {
         return super.find(id);
     }
+    
+    @GET
+    @Path("specialoffer/{idSpecialOffers}")
+    @Produces({"application/xml", "application/json"})
+    $GallerySupported
+    public List<VhsOfferImage> findBySpecialOffer(@PathParam("idSpecialOffers") Integer idSpecialOffers) {
+        Query q = em.createNamedQuery("VhsOfferImage.findBySpecialOffer");
+        q.setParameter("idSpecialOffers", idSpecialOffers);
+        return (List<VhsOfferImage>) q.getResultList();
+    }
+
+
 
     @GET
     @Override
     @Produces({"application/xml", "application/json"})
-    public List<VhsOfferSale> findAll() {
+    public List<VhsOfferImage> findAll() {
         return super.findAll();
     }
 
     @GET
     @Path("{from}/{to}")
     @Produces({"application/xml", "application/json"})
-    public List<VhsOfferSale> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
+    public List<VhsOfferImage> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
         return super.findRange(new int[]{from, to});
     }
-    
-    @GET
-    @Path("{mail}/{begin}/{end}/{type}")
-    @Produces({"application/xml", "application/json"})
-    public List<DatosReporte> findSale(@PathParam("mail") String mail, @PathParam("begin") String begin, @PathParam("end") String end,  @PathParam("type") String type ) throws ParseException {
-        Query q;
-        if(type.equalsIgnoreCase("location"))
-        {
-            q = getEntityManager().createNativeQuery(VhsOfferSale.SQL_SALES_LOCATION);
-        }
-        else
-        {
-            q = getEntityManager().createNativeQuery(VhsOfferSale.SQL_SALES_PRODUCT);
-        }
-        return getReport(q, mail, begin, end);
-     }
 
     @GET
     @Path("count")
@@ -112,7 +96,7 @@ public class VhsOfferSaleFacadeREST extends AbstractFacade<VhsOfferSale> {
     public String countREST() {
         return String.valueOf(super.count());
     }
-    
+
     @Override
     protected EntityManager getEntityManager() {
         return em;
@@ -133,5 +117,4 @@ public class VhsOfferSaleFacadeREST extends AbstractFacade<VhsOfferSale> {
         }
         return retValue.build();
     }
-    
 }

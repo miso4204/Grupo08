@@ -6,7 +6,7 @@
 package com.vhs.service;
 
 import com.vhs.data.DatosReporte;
-import com.vhs.data.VhsOfferSale;
+import com.vhs.data.VhsOfferRating;
 import java.text.ParseException;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -30,36 +30,26 @@ import javax.ws.rs.core.Response;
  * @author andresvargas
  */
 @Stateless
-@Path("vhsoffersale")
-public class VhsOfferSaleFacadeREST extends AbstractFacade<VhsOfferSale> {
+@Path("vhsofferrating")
+public class VhsOfferRatingFacadeREST extends AbstractFacade<VhsOfferRating> {
     @PersistenceContext(unitName = "VhsBackEndServicesPU")
     private EntityManager em;
 
-    public VhsOfferSaleFacadeREST() {
-        super(VhsOfferSale.class);
+    public VhsOfferRatingFacadeREST() {
+        super(VhsOfferRating.class);
     }
 
     @POST
     @Override
     @Consumes({"application/xml", "application/json"})
-    public void create(VhsOfferSale entity) {
+    public void create(VhsOfferRating entity) {
         super.create(entity);
-    }
-    
-    
-    @POST
-    @Consumes({"application/xml", "application/json"})
-    public void create(List<VhsOfferSale> entities) {
-        for ( VhsOfferSale entity: entities)
-        {
-           super.create(entity);
-        }
     }
 
     @PUT
     @Path("{id}")
     @Consumes({"application/xml", "application/json"})
-    public void edit(@PathParam("id") Long id, VhsOfferSale entity) {
+    public void edit(@PathParam("id") Long id, VhsOfferRating entity) {
         super.edit(entity);
     }
 
@@ -72,38 +62,49 @@ public class VhsOfferSaleFacadeREST extends AbstractFacade<VhsOfferSale> {
     @GET
     @Path("{id}")
     @Produces({"application/xml", "application/json"})
-    public VhsOfferSale find(@PathParam("id") Long id) {
+    public VhsOfferRating find(@PathParam("id") Long id) {
         return super.find(id);
     }
 
     @GET
     @Override
     @Produces({"application/xml", "application/json"})
-    public List<VhsOfferSale> findAll() {
+    public List<VhsOfferRating> findAll() {
         return super.findAll();
     }
 
     @GET
     @Path("{from}/{to}")
     @Produces({"application/xml", "application/json"})
-    public List<VhsOfferSale> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
+    public List<VhsOfferRating> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
         return super.findRange(new int[]{from, to});
     }
     
+    /**
+     * 
+     * @param mail
+     * @param begin final date format ddmmaaaa
+     * @param end final date format ddmmaaaa
+     * @param type tipo de reporte location or package
+     * @throws ParseException
+     * @return 
+     */
     @GET
     @Path("{mail}/{begin}/{end}/{type}")
     @Produces({"application/xml", "application/json"})
-    public List<DatosReporte> findSale(@PathParam("mail") String mail, @PathParam("begin") String begin, @PathParam("end") String end,  @PathParam("type") String type ) throws ParseException {
+    $Package
+    public List<DatosReporte> findRating(@PathParam("mail") String mail, @PathParam("begin") String begin, @PathParam("end") String end,  @PathParam("type") String type )  throws ParseException{
         Query q;
         if(type.equalsIgnoreCase("location"))
         {
-            q = getEntityManager().createNativeQuery(VhsOfferSale.SQL_SALES_LOCATION);
+            q = getEntityManager().createNativeQuery(VhsOfferRating.SQL_RATING_LOCATION);
         }
         else
         {
-            q = getEntityManager().createNativeQuery(VhsOfferSale.SQL_SALES_PRODUCT);
+            q = getEntityManager().createNativeQuery(VhsOfferRating.SQL_RATING_PRODUCT);
         }
-        return getReport(q, mail, begin, end);
+        return getReport(q, mail, begin, end );
+        
      }
 
     @GET
@@ -112,7 +113,7 @@ public class VhsOfferSaleFacadeREST extends AbstractFacade<VhsOfferSale> {
     public String countREST() {
         return String.valueOf(super.count());
     }
-    
+
     @Override
     protected EntityManager getEntityManager() {
         return em;
@@ -133,5 +134,4 @@ public class VhsOfferSaleFacadeREST extends AbstractFacade<VhsOfferSale> {
         }
         return retValue.build();
     }
-    
 }

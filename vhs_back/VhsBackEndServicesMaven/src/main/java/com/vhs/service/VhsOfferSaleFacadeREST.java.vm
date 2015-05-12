@@ -93,6 +93,7 @@ public class VhsOfferSaleFacadeREST extends AbstractFacade<VhsOfferSale> {
     @GET
     @Path("{mail}/{begin}/{end}/{type}")
     @Produces({"application/xml", "application/json"})
+    $ReportByLocation
     public List<DatosReporte> findSale(@PathParam("mail") String mail, @PathParam("begin") String begin, @PathParam("end") String end,  @PathParam("type") String type ) throws ParseException {
         Query q;
         if(type.equalsIgnoreCase("location"))
