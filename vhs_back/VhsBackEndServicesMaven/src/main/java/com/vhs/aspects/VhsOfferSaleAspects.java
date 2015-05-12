@@ -12,18 +12,18 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 
 /**
- * Supported currency aspects definition.
+ * Additional values aspects definition.
  *
  * @author Andres Vargas (ja.vargas147@uniandes.edu.co)
  * @author Alex Vicente ChacOn JimEnez (av.chacon10@uniandes.edu.co)
  */
 @Aspect
-public class VhsUserAspects
+public class VhsOfferSaleAspects
 {
-    @Around("execution(@com.vhs.annotations.VHSFeature * com.vhs.service.VhsUserFacadeREST.edit(..))")
-    public void adviceEdit(ProceedingJoinPoint pjp) throws Throwable
+    @Around("execution(@com.vhs.annotations.VHSFeature * com.vhs.service.VhsOfferSaleFacadeREST.findSale(..))")
+    public Object adviceFindSale(ProceedingJoinPoint pjp) throws Throwable
     {
-        Logger.getLogger(VhsUserAspects.class.getName()).log(Level.INFO, "Feature interceptado: ChangePassword");
-        Logger.getLogger(VhsUserAspects.class.getName()).log(Level.WARNING, "No se permite hacer cambio  de password");
+        Logger.getLogger(VhsOfferSaleAspects.class.getName()).log(Level.INFO, "Feature interceptado: ReportByLocation");
+        return null;
     }
 }
