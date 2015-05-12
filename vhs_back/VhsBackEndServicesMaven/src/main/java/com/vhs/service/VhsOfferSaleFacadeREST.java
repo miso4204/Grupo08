@@ -49,6 +49,16 @@ public class VhsOfferSaleFacadeREST extends AbstractFacade<VhsOfferSale> {
     public void create(VhsOfferSale entity) {
         super.create(entity);
     }
+    
+    
+    @POST
+    @Consumes({"application/xml", "application/json"})
+    public void create(List<VhsOfferSale> entities) {
+        for ( VhsOfferSale entity: entities)
+        {
+           super.create(entity);
+        }
+    }
 
     @PUT
     @Path("{id}")
