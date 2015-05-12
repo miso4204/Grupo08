@@ -238,7 +238,7 @@ Cócteles y gastronomía con buena música de fondo, mucha animación y un ambie
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lo sentimos, no encontramos ningún producto " lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFs-uR-hw5">
                                         <rect key="frame" x="31" y="24" width="259" height="64"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8jg-Ww-8Dv" customClass="BButton">
@@ -439,7 +439,7 @@ Cócteles y gastronomía con buena música de fondo, mucha animación y un ambie
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lo sentimos, no encontramos ningún producto " lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5U-rO-dF7">
                                         <rect key="frame" x="31" y="24" width="259" height="64"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQe-V2-0rV" customClass="BButton">
@@ -464,11 +464,12 @@ Cócteles y gastronomía con buena música de fondo, mucha animación y un ambie
                         <outlet property="btnTryAgain" destination="NQe-V2-0rV" id="A7x-Bf-lkI"/>
                         <outlet property="tableviewProducts" destination="W1O-qP-9ZO" id="YEP-gJ-Flr"/>
                         <outlet property="viewSearchAgain" destination="aBv-Mi-1Fg" id="t3r-wr-uCt"/>
+                        <segue destination="fyk-1P-sIo" kind="presentation" identifier="description" id="Pbt-4c-g2m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P9q-Q5-gpV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2738" y="3329"/>
+            <point key="canvasLocation" x="2870" y="3313"/>
         </scene>
         <!--Búsqueda-->
         <scene sceneID="wJ4-sg-srF">
@@ -708,7 +709,7 @@ Cócteles y gastronomía con buena música de fondo, mucha animación y un ambie
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lo sentimos, no encontramos ningún producto " lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QaH-H4-qkE">
                                         <rect key="frame" x="31" y="24" width="259" height="64"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4s-j4-qgc" customClass="BButton">
@@ -892,7 +893,7 @@ Cócteles y gastronomía con buena música de fondo, mucha animación y un ambie
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Huf-jE-puO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4072" y="2463"/>
+            <point key="canvasLocation" x="4186" y="2335"/>
         </scene>
         <!--Categorias-->
         <scene sceneID="NRz-KS-q2z">
@@ -1374,6 +1375,6 @@ Cócteles y gastronomía con buena música de fondo, mucha animación y un ambie
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Y2o-AQ-ncW"/>
-        <segue reference="I28-sx-llC"/>
+        <segue reference="PYt-Om-fzj"/>
     </inferredMetricsTieBreakers>
 </document>

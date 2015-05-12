@@ -253,13 +253,14 @@
         cell.ViewDetailButton.tag=[indexPath row];
         
         
+        
         return cell;
 
     }
 }
 - (void)viewDetail:(UIButton *)button
 {
-    Product *product = [self.returnP objectAtIndex:button.tag];
+    Product *product = [self.productsArray objectAtIndex:button.tag];
     self.myProduct = product;
     [self performSegueWithIdentifier:@"description" sender:product];
 }

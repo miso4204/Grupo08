@@ -798,10 +798,10 @@
     NSLog(@"offer images %@",responseObject);
     NSArray *items = [responseObject valueForKeyPath:@"collection.vhsOfferImage"];
     NSLog(@"arraty %@",items);
-    self.returnP = [[NSMutableArray alloc]init];
     NSLog(@"items count %lu",(unsigned long)items.count);
     for (NSDictionary * test in items) {
         NSDictionary *urlImage = [test objectForKey:@"url"];
+        NSLog(@"url image %@",urlImage);
         NSString *urlfromdictionary = [urlImage objectForKey:@"text"];
         NSURL* url = [NSURL URLWithString:urlfromdictionary];
         NSURLRequest* request = [NSURLRequest requestWithURL:url];
