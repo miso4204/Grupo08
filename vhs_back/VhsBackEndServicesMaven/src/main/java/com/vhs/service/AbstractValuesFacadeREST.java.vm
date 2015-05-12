@@ -5,7 +5,6 @@
  */
 package com.vhs.service;
 
-import com.vhs.annotations.VHSFeature;
 import com.vhs.data.AdditionalValues;
 import com.vhs.service.AbstractFacade;
 import java.util.List;
