@@ -159,7 +159,6 @@ public class VhsUserFacadeREST extends AbstractFacade<VhsUser>
     
     @PUT
     @Path("{id}")
-	$aspect
     @Consumes(
     {
         "application/xml", "application/json"
