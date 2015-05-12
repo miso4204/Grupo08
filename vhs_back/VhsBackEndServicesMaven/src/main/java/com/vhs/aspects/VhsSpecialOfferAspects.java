@@ -29,8 +29,8 @@ public class VhsSpecialOfferAspects
     @Around("execution(* com.vhs.service.VhsSpecialOfferFacadeREST.findAll(..))")
     public Object adviceFindAll(ProceedingJoinPoint pjp) throws Throwable
     {
-        
-        
+        return (List<VhsSpecialOffer>)pjp.proceed();
+        /*
         
         List<VhsSpecialOffer> currentResponse = (List<VhsSpecialOffer>)pjp.proceed();
         List<AdditionalValues> additionalValue = new ArrayList<>();
@@ -59,5 +59,7 @@ public class VhsSpecialOfferAspects
         }
         Logger.getLogger(VhsSpecialOfferAspects.class.getName()).log(Level.INFO, "Ingreso....{0}", currentResponse);
         return currentResponse;
+                */
+        
     }
 }
