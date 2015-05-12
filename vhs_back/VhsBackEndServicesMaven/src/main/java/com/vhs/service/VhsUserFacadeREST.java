@@ -183,7 +183,11 @@ public class VhsUserFacadeREST extends AbstractFacade<VhsUser>
     })
     public void edit(@PathParam("id") Integer id, VhsUser entity)
     {
-        super.edit(entity);
+        VhsUser orig = super.find(id);
+        orig.setMail(entity.getMail());
+        orig.setFullName(entity.getFullName());
+        orig.setPassword(entity.getPassword());
+        super.edit(orig);
     }
 
     @DELETE

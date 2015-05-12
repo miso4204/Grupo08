@@ -5,11 +5,16 @@
  */
 package com.vhs.data;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import java.io.Serializable;
 import java.util.Collection;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -17,6 +22,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.xml.bind.annotation.XmlRootElement;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
@@ -27,9 +33,11 @@ import org.hibernate.annotations.LazyCollectionOption;
  * @author Andres Vargas (ja.vargas147@uniandes.edu.co)
  * @author Alex Vicente ChacOn JimEnez (av.chacon10@uniandes.edu.co)
  */
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Entity
-@Table(name = "vhs_city")
 @XmlRootElement
+@Table(name = "vhs_city")
 @NamedQueries
         (
             {
@@ -50,8 +58,9 @@ public class VhsCity implements Serializable
      * City identifier
      */
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_city")
-    private Long idCity;
+    private Integer idCity;
     
     /**
      * City name
@@ -90,17 +99,17 @@ public class VhsCity implements Serializable
     {
     }
 
-    public VhsCity(Long idCity)
+    public VhsCity(Integer idCity)
     {
         this.idCity = idCity;
     }
-
+    
     public long getIdCity()
     {
         return idCity;
     }
 
-    public void setIdCity(Long idCity)
+    public void setIdCity(Integer idCity)
     {
         this.idCity = idCity;
     }
@@ -134,7 +143,7 @@ public class VhsCity implements Serializable
     }
 
     public String getLat() {
-        return lat;
+        return lat + "|" + idCity;
     }
 
     public void setLat(String lat) {
