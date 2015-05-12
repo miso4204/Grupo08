@@ -13,8 +13,11 @@ C:\Users\alex.chacon\Documents\Uniandes\GitHub\Grupo08\vhs_back\VhsBackEndServic
 C:\Users\alex.chacon\Documents\Uniandes\GitHub\Grupo08\vhs_back\VhsBackEndServicesMaven\src\main\java\com\vhs\aspects\test\services\TestService.java
 C:\Users\alex.chacon\Documents\Uniandes\GitHub\Grupo08\vhs_back\VhsBackEndServicesMaven\src\main\java\com\vhs\aspects\TestAspect.java
 C:\Users\alex.chacon\Documents\Uniandes\GitHub\Grupo08\vhs_back\VhsBackEndServicesMaven\src\main\java\com\vhs\aspects\VhsAdditionalValuesAspects.java
+C:\Users\alex.chacon\Documents\Uniandes\GitHub\Grupo08\vhs_back\VhsBackEndServicesMaven\src\main\java\com\vhs\aspects\VhsOfferImageAspects.java
+C:\Users\alex.chacon\Documents\Uniandes\GitHub\Grupo08\vhs_back\VhsBackEndServicesMaven\src\main\java\com\vhs\aspects\VhsOfferRatingAspects.java
+C:\Users\alex.chacon\Documents\Uniandes\GitHub\Grupo08\vhs_back\VhsBackEndServicesMaven\src\main\java\com\vhs\aspects\VhsOfferSaleAspects.java
 C:\Users\alex.chacon\Documents\Uniandes\GitHub\Grupo08\vhs_back\VhsBackEndServicesMaven\src\main\java\com\vhs\aspects\VhsSpecialOfferAspects.java
-C:\Users\alex.chacon\Documents\Uniandes\GitHub\Grupo08\vhs_back\VhsBackEndServicesMaven\src\main\java\com\vhs\aspects\VhsSupportedCurrencyAspects.java
+C:\Users\alex.chacon\Documents\Uniandes\GitHub\Grupo08\vhs_back\VhsBackEndServicesMaven\src\main\java\com\vhs\aspects\VhsUserAspects.java
 C:\Users\alex.chacon\Documents\Uniandes\GitHub\Grupo08\vhs_back\VhsBackEndServicesMaven\src\main\java\com\vhs\builders\BuilderContract.java
 C:\Users\alex.chacon\Documents\Uniandes\GitHub\Grupo08\vhs_back\VhsBackEndServicesMaven\src\main\java\com\vhs\builders\util\Utilities.java
 C:\Users\alex.chacon\Documents\Uniandes\GitHub\Grupo08\vhs_back\VhsBackEndServicesMaven\src\main\java\com\vhs\builders\VhsCurrencyBuilder.java

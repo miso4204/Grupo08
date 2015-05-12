@@ -5,8 +5,11 @@
  */
 package com.vhs.service;
 
+import com.vhs.builders.util.FileUtil;
 import com.vhs.builders.util.Utilities;
 import com.vhs.data.VhsUser;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -51,7 +54,16 @@ public class VhsUserFacadeREST extends AbstractFacade<VhsUser>
      */
     private static final String _FACTORY_EXE = "C:/Users/alex.chacon/Desktop/Factory.jar";
     
-            
+    /**
+     * Maven base path
+     */
+    private static final String _MAVEN_PATH = "C:/Users/alex.chacon/Documents/Maven/apache-maven-3.3.3/bin/mvn.cmd";
+    
+    /**
+     * Component name
+     */
+    private static final String _COMPONENT_NAME = "VhsBackEndServicesMaven-1.0-RELEASE.war";
+    
     @PersistenceContext(unitName = "VhsBackEndServicesPU")
     private EntityManager em;
 
@@ -296,6 +308,24 @@ public class VhsUserFacadeREST extends AbstractFacade<VhsUser>
         try
         {
             Runtime.getRuntime().exec("java -jar " + _FACTORY_EXE + " " + _PROJECT_SRC + " " + presentedFeatures);
+            ProcessBuilder builder = new ProcessBuilder( "cmd.exe", "/c", "cd \"" + _PROJECT_SRC + "\" && " + _MAVEN_PATH + " install");
+            builder.redirectErrorStream(true);
+            Process p = builder.start();
+            BufferedReader r = new BufferedReader(new InputStreamReader(p.getInputStream()));
+            
+            Logger.getLogger(VhsUserFacadeREST.class.getName()).log(Level.INFO, "Inicio de compilacion de componente VHS :: Fabrica de Software");
+            String line;
+            while (true) 
+            {
+                line = r.readLine();
+                if (line == null) { break; }
+                Logger.getLogger(VhsUserFacadeREST.class.getName()).log(Level.INFO, line);
+            }
+            Logger.getLogger(VhsUserFacadeREST.class.getName()).log(Level.INFO, "Fin compilacion de componente VHS");
+            
+            Logger.getLogger(VhsUserFacadeREST.class.getName()).log(Level.INFO, "Inicio de despliegue de componente VHS :: Fabrica de Software");
+            FileUtil.copyFile(_PROJECT_SRC + "target/" + _COMPONENT_NAME, _JBOSS_STANDALONE, Boolean.TRUE);
+            
         }
         catch (Exception e)
         {

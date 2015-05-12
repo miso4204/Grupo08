@@ -73,7 +73,7 @@ public class FactoryVelocityContext
 			
 			for (String currentPresentFeature: this.presentFeatures)
 			{
-				if (currenteReferenceFeature.trim().contains(currentPresentFeature.trim()))
+				if (currenteReferenceFeature.trim().equals(currentPresentFeature.trim()))
 				{
 					featureNotFound = false;
 				}
