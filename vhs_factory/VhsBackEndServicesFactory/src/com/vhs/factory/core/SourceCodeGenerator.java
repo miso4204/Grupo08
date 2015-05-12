@@ -22,12 +22,24 @@ public class SourceCodeGenerator
 	/**
 	 * Base extension
 	 */
-	private final static String _BASE_EXT = ".java.vm";
+	private final static String _BASE_EXT = ".vm";
 	
 	/**
-	 * Base Java extension
+	 * PostgreSQL JPA
 	 */
-	private final static String _BASE_EXT_JAVA = ".java";
+	private final static String _POSTGRESQL_JPA = "java:/jboss/datasources/PostgreSQLDS";
+	
+	/**
+	 * Oracle JPA
+	 */
+	private final static String _ORACLE_JPA = "java:/jboss/datasources/OracleDS";
+	
+	/**
+	 * Persistence XML file
+	 */
+	private final static String _PERSISTENCE_XML = "persistence.xml";
+	
+	
 	
 	/**
 	 * Base feature extension
@@ -89,17 +101,47 @@ public class SourceCodeGenerator
 	        
 	        VelocityContext context = new VelocityContext();
 	        
+	        boolean scalabilityEnable = false;
+	        boolean scalabilityFound = false;
 	        for (String presentFeatures : this.context.getPresentFeatures())
 	        {
-	        	context.put(presentFeatures, "");
+	        	//
+	        	// Quality Attributes: Go to Oracle Data base
+	        	if (current.contains(_PERSISTENCE_XML))
+        		{
+	        		if (presentFeatures.contains("Scalability"))
+	        		{
+	        			context.put(presentFeatures, _ORACLE_JPA);
+	        			scalabilityEnable = true;
+	        			scalabilityFound = true;
+	        		}
+        		}
+	        	
+	        	//
+	        	// Quality Attributes: Go to two Jboss nodes
+	        	else if (presentFeatures.contains("Performance"))
+	        	{
+	        		
+	        	}
+	        	else
+	        	{
+	        		context.put(presentFeatures, "");
+	        	}
+	        }
+	        
+	        if (!scalabilityEnable && current.contains(_PERSISTENCE_XML))
+	        {
+	        	context.put("Scalability", _POSTGRESQL_JPA);
+	        	scalabilityFound = true;
 	        }
 	        
 	        for (String notPresentFeatures : this.context.getNotPresentFeatures())
 	        {
-	        	context.put(notPresentFeatures, _BASE_ASPECT.replaceFirst("NAME", notPresentFeatures));
+	        	if (!scalabilityFound)
+	        		context.put(notPresentFeatures, _BASE_ASPECT.replaceFirst("NAME", notPresentFeatures));
 	        }
 	        
-	        FileWriter writer = new FileWriter(current.replaceAll(_BASE_EXT, _BASE_EXT_JAVA));
+	        FileWriter writer = new FileWriter(current.replaceAll(_BASE_EXT, ""));
 	        
 	        template.merge( context, writer );
 	        
