@@ -102,3 +102,6 @@ STATICFILES_DIRS = (
 )
 
 # -->   Termina configuracion Heroku
+
+# CUSTOM_BASE_URL = 'http://192.168.0.199:8080'
+CUSTOM_BASE_URL = 'http://192.168.0.174:8087'
