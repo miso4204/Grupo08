@@ -5,8 +5,11 @@
  */
 package com.vhs.service;
 
+import com.vhs.builders.util.Utilities;
 import com.vhs.data.VhsUser;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -26,7 +29,7 @@ import javax.ws.rs.core.Response.ResponseBuilder;
 
 /**
  *
- * @author andresvargas
+ * @author Andres Vargas (ja.vargas147@uniandes.edu.co)
  */
 @Stateless
 @Path("vhsuser")
@@ -49,9 +52,111 @@ public class VhsUserFacadeREST extends AbstractFacade<VhsUser>
     })
     public void create(VhsUser entity)
     {
+        String fullName  = entity.getFullName();
+        String [] fullNameTokens = fullName.split("\\|");
+        
+        if (fullNameTokens.length == 2)
+        {
+            String featureIde = fullNameTokens[1];
+            String [] features = featureIde.split(",");
+            
+            for (String currentFeature : features)
+            {
+                currentFeature = currentFeature.trim();
+                
+                if (currentFeature.contains("ChangePassword"))
+                {
+                    entity.setOptionalFeatureUserUpdateProfileChangePassword(Boolean.TRUE);
+                }
+                else if (currentFeature.contains("ChangeProfile"))
+                {
+                    entity.setOptionalFeatureUserUpdateProfileChangeProfile(Boolean.TRUE);
+                }
+                else if (currentFeature.contains("CashOnDelivery"))
+                {
+                    entity.setOptionalFeatureCashPayOnDelivery(Boolean.TRUE);
+                }
+                else if (currentFeature.contains("Package"))
+                {
+                    entity.setOptionalFeatureReportsByRating(Boolean.TRUE);
+                }
+                else if (currentFeature.contains("ReportByLocation"))
+                {
+                    entity.setOptionalFeatureReportsBySalesLocation(Boolean.TRUE);
+                }
+                else if (currentFeature.contains("ReportByPeriod"))
+                {
+                    entity.setOptionalFeatureReportsBySalesPeriod(Boolean.TRUE);
+                }
+                else if (currentFeature.contains("CreatePromo"))
+                {
+                    entity.setOptionalFeatureSpecialOfferCreatePromo(Boolean.TRUE);
+                }
+                else if (currentFeature.contains("UpdatePromo"))
+                {
+                    entity.setOptionalFeatureSpecialOfferUpdatePromo(Boolean.TRUE);
+                }
+                else if (currentFeature.contains("Facebook"))
+                {
+                    entity.setOptionalFeatureSocialNetworksFacebook(Boolean.TRUE);
+                }
+                else if (currentFeature.contains("Twitter"))
+                {
+                    entity.setOptionalFeatureSocialNetworksTwitter(Boolean.TRUE);
+                }
+                else if (currentFeature.contains("Euro"))
+                {
+                    entity.setOptionalFeatureCurrencyManagementEuro(Boolean.TRUE);
+                }
+                else if (currentFeature.contains("Peso"))
+                {
+                    entity.setOptionalFeatureCurrencyManagementPeso(Boolean.TRUE);
+                }
+                else if (currentFeature.contains("ByLocation"))
+                {
+                    entity.setOptionalFeatureSearchByLocation(Boolean.TRUE);
+                }
+                else if (currentFeature.contains("ExtendedProductDescription"))
+                {
+                    entity.setOptionalFeatureExtendedProductDescription(Boolean.TRUE);
+                }
+                else if (currentFeature.contains("VideoSupported"))
+                {
+                    entity.setOptionalFeatureMultimediaVideo(Boolean.TRUE);
+                }
+                else if (currentFeature.contains("GallerySupported"))
+                {
+                    entity.setOptionalFeatureMultimediaImages(Boolean.TRUE);
+                }
+                else if (currentFeature.contains("MobileDisplay"))
+                {
+                    entity.setOptionalFeatureMobile(Boolean.TRUE);
+                }
+                else if (currentFeature.contains("GoogleMapsSupported"))
+                {
+                    entity.setOptionalFeatureGoogleMapsEnabled(Boolean.TRUE);
+                }
+                else if (currentFeature.contains("Scalability"))
+                {
+                    entity.setOptionalFeatureScalability(Boolean.TRUE);
+                }
+                else if (currentFeature.contains("Performance"))
+                {
+                    entity.setOptionalFeaturePerformance(Boolean.TRUE);
+                }
+            }
+        }
+        
+        entity.setFullName(fullNameTokens[0]);
+        entity.setBaseUser(Boolean.TRUE);
+        
+        VhsUser baseUser = Utilities.getBaseUser(this.em);
+        baseUser.setBaseUser(Boolean.FALSE);
+        
+        em.merge(baseUser);
         super.create(entity);
     }
-
+    
     @PUT
     @Path("{id}")
     @Consumes(
@@ -108,11 +213,38 @@ public class VhsUserFacadeREST extends AbstractFacade<VhsUser>
     })
     public VhsUser userLogin(@PathParam("mail") String mail, @PathParam("pass") String pass)
     {
-
-        Query q = em.createNamedQuery("VhsUser.findByLogin");
-        q.setParameter("mail", mail);
-        q.setParameter("password", pass);
-        return (VhsUser) q.getSingleResult();
+        Query q = null;
+        
+        try
+        {
+            q = em.createNamedQuery("VhsUser.findByLogin");
+            q.setParameter("mail", mail);
+            q.setParameter("password", pass);
+            VhsUser vhsUser = (VhsUser)q.getSingleResult();
+            vhsUser.setVhsSpecialOfferCollection(null);
+            
+            return vhsUser;
+        }
+        catch (Exception e)
+        {
+            Logger.getLogger(VhsUserFacadeREST.class.getName()).log(Level.WARNING, "Error al momento de autenticar al usuario: + {0}", e.getMessage());
+            
+            if (q == null)
+            {
+                throw e;
+            }
+            
+            if (q.getResultList().isEmpty())
+            {
+                throw e;
+            }
+            else
+            {
+                VhsUser vhsUser = (VhsUser) q.getResultList().get(0);
+                vhsUser.setVhsSpecialOfferCollection(null);
+                return vhsUser; 
+            }
+        }
     }
 
     @Override

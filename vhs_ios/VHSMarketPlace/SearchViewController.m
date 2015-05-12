@@ -18,7 +18,7 @@
 #import "ProductCell.h"
 #import "AppDelegate.h"
 @interface SearchViewController (){
-    Product * prod1;
+    Product * prod;
 
     LocationSe * p;
 
@@ -259,10 +259,8 @@
 - (void)viewDetail:(UIButton *)button
 {
     Product *product = [self.returnP objectAtIndex:button.tag];
-    
     self.myProduct = product;
-    
-    [self performSegueWithIdentifier:@"description" sender:self.myProduct];
+    [self performSegueWithIdentifier:@"description" sender:product];
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     NSLog(@"sender for book info %@",sender);
@@ -389,87 +387,28 @@
         self.viewSearchAgain.hidden = NO;
     }
     
-    for (int i =0; i<items.count; i++) {
-        NSEnumerator *enumerator = [items[i] objectEnumerator];
-        int count = 0;
-        NSLog(@"items sub i %@",items[i]);
-        while (item = (NSDictionary*)[enumerator nextObject]) {
-            NSLog(@"proeuctssssss = %@",  [item objectForKey:@"text"]);
-            
-            if (count ==0) {
-                prod1 = [[Product alloc]init];
-                
-                prod1.longitude = [[item objectForKey:@"text"] floatValue];
-                count ++;
-                NSLog(@"proeucts0 = %@",  [item objectForKey:@"text"]);
-                
-            }
-            
-            if (count ==1) {
-                prod1.longitude = [[item objectForKey:@"text"] floatValue];
-                count ++;
-                NSLog(@"proeucts1 = %@",  [item objectForKey:@"text"]);
-                
-                
-            }else if (count ==2){
-                prod1.longitude =[[item objectForKey:@"text"] floatValue];
-                count ++;
-                NSLog(@"proeucts2 = %@",  [item objectForKey:@"text"]);
-                
-                
-            }else if (count ==3){
-                prod1.startDate =[item objectForKey:@"text"];
-                count ++;
-                NSLog(@"proeucts3 = %@",  [item objectForKey:@"text"]);
-                
-                
-            }else if (count == 4) {
-                prod1.image = [item objectForKey:@"text"];
-                count ++;
-                NSLog(@"proeucts4 = %@",  [item objectForKey:@"text"]);
-                
-                
-            }else if (count ==5){
-                prod1.price = [[item objectForKey:@"text"] intValue];
-                count ++;
-                NSLog(@"proeucts5 = %@",  [item objectForKey:@"text"]);
-                
-            }else if (count ==6){
-                prod1.name = [item objectForKey:@"text"];
-                count ++;
-                NSLog(@"proeucts6 = %@",  [item objectForKey:@"text"]);
-                
-            }else if (count ==7){
-                prod1.latitude =[[item objectForKey:@"text"] floatValue];
-                count ++;
-                NSLog(@"proeucts7 = %@",  [item objectForKey:@"text"]);
-                
-            }else if (count ==8){
-                prod1.descriptions =[item objectForKey:@"text"];
-                count ++;
-                NSLog(@"proeucts8 = %@",  [item objectForKey:@"text"]);
-                
-            }else if (count ==9){
-                NSLog(@"proeucts9 = %@",  [item objectForKey:@"text"]);
-                prod1.startDate = [item objectForKey:@"text"];
-                count ++;
-            }else if (count ==10){
-                count ++;
-                NSLog(@"proeucts10 = %@",  [item objectForKey:@"text"]);
-                
-                
-                NSLog(@"proeucts11 = %@",  [item objectForKey:@"text"]);
-                [self.productsArray addObject:prod1];
-            }else if (count ==11){
-                prod1.id =[[item objectForKey:@"text"] intValue];
-                count =0;
-                
-                NSLog(@"proeucts11 = %@",  [item objectForKey:@"text"]);
-                [self.productsArray addObject:prod1];
-            }
-            
-        }
-        
+    for (NSDictionary * test in items) {
+        NSDictionary *description = [test objectForKey:@"description"];
+        NSDictionary *endDate = [test objectForKey:@"endDate"];
+        NSDictionary *idSpecialOffers = [test objectForKey:@"idSpecialOffers"];
+        NSDictionary *latitude = [test objectForKey:@"latitude"];
+        NSDictionary *longitude = [test objectForKey:@"longitude"];
+        NSDictionary *mainImageUrl = [test objectForKey:@"mainImageUrl"];
+        NSDictionary *offerCategory = [test objectForKey:@"offerCategory"];
+        NSDictionary *price = [test objectForKey:@"price"];
+        NSDictionary *publishDate = [test objectForKey:@"publishDate"];
+        NSDictionary *shortName = [test objectForKey:@"shortName"];
+        prod = [[Product alloc]init];
+        prod.longitude = [[longitude objectForKey:@"text"] floatValue];
+        prod.startDate =[publishDate objectForKey:@"text"];
+        prod.image = [mainImageUrl objectForKey:@"text"];
+        prod.price = [[price objectForKey:@"text"] intValue];
+        prod.name = [shortName objectForKey:@"text"];
+        prod.latitude =[[latitude objectForKey:@"text"] floatValue];
+        prod.descriptions =[description objectForKey:@"text"];
+        prod.id =[[idSpecialOffers objectForKey:@"text"] intValue];
+        [self.productsArray addObject:prod];
+        NSLog(@"description and endate %@ %@",description,endDate);
     }
     [self.tableviewProducts reloadData];
 

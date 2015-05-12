@@ -63,6 +63,7 @@
 		F246D1F71AFEA80B00C52AAB /* promotions@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F246D1F61AFEA80B00C52AAB /* promotions@2x.png */; };
 		F246D1FA1AFEA88700C52AAB /* PromotionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F246D1F91AFEA88700C52AAB /* PromotionsViewController.m */; };
 		F246D1FC1AFFF00800C52AAB /* travel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F246D1FB1AFFF00800C52AAB /* travel@2x.png */; };
+		F246D1FF1B00283F00C52AAB /* AdditionalValue.m in Sources */ = {isa = PBXBuildFile; fileRef = F246D1FE1B00283F00C52AAB /* AdditionalValue.m */; };
 		F247CF9C1AE6FD8A001C0286 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = F247CF9B1AE6FD8A001C0286 /* close.png */; };
 		F24DF8531AF02C69001BC3AF /* LocationSe.m in Sources */ = {isa = PBXBuildFile; fileRef = F24DF8521AF02C69001BC3AF /* LocationSe.m */; };
 		F261CE431AEF3F69003D8A34 /* share@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F261CE421AEF3F69003D8A34 /* share@2x.png */; };
@@ -170,6 +171,8 @@
 		F246D1F81AFEA88700C52AAB /* PromotionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromotionsViewController.h; sourceTree = "<group>"; };
 		F246D1F91AFEA88700C52AAB /* PromotionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromotionsViewController.m; sourceTree = "<group>"; };
 		F246D1FB1AFFF00800C52AAB /* travel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "travel@2x.png"; path = "Resources/travel@2x.png"; sourceTree = "<group>"; };
+		F246D1FD1B00283F00C52AAB /* AdditionalValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdditionalValue.h; sourceTree = "<group>"; };
+		F246D1FE1B00283F00C52AAB /* AdditionalValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdditionalValue.m; sourceTree = "<group>"; };
 		F247CF9B1AE6FD8A001C0286 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = close.png; path = Resources/close.png; sourceTree = "<group>"; };
 		F24DF8511AF02C69001BC3AF /* LocationSe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationSe.h; sourceTree = "<group>"; };
 		F24DF8521AF02C69001BC3AF /* LocationSe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationSe.m; sourceTree = "<group>"; };
@@ -257,6 +260,8 @@
 				10EBE1B01AD2070D00CC496D /* Category.m */,
 				F2CA293D1AEDB49100555375 /* Payment.h */,
 				F2CA293E1AEDB49100555375 /* Payment.m */,
+				F246D1FD1B00283F00C52AAB /* AdditionalValue.h */,
+				F246D1FE1B00283F00C52AAB /* AdditionalValue.m */,
 				F246D1FB1AFFF00800C52AAB /* travel@2x.png */,
 				F246D1F61AFEA80B00C52AAB /* promotions@2x.png */,
 				F261CE421AEF3F69003D8A34 /* share@2x.png */,
@@ -594,6 +599,7 @@
 				10B52F421AD788B700D241E7 /* InitialViewController.m in Sources */,
 				10A148CD1AC8D8E20038DEF8 /* main.m in Sources */,
 				10A148D61AC8D8E20038DEF8 /* ViewController.m in Sources */,
+				F246D1FF1B00283F00C52AAB /* AdditionalValue.m in Sources */,
 				10EBE1B61AD228DE00CC496D /* SearchViewController.m in Sources */,
 				F2FB24A31AE328C800F4F3ED /* PaymentViewController.m in Sources */,
 				F27F38881ADF61EB0060DFC1 /* XMLReader.m in Sources */,

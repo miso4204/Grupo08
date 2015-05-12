@@ -180,7 +180,7 @@
     Payment *pays = [[Payment alloc]init];
     pays=[self.returnP objectAtIndex:indexPath.row];
     
-    if ([pays.idPayment isEqualToString:@"1"]) {
+    if ([pays.idPayment isEqualToString:@"4"]) {
         [self performSegueWithIdentifier:@"cash" sender:self];
 
     }else if ([pays.idPayment isEqualToString:@"2"]){

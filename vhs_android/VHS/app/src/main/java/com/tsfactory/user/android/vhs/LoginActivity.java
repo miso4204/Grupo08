@@ -17,6 +17,8 @@ import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.v7.app.ActionBarActivity;
 import android.text.TextUtils;
+import android.util.Log;
+import android.util.Xml;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -41,6 +43,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.XML;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -196,7 +199,7 @@ public class LoginActivity extends ActionBarActivity implements LoaderCallbacks<
 
     private boolean isPasswordValid(String password) {
         //TODO: Replace this with your own logic
-        return password.length() > 4;
+        return password.length() > 2;
     }
 
     /**
@@ -309,27 +312,49 @@ public class LoginActivity extends ActionBarActivity implements LoaderCallbacks<
         protected Boolean doInBackground(Void... params) {
 
             try {
+                Log.e("LoginActivity", "Login");
                 // Simulate network access.
                 //Thread.sleep(2000);
                 HttpClient httpClient = new DefaultHttpClient();
                 HttpGet request = new HttpGet(Constants.API_URL + Constants.VHS_USER + mEmail + "/" + mPassword);
 
-                request.setHeader("Accept", "application/json");
+                //request.setHeader("Accept", "application/json");
                 request.setHeader("Content-type", "application/json");
 
                 HttpResponse response = httpClient.execute(request);
                 // write response to log
                 if (response.getStatusLine().getStatusCode() == 200)
                 {
-                    HttpEntity entity = response.getEntity();
+                    Log.e("LoginActivity", "RESPONSE: 200");
 
-                    JSONObject myObject = new JSONObject(EntityUtils.toString(entity));
-                    userName = myObject.getString("fullName");
-                    userEmail = myObject.getString("mail");
-                    userPassword = myObject.getString("password");
-                    userId = myObject.getInt("userId");
+
+                    String sampleXml = EntityUtils.toString(response.getEntity());
+
+                    Log.e("LoginActivity", "Sample:" + sampleXml);
+
+                    JSONObject jsonObj = null;
+                    try {
+                        Log.e("LoginActivity", "Converting:" + sampleXml);
+                        jsonObj = XML.toJSONObject(sampleXml);
+                    } catch (JSONException e) {
+                        Log.e("JSON exception", e.getMessage());
+                        e.printStackTrace();
+                    }
+
+                    Log.d("XML", sampleXml);
+
+                    Log.d("JSON", jsonObj.toString());
+
+                    JSONObject myObject = new JSONObject(jsonObj.toString());
+                    JSONObject vhsUser = myObject.getJSONObject("vhsUser");
+                    userName = vhsUser.getString("fullName");
+                    userEmail = vhsUser.getString("mail");
+                    userPassword = vhsUser.getString("password");
+                    userId = vhsUser.getInt("userId");
 
                     return true;
+                } else {
+                    Log.e("Login", "ERROR");
                 }
 
             //} catch (InterruptedException e) {

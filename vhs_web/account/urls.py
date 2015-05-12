@@ -9,5 +9,6 @@ urlpatterns = patterns('',
 	url(r'^index/$', views.index),
 	url(r'^logout/$', views.logout),
 	url(r'^register/$', views.register),
+	url(r'^allUsers/$', views.allUsers),
 
 )
