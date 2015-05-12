@@ -9,6 +9,7 @@ import requests
 import json
 import operator
 from datetime import datetime, timedelta
+from django.conf import settings
 
 #Custom 
 
@@ -34,7 +35,7 @@ def rating_report_package(request):
 		# date = {'date': '03/04/2015 11:58:00 PM'}
 		date = datetime.today().strftime('%d/%m/%Y %I:%M:%S %p')
 		
-		url = 'http://jbossasvhsbackendservices-vhstourism.rhcloud.com/VhsBackEndServices/webresources'
+		url = settings.CUSTOM_BASE_URL + '/VhsBackEndServices/webresources'
 		method = 'vhsofferrating'
 		username = request.session['mail_usuario'] #"andresvargasr@gmail.com"
 
@@ -107,7 +108,7 @@ def rating_report_location(request):
 
 		# ToDo: El metodo puede que cambie dependiendo del servicio
 		
-		url = 'http://jbossasvhsbackendservices-vhstourism.rhcloud.com/VhsBackEndServices/webresources'
+		url = settings.CUSTOM_BASE_URL + '/VhsBackEndServices/webresources'
 		method = 'vhsofferrating'
 		username = request.session['mail_usuario'] #"andresvargasr@gmail.com"
 
@@ -180,7 +181,7 @@ def sales_report_location(request):
 
 		# ToDo: El metodo puede que cambie dependiendo del servicio
 		
-		url = 'http://jbossasvhsbackendservices-vhstourism.rhcloud.com/VhsBackEndServices/webresources'
+		url = settings.CUSTOM_BASE_URL + '/VhsBackEndServices/webresources'
 		method = 'vhsoffersale'
 		username = request.session['mail_usuario'] #"andresvargasr@gmail.com"
 
@@ -253,7 +254,7 @@ def sales_report_period(request):
 
 		# ToDo: El metodo puede que cambie dependiendo del servicio
 		
-		url = 'http://jbossasvhsbackendservices-vhstourism.rhcloud.com/VhsBackEndServices/webresources'
+		url = settings.CUSTOM_BASE_URL + '/VhsBackEndServices/webresources'
 		method = 'vhsoffersale'
 		username = request.session['mail_usuario'] #"andresvargasr@gmail.com"
 
