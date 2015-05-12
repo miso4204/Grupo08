@@ -385,10 +385,7 @@
     [CardIOUtilities preload];
 
     [[[[[self tabBarController] tabBar] items]
-      objectAtIndex:1] setBadgeValue:nil];
-    
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    
+      objectAtIndex:2] setBadgeValue:nil];
 
     [self.tableviewCart reloadData];
     NSLog(@"selpshopping %@",self.productCart);

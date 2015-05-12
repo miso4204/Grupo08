@@ -62,6 +62,9 @@
 -(void)getSocialNetworksDidFinishSuccessfully:(NSDictionary*)responseObject; //  PromotionsViewController
 -(void)getSocialNetworksDidFinishWithFailure:(NSDictionary*)responseObject; //  PromotionsViewController
 
+-(void)getOfferImagesDidFinishSuccessfully:(NSDictionary*)responseObject; //  PromotionsViewController
+-(void)getOfferImagesDidFinishWithFailure:(NSDictionary*)responseObject; //  PromotionsViewController
+
 @end
 
 
@@ -100,6 +103,9 @@
 -(void)getAdditionalValues:(NSDictionary *)params;
 
 -(void)getSocialNetworks;
+
+-(void)getOfferImages:(NSDictionary *)params;
+
 
 
 

@@ -16,6 +16,7 @@
 #import "detailViewController.h"
 #import "AppDelegate.h"
 #import "AdditionalValue.h"
+#import  "BButton.h"
 @interface detailViewController (){
 
     NSMutableArray *markers;
@@ -208,6 +209,8 @@
         }
         
     }
+    
+    [self loadImages];
     [self ShowAllMarkers];
     
     
@@ -216,6 +219,18 @@
     
     [self loadValues];
     // Do any additional setup after loading the view.
+}
+-(void)loadImages{
+    self.APIConnection.delegate = self;
+    
+    NSMutableDictionary * params= [[NSMutableDictionary alloc]init];
+    NSString *strFromInt = [NSString stringWithFormat:@"%d",self.myProduct.id];
+    
+    [params setObject:strFromInt forKey:@"idimage"];
+
+    [self.APIConnection getOfferImages:params];
+
+
 }
 -(void)loadValues{
     self.APIConnection.delegate = self;
@@ -430,7 +445,7 @@
     
 
     [[[[[self tabBarController] tabBar] items]
-      objectAtIndex:1] setBadgeValue:size];
+      objectAtIndex:2] setBadgeValue:size];
     
 
     
@@ -775,6 +790,46 @@
     }
 }
 -(void)getSocialNetworksDidFinishWithFailure:(NSDictionary*)responseObject{
+
+}
+
+-(void)getOfferImagesDidFinishSuccessfully:(NSDictionary*)responseObject{
+
+    NSLog(@"offer images %@",responseObject);
+    NSArray *items = [responseObject valueForKeyPath:@"collection.vhsOfferImage"];
+    NSLog(@"arraty %@",items);
+    self.returnP = [[NSMutableArray alloc]init];
+    NSLog(@"items count %lu",(unsigned long)items.count);
+    for (NSDictionary * test in items) {
+        NSDictionary *urlImage = [test objectForKey:@"url"];
+        NSString *urlfromdictionary = [urlImage objectForKey:@"text"];
+        NSURL* url = [NSURL URLWithString:urlfromdictionary];
+        NSURLRequest* request = [NSURLRequest requestWithURL:url];
+        
+        
+        [NSURLConnection sendAsynchronousRequest:request
+                                           queue:[NSOperationQueue mainQueue]
+                               completionHandler:^(NSURLResponse * response,
+                                                   NSData * data,
+                                                   NSError * error) {
+                                   if (!error){
+                                       
+                                       UIImage * image = [UIImage imageWithData:data];
+                                       [_slideshow addImage:image];
+                                       
+                                   }
+                                   
+                               }];
+
+    }
+    
+    [_slideshow addGesture:KASlideShowGestureTap]; // Gesture to go previous/next directly on the image
+    _slideshow.gestureRecognizers = nil;
+    [_slideshow addGesture:KASlideShowGestureSwipe];
+
+}
+-(void)getOfferImagesDidFinishWithFailure:(NSDictionary*)responseObject{
+
 
 }
 @end

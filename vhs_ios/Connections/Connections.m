@@ -386,4 +386,30 @@
                          }];
 
 }
+-(void)getOfferImages:(NSDictionary *)params{
+
+    NSString *path = [NSString stringWithFormat:@"%@/%@",@"vhsofferimage/specialoffer",[params objectForKey:@"idimage"]];
+    
+    [[Client sharedInstance] GET:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        // Parse the XML into a dictionary
+        NSError *parseError = nil;
+        NSDictionary *xmlDictionary = [XMLReader dictionaryForXMLString:string error:&parseError];
+        // Print the dictionary
+        
+        @try {
+            [self.delegate getOfferImagesDidFinishSuccessfully:xmlDictionary];
+        }
+        @catch (NSException *exception) {
+        }
+        @finally {
+        }
+        
+    }
+                         failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                             NSLog(@"error report %@",error);
+                             
+                         }];
+
+}
 @end

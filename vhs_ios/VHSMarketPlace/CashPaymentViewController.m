@@ -120,6 +120,9 @@
                                                   cancelButtonTitle:@"Ok"
                                                   otherButtonTitles:nil];
         [alertView show];
+          AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+          
+          appDelegate.shoppingCart = [[NSMutableArray alloc]init];
         
         //here is place for code executed in success case
         

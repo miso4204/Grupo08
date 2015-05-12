@@ -197,7 +197,7 @@
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:2];
     [[[[[self tabBarController] tabBar] items]
-      objectAtIndex:1] setBadgeValue:size];
+      objectAtIndex:2] setBadgeValue:size];
     
     
     [UIView commitAnimations];
