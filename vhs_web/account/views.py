@@ -118,7 +118,7 @@ def allUsers(request):
 	#Realizar el llamado al método REST para obtener la información
 
 	try:
-		url = 'http://localhost:8080/VhsBackEndServices/webresources/vhsuser/'
+		url = 'http://192.168.0.199:8080/VhsBackEndServices/webresources/vhsuser/'
 		# headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
 		# response = requests.get(url, headers=headers)
 		response = requests.get(url)
@@ -126,9 +126,6 @@ def allUsers(request):
 		raise e
 
 	if response.status_code == 200:
-		tree =  ElementTree.XML(response.text)
-		# tree = json.dumps(xmltodict.parse(response.text))
-
 		tree = xmltodict.parse(response.text)['collection']['vhsUser']
 
 		usuarios = []
@@ -136,59 +133,42 @@ def allUsers(request):
 		for element in tree:
 			usuario = {}
 			try:
+
+				# Setting defaults
+
+				usuario['baseuser'] = 'false.png'
+				usuario['name'] = 'No Name'
+				usuario['email'] = 'No email'
+				
+				usuario['optionalFeatureCashPayOnDelivery'] = 'false.png'
+				usuario['optionalFeatureGoogleMapsEnabled'] = 'false.png'
+				usuario['optionalFeatureMobile'] = 'false.png'
+				usuario['optionalFeatureMultimediaImages'] = 'false.png'
+				usuario['optionalFeatureMultimediaVideo'] = 'false.png'
+				usuario['optionalFeaturePerformance'] = 'false.png'
+				usuario['optionalFeatureReportsByRating'] = 'false.png'
+				usuario['optionalFeatureScalability'] = 'false.png'
+				usuario['optionalFeatureSearchByLocation'] = 'false.png'
+
+				# Obtaining info
+
 				usuario['name'] = element['fullName']
 				usuario['email'] = element['mail']
-				# Features
-				usuario['optionalFeatureCashPayOnDelivery'] = 'T' if (element['optionalFeatureCashPayOnDelivery'] == 'true') else 'F'
-				usuario['optionalFeatureGoogleMapsEnabled'] = 'T' if (element['optionalFeatureGoogleMapsEnabled'] == 'true') else 'F'
-				usuario['optionalFeatureMobile'] = 'T' if (element['optionalFeatureMobile'] == 'true') else 'F'
-				usuario['optionalFeatureMultimediaImages'] = 'T' if (element['optionalFeatureMultimediaImages'] == 'true') else 'F'
-				usuario['optionalFeatureMultimediaVideo'] = 'T' if (element['optionalFeatureMultimediaVideo'] == 'true') else 'F'
-				usuario['optionalFeaturePerformance'] = 'T' if (element['optionalFeaturePerformance'] == 'true') else 'F'
-				usuario['optionalFeatureReportsByRating'] = 'T' if (element['optionalFeatureReportsByRating'] == 'true') else 'F'
-				usuario['optionalFeatureScalability'] = 'T' if (element['optionalFeatureScalability'] == 'true') else 'F'
-				usuario['optionalFeatureSearchByLocation'] = 'T' if (element['optionalFeatureSearchByLocation'] == 'true') else 'F'
+				usuario['baseuser'] = 'true.png' if (element['baseUser'] == 'true') else 'false.png'
+				usuario['optionalFeatureCashPayOnDelivery'] = 'true.png' if (element['optionalFeatureCashPayOnDelivery'] == 'true') else 'false.png'
+				usuario['optionalFeatureGoogleMapsEnabled'] = 'true.png' if (element['optionalFeatureGoogleMapsEnabled'] == 'true') else 'false.png'
+				usuario['optionalFeatureMobile'] = 'true.png' if (element['optionalFeatureMobile'] == 'true') else 'false.png'
+				usuario['optionalFeatureMultimediaImages'] = 'true.png' if (element['optionalFeatureMultimediaImages'] == 'true') else 'false.png'
+				usuario['optionalFeatureMultimediaVideo'] = 'true.png' if (element['optionalFeatureMultimediaVideo'] == 'true') else 'false.png'
+				usuario['optionalFeaturePerformance'] = 'true.png' if (element['optionalFeaturePerformance'] == 'true') else 'false.png'
+				usuario['optionalFeatureReportsByRating'] = 'true.png' if (element['optionalFeatureReportsByRating'] == 'true') else 'false.png'
+				usuario['optionalFeatureScalability'] = 'true.png' if (element['optionalFeatureScalability'] == 'true') else 'false.png'
+				usuario['optionalFeatureSearchByLocation'] = 'true.png' if (element['optionalFeatureSearchByLocation'] == 'true') else 'false.png'
 
-				if usuario['name'] == None:
-					usuario['name'] = 'None'
-
-				if usuario['email'] == None:
-					usuario['email'] = 'None'
-
-				# Features
-
-				if usuario['optionalFeatureCashPayOnDelivery'] == None:
-					usuario['optionalFeatureCashPayOnDelivery'] = 'F'
-				
-				if usuario['optionalFeatureGoogleMapsEnabled'] == None:
-					usuario['optionalFeatureGoogleMapsEnabled'] = 'F'
-				
-				if usuario['optionalFeatureMobile'] == None:
-					usuario['optionalFeatureMobile'] = 'F'
-				
-				if usuario['optionalFeatureMultimediaImages'] == None:
-					usuario['optionalFeatureMultimediaImages'] = 'F'
-				
-				if usuario['optionalFeatureMultimediaVideo'] == None:
-					usuario['optionalFeatureMultimediaVideo'] = 'F'
-				
-				if usuario['optionalFeaturePerformance'] == None:
-					usuario['optionalFeaturePerformance'] = 'F'
-				
-				if usuario['optionalFeatureReportsByRating'] == None:
-					usuario['optionalFeatureReportsByRating'] = 'F'
-				
-				if usuario['optionalFeatureScalability'] == None:
-					usuario['optionalFeatureScalability'] = 'F'
-				
-				if usuario['optionalFeatureSearchByLocation'] == None:
-					usuario['optionalFeatureSearchByLocation'] = 'F'
-
-				usuarios.append(usuario)
 			except Exception, e:
 				print 'No se encontro el parametro'
-			
-		print usuarios
+			finally:
+				usuarios.append(usuario)
 
 	# try:
 	# 	listado_usuarios = [
