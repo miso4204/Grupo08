@@ -5,10 +5,6 @@
  */
 package com.vhs.aspects;
 
-import com.vhs.data.AdditionalValues;
-import com.vhs.data.VhsSpecialOffer;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -16,18 +12,18 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 
 /**
- * User aspects definition.
+ * Additional values aspects definition.
  *
  * @author Andres Vargas (ja.vargas147@uniandes.edu.co)
  * @author Alex Vicente ChacOn JimEnez (av.chacon10@uniandes.edu.co)
  */
 @Aspect
-public class VhsUserAspects
+public class VhsAdditionalValuesAspects
 {
-    @Around("execution(* com.vhs.service.VhsUserFacadeREST.create(..))")
-    public void adviceCreate(ProceedingJoinPoint pjp) throws Throwable
+    @Around("execution(@com.vhs.annotations.VHSFeature * com.vhs.service.AdditionalValuesFacadeREST.findBySpecialOffer(..))")
+    public Object adviceFindBySpecialOffer(ProceedingJoinPoint pjp) throws Throwable
     {
-        //pjp.getArgs()[0]
-        pjp.proceed();
+        Logger.getLogger(VhsAdditionalValuesAspects.class.getName()).log(Level.INFO, "Feature interceptado: ExtendedProductDescription");
+        return null;
     }
 }

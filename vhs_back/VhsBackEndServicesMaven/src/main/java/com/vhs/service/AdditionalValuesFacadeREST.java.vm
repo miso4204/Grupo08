@@ -6,7 +6,6 @@
 package com.vhs.service;
 
 import com.vhs.data.AdditionalValues;
-import com.vhs.service.AbstractFacade;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -65,6 +64,7 @@ public class AdditionalValuesFacadeREST extends AbstractFacade<AdditionalValues>
     @GET
     @Path("specialoffer/{idSpecialOffers}")
     @Produces({"application/xml", "application/json"})
+    $ExtendedProductDescription
     public List<AdditionalValues> findBySpecialOffer(@PathParam("idSpecialOffers") Integer idSpecialOffers) {
         Query q = em.createNamedQuery("VhsAdditionalValues.findBySpecialOffer");
         q.setParameter("idSpecialOffers", idSpecialOffers);

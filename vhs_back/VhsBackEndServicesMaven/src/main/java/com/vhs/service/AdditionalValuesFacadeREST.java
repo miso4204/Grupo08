@@ -6,7 +6,6 @@
 package com.vhs.service;
 
 import com.vhs.data.AdditionalValues;
-import com.vhs.service.AbstractFacade;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
