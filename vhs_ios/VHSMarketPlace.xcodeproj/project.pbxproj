@@ -68,6 +68,8 @@
 		F24DF8531AF02C69001BC3AF /* LocationSe.m in Sources */ = {isa = PBXBuildFile; fileRef = F24DF8521AF02C69001BC3AF /* LocationSe.m */; };
 		F261CE431AEF3F69003D8A34 /* share@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F261CE421AEF3F69003D8A34 /* share@2x.png */; };
 		F27F38881ADF61EB0060DFC1 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = F27F38871ADF61EB0060DFC1 /* XMLReader.m */; };
+		F29E395B1B01A4CC00A4C28E /* PSEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F29E395A1B01A4CB00A4C28E /* PSEViewController.m */; };
+		F29E395D1B01AD5100A4C28E /* pse@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F29E395C1B01AD5100A4C28E /* pse@2x.png */; };
 		F2B5F2EF1AF53E0500E360A1 /* menuSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2B5F2EE1AF53E0500E360A1 /* menuSearchViewController.m */; };
 		F2B5F2F21AF542ED00E360A1 /* searchDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2B5F2F11AF542ED00E360A1 /* searchDateViewController.m */; };
 		F2B5F2F51AF54E0100E360A1 /* SearchPriceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2B5F2F41AF54E0100E360A1 /* SearchPriceViewController.m */; };
@@ -179,6 +181,9 @@
 		F261CE421AEF3F69003D8A34 /* share@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "share@2x.png"; path = "Resources/share@2x.png"; sourceTree = "<group>"; };
 		F27F38861ADF61EB0060DFC1 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMLReader.h; path = "../../../../../Downloads/XMLReader-master/XMLReader.h"; sourceTree = "<group>"; };
 		F27F38871ADF61EB0060DFC1 /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XMLReader.m; path = "../../../../../Downloads/XMLReader-master/XMLReader.m"; sourceTree = "<group>"; };
+		F29E39591B01A4CB00A4C28E /* PSEViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSEViewController.h; sourceTree = "<group>"; };
+		F29E395A1B01A4CB00A4C28E /* PSEViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSEViewController.m; sourceTree = "<group>"; };
+		F29E395C1B01AD5100A4C28E /* pse@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pse@2x.png"; path = "Resources/pse@2x.png"; sourceTree = "<group>"; };
 		F2B5F2ED1AF53E0500E360A1 /* menuSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = menuSearchViewController.h; sourceTree = "<group>"; };
 		F2B5F2EE1AF53E0500E360A1 /* menuSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = menuSearchViewController.m; sourceTree = "<group>"; };
 		F2B5F2F01AF542ED00E360A1 /* searchDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = searchDateViewController.h; sourceTree = "<group>"; };
@@ -278,6 +283,7 @@
 				1055DEB31AD3A01A00B23D3E /* hote2@2x.jpeg */,
 				1055DEB41AD3A01A00B23D3E /* hote1@2x.jpeg */,
 				F247CF9B1AE6FD8A001C0286 /* close.png */,
+				F29E395C1B01AD5100A4C28E /* pse@2x.png */,
 				10A149031AC8DA510038DEF8 /* Cells */,
 				10B52F331AD7877500D241E7 /* ApiConnection */,
 				10A148CE1AC8D8E20038DEF8 /* AppDelegate.h */,
@@ -293,6 +299,8 @@
 				10A149201AC8F7220038DEF8 /* CartViewController.h */,
 				10A149211AC8F7220038DEF8 /* CartViewController.m */,
 				10A148D71AC8D8E20038DEF8 /* Main.storyboard */,
+				F29E39591B01A4CB00A4C28E /* PSEViewController.h */,
+				F29E395A1B01A4CB00A4C28E /* PSEViewController.m */,
 				F246D1F81AFEA88700C52AAB /* PromotionsViewController.h */,
 				F246D1F91AFEA88700C52AAB /* PromotionsViewController.m */,
 				F2B5F2ED1AF53E0500E360A1 /* menuSearchViewController.h */,
@@ -513,6 +521,7 @@
 				10A1490E1AC8DA570038DEF8 /* CheckoutHeaderView.xib in Resources */,
 				10A149101AC8DA570038DEF8 /* ProductCartCell.xib in Resources */,
 				F247CF9C1AE6FD8A001C0286 /* close.png in Resources */,
+				F29E395D1B01AD5100A4C28E /* pse@2x.png in Resources */,
 				10A1491F1AC8F0E00038DEF8 /* home@2x.png in Resources */,
 				107E922E1AD38FC400328F6C /* location@2x.png in Resources */,
 				103D4BEB1AD39A38004F65E9 /* tsFactory@2x.png in Resources */,
@@ -617,6 +626,7 @@
 				10DAF7091ACDAE66000CC7B8 /* UINavigationBar+FlatUI.m in Sources */,
 				10DAF7081ACDAE66000CC7B8 /* UIImage+FlatUI.m in Sources */,
 				10DAF7071ACDAE66000CC7B8 /* UIFont+FlatUI.m in Sources */,
+				F29E395B1B01A4CC00A4C28E /* PSEViewController.m in Sources */,
 				10B52F381AD7878200D241E7 /* Client.m in Sources */,
 				10BBADE01AD0672B00E8297D /* CatalogViewController.m in Sources */,
 				10DAF7061ACDAE66000CC7B8 /* UIColor+FlatUI.m in Sources */,

@@ -187,6 +187,9 @@
         [self performSegueWithIdentifier:@"credit" sender:self];
 
     }else{
+        [self performSegueWithIdentifier:@"pse" sender:self];
+
+        /*
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         
         // Create a PayPalPayment
@@ -224,7 +227,7 @@
         // Present the PayPalPaymentViewController.
         [self.navigationController presentViewController:paymentViewController animated:YES completion:nil];
         
-        
+        */
 
     
     }

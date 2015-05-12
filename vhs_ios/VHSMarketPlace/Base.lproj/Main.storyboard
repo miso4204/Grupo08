@@ -42,11 +42,12 @@
                         <outlet property="tableviewPayment" destination="264-GX-trn" id="FzO-FK-7FJ"/>
                         <segue destination="Zfr-tx-38d" kind="presentation" identifier="credit" id="kgw-w2-Ici"/>
                         <segue destination="Rzq-Uw-dVo" kind="presentation" identifier="cash" id="A1P-VP-JuH"/>
+                        <segue destination="S7c-Qu-zuw" kind="presentation" identifier="pse" id="zEa-Gt-loC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x6q-Zh-8vI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2724" y="1337"/>
+            <point key="canvasLocation" x="3064" y="1665"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="xqQ-c4-OAX">
@@ -756,27 +757,27 @@ Cócteles y gastronomía con buena música de fondo, mucha animación y un ambie
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Nombre" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7sx-88-EV4">
-                                <rect key="frame" x="4" y="81" width="313" height="30"/>
+                                <rect key="frame" x="10" y="81" width="301" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Dirección" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LHr-a1-guX">
-                                <rect key="frame" x="4" y="118" width="313" height="30"/>
+                                <rect key="frame" x="10" y="125" width="301" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="cvv" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J87-QY-8vB">
-                                <rect key="frame" x="4" y="270" width="70" height="30"/>
+                                <rect key="frame" x="10" y="301" width="58" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Fecha" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZgB-8A-V1e">
-                                <rect key="frame" x="4" y="232" width="128" height="30"/>
+                                <rect key="frame" x="10" y="257" width="118" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YT8-7v-6kY" customClass="BButton">
-                                <rect key="frame" x="187" y="308" width="130" height="45"/>
+                                <rect key="frame" x="181" y="362" width="130" height="45"/>
                                 <state key="normal" title="Realizar Pago">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -785,12 +786,12 @@ Cócteles y gastronomía con buena música de fondo, mucha animación y un ambie
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Correo electrónico" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rcK-fk-6kF">
-                                <rect key="frame" x="4" y="156" width="313" height="30"/>
+                                <rect key="frame" x="10" y="169" width="301" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lrt-Kf-3XF" customClass="BButton">
-                                <rect key="frame" x="7" y="308" width="130" height="45"/>
+                                <rect key="frame" x="10" y="362" width="130" height="45"/>
                                 <state key="normal" title="Escanear Tarjeta">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -799,7 +800,7 @@ Cócteles y gastronomía con buena música de fondo, mucha animación y un ambie
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Tarjeta de crédito" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oz4-ZC-256">
-                                <rect key="frame" x="4" y="194" width="313" height="30"/>
+                                <rect key="frame" x="10" y="213" width="301" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -1275,6 +1276,91 @@ Cócteles y gastronomía con buena música de fondo, mucha animación y un ambie
             </objects>
             <point key="canvasLocation" x="483" y="421"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="owt-qq-n2E">
+            <objects>
+                <viewController id="aef-iW-H0l" customClass="PSEViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="07b-Bc-yCV"/>
+                        <viewControllerLayoutGuide type="bottom" id="gKg-Zm-kZz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ulw-3I-O8k">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Nombre" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FoX-7z-FqC">
+                                <rect key="frame" x="13" y="83" width="295" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Dirección" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yyf-rg-xmt">
+                                <rect key="frame" x="13" y="127" width="295" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Nombre del banco PSE" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gcU-mC-1fA">
+                                <rect key="frame" x="13" y="217" width="295" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Correo electrónico" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ze0-mW-NhK">
+                                <rect key="frame" x="13" y="171" width="295" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Número de cuenta PSE" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zXc-Qw-gNR">
+                                <rect key="frame" x="13" y="261" width="295" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pse.png" translatesAutoresizingMaskIntoConstraints="NO" id="IYI-Na-s6G">
+                                <rect key="frame" x="79" y="394" width="162" height="153"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKs-Is-6FC" customClass="BButton">
+                                <rect key="frame" x="169" y="319" width="130" height="45"/>
+                                <state key="normal" title="Realizar Pago">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pay:" destination="aef-iW-H0l" eventType="touchUpInside" id="jVM-4S-hni"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="vcQ-lo-rGE"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="btnPay" destination="aKs-Is-6FC" id="dvO-Xx-z1O"/>
+                        <outlet property="txtAccount" destination="zXc-Qw-gNR" id="VzV-pi-Fx9"/>
+                        <outlet property="txtAddress" destination="Yyf-rg-xmt" id="Lw2-LY-zFT"/>
+                        <outlet property="txtBanc" destination="gcU-mC-1fA" id="Udf-ae-nFa"/>
+                        <outlet property="txtEmail" destination="Ze0-mW-NhK" id="4Cm-5f-o34"/>
+                        <outlet property="txtName" destination="FoX-7z-FqC" id="qut-gr-iRU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XDn-xi-3o1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4650" y="69"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aCl-Yh-brr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="S7c-Qu-zuw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Eam-vQ-YNG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="aef-iW-H0l" kind="relationship" relationship="rootViewController" id="GPi-8l-WLI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F2M-7o-9DT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2986" y="365"/>
+        </scene>
     </scenes>
     <resources>
         <image name="cart.png" width="20" height="20"/>
@@ -1283,6 +1369,7 @@ Cócteles y gastronomía con buena música de fondo, mucha animación y un ambie
         <image name="home.png" width="20" height="20"/>
         <image name="location.png" width="100" height="100"/>
         <image name="promotions.png" width="25" height="25"/>
+        <image name="pse.png" width="226" height="225"/>
         <image name="search.png" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>

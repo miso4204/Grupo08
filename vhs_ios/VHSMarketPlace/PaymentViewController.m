@@ -41,10 +41,10 @@
     self.txtName.delegate = self;
     self.txtMail.delegate = self;
     
-    
+    [self.btnScan setStyle:BButtonStyleBootstrapV3];
+    [self.btnScan setType:BButtonTypeFacebook];
     [self.btnPay setStyle:BButtonStyleBootstrapV3];
-    [self.btnPay setType:BButtonTypeFacebook];
-    
+    [self.btnPay setType:BButtonTypeTwitter];
 
    // [self.btnScan setStyle:BButtonStyleBootstrapV3];
    // [self.btnScan setType:BButtonTypeTwitter];
