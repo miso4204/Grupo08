@@ -35,7 +35,8 @@ import org.hibernate.annotations.LazyCollectionOption;
             {
                 @NamedQuery(name = "VhsCity.findAll", query = "SELECT v FROM VhsCity v"),
                 @NamedQuery(name = "VhsCity.findByIdCity", query = "SELECT v FROM VhsCity v WHERE v.idCity = :idCity"),
-                @NamedQuery(name = "VhsCity.findByDescription", query = "SELECT v FROM VhsCity v WHERE v.description = :description")
+                @NamedQuery(name = "VhsCity.findByDescription", query = "SELECT v FROM VhsCity v WHERE v.description = :description"),
+                @NamedQuery(name = "VhsCity.findByMain", query = "SELECT v FROM VhsCity v WHERE v.main = true")
             }
         )
 public class VhsCity implements Serializable
@@ -57,6 +58,21 @@ public class VhsCity implements Serializable
      */
     @Column(name = "description")
     private String description;
+    
+    /**
+     * Latitude
+     */
+    @Column(name = "lat")
+    private String lat;
+    
+    /**
+     * Longitude
+     */
+    @Column(name = "lon")
+    private String lon;
+    
+    @Column(name = "main")
+    private Boolean main;
     
     /**
      * City owner country
@@ -115,6 +131,30 @@ public class VhsCity implements Serializable
 
     public void setVhsSpecialOffer(Collection<VhsSpecialOffer> vhsSpecialOffer) {
         this.vhsSpecialOffer = vhsSpecialOffer;
+    }
+
+    public String getLat() {
+        return lat;
+    }
+
+    public void setLat(String lat) {
+        this.lat = lat;
+    }
+
+    public String getLon() {
+        return lon;
+    }
+
+    public void setLon(String lon) {
+        this.lon = lon;
+    }
+
+    public Boolean getMain() {
+        return main;
+    }
+
+    public void setMain(Boolean main) {
+        this.main = main;
     }
     
     @Override
