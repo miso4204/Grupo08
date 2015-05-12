@@ -15,9 +15,11 @@
 #import "FUIButton.h"
 #import "detailViewController.h"
 #import "AppDelegate.h"
+#import "AdditionalValue.h"
 @interface detailViewController (){
 
     NSMutableArray *markers;
+    AdditionalValue * prod;
 
 }
 @property (nonatomic, strong) Connections *APIConnection;
@@ -605,11 +607,12 @@
     if ([tableView respondsToSelector:@selector(setSeparatorInset:)]) {
         [tableView setSeparatorInset:UIEdgeInsetsZero];
     }
+    AdditionalValue * addv = [self.returnP objectAtIndex:indexPath.row];
+    cell.textLabel.text = addv.addTitle;
     
-    cell.textLabel.text = @"Cannopy";
-    
-    cell.detailTextLabel.text = @"Atrévete al mejor canoppy de la ciudad";
-    
+    cell.detailTextLabel.text = addv.addDescription;
+    cell.detailTextLabel.numberOfLines = 0;
+    cell.detailTextLabel.lineBreakMode = NSLineBreakByWordWrapping;
     UIImageView *imgView2 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
     imgView2.image = [UIImage imageNamed:@"travel@2x.png"];
     cell.imageView.image = imgView2.image;
@@ -639,10 +642,27 @@
     cell.backgroundView.backgroundColor = [UIColor clearColor];
 }
 -(void)getAdditionalValuesDidFinishSuccessfully:(NSDictionary*)responseObject{
+    NSArray *items = [responseObject valueForKeyPath:@"collection.additionalValues"];
+    NSLog(@"arraty %@",responseObject);
+    if (items.count ==0) {
+        self.segmentedControl.hidden = YES;
+        
+    }else{
+        self.segmentedControl.hidden = NO;
+    }
     self.returnP = [[NSMutableArray alloc]init];
-    
-    NSLog(@"additional values %@",responseObject);
-
+    for (NSDictionary * test in items) {
+        NSDictionary * currentValue = [test objectForKey:@"currentValue"];
+        NSDictionary * title = [test objectForKey:@"title"];
+        NSDictionary * addid = [test objectForKey:@"id"];
+        NSLog(@"last %@",currentValue);
+        prod = [[AdditionalValue alloc]init];
+        prod.addId =[addid objectForKey:@"text"];
+        prod.addDescription = [currentValue objectForKey:@"text"];
+        prod.addTitle = [title objectForKey:@"text"];
+        [self.returnP addObject:prod];
+    }
+    [self.tableviewAdditionalVaues reloadData];
 }
 -(void)getAdditionalValuesDidFinishWithFailure:(NSDictionary*)responseObject{
 

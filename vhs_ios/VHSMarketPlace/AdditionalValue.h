@@ -9,5 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface AdditionalValue : NSObject
+@property (strong, nonatomic) NSString *addTitle;
+@property (strong, nonatomic) NSString *addDescription;
+@property (strong, nonatomic) NSString *addId;
 
 @end

@@ -41,6 +41,14 @@
     self.txtName.delegate = self;
     self.txtMail.delegate = self;
     
+    
+    [self.btnPay setStyle:BButtonStyleBootstrapV3];
+    [self.btnPay setType:BButtonTypeFacebook];
+    
+
+   // [self.btnScan setStyle:BButtonStyleBootstrapV3];
+   // [self.btnScan setType:BButtonTypeTwitter];
+    
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(0, 0, 32, 32);
     [button setImage:[UIImage imageNamed:@"flechablanca@2x.png"] forState:UIControlStateNormal];
@@ -69,7 +77,6 @@
 */
 
 - (IBAction)pay:(id)sender {
-    
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
     NSMutableDictionary * params= [[NSMutableDictionary alloc]init];
@@ -84,14 +91,15 @@
     
     [params setObject:self.txtCvv.text forKey:@"creditCardVerificationCode"];
     
+
     NSArray * date = [self getDataOfQueryString:self.txtDate.text andseparator:@"/"];
     
     [params setObject:date[0] forKey:@"creditCardExpirationMonth"];
     
     [params setObject:date[1] forKey:@"creditCardExpirationYear"];
-
-
     
+
+
     double amount=  [appDelegate totalAmount];
     
     NSString * paymentValue = [NSString stringWithFormat:@"%f",amount];
@@ -103,19 +111,19 @@
     [params setObject:numberItems forKey:@"saleQuantity"];
     
     
-    NSDictionary *paymentV = @{@"id": @"3"};
+    NSDictionary *paymentV = @{@"id": @"2"};
     [params setObject:paymentV forKey:@"paymentMethod"];
     
     
     NSDictionary *cityV = @{@"idCity": @"1"};
     [params setObject:cityV forKey:@"buyerCity"];
     
-    
     NSMutableDictionary * productPaying = [[NSMutableDictionary alloc]init];
     
-    for (NSDictionary * products in appDelegate.shoppingCart) {
+    for (Product * products in appDelegate.shoppingCart) {
         Product * pro = [[Product alloc]init];
-        [productPaying setObject:[NSString stringWithFormat:@"%d",pro.id ] forKey:@"idSpecialOffers"];
+        pro =products;
+        [productPaying setObject:[NSString stringWithFormat:@"%d",pro.id] forKey:@"idSpecialOffers"];
         NSLog(@"products in cart %@",products);
     }
     [params setObject:productPaying forKey:@"specialOffer"];
@@ -124,12 +132,11 @@
     
     //  [self.ConnectionDelegate payProducts:params];
     
-    NSURL *baseURL = [NSURL URLWithString:@"http://jbossasvhsbackendservices-vhstourism.rhcloud.com/VhsBackEndServices/webresources/"];
+    NSURL *baseURL = [NSURL URLWithString:@"http://192.168.0.174:8087/VhsBackEndServices/webresources/"];
     
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:baseURL];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    
     [manager POST:@"vhsoffersale" parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
         
         NSLog(@"JSON: %@", responseObject);
@@ -177,7 +184,7 @@
         NSLog(@"Received card info. Number: %@, expiry: %02i/%i, cvv: %@. card Type: %@.", info.redactedCardNumber, info.expiryMonth, info.expiryYear, info.cvv,info.cardType);
         // Use the card info...
         
-        self.txtCreditCardNumber.text = info.redactedCardNumber;
+        self.txtCreditCardNumber.text = info.cardNumber;
         
         self.txtCvv.text = info.cvv;
         
@@ -194,7 +201,7 @@
 
     
     NSLog(@"card information %ld",(long)cardInfo.cardType);
-    self.txtCreditCardNumber.text = cardInfo.redactedCardNumber;
+    self.txtCreditCardNumber.text = cardInfo.cardNumber;
     
     self.txtCvv.text = cardInfo.cvv;
     

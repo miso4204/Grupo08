@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VHSMarketPlace/SearchViewController.m"
-            timestampString = "452988796.022984"
+            timestampString = "452995537.595153"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "482"
-            endingLineNumber = "482"
+            startingLineNumber = "421"
+            endingLineNumber = "421"
             landmarkName = "-searchPlaceFinishWithFailure:"
             landmarkType = "5">
          </BreakpointContent>

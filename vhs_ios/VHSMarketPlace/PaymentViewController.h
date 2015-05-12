@@ -21,7 +21,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *txtMail;
 @property (weak, nonatomic) IBOutlet BButton *btnPay;
 - (IBAction)pay:(id)sender;
-@property (weak, nonatomic) IBOutlet UIButton *btnScan;
+@property (weak, nonatomic) IBOutlet BButton *btnScan;
 - (IBAction)scan:(id)sender;
 
 @end

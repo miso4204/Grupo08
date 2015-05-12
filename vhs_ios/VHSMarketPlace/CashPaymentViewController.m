@@ -84,7 +84,7 @@
     [params setObject:numberItems forKey:@"saleQuantity"];
 
     
-    NSDictionary *paymentV = @{@"id": @"1"};
+    NSDictionary *paymentV = @{@"id": @"4"};
     [params setObject:paymentV forKey:@"paymentMethod"];
     
     
@@ -93,9 +93,10 @@
     
     NSMutableDictionary * productPaying = [[NSMutableDictionary alloc]init];
 
-    for (NSDictionary * products in appDelegate.shoppingCart) {
+    for (Product * products in appDelegate.shoppingCart) {
         Product * pro = [[Product alloc]init];
-        [productPaying setObject:[NSString stringWithFormat:@"%d",pro.id ] forKey:@"idSpecialOffers"];
+        pro =products;
+        [productPaying setObject:[NSString stringWithFormat:@"%d",pro.id] forKey:@"idSpecialOffers"];
         NSLog(@"products in cart %@",products);
     }
     [params setObject:productPaying forKey:@"specialOffer"];
@@ -104,13 +105,12 @@
     
   //  [self.ConnectionDelegate payProducts:params];
  
-    NSURL *baseURL = [NSURL URLWithString:@"http://jbossasvhsbackendservices-vhstourism.rhcloud.com/VhsBackEndServices/webresources/"];
+    NSURL *baseURL = [NSURL URLWithString:@"http://192.168.0.174:8087/VhsBackEndServices/webresources/"];
 
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:baseURL];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    
-    [manager POST:@"vhsoffersale" parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+      [manager POST:@"vhsoffersale" parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
         
         NSLog(@"JSON: %@", responseObject);
         
