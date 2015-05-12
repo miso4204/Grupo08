@@ -263,6 +263,16 @@
 }
 - (void)checkout:(UIButton *)button
 {
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+
+    if ([appDelegate.shoppingCart count]==0) {
+        UIAlertView * alert=[[UIAlertView alloc]initWithTitle:NSLocalizedString(@"Problema", nil)
+                                                      message:NSLocalizedString(@"No tienes ningún producto en el carrito de compras.", nil)
+                                                     delegate:self
+                                            cancelButtonTitle:NSLocalizedString(@"Cancelar", nil)
+                                            otherButtonTitles:nil]; //!!JCS.8aug2012.Agregar FB
+        [alert show];
+    }else{
     self.ConnectionDelegate.delegate = self;
     
     [self.ConnectionDelegate getPaymentMethods];
@@ -277,6 +287,7 @@
     UIBarButtonItem *barButton=[[UIBarButtonItem alloc] init];
     [barButton setCustomView:button2];
     self.navigationItem.leftBarButtonItem=barButton;
+    }
 
 }
 -(void)back{

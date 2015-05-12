@@ -132,7 +132,7 @@
     self.viewForDate.hidden = YES;
 }
 -(void)getCityDidFinishSuccessfully:(NSDictionary*)responseObject{
-
+    NSLog(@"cities supported %@",responseObject);
     
     NSArray *items = [responseObject valueForKeyPath:@"collection.vhsCity"];
 

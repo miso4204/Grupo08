@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ddC-dv-zeV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oec-zE-tva">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -322,11 +322,11 @@ Cócteles y gastronomía con buena música de fondo, mucha animación y un ambie
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <segue destination="eBN-51-rEd" kind="relationship" relationship="viewControllers" id="JRt-cB-uMO"/>
                         <segue destination="wfz-3V-Dgp" kind="relationship" relationship="viewControllers" id="HCl-5b-KHi"/>
                         <segue destination="TV6-eD-uLU" kind="relationship" relationship="viewControllers" id="K5g-1E-Fc2"/>
                         <segue destination="IEg-oX-PMC" kind="relationship" relationship="viewControllers" id="uEX-ia-Pyn"/>
                         <segue destination="aJY-vy-9w2" kind="relationship" relationship="viewControllers" id="pwQ-Mr-ThS"/>
-                        <segue destination="eBN-51-rEd" kind="relationship" relationship="viewControllers" id="JRt-cB-uMO"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12G-pz-1WW" userLabel="First Responder" sceneMemberID="firstResponder"/>

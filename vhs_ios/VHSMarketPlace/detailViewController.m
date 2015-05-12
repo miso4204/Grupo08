@@ -451,7 +451,7 @@
         
         mySLComposerSheet = [[SLComposeViewController alloc] init]; //initiate the Social Controller
         mySLComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook]; //Tell him with what social plattform to use it, e.g. facebook or twitter
-        NSString *shareMessage = [NSString stringWithFormat:@"%@ %@ %@ %@ %@ %f",@"Mira este increíble plan turístico" ,self.myProduct.name,@"que oferce:",self.myProduct.descriptions,@"con un costo de:",self.myProduct.price];
+        NSString *shareMessage = [NSString stringWithFormat:@"%@ %@ %@ %@ %@ %f",@"@VHSMarketPlace Mira este increíble plan turístico" ,self.myProduct.name,@"que oferce:",self.myProduct.descriptions,@"con un costo de:",self.myProduct.price];
         
         [mySLComposerSheet setInitialText:[NSString stringWithFormat:shareMessage,mySLComposerSheet.serviceType]]; //the message you want to post
         //for more instance methodes, go here:https://developer.apple.com/library/ios/#documentation/NetworkingInternet/Reference/SLComposeViewController_Class/Reference/Reference.html#//apple_ref/doc/uid/TP40012205
@@ -476,7 +476,7 @@
 }
 - (void)tweet {  //!!JCS.25sep2012.Move this to MVC?
     //[SHKTwitter shareImage:pic.image title:@"Emoji Message"];
-   NSString *msg = [NSString stringWithFormat:@"%@ %@ %@ %@ %@ %f",@"Mira este increíble plan turístico" ,self.myProduct.name,@"que oferce:",self.myProduct.descriptions,@"con un costo de:",self.myProduct.price];
+   NSString *msg = [NSString stringWithFormat:@"%@ %@ %@ %@ %@ %f",@"@ VHSMarketPlace Mira este increíble plan turístico" ,self.myProduct.name,@"que oferce:",self.myProduct.descriptions,@"con un costo de:",self.myProduct.price];
     
 
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])

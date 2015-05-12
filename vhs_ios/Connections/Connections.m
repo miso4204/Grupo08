@@ -178,7 +178,7 @@
 }
 -(void)getCity{
 
-    [[Client sharedInstance] GET:@"vhscity" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [[Client sharedInstance] GET:@"vhscity/main" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         // Parse the XML into a dictionary
         NSError *parseError = nil;

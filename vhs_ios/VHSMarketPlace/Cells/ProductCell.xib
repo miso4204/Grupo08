@@ -40,7 +40,7 @@
                         </state>
                     </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="promotion.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="G2V-Iu-hff">
-                        <rect key="frame" x="42" y="1" width="97" height="63"/>
+                        <rect key="frame" x="42" y="5" width="97" height="63"/>
                     </imageView>
                 </subviews>
             </tableViewCellContentView>
